@@ -6,7 +6,7 @@ Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta e
 
 Encaja con: maqueta estática, migración literal a WordPress, sistema editorial donde el layout no debe contaminar la obra.
 
-**Depende de:** `static-file-structure`, `theme-file-structure`, `identidad-corporativa` (tokens de marca)
+**Depende de:** `17-17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tokens de marca)
 
 ---
 
@@ -191,4 +191,4 @@ En WordPress no hay ventaja técnica directa por Sass; el CMS solo consume el CS
 ---
 
 **Versión:** 1.0  
-**Relación:** Define la base CSS para `static-file-structure` (maqueta) y para el theme WordPress.
+**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress.

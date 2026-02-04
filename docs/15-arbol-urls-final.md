@@ -7,10 +7,10 @@ Este documento define todas las rutas reales del sitio por idioma, tipo de obra 
 
 Este árbol es la traducción directa de:
 
-- `wordpress-content-model.md`
-- `mapa-pantallas.md`
-- `arquitectura-editorial.md`
-- `arquitectura-informacion-navegacion.md`
+- `04-wordpress-content-model`
+- `05-mapa-pantallas`
+- `03-arquitectura-editorial`
+- `14-arquitectura-informacion-navegacion`
 
 **Si una URL no está aquí, no existe.**
 
@@ -162,7 +162,7 @@ Estos no generan rutas nuevas.
 | Archivo vacío | En listados |
 | 404 | Cualquier URL fuera del árbol |
 
-El mensaje y las salidas están definidos en `ui-copy-sheet.md` y `arquitectura-informacion-navegacion.md`.
+El mensaje y las salidas están definidos en `10-ui-copy-sheet` y `14-arquitectura-informacion-navegacion`.
 
 ---
 
@@ -195,4 +195,4 @@ Este árbol es el territorio oficial de la obra. WordPress no puede inventar rut
 ---
 
 **Versión:** 2.0  
-**Depende de:** `wordpress-content-model.md`, `mapa-pantallas.md`, `arquitectura-editorial.md`, `arquitectura-informacion-navegacion.md`
+**Depende de:** `04-wordpress-content-model`, `05-mapa-pantallas`, `03-arquitectura-editorial`, `14-arquitectura-informacion-navegacion`

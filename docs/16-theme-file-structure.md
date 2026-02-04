@@ -6,7 +6,7 @@ Este documento define la arquitectura definitiva de archivos del theme: qué pla
 
 No es un theme genérico. Es una biblioteca de obra. Esta estructura es la barrera que evita que poemas, libros y ensayos se conviertan en posts y que el archivo se vuelva un feed.
 
-**Depende de:** `wordpress-content-model`, `mapa-pantallas`, `arbol-urls-final`, `arquitectura-informacion-navegacion`, `wireframes`
+**Depende de:** `04-wordpress-content-model`, `05-mapa-pantallas`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`
 
 ---
 

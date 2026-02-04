@@ -108,7 +108,7 @@ El sitio soporta **múltiples idiomas** sin cambiar el modelo de contenido. Leng
 
 **Qué se traduce:** Páginas clave, fichas de Book y Workshop, bio, selección de poemas y ensayos. Términos de topic/period pueden traducirse o mantenerse en un idioma.
 
-La tipografía y el layout de `identidad-corporativa.md` aplican en todos los idiomas.
+La tipografía y el layout de `02-identidad-corporativa` aplican en todos los idiomas.
 
 ---
 
@@ -119,5 +119,5 @@ Esta arquitectura permite: tratar la obra como un **corpus**; no perder poemas e
 ---
 
 **Versión del documento:** 2.0  
-**Depende de:** `identidad-corporativa.md`  
-**Alimenta a:** `wordpress-content-model.md` y a la implementación del theme.
+**Depende de:** `02-identidad-corporativa`  
+**Alimenta a:** `04-wordpress-content-model` y a la implementación del theme.

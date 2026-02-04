@@ -1,6 +1,6 @@
 # User Journey Diagram — Daniel Arella
 
-Diagrama en Mermaid. Basado en `user-journey.md` v1.1. Score 1–5: fluidez del paso (5 = sin fricción). Actor: **Lector**.
+Diagrama en Mermaid. Basado en `11-user-journey` v1.1. Score 1–5: fluidez del paso (5 = sin fricción). Actor: **Lector**.
 
 ---
 
@@ -54,4 +54,4 @@ journey
 
 ---
 
-**Referencia:** `user-journey.md`
+**Referencia:** `11-user-journey`

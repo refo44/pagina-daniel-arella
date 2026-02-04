@@ -334,7 +334,7 @@ The identity system is complete as defined above. Two optional extensions may be
    May be added to lock the palette and typography inside the Gutenberg editor, preventing the use of non-brand colors or fonts.
 
 3. **Multilingual (i18n)**  
-   The site supports multiple languages (Spanish and English primary, extensible). All theme UI strings must be translatable (text domain). Content and URL strategy are defined in the editorial architecture (`arquitectura-editorial.md` §10).
+   The site supports multiple languages (Spanish and English primary, extensible). All theme UI strings must be translatable (text domain). Content and URL strategy are defined in the editorial architecture (`03-arquitectura-editorial` §10).
 
 ---
 

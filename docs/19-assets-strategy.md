@@ -4,7 +4,7 @@
 
 Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, fuentes, iconos, favicon).
 
-**Depende de:** `static-file-structure`, `theme-file-structure`, `identidad-corporativa` (tipografías y paleta)
+**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tipografías y paleta)
 
 ---
 
@@ -35,7 +35,7 @@ js/                 Scripts mínimos (navegación, formularios, accesibilidad)
 ├── main.js         (o navigation.js, forms.js, accessibility.js)
 ```
 
-La misma estructura se replica en la maqueta estática y dentro del theme. En `identidad-corporativa.md` se definen las familias tipográficas (Fraunces, Source Sans 3) y su uso.
+La misma estructura se replica en la maqueta estática y dentro del theme. En `02-identidad-corporativa` se definen las familias tipográficas (Fraunces, Source Sans 3) y su uso.
 
 ---
 
@@ -92,7 +92,7 @@ assets/icons/
 - **Autohospedadas** (recomendado): archivos en el proyecto y luego en el theme. Más control, más estable, menos dependencias.
 - **Google Fonts**: válido para maqueta rápida, pero añade dependencia externa; no recomendado si se busca máxima coherencia y privacidad.
 
-Con CSS nativo, lo coherente es autohospedar y declarar con `@font-face`. Las familias y pesos están en `identidad-corporativa.md` (Fraunces, Source Sans 3).
+Con CSS nativo, lo coherente es autohospedar y declarar con `@font-face`. Las familias y pesos están en `02-identidad-corporativa` (Fraunces, Source Sans 3).
 
 ### Estructura
 
@@ -204,8 +204,8 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 ## 8. Relación con otros documentos
 
-- **Estructura de archivos:** `static-file-structure.md` incluye `assets/` (images, icons, fonts, favicon) y `js/` en la raíz; este documento detalla iconos, fuentes, favicon y reglas para JS.
-- **Identidad:** `identidad-corporativa.md` define tipografías y paleta; las fuentes listadas aquí son las que se autohospedan para esa identidad.
+- **Estructura de archivos:** `17-static-file-structure` incluye `assets/` (images, icons, fonts, favicon) y `js/` en la raíz; este documento detalla iconos, fuentes, favicon y reglas para JS.
+- **Identidad:** `02-identidad-corporativa` define tipografías y paleta; las fuentes listadas aquí son las que se autohospedan para esa identidad.
 - **CSS:** `css-architecture.md` define variables de fuente (`--font-body`, etc.) que apuntan a las fuentes en `assets/fonts/`.
 
 ---

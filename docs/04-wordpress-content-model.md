@@ -2,7 +2,7 @@
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés; labels traducidos vía i18n. Legible para el autor y suficiente para el desarrollador.
 
-**Depende de:** `identidad-corporativa.md`, `arquitectura-editorial.md`
+**Depende de:** `02-identidad-corporativa`, `03-arquitectura-editorial`
 
 ---
 

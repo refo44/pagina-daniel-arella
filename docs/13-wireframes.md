@@ -2,7 +2,7 @@
 
 Describe la estructura de cada pantalla importante. No son dibujos obligatorios; son listas de bloques. Fija prioridades y jerarquía sin entrar en estética.
 
-**Referencia:** `identidad-corporativa.md` (layout, tipografía), `ui-copy-sheet.md` (copy por bloque)
+**Referencia:** `02-identidad-corporativa` (layout, tipografía), `10-ui-copy-sheet` (copy por bloque)
 
 ---
 

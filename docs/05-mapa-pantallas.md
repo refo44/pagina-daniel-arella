@@ -4,7 +4,7 @@ Lista de qué pantallas existen. No describe diseño; solo qué vistas hay que c
 
 Es el índice de lo que se wireframea y se implementa.
 
-**Referencia:** `arquitectura-editorial.md`, `wordpress-content-model.md`
+**Referencia:** `03-arquitectura-editorial`, `04-wordpress-content-model`
 
 ---
 

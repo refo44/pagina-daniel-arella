@@ -2,7 +2,7 @@
 
 Este documento no define qué va a publicar Daniel, sino **cómo puede vivir la obra en el tiempo** dentro de la plataforma sin romper nada. Es un marco de decisión autorial.
 
-Se apoya en: `plataforma-autor-plan.md`, `arquitectura-editorial.md`, `wordpress-content-model.md`.  
+Se apoya en: `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`.  
 
 ---
 
@@ -139,7 +139,7 @@ Este documento no exige respuestas inmediatas, pero estructura las decisiones fu
 - Visibilidad y archivo de talleres.  
 - Alcance de las traducciones.  
 
-El sistema ya soporta todas estas variantes. Las respuestas a estas preguntas solo afectan **cómo se usan** los tipos de contenido y campos definidos en `wordpress-content-model.md`, no su estructura.
+El sistema ya soporta todas estas variantes. Las respuestas a estas preguntas solo afectan **cómo se usan** los tipos de contenido y campos definidos en `04-wordpress-content-model`, no su estructura.
 
 ---
 

@@ -6,7 +6,7 @@ Este documento define la arquitectura definitiva de la maqueta estática. Todo l
 
 Misma arquitectura editorial, mismas pantallas, mismas rutas. Solo cambia el motor: archivos HTML hoy, PHP con WordPress después.
 
-**Depende de:** `theme-file-structure`, `arbol-urls-final`, `arquitectura-informacion-navegacion`, `wireframes`
+**Depende de:** `16-theme-file-structure`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`
 
 ---
 
@@ -188,7 +188,7 @@ Los nombres de clase deben ser semánticos y editoriales, no genéricos.
 - `.sidebar`
 - `.widget`
 
-La maqueta ya debe hablar en el idioma del theme. Detalle de capas, BEM y variables en `css-architecture.md`.
+La maqueta ya debe hablar en el idioma del theme. Detalle de capas, BEM y variables en `18-css-architecture`.
 
 ---
 

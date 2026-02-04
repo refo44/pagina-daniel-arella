@@ -2,7 +2,7 @@
 
 Repertorio de textos listos para usar en interfaz, sistema y navegación.
 
-Alineado con: `guia-voz-microcopy-ux.md` (voz, tono), `voice-dictionary.md` (léxico), `arquitectura-editorial.md` y `wordpress-content-model.md`.
+Alineado con: `08-guia-voz-microcopy-ux` (voz, tono), `09-voice-dictionary` (léxico), `03-arquitectura-editorial` y `04-wordpress-content-model`.
 
 **Regla central:** el sitio no vende, invita a leer.
 

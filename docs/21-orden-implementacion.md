@@ -10,7 +10,7 @@ Secuencia acordada para llevar el sistema editorial a la web. **No saltar etapas
    - HTML5 semántico
    - CSS3
    - Sin JavaScript de aplicación (solo lo imprescindible si hace falta)
-2. Contenido y estructura según: `wireframes.md`, `arquitectura-informacion-navegacion.md`, `arbol-urls-final.md`, `identidad-corporativa.md`, `ui-copy-sheet.md`.
+2. Contenido y estructura según: `13-wireframes`, `14-arquitectura-informacion-navegacion`, `15-arbol-urls-final`, `02-identidad-corporativa`, `10-ui-copy-sheet`.
 
 ---
 
@@ -24,7 +24,7 @@ Secuencia acordada para llevar el sistema editorial a la web. **No saltar etapas
 ## Fase 3: WordPress
 
 5. **Convertir** la maqueta en theme/template de WordPress.
-6. Ajustar a `wordpress-content-model.md` y al árbol de URLs.
+6. Ajustar a `04-wordpress-content-model` y al árbol de URLs.
 7. **Subir** al servidor final y configurar contenido/hosting.
 
 ---

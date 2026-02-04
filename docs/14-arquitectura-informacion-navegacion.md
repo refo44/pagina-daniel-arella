@@ -11,7 +11,7 @@ Sirve para que:
 - El lector no se pierda.
 - La obra se lea como obra, no como feed.
 
-**Referencia:** `mapa-pantallas.md`, `wireframes.md`, `user-journey.md`, `arquitectura-editorial.md`, `ui-copy-sheet.md`
+**Referencia:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`
 
 ---
 
@@ -255,4 +255,4 @@ Este sistema impide que el sitio se convierta en un feed, una tienda o un laberi
 ---
 
 **Versión:** 2.0  
-**Depende de:** `mapa-pantallas.md`, `wireframes.md`, `user-journey.md`, `arquitectura-editorial.md`, `ui-copy-sheet.md`
+**Depende de:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`
