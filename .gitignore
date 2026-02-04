@@ -47,6 +47,9 @@ wp-config.php
 # uncomment the next line
 #/wp-content/themes
 
+# Content source: reference material from author (heavy; use assets/ for site files)
+/content-source/
+
 # IDEs
 .vscode
 *.code-*
