@@ -46,3 +46,17 @@ wp-config.php
 # Note: If you wish to whitelist themes,
 # uncomment the next line
 #/wp-content/themes
+
+# IDEs
+.vscode
+*.code-*
+.idea
+.cursor
+.cursorrules
+.cursorrules.md
+.cursorrules.txt
+.cursorrules.yml
+.cursorrules.yaml
+.cursorrules.json
+.cursorrules.jsonc
+.cursorrules.json5
