@@ -15,10 +15,10 @@ Solo se modelan los tipos de contenido que el lector realmente necesita:
 | **Essay**  | Texto filosófico o crítico                           |
 | **Story**  | Relato o pieza narrativa                             |
 | **Workshop** | Taller o curso vinculado a la obra                 |
-| **Article** | Artículos o notas de blog (opcional)                |
+| **Article** | Artículos o notas de blog                          |
 | **Page**   | Inicio, Sobre el autor, Archivo, Contacto, etc.      |
 
-En WordPress: `poem`, `book`, `essay`, `story`, `workshop` son **Custom Post Types**; `page` y `post` son tipos nativos. `post` se usa solo para **Article** (blog / notas), si Daniel decide tenerlos.
+En WordPress: `poem`, `book`, `essay`, `story`, `workshop` son **Custom Post Types**; `page` y `post` son tipos nativos. `post` se usa para **Article** (blog / notas).
 
 No se crean tipos adicionales para ciclos, series o estados. Esos conceptos se resuelven con texto editorial y relaciones simples.
 
@@ -35,8 +35,6 @@ El tipo nativo **Post** solo se usa para: Artículos, Noticias, Notas, Actualiza
 Se reduce la clasificación a lo mínimo que mejora lectura y archivo.
 
 **Globales:** `topic` (Tema), `period` (Periodo). Se aplican a poem, book, essay, story, post, workshop.
-
-**Opcional:** `form` (Forma) — verso libre, prosa, fragmento — solo si Daniel la usa de forma real y sostenida (poem, essay, story, post).
 
 No se añaden taxonomías para idioma (plugin de traducción), ni para estados internos, editorial, formato o modalidad; se resuelven con campos de texto.
 
@@ -80,7 +78,7 @@ La página de inicio **no** es un feed ni una portada congelada. Es una **superf
 
 > “Esta es la obra que estoy escribiendo ahora.”
 
-**Qué muestra el home:** Libro activo (obra en curso), Poema destacado, Ensayo reciente (si existe), Taller próximo (si existe), acceso claro al Archivo. **La obra primero. El tiempo después.**
+**Qué muestra el home:** Libro activo (obra en curso), Poema destacado, Ensayo reciente, Taller próximo, acceso claro al Archivo. **La obra primero. El tiempo después.**
 
 **Relación directa:** El centro de la relación con el lector es el **email**. Llamadas como “Recibir nuevos textos”, “Carta del autor”; nunca “Suscríbete”, “Newsletter”. La implementación vive en la Estrategia de publicación.
 

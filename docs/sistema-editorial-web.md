@@ -2,9 +2,9 @@
 
 Este documento define el marco para **escribir y editar** textos en el sitio (no la poética de Daniel, sino cómo la obra se presenta en pantalla). Complementa:
 
-- `identidad-corporativa.md` (tipografía, ritmo, layout)  
-- `plataforma-autor-plan.md`  
-- `guia-voz-microcopy-ux.md` y `voice-dictionary.md`  
+- `identidad-corporativa` (tipografía, ritmo, layout)  
+- `plataforma-autor-plan`  
+- `guia-voz-microcopy-ux` y `voice-dictionary`  
 
 ---
 
@@ -134,7 +134,7 @@ Ejemplos:
 
 ## 8. Jerarquía visual y editorial
 
-Recordatorio desde `identidad-corporativa.md`:
+Recordatorio desde `identidad-corporativa`:
 
 - H1: 3rem Fraunces (titulares principales).  
 - H2/H3: bajan escalonadamente.  
