@@ -1,178 +1,188 @@
-# Daniel Arella — Sistema editorial para la web v2.0
+# Daniel Arella — Sistema editorial para la web
 
-Este documento define el marco para **escribir y editar** textos en el sitio (no la poética de Daniel, sino cómo la obra se presenta en pantalla). Complementa:
+**Versión 2.1**
 
-- `02-identidad-corporativa` (tipografía, ritmo, layout)  
-- `plataforma-autor-plan`  
-- `guia-voz-microcopy-ux` y `voice-dictionary`  
+Este documento define el marco para escribir, editar y presentar textos en el sitio. No define la poética de Daniel, sino la forma en que la obra habita la pantalla.
+
+**Complementa:** `02-identidad-corporativa`, `01-plataforma-autor-plan`, `08-guia-voz-microcopy-ux`, `09-voice-dictionary`
 
 ---
 
 ## 1. Niveles de texto
 
-En el sitio conviven tres niveles de texto:
+En la plataforma conviven tres niveles claramente separados:
 
-1. **Texto de obra**  
-   - Poemas, relatos, ensayos, textos breves (fragmentos, aforismos).  
-   - Se respetan saltos de línea, estrofas y puntuación original.  
+### 1. Texto de obra
 
-2. **Texto editorial**  
-   - Presentaciones breves, notas de contexto, biografía, descripciones de libro.  
-   - Habla en voz de autor o de editorial pequeña.  
+Poemas, relatos, ensayos, fragmentos, aforismos.
 
-3. **Texto de sistema (UI/UX)**  
-   - Botones, estados, mensajes, navegación.  
-   - Voz de “editor silencioso” (sobria, cálida, intelectual).  
+- Se respetan saltos de línea, estrofas y puntuación original.
+- No se adapta a la web sacrificando ritmo o forma.
 
-Cada nivel tiene reglas distintas; este documento se centra en 2 y 3 (la obra vive libre en 1).
+### 2. Texto editorial
+
+Presentaciones, descripciones de libro, bio, notas de contexto.
+
+- Voz de editorial pequeña o del propio autor.
+- Acompaña la obra sin explicarla de más.
+
+### 3. Texto de sistema
+
+Botones, navegación, mensajes de estado, formularios.
+
+- Voz del editor silencioso.
+- Sobria, cálida, intelectual.
+
+**Este documento regula los niveles 2 y 3. La obra, en el nivel 1, no se toca.**
 
 ---
 
 ## 2. Ensayos en la web
 
-### 2.1 Longitud y estructura
+### 2.1 Longitud
 
-Recomendación (no obligación):
+Rangos orientativos:
 
-- Ensayo breve: 800–1500 palabras.  
-- Ensayo medio: 1500–3000 palabras.  
-- Ensayo largo: >3000 palabras (considerar PDF o formato “libro web”).  
+- **Breve:** 800 a 1500 palabras
+- **Medio:** 1500 a 3000
+- **Largo:** más de 3000, considerar formato de libro web o PDF
 
-Estructura sugerida:
+La longitud nunca es una restricción estética, solo una guía de legibilidad.
 
-- Título (`h1`)  
-- Subtítulo o abstract corto (campo `essay_abstract`)  
-- Cuerpo del ensayo  
-- Sección de notas / referencias (si aplica)  
+### 2.2 Estructura
 
-### 2.2 Notas
+Un ensayo estándar contiene:
 
-- Mantener notas largas al final del texto (“Notas” o “Referencias”).  
-- En el texto, usar marcadores discretos (superíndices o corchetes).  
-- Evitar notas invasivas en mitad del verso o de la línea poética.  
+- Título
+- Abstract breve si existe
+- Cuerpo
+- Notas o referencias si aplica
+
+No se interrumpe el flujo con cajas, popups o llamadas externas.
+
+### 2.3 Notas
+
+- Las notas largas van al final.
+- En el texto se marcan con superíndices o corchetes.
+- No se colocan notas dentro de versos o frases poéticas.
 
 ---
 
 ## 3. Poemas en la web
 
-### 3.1 Respiración y formato
+### 3.1 Respiración
 
-- Respetar saltos de línea y estrofas tal como en el original.  
-- Evitar justificados; alineación a la izquierda.  
-- No romper versos para “llenar” pantalla.  
+- Saltos de línea y estrofas intactos.
+- Alineación a la izquierda.
+- Nunca justificar ni compactar.
 
-### 3.2 Poema completo vs fragmento
+### 3.2 Vista de archivo
 
-- En páginas de **archivo / listado**, mostrar solo título y 1–3 versos o líneas breves.  
-- En página **single**, mostrar el poema completo.  
+**En listados:**
 
-Si se usan fragmentos:
+- Mostrar título
+- Opcionalmente uno a tres versos o líneas
 
-- Marcarlo editorialmente cuando importe (“Fragmento de…”, “Del libro…”).  
+**En página individual:**
+
+- El poema completo, sin cortes.
+- Si se muestra un fragmento, debe indicarse con claridad.
 
 ---
 
 ## 4. Textos breves y relatos
 
-### 4.1 Textos breves (fragmentos, aforismos)
+### 4.1 Fragmentos y aforismos
 
-- Piezas autónomas; una idea por página o por bloque.  
-- En listados, agrupar por tema o serie.  
-- Evitar saturar la página sin navegación clara.  
+- Cada pieza debe poder leerse sola.
+- En listados se agrupan por tema o libro.
+- Nunca se apilan sin contexto ni navegación.
 
 ### 4.2 Relatos
 
-- Tratar cada `story` como una unidad clara.  
-- Ofrecer navegación sencilla (Siguiente / Anterior / Volver a relatos).  
+Cada relato es una unidad:
+
+- Página individual
+- Navegación anterior y siguiente
+- Enlace a archivo de relatos
 
 ---
 
-## 5. Biografía y “Sobre el autor”
+## 5. Biografía y Sobre el autor
 
-La bio no es un CV pegado; es una **entrada editorial a la obra**.
+La biografía es una entrada editorial a la obra, no un currículum.
 
-Fuentes sugeridas: biografía larga, CV y archivo del autor en `content-source/` (Docus o equivalente).  
+**Reglas:**
 
-Reglas:
-
-- Bio corta en Home y About (3–5 líneas).  
-- Bio larga en About o sección “Trayectoria”.  
-- Integrar logros y premios con tono sobrio, sin lenguaje de marketing.  
+- Bio corta para Home y cabecera.
+- Bio larga para Sobre el autor.
+- Logros, premios y publicaciones se mencionan sin lenguaje de marketing.
 
 ---
 
-## 6. Prensa y enlaces externos
+## 6. Prensa y referencias
 
-Sección “Prensa” o “En otros lugares”:
+La sección Prensa muestra dónde aparece la obra.
 
-- Listar revistas, blogs y antologías donde aparece Daniel.  
-- Usar títulos y medios como se presentan en el CV.  
-- Evitar “clip” largo de texto; basta con fragmentos y enlaces.  
+**Formato:**
 
-Formato sugerido:
+- Título de la pieza
+- Medio
+- Año
+- Enlace
 
-- Título de pieza / entrevista / reseña  
-- Medio y año  
-- Enlace  
-
----
-
-## 7. Idiomas (es/en)
-
-Reglas mínimas:
-
-- Mantener la **misma estructura** de secciones en ambos idiomas (cuando existan).  
-- Bio corta y larga siempre traducidas.  
-- No traducir títulos de libros ni de poemas salvo decisión explícita (pueden mantenerse en español con nota en inglés).  
-
-Ejemplos:
-
-- ES: “Poemas recientes” → EN: “Recent poems”.  
-- ES: “El Arcángel” (título de libro) → EN: “El Arcángel (poetry collection)”.  
+No se reproducen artículos completos salvo permiso explícito.
 
 ---
 
-## 8. Jerarquía visual y editorial
+## 7. Idiomas
 
-Recordatorio desde `02-identidad-corporativa`:
+**Principios:**
 
-- H1: 3rem Fraunces (titulares principales).  
-- H2/H3: bajan escalonadamente.  
-- Cuerpo: 18px Fraunces, 1.6 de interlineado, 65ch máximo.  
+- La estructura del sitio es la misma en todos los idiomas.
+- Bio y páginas fijas siempre traducidas.
+- Libros y poemas mantienen su título original salvo decisión expresa.
 
-Aplicación editorial:
-
-- Máximo un H1 por página.  
-- No usar más de dos niveles de subtítulos en documentos largos (H2 / H3).  
-- Mantener consistencia en cómo se titulan listados, archivos y fichas.  
+**Ejemplo:** “El Arcángel” se mantiene como título. En inglés se puede añadir una nota breve.
 
 ---
 
-## 9. Qué decide el autor (no el sistema)
+## 8. Jerarquía visual
 
-Este documento no fija:
+Desde `02-identidad-corporativa`:
 
-- Temas, tonos, ni enfoques de los textos.  
-- Si un poema se publica completo o no.  
-- Si un ensayo debe ser breve o largo.  
-
-Lo que hace es **evitar que la web deforme la obra** (leyendo mal, cortando mal, saturando, o usando lenguaje ajeno a la voz de Daniel).
-
----
-
-## 10. Checklist para nuevos textos
-
-Antes de publicar un nuevo texto (ensayo, nota, presentación) en el sitio:
-
-- ¿Respeta la jerarquía visual (H1/H2, cuerpo, márgenes)?  
-- ¿Sigue la voz del sistema (sobria, cálida, intelectual)?  
-- ¿Está claro si es texto de obra o texto editorial?  
-- ¿Los enlaces y notas están colocados donde no rompen el ritmo de lectura?  
-- ¿Se mantendría legible en móvil (sin bloques interminables)?  
-
-Si todo esto se cumple, el texto encaja en el sistema sin que el sistema lo traicione.
+- Un H1 por página.
+- H2 y H3 solo para estructura real.
+- Texto de cuerpo legible en móvil y escritorio.
+- Nunca usar títulos como decoración.
 
 ---
 
-**Versión del documento:** 2.0
+## 9. Qué decide el autor
 
+El sistema no decide:
+
+- Qué publicar
+- Cuánto publicar
+- En qué tono
+- En qué orden
+
+Solo asegura que la obra no se rompa al pasar por la web.
+
+---
+
+## 10. Checklist editorial
+
+Antes de publicar:
+
+1. ¿El texto respira en pantalla?
+2. ¿Se distingue obra de editorial y de sistema?
+3. ¿La voz es sobria y clara?
+4. ¿Las notas no interrumpen la lectura?
+5. ¿Se entiende en móvil sin perder ritmo?
+
+**Si la respuesta es sí, el texto pertenece a este territorio.**
+
+---
+
+**Versión del documento:** 2.1

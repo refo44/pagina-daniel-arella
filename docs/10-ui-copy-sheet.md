@@ -1,495 +1,265 @@
-# Daniel Arella — UI Copy Sheet v2.0
+# Daniel Arella — UI Copy Sheet
 
-Repertorio de textos listos para usar en interfaz, sistema y navegación.
+**Repertorio de microcopy, navegación y sistema**  
+**Versión 2.1**
 
-Alineado con: `08-guia-voz-microcopy-ux` (voz, tono), `09-voice-dictionary` (léxico), `03-arquitectura-editorial` y `04-wordpress-content-model`.
+Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
-**Regla central:** el sitio no vende, invita a leer.
+**Está alineado con:** `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`
 
----
-
-## 1) Convenciones del sistema
-
-### 1.1 Persona gramatical por contexto
-
-- Navegación: sustantivos neutros (Poemas, Ensayos, Archivo).  
-- Sistema UX: segunda persona suave, sin tono técnico.  
-- Editorial (Home, introducciones): primera persona del autor cuando corresponda.  
-
-### 1.2 Puntuación y estilo
-
-- Frases breves, limpias.  
-- Sin signos promocionales ni exclamaciones.  
-- Evitar gerundios técnicos (“cargando…”). Preferir formulaciones editoriales.  
-
-### 1.3 Verbos permitidos para acciones
-
-Leer, Abrir, Ver, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Guardar, Cerrar, Cambiar idioma.
-
-### 1.4 Palabras prohibidas
-
-No usar: **suscríbete, compra ahora, oferta, exclusivo, premium, contenido, usuario, lead, funnel, dashboard, feed, perfil**.
+**Regla central:** El sitio no vende. Invita a leer.
 
 ---
 
-## 2) Navegación global
+## 1. Convenciones del sistema
+
+### 1.1 Persona gramatical
+
+| Contexto | Voz |
+|----------|-----|
+| Navegación | Sustantivos neutros |
+| Sistema UX | Segunda persona suave |
+| Editorial (Home, introducciones) | Primera persona del autor cuando aplique |
+
+**Ejemplos:**
+
+- Navegación: “Poemas”, “Ensayos”, “Archivo”
+- Sistema: “No fue posible mostrar este texto.”
+- Editorial: “Escribo desde la memoria y el cuerpo.”
+
+**Nunca tercera persona promocional:** “Daniel Arella presenta…”
+
+### 1.2 Estilo
+
+- Frases cortas
+- Sin signos de entusiasmo
+- Sin tecnicismos
+- Sin gerundios técnicos (“cargando”, “procesando”)
+
+Preferir siempre formulaciones editoriales:
+
+- No: “Cargando resultados…”
+- Sí: “Buscando en el archivo.”
+
+### 1.3 Verbos permitidos
+
+Leer, Abrir, Ver, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Guardar, Cerrar, Cambiar.
+
+**Nunca:** suscribirse, comprar, empezar, desbloquear, registrarse.
+
+---
+
+## 2. Navegación global
 
 ### 2.1 Menú principal
 
-- Inicio  
-- Poemas  
-- Ensayos  
-- Relatos  
-- Libros  
-- Talleres  
-- Archivo  
-- Sobre el autor  
-- Contacto  
+- Inicio
+- Poemas
+- Ensayos
+- Relatos
+- Libros
+- Talleres
+- Archivo
+- Sobre el autor
+- Contacto
 
-Opcional (si existe sección): Artículos (o Escritura).
+Si existe sección de textos no literarios: **Artículos** o **Escritura**
 
-### 2.2 Menú secundario (footer)
+### 2.2 Footer
 
-- Prensa  
-- Derechos y permisos  
-- Descargas  
-- Correspondencia  
-- Créditos del sitio  
+- Prensa
+- Derechos y permisos
+- Descargas
+- Correspondencia
+- Créditos del sitio
 
-### 2.3 Migas de pan (breadcrumbs)
+### 2.3 Migas de pan
 
-Formato:
+**Formatos:**
 
-- “Inicio → Poemas → [Libro] → [Poema]”  
-- “Inicio → Ensayos → [Tema] → [Ensayo]”  
-- “Inicio → Archivo → [Filtro] → [Pieza]”  
+- Inicio → Poemas → El Arcángel → [Poema]
+- Inicio → Ensayos → Mística → [Ensayo]
+- Inicio → Archivo → Periodo → [Pieza]
 
-Etiquetas:
-
-- “Inicio”  
-- “Archivo”  
-- “Volver”  
-
-Botón de retorno:
-
-- “Volver al archivo”  
-- “Volver a Poemas”  
-- “Volver al libro”  
+**Botones de retorno:** “Volver”, “Volver al archivo”, “Volver al libro”, “Volver a Poemas”
 
 ---
 
-## 3) Home editorial
+## 3. Home editorial
 
-La home responde una sola pregunta: **“Esto es lo que estoy escribiendo ahora.”**
+La Home responde una sola cosa: **“Esto es lo que estoy escribiendo ahora.”**
 
-### 3.1 Bloques y títulos
+### 3.1 Bloques
 
-- “Ahora”  
-- “Poema destacado”  
-- “Ensayo reciente”  
-- “Libro activo”  
-- “Taller próximo”  
-- “Entrar al archivo”  
+- Ahora
+- Poema destacado
+- Ensayo reciente
+- Libro activo
+- Taller próximo
+- Entrada al archivo
+- Correspondencia
 
-### 3.2 CTAs de Home
+### 3.2 Botones
 
-- “Leer el poema”  
-- “Leer el ensayo”  
-- “Abrir el libro”  
-- “Explorar archivo”
-- “Recibir nuevos textos”  
+- Leer el poema
+- Leer el ensayo
+- Abrir el libro
+- Explorar archivo
+- Recibir nuevos textos
 
-### 3.3 Texto editorial breve (plantillas)
+### 3.3 Encabezados editoriales
 
-Opciones de encabezado (H1):
+**Opciones:** “Obra”, “Escritura”, “Cuaderno”, “Archivo”
 
-- “Obra”  
-- “Escritura”  
-- “Archivo”  
-- “Cuaderno”  
-
-Subtítulo (1 a 2 líneas):
-
-- “Escribo desde la memoria, el cuerpo y el tiempo.”  
-- “Este sitio es una biblioteca en movimiento.”  
-- “Aquí la obra se ordena por libros y temas.”  
+**Subtítulos:** “Este sitio es una biblioteca en movimiento.”, “Aquí la obra se ordena por libros y temas.”, “Escribo desde la memoria, el cuerpo y el tiempo.”
 
 ---
 
-## 4) Secciones y listados
+## 4. Secciones y listados
 
-### 4.1 Títulos por tipo
+### 4.1 Títulos
 
-- Poemas, Libros, Ensayos, Relatos, Talleres, Artículos (si aplica).
+Poemas, Ensayos, Relatos, Libros, Talleres, Artículos (si existe)
 
-### 4.2 Encabezado de archivo por tipo
+### 4.2 Archivo por tipo
 
-- “Archivo de poemas”, “Archivo de ensayos”, “Archivo de relatos”  
+- “Archivo de poemas”
+- “Archivo de ensayos”
+- “Archivo de relatos”
 
-### 4.3 Etiquetas de tarjeta (card labels)
+### 4.3 Etiquetas de estado
 
-- “Publicado”  
-- “Inédito”  
-- “Borrador”  
-- “Retirado”  
-- “En archivo”  
+**Textos:** Publicado, Inédito, Borrador, Retirado, En archivo
 
-Si aplica (workshop):
-
-- “Próximo”  
-- “En curso”  
-- “Finalizado”  
+**Talleres:** Próximo, En curso, Finalizado
 
 ---
 
-## 5) Filtros, búsqueda y orden
+## 5. Búsqueda y filtros
 
 ### 5.1 Buscador
 
-Placeholder:
+- **Placeholder:** “Buscar en el archivo”
+- **Botón:** “Buscar”
+- **Ayuda:** “Puedes buscar por título, tema o periodo.”
 
-- “Buscar en el archivo”  
+### 5.2 Filtros
 
-Botón:
+**Etiquetas:** Tipo, Tema, Periodo, Forma, Estatus
 
-- “Buscar”  
+**Acciones:** Aplicar, Quitar filtros, Ver todo
 
-Ayuda (opcional, debajo):
-
-- “Puedes buscar por título, tema o periodo.”  
-
-### 5.2 Filtros del archivo (chips o select)
-
-Etiquetas:
-
-- “Tipo”  
-- “Tema”  
-- “Periodo”  
-- “Forma”  
-- “Tono”  
-- “Estatus”  
-- “Idioma”  
-
-Acciones:
-
-- “Aplicar”  
-- “Quitar filtros”  
-- “Ver todo”  
-
-Estados:
-
-- “Filtros”  
-- “Sin filtros”  
+**Estados:** Filtros, Sin filtros
 
 ### 5.3 Orden
 
-Etiqueta:
-
-- “Orden”  
-
-Opciones:
-
-- “Más reciente”  
-- “Más antiguo”  
-- “Por título”  
-- “Por libro”  
+Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 6) Páginas individuales (single)
+## 6. Páginas individuales
 
 ### 6.1 Poema
 
-Botones:
-
-- “Leer el poema” (si existe vista previa en listados)  
-- “Siguiente poema”  
-- “Poema anterior”  
-- “Explorar archivo”  
-
-Contexto automático:
-
-- “Este poema pertenece a: [Libro]”  
-- “Abrir el libro”  
-- (Si aplica, dentro de un libro: “Ver poemas de este libro” o “Leer más del libro”.)  
-
-Metadatos visibles (si se muestran):
-
-- “Tema”  
-- “Periodo”  
-- “Forma”  
-- “Tono”  
+- Siguiente poema
+- Poema anterior
+- Explorar archivo
+- **Contexto:** “Este poema pertenece a: [Libro]”, “Abrir el libro”
 
 ### 6.2 Libro
 
-Acciones:
+**Acciones:** Abrir el libro, Ver índice, Leer fragmentos, Descargar PDF, Descargar EPUB, Adquirir el libro
 
-- “Abrir el libro”  
-- “Ver índice”  
-- “Leer fragmentos”  
-- “Descargar PDF”  
-- “Descargar EPUB”  
-- “Adquirir el libro” (solo si existe link externo)  
-
-Secciones internas:
-
-- “Descripción”  
-- “Índice”  
-- “Edición”  
-- “Descargas”  
-- “Prensa” (si aplica)  
-- “Derechos”  
-
-Metadatos:
-
-- “Editorial”  
-- “Año”  
-- “ISBN”  
-- “Formato”  
+**Secciones:** Descripción, Índice, Edición, Descargas, Prensa, Derechos
 
 ### 6.3 Ensayo
 
-Acciones:
-
-- “Leer el ensayo”  
-- “Siguiente ensayo”  
-- “Ensayo anterior”  
-- “Explorar ensayos”  
-
-Secciones internas:
-
-- “Notas”  
-- “Referencias” (si aplica)  
-
-Contexto:
-
-- “Más ensayos sobre este tema”  
+- Leer el ensayo
+- Siguiente ensayo, Ensayo anterior
+- Explorar ensayos
+- **Secciones:** Notas, Referencias
 
 ### 6.4 Relato
 
-Acciones:
-
-- “Leer el relato”  
-- “Siguiente relato”  
-- “Relato anterior”  
-- “Explorar relatos”  
+- Leer el relato
+- Siguiente relato, Relato anterior
+- Explorar relatos
 
 ### 6.5 Taller
 
-Acciones:
-
-- “Ver detalles”  
-- “Enviar solicitud”  
-- “Contactar”  
-- “Guardar” (solo si hay sistema de guardado)  
-
-Datos:
-
-- “Modalidad”  
-- “Fecha”  
-- “Lugar”  
-- “Plataforma”  
-- “Cupo”  
-- “Valor”  
-
-Estados:
-
-- “No hay talleres programados por ahora.”  
-- “Este taller ya finalizó.”  
+- Ver detalles
+- Enviar solicitud
+- Contactar
+- **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
+- **Estados:** “No hay talleres programados por ahora.”, “Este taller ya finalizó.”
 
 ---
 
-## 7) Correspondencia (email)
+## 7. Correspondencia
 
-### 7.1 Nombre de la sección
-
-- “Correspondencia” o “Carta”  
-
-### 7.2 CTA principal
-
-Botón:
-
-- “Recibir nuevos textos”  
-
-### 7.3 Titulares posibles
-
-- “Correspondencia”  
-- “Recibir nuevos textos”  
-- “Carta del autor”  
-
-### 7.4 Microcopy de apoyo (debajo del formulario)
-
-Opciones:
-
-- “Envío ocasional. Sin ruido.”  
-- “Una carta cuando haya algo que compartir.”  
-- “Textos nuevos, fragmentos y notas.”  
-
-Campos:
-
-- Placeholder email: “Tu correo”  
-- Botón: “Recibir”  
-- Mensaje legal breve:
-  - “Puedes dejar de recibir estas cartas cuando quieras.”  
-
-### 7.5 Mensajes de confirmación
-
-- Éxito: “Listo. A partir de ahora recibirás nuevos textos.”  
-- Doble opt-in (si aplica): “Revisa tu correo para confirmar.”  
-- Error: “No fue posible enviar la solicitud. Inténtalo de nuevo.”  
+- **Nombre:** Correspondencia, Carta
+- **Botón:** Recibir nuevos textos
+- **Campos:** Tu correo
+- **Mensajes:** “Listo. A partir de ahora recibirás nuevos textos.”, “Revisa tu correo para confirmar.”, “No fue posible enviar la solicitud.”
 
 ---
 
-## 8) Formularios (Contacto)
+## 8. Contacto
 
-### 8.1 Contacto
-
-Título:
-
-- “Contacto”  
-
-Descripción breve:
-
-- “Si necesitas escribir por prensa, edición o lecturas, este es el lugar.”  
-
-Campos:
-
-- “Nombre”  
-- “Correo”  
-- “Asunto”  
-- “Mensaje”  
-
-Placeholders:
-
-- “Tu nombre”  
-- “Tu correo”  
-- “Motivo del mensaje”  
-- “Escribe aquí”  
-
-Botón:
-
-- “Enviar”  
-
-Estados:
-
-- Éxito: “Mensaje enviado.”  
-- Error: “No fue posible enviar el mensaje.”  
+- **Descripción:** “Para prensa, edición o lecturas.”
+- **Campos:** Nombre, Correo, Asunto, Mensaje
+- **Placeholders:** Tu nombre, Tu correo, Motivo del mensaje, Escribe aquí
+- **Botón:** Enviar
+- **Mensajes:** “Mensaje enviado.”, “No fue posible enviar el mensaje.”
 
 ---
 
-## 9) Estados vacíos, errores y fricción
+## 9. Estados y errores
 
-### 9.1 Vacíos editoriales
+**Vacíos:** “Aún no hay textos en esta sección.”, “Este archivo aún está en construcción.”, “No hay talleres programados por ahora.”
 
-- “Aún no hay textos en esta sección.”  
-- “Este archivo aún está en construcción.”  
-- “Aún no hay poemas en este tema.”  
-- “Aún no hay ensayos en este periodo.”  
-- “No hay talleres programados por ahora.”  
+**Filtros:** “No hay textos con estos filtros.”
 
-### 9.2 Sin resultados (búsqueda o filtros)
+**404:** “Este texto no existe o fue retirado.”
 
-- “No hay textos con estos filtros.”  
-
-Acciones sugeridas:
-
-- “Quitar filtros”  
-- “Ver todo”  
-
-### 9.3 Errores
-
-404:
-
-- “Este texto no existe o fue retirado.”  
-
-Botones:
-
-- “Volver”  
-- “Explorar archivo”  
-
-Error técnico:
-
-- “No fue posible mostrar este texto.”  
-
-Botón:
-
-- “Intentar de nuevo”  
-
-Contenido no disponible:
-
-- “Este contenido no está disponible.”  
+**Error:** “No fue posible mostrar este texto.”
 
 ---
 
-## 10) Modales y UI menor
+## 10. Modales y acciones menores
 
-### 10.1 Modales
-
-Botones:
-
-- “Cerrar”  
-- “Volver”  
-- “Continuar”  
-
-### 10.2 Acciones secundarias
-
-- “Copiar enlace”  
-- “Abrir en una nueva pestaña” (si es necesario)  
-- “Descargar”  
-
-Confirmaciones:
-
-- “Enlace copiado.”  
+- Cerrar, Volver, Continuar
+- Copiar enlace, Descargar
+- **Mensajes:** “Enlace copiado.”
 
 ---
 
-## 11) i18n y selector de idioma
+## 11. Idioma
 
-Etiqueta:
-
-- “Cambiar idioma”  
-
-Opciones:
-
-- “Español”  
-- “English”  
-
-Mensaje opcional:
-
-- “El contenido puede variar según el idioma.”  
+- Cambiar idioma
+- Español, English
+- **Nota opcional:** “El contenido puede variar según el idioma.”
 
 ---
 
-## 12) Accesibilidad y microcopy de soporte
+## 12. Accesibilidad
 
-### 12.1 Textos alternativos (principios)
+**Alt text:** “Portada de El Arcángel”, “Retrato de Daniel Arella”, “Descargar PDF de [título]”
 
-- Describir sin adjetivos promocionales.  
-- Nombrar obra, autor, edición.  
-
-Ejemplos:
-
-- “Portada de El Arcángel”  
-- “Retrato de Daniel Arella”  
-- “Descargar PDF de [título]”  
-
-### 12.2 Avisos discretos
-
-- “Abre en una nueva pestaña.” (solo si realmente ocurre)  
-- “Archivo PDF.”  
+**Avisos:** “Archivo PDF.”, “Abre en una nueva pestaña.”
 
 ---
 
-## 13) Checklist rápido de validación editorial
+## 13. Checklist editorial
 
-Antes de publicar cualquier texto UI:
+Antes de aprobar cualquier texto:
 
-- ¿Suena a editorial y no a marketing?  
-- ¿Evita “suscríbete”, “compra ahora”, “imperdible”?  
-- ¿Usa verbos permitidos (Leer, Recibir, Abrir)?  
-- ¿Es claro sin explicar de más?  
-- ¿Invita sin ordenar?  
+1. ¿Suena a editorial, no a marketing?
+2. ¿Usa Leer, Abrir o Recibir en vez de Comprar o Suscribirse?
+3. ¿Es claro sin explicar de más?
+4. ¿Respeta el Voice Dictionary?
 
 ---
 
-**Versión:** 2.0
+**Versión:** 2.1  
+**Documento canónico para todo el copy del sistema.**

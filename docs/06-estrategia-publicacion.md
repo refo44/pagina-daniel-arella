@@ -1,147 +1,197 @@
-# Daniel Arella — Estrategia de publicación v2.0
+# Daniel Arella — Estrategia de publicación
 
-Este documento no define qué va a publicar Daniel, sino **cómo puede vivir la obra en el tiempo** dentro de la plataforma sin romper nada. Es un marco de decisión autorial.
+**Versión 2.1**
 
-Se apoya en: `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`.  
+Este documento no define qué va a escribir Daniel Arella. Define cómo la obra puede vivir en el tiempo dentro de la plataforma sin romper la arquitectura, la navegación ni la identidad editorial.
 
----
+Es un marco de decisión autorial. El sistema sostiene. El autor decide.
 
-## 1. Ritmo general
-
-**Preguntas para Daniel (no técnicas):**
-
-- ¿Prefiere ciclos de publicación (por libros/ciclos) o flujo continuo (por fecha)?  
-- ¿Quiere temporadas claras (ej. “Ciclo X”, luego pausa, luego “Libro Y”) o una presencia constante con menos énfasis en temporadas?  
-
-**Opciones de ritmo (compatibles con el sistema):**
-
-- **Por libros:**  
-  - Cada etapa se articula alrededor de un `book` (inédito o publicado).  
-  - Fragmentos, poemas y ensayos se ordenan bajo ese libro; los ciclos se narran en la página del libro o con enlaces.  
-  - El Home destaca el libro activo (obra en curso).  
-
-- **Por flujo cronológico:**  
-  - Poemas/ensayos entran con fecha; el archivo permite ver por periodo y tipo.  
-  - El Home rota elementos recientes pero manteniendo una “obra en curso” fija.  
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`
 
 ---
 
-## 2. Obra en curso
+## 1. Principio rector
 
-La pregunta central del Home: **“Esta es la obra que estoy escribiendo ahora.”**
+La plataforma no está pensada para “publicar cosas”. Está pensada para hacer visible una obra en desarrollo.
 
-**Decisiones a tomar por Daniel:**
+Toda decisión de publicación debe responder a una sola pregunta:
 
-- ¿Qué se considera “obra en curso” ahora? (libro, ciclo, etapa, investigación).  
-- ¿Cada cuánto cambia esa obra en curso en el Home?  
-- ¿Se anuncia explícitamente (texto editorial) o solo se manifiesta por selección de piezas?  
+**¿Esto ayuda a que el lector comprenda mejor el cuerpo de la obra?**
 
-**Implementación (resumen):**
-
-- Un `book` marcado como destacado (obra en curso).  
-- Uno o varios `poem` y `essay` marcados como “featured” alimentan bloques de Home.  
+Si no, no se publica o se publica en otra forma.
 
 ---
 
-## 3. Qué entra al archivo web
+## 2. Ritmo general de la obra
 
-No toda la obra tiene que estar en el sitio.
+Daniel puede elegir cualquier ritmo sin romper el sistema. Existen dos grandes modos compatibles:
 
-**Preguntas:**
+### A. Ritmo por libros
 
-- ¿Se publican libros completos o solo fragmentos?  
-- ¿Se publican poemas inéditos o solo ya editados?  
-- ¿Se incluyen ensayos académicos largos o solo textos adaptados?  
+La obra se organiza en torno a libros, publicados o en proceso.
 
-**Estrategias posibles:**
+- Cada book representa una etapa de escritura.
+- Poemas, ensayos y relatos se asocian a ese libro.
+- El Home muestra siempre el libro activo como obra en curso.
+- El archivo permite recorrer libros pasados como capas de una trayectoria.
 
-- **Archivo completo**: reproducir la mayor parte de la obra (libros, ciclos, ensayos) con PDFs cuando aplique.  
-- **Archivo parcial**: solo fragmentos representativos de cada libro y ciclo; PDFs llevan al texto completo.  
-- **Capas de visibilidad**:  
-  - Capa 1: textos para lectura general.  
-  - Capa 2: PDFs/EPUBs más extensos.  
+Este modo favorece lectura profunda y percepción de proyecto.
 
----
+### B. Ritmo por flujo continuo
 
-## 4. PDFs, EPUBs y descargas
+La obra se publica por fecha, sin separar estrictamente por libros.
 
-**Preguntas:**
+- Poemas, ensayos y relatos entran al archivo como piezas independientes.
+- period organiza las etapas de escritura.
+- El Home sigue mostrando una obra en curso, aunque no esté definida como libro.
 
-- ¿Qué libros se pueden descargar?  
-- ¿Con qué licencia o permiso?  
+Este modo favorece presencia constante sin necesidad de cerrar libros.
 
-**Posibles reglas:**
-
-- Libros agotados en papel → PDF descargable.  
-- Libros en circulación → solo fragmentos + enlace a editorial.  
-- Ensayos académicos → PDF abierto o bajo aviso de uso educativo/personal.  
-
-**Textos de apoyo:** ver `guia-voz-microcopy-ux.md` y `voice-dictionary.md` (vocabulario “Descargar / Adquirir”).  
+**Ambos modos pueden coexistir.** El sistema no obliga a elegir uno solo.
 
 ---
 
-## 5. Correspondencia (email)
+## 3. Obra en curso
 
-La correspondencia es un **ritmo editorial propio**.
+El Home responde siempre a una pregunta:
 
-**Decisiones:**
+**“Esta es la obra que estoy escribiendo ahora.”**
 
-- ¿Con qué frecuencia envía cartas? (cuando haya algo que decir, mensual, por ciclo, por libro).  
-- ¿Qué tipo de contenido llevan? (poemas nuevos, notas de lectura, avances de libros, reflexiones).  
+Daniel decide:
 
-**Reglas sugeridas:**
+- Si la obra en curso es un libro, un ciclo, una investigación o una etapa.
+- Cuándo cambia.
+- Si se nombra explícitamente o se sugiere por selección de textos.
 
-- Solo escribir cuando haya algo que aporte al lector.  
-- Mantener la carta alineada con la voz: sobria, cálida, intelectual (ver `guia-voz-microcopy-ux.md`).  
+**Implementación:**
 
----
-
-## 6. Talleres y actividades
-
-Los `workshop` son parte de la vida de la obra, no un “producto aparte”.
-
-**Preguntas:**
-
-- ¿Se anuncian todos los talleres o solo los de ciertas líneas (heteronimia, poesía mística, etc.)?  
-- ¿Se archivan talleres pasados como parte de la historia de la obra?  
-
-**Opciones:**
-
-- Mostrar solo talleres “Próximo / En curso” en Home; los pasados quedan en archivo de Talleres.  
-- Relacionar talleres con libros (`workshop_book`) para darles contexto.  
+- Un book marcado como activo o destacado.
+- Poemas y ensayos relacionados a ese libro alimentan los bloques del Home.
+- El texto editorial del Home lo nombra o lo insinúa.
+- Nada más.
 
 ---
 
-## 7. Multilingüe (es/en)
+## 4. Qué entra al archivo
 
-**Preguntas:**
+El archivo no es una obligación de transparencia total. Es una curaduría de la obra.
 
-- ¿Qué se traduce primero: poemas, bio, libros, ensayos?  
-- ¿Hay textos que existan solo en un idioma y otros en ambos?  
+Daniel decide:
 
-**Posible estrategia:**
+- Si un libro está completo o solo representado por fragmentos.
+- Si los poemas inéditos se publican o se guardan.
+- Si los ensayos académicos se adaptan o se publican íntegros.
 
-- Siempre traducir: bio corta, About, Contacto, información de libros.  
-- Traducir selectivamente: poemas/ensayos clave.  
-- Marcar claramente idioma en archivo y filtros.  
+Existen tres niveles posibles, todos soportados:
 
----
+| Nivel | Descripción |
+|-------|-------------|
+| **Nivel 1. Lectura pública** | Textos que cualquiera puede leer en pantalla. |
+| **Nivel 2. Edición extendida** | PDFs o EPUBs con versiones completas o académicas. |
+| **Nivel 3. Referencia editorial** | Información, índices, citas, enlaces a editoriales. |
 
-## 8. Resumen de decisiones (para Daniel)
-
-Este documento no exige respuestas inmediatas, pero estructura las decisiones futuras:
-
-- Ritmo: ciclos / libros / fechas.  
-- Obra en curso: qué es ahora y con qué frecuencia cambia.  
-- Nivel de apertura del archivo: completo vs parcial.  
-- Política de descargas: qué está disponible y cómo.  
-- Ritmo y tono de la correspondencia.  
-- Visibilidad y archivo de talleres.  
-- Alcance de las traducciones.  
-
-El sistema ya soporta todas estas variantes. Las respuestas a estas preguntas solo afectan **cómo se usan** los tipos de contenido y campos definidos en `04-wordpress-content-model`, no su estructura.
+El lector no debe sentirse engañado. Debe entender siempre qué está viendo.
 
 ---
 
-**Versión del documento:** 2.0
+## 5. PDFs, EPUBs y adquisiciones
 
+Los libros pueden existir en tres formas:
+
+- Lectura web (fragmentos o textos completos).
+- Descarga (PDF o EPUB).
+- Enlace editorial para adquirir.
+
+Daniel define por libro: qué se puede descargar, qué solo se puede leer, qué se debe adquirir fuera del sitio.
+
+**Reglas editoriales:**
+
+- Libros agotados o fuera de circulación pueden abrirse en PDF.
+- Libros activos en editoriales se muestran como fragmentos con “Adquirir el libro”.
+- Ensayos largos pueden ofrecerse como PDF con aviso de uso personal o académico.
+
+La interfaz nunca debe parecer una tienda. La compra es un gesto secundario a la lectura.
+
+---
+
+## 6. Correspondencia
+
+La correspondencia es una extensión de la obra, no un canal de marketing.
+
+Daniel decide: cuándo escribir, con qué frecuencia, qué tipo de textos enviar.
+
+La carta puede incluir:
+
+- Poemas inéditos.
+- Notas de proceso.
+- Avances de libros.
+- Invitaciones a talleres.
+
+**Regla editorial:** Solo se escribe cuando hay algo que merezca ser leído.
+
+---
+
+## 7. Talleres
+
+Los talleres son parte del ecosistema de la obra.
+
+Daniel decide:
+
+- Qué talleres aparecen en el sitio.
+- Cuáles se muestran solo cuando están activos.
+- Cuáles quedan archivados como parte de su trayectoria.
+
+**Buenas prácticas:**
+
+- Talleres activos aparecen en el Home.
+- Talleres pasados quedan en el archivo de Talleres.
+- Talleres relacionados a un libro se vinculan a él.
+
+Un taller no es un producto. Es una puerta a una zona de la obra.
+
+---
+
+## 8. Idiomas
+
+El sitio soporta español e inglés.
+
+Daniel decide: qué libros se traducen, qué poemas se mantienen solo en español, qué ensayos se adaptan o se reescriben.
+
+**Reglas editoriales:**
+
+- Bio, About, Contacto y fichas de libros siempre en ambos idiomas.
+- Las obras se traducen cuando tenga sentido literario o editorial.
+- Los títulos de libros no se traducen salvo decisión explícita.
+- El archivo debe permitir convivir textos en ambos idiomas sin jerarquías artificiales.
+
+---
+
+## 9. Qué controla Daniel
+
+Daniel controla:
+
+- El ritmo.
+- El foco del Home.
+- Qué se publica y qué no.
+- Qué se muestra completo o fragmentado.
+- Qué se traduce.
+- Qué se descarga.
+- Qué se vende.
+
+La plataforma no fuerza nada. Solo garantiza que la obra no se fracture.
+
+---
+
+## 10. Qué garantiza el sistema
+
+Independientemente de las decisiones de Daniel, el sistema garantiza:
+
+- Que la obra siga siendo navegable.
+- Que los libros sigan siendo legibles.
+- Que el archivo no se vuelva caótico.
+- Que el Home siga teniendo una sola tesis.
+- Que la voz editorial no se diluya.
+
+---
+
+**Versión del documento:** 2.1

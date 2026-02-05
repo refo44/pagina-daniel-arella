@@ -1,125 +1,136 @@
-# Daniel Arella — Guía de voz, microcopy y UX v2.0
+# Daniel Arella — Guía de voz, microcopy y escritura UX
 
-Este documento define **cómo habla** el sitio.  
-No define la poesía ni el pensamiento de Daniel; define la voz del **sistema editorial** que contiene su obra.
+**Versión 1.1**
 
-Objetivo: que todo el sitio suene como **una editorial de autor**, no como blog, tienda ni plataforma.
+Este documento define cómo habla el sitio web de Daniel Arella. No define su poesía ni su pensamiento. Define la voz del sistema editorial que contiene su obra.
+
+El objetivo es que todo el sitio suene como una editorial de autor, no como un blog, ni una tienda, ni una plataforma.
 
 ---
 
 ## 1. Principio fundamental
 
-El sitio **no vende**.  
-El sitio **invita a leer**.
+El sitio no vende. El sitio invita a leer.
 
-- No persuade.  
-- No interrumpe.  
+- No persuade.
+- No interrumpe.
 - No dramatiza.
 
-La voz es la de un **editor silencioso** que acompaña al lector dentro de la obra.
+El sitio habla como: **Un editor silencioso que acompaña al lector dentro de una obra.**
 
 ---
 
-## 2. Identidad de la voz
+## 2. Identidad de la voz del sistema
 
-Tres atributos obligatorios:
+La voz del sistema tiene tres atributos obligatorios.
 
-| Atributo    | Significado |
-|-------------|-------------|
-| **Sobria**  | Sin exagerar. Sin lenguaje promocional ni emotivo vacío. |
-| **Cálida**  | Se dirige a una persona, no a un “usuario”. No es fría ni técnica. |
-| **Intelectual** | Palabras precisas. No coloquial ni infantil. |
+| Atributo | Qué significa |
+|----------|----------------|
+| Sobria | Nunca exagera. No usa lenguaje promocional ni emotivo vacío. |
+| Cálida | Se dirige a una persona, no a un usuario. No es fría ni técnica. |
+| Intelectual | Usa palabras precisas. No es coloquial ni infantil. |
 
-**Ejemplos**
+### Ejemplos
 
-- ❌ “Descubre mis poemas más increíbles”  
-- ✅ “Poemas recientes”, “Poemas de este periodo”, “Textos nuevos”
+| Incorrecto | Correcto |
+|------------|----------|
+| “Descubre mis poemas más increíbles” | “Poemas recientes” |
+| | “Poemas de este periodo” |
+| | “Textos nuevos” |
 
 ---
 
 ## 3. Personas gramaticales
 
-| Contexto     | Voz |
-|-------------|-----|
-| Navegación  | Neutra (Poemas, Ensayos, Libros, Archivo) |
-| Editorial   | Primera persona del autor cuando corresponde |
-| UX / sistema | Segunda persona suave |
+El sitio usa tres voces, según el contexto.
 
-**Ejemplos**
+| Contexto | Voz |
+|----------|-----|
+| Navegación | Neutra |
+| Editorial | Primera persona del autor |
+| UX y sistema | Segunda persona suave |
 
-- Navegación: “Poemas”, “Ensayos”, “Libros”.  
-- Editorial: “Estoy escribiendo sobre la memoria y el cuerpo.”  
-- UX: “Leer el poema”, “Recibir nuevos textos”, “Este archivo aún no tiene contenido.”
+### Ejemplos
 
-**Nunca** hablar del autor en tercera persona en el sistema (“Daniel Arella presenta…” es lenguaje de prensa, no de la interfaz).
+- **Navegación:** “Poemas”, “Ensayos”, “Libros”
+- **Editorial:** “Estoy escribiendo sobre la memoria y el cuerpo.” “Este libro reúne poemas escritos entre…”
+- **UX:** “Leer el poema”, “Recibir nuevos textos”, “Este archivo aún no tiene contenido.”
+
+Nunca se habla del autor en tercera persona dentro del sistema. Nunca: “Daniel Arella presenta…” Eso es lenguaje de nota de prensa.
 
 ---
 
 ## 4. Palabras prohibidas
 
-No usar en ningún lugar del sitio:
+Estas palabras no deben aparecer en ningún lugar del sitio.
 
-increíble, imperdible, best seller, no te lo pierdas, compra ahora, oferta, exclusivo, contenido premium, gratis, suscríbete, usuario, lead, funnel, dashboard, feed, producto.
+**Prohibidas:** increíble, imperdible, best seller, no te lo pierdas, compra ahora, oferta, exclusivo, contenido premium, gratis
 
-**Sustituciones editoriales**
+Se sustituyen por lenguaje editorial.
 
-| Evitar        | Usar |
-|---------------|------|
-| gratis        | sin costo, o no mencionar |
-| exclusivo     | inédito |
-| compra ahora  | adquirir el libro |
-| suscríbete    | recibir (ej. “Recibir nuevos textos”) |
+| En lugar de | Usar |
+|-------------|------|
+| gratis | sin costo o no se menciona |
+| exclusivo | inédito |
+| compra ahora | adquirir el libro |
+| suscríbete | recibir |
 
 ---
 
 ## 5. Llamadas a la acción
 
-Las acciones son **invitaciones**, no órdenes.
+Las acciones nunca son órdenes. Son invitaciones.
 
-**Orden natural:** Leer → Recibir → Adquirir → Contactar.
+**Jerarquía natural:**
 
-**Correcto:** “Leer el poema”, “Abrir el libro”, “Recibir nuevos textos”, “Adquirir el libro”, “Contactar”.
+| Nivel | Acción |
+|-------|--------|
+| 1 | Leer |
+| 2 | Recibir |
+| 3 | Adquirir |
+| 4 | Contactar |
 
-**Incorrecto:** “Compra ya”, “Suscríbete ahora”, “Obtén acceso exclusivo”.
+**Ejemplos correctos:** “Leer el poema”, “Leer el ciclo completo”, “Recibir nuevos textos”, “Adquirir el libro”, “Contactar”
+
+**Incorrectos:** “Compra ya”, “Suscríbete ahora”, “Obtén acceso exclusivo”
 
 ---
 
-## 6. El correo (correspondencia)
+## 6. El correo
 
-El email **no es un newsletter**. Es **correspondencia del autor**.
+El email no es un newsletter. Es una correspondencia del autor.
 
-**Nombres válidos:** Carta, Correspondencia, Cuaderno, Textos nuevos.
+**Nombres válidos:** Carta, Correspondencia, Cuaderno, Textos nuevos
 
-**CTA del botón:** “Recibir nuevos textos”.
+**Ejemplo de botón:** “Recibir nuevos textos”
 
-**Nunca:** “Suscribirse”, “Newsletter”.
+**Nunca:** “Suscribirse”, “Newsletter”
 
 ---
 
 ## 7. Estados vacíos
 
-Lenguaje editorial, nunca de software.
+Nunca se usa lenguaje de software.
 
-| Situación           | Texto |
-|---------------------|-------|
-| Sin poemas en un tema | “Aún no hay poemas en este tema.” |
-| Sin talleres        | “No hay talleres programados por ahora.” |
-| Archivo vacío       | “Este archivo aún está en construcción.” |
-| Sin resultados      | “No hay textos con estos filtros.” |
+| Situación | Texto |
+|-----------|-------|
+| No hay poemas en un tema | “Aún no hay poemas en este tema.” |
+| No hay talleres | “No hay talleres programados por ahora.” |
+| Archivo vacío | “Este archivo aún está en construcción.” |
 
-**Nunca:** “No se encontraron resultados”, “Empty”.
+**Nunca:** “No se encontraron resultados”, “Empty”
 
 ---
 
 ## 8. Errores y fricción
 
-| Caso              | Texto |
-|-------------------|--------|
-| Página no existe  | “Este texto no existe o fue retirado.” |
-| Contenido bloqueado | “Este contenido no está disponible.” |
-| Error técnico     | “No fue posible mostrar este texto.” |
+| Caso | Texto |
+|------|-------|
+| Página no existe | “Este texto no existe o fue retirado.” |
+| Acceso bloqueado | “Este contenido no está disponible.” |
+| Error técnico | “No fue posible mostrar este texto.” |
 
-Sin códigos ni tecnicismos visibles para el lector.
+No se usan códigos ni tecnicismos visibles.
 
 ---
 
@@ -127,37 +138,42 @@ Sin códigos ni tecnicismos visibles para el lector.
 
 Evitar nombres de marketing o de plataformas.
 
-| Función     | Nombre correcto |
-|-------------|-------------------|
-| Blog        | Artículos o Escritura |
-| About       | Sobre el autor |
-| Store       | Libros |
-| Press       | Prensa |
-| Newsletter  | Carta o Correspondencia |
+| Función | Nombre correcto |
+|---------|-----------------|
+| Blog | Artículos o Escritura |
+| About | Sobre el autor |
+| Store | Libros |
+| Press | Prensa |
+| Newsletter | Carta o Correspondencia |
 
 ---
 
 ## 10. Tono por sección
 
-| Sección   | Tono |
-|-----------|------|
-| Home      | Editorial, presente, íntimo |
-| Poemas    | Silencioso, limpio |
-| Ensayos   | Claro, reflexivo |
-| Libros    | Editorial, informativo |
-| Talleres  | Preciso, sin hype |
-| Contacto  | Cortés, simple |
+| Sección | Tono |
+|---------|------|
+| Home | Editorial, presente, íntimo |
+| Poemas | Silencioso, limpio |
+| Ensayos | Claro, reflexivo |
+| Libros | Editorial, informativo |
+| Talleres | Preciso, sin hype |
+| Contacto | Cortés, simple |
 
 ---
 
 ## 11. Regla de oro
 
-Si un texto suena a landing, tienda, startup o influencer, está mal.
+Si un texto suena a:
 
-Debe sonar como **una editorial pequeña, seria y viva**.
+- landing page
+- tienda
+- startup
+- influencer
+
+**Está mal.**
+
+Debe sonar como: **Una editorial pequeña, seria y viva.**
 
 ---
 
-**Referencia para:** navegación, botones, mensajes de sistema, estados vacíos, errores, formularios, home, archivo y secciones estáticas.
-
-**Versión:** 2.0
+**Versión del documento:** 1.1

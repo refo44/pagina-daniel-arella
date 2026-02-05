@@ -1,98 +1,167 @@
-# Daniel Arella — Wireframes (estructura de pantallas)
+# Daniel Arella — Wireframes. Estructura de pantallas
 
-Describe la estructura de cada pantalla importante. No son dibujos obligatorios; son listas de bloques. Fija prioridades y jerarquía sin entrar en estética.
+**Versión 1.1**
 
-**Referencia:** `02-identidad-corporativa` (layout, tipografía), `10-ui-copy-sheet` (copy por bloque)
+Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
----
-
-## Home
-
-- Cabecera  
-- Obra en curso  
-- Poema destacado  
-- Ensayo reciente  
-- Taller próximo  
-- Entrada al archivo  
-- Correspondencia  
-- Pie  
+**Se apoya en:** `02-identidad-corporativa`, `10-ui-copy-sheet`
 
 ---
 
-## Single poema
+## 1. Home
 
-- Breadcrumb  
-- Título  
-- Texto  
-- Pertenece al libro  
-- Anterior y siguiente  
-- Pie  
+**Función editorial:** mostrar qué obra está viva ahora.
 
----
+Bloques en orden vertical:
 
-## Single libro
+- **Cabecera**
+- **Obra en curso**
+  - Título del libro o ciclo activo
+  - Breve texto editorial
+  - Enlace “Abrir el libro”
+- **Poema destacado**
+  - Título
+  - 2 a 4 versos
+  - Enlace “Leer el poema”
+- **Ensayo reciente**
+  - Título
+  - Fragmento
+  - Enlace “Leer”
+- **Taller próximo**
+  - Título
+  - Fecha y modalidad
+  - Enlace “Ver taller”
+- **Entrada al archivo**
+  - Enlace “Explorar archivo”
+- **Correspondencia**
+  - Texto breve
+  - Campo de email
+  - Botón “Recibir”
+- **Pie**
 
-- Título  
-- Descripción  
-- Índice de textos  
-- Descargas  
-- Pie  
-
----
-
-## Single ensayo
-
-- Breadcrumb  
-- Título  
-- Abstract (si aplica)  
-- Cuerpo  
-- Notas / referencias  
-- Pertenece al libro (si aplica)  
-- Anterior y siguiente  
-- Pie  
-
----
-
-## Single relato
-
-- Breadcrumb  
-- Título  
-- Texto  
-- Pertenece al libro (si aplica)  
-- Anterior y siguiente  
-- Pie  
+Nada en Home es una lista larga. Todo es selección editorial.
 
 ---
 
-## Single taller
+## 2. Single poema
 
-- Título  
-- Descripción  
-- Fecha, lugar, modalidad  
-- Enviar solicitud / Contactar  
-- Pie  
+**Función:** permitir leer sin distracciones y sin perder contexto.
 
----
+Bloques:
 
-## Archivo (listado con filtros)
-
-- Título (ej. “Archivo” o “Archivo de poemas”)  
-- Filtros (tipo, tema, periodo)  
-- Lista de piezas  
-- Pie  
+- Cabecera
+- Breadcrumb
+- Título
+- Texto del poema
+- Pertenece al libro → Enlace al libro
+- Navegación: Anterior, Siguiente, Volver al archivo
+- Pie
 
 ---
 
-## Páginas fijas (Inicio ya descrito; resto)
+## 3. Single libro
 
-Estructura común: Cabecera → Contenido (texto, enlaces, formulario según página) → Pie.
+**Función:** representar una obra como un cuerpo.
 
-- **Sobre el autor:** contenido biográfico y foto.  
-- **Correspondencia:** texto breve + formulario (email, “Recibir”).  
-- **Contacto:** texto breve + formulario (nombre, correo, asunto, mensaje).  
-- **Prensa:** listado de enlaces o referencias.  
-- **Derechos:** texto legal / permisos.  
+Bloques:
+
+- Cabecera
+- Título
+- Descripción editorial
+- Metadatos: Año, Editorial, ISBN
+- Índice de textos: Poemas, Ensayos, Relatos
+- Descargas: PDF, EPUB. Enlace a editorial
+- Pie
 
 ---
 
-**Versión:** 1.0
+## 4. Single ensayo
+
+**Función:** lectura continua y crítica.
+
+Bloques:
+
+- Cabecera
+- Breadcrumb
+- Título
+- Abstract
+- Cuerpo del ensayo
+- Notas o referencias
+- Pertenece al libro
+- Navegación: Anterior, Siguiente, Volver
+- Pie
+
+---
+
+## 5. Single relato
+
+**Función:** lectura narrativa sin interrupciones.
+
+Bloques:
+
+- Cabecera
+- Breadcrumb
+- Título
+- Texto del relato
+- Pertenece al libro
+- Navegación: Anterior, Siguiente, Volver
+- Pie
+
+---
+
+## 6. Single taller
+
+**Función:** informar y permitir contacto.
+
+Bloques:
+
+- Cabecera
+- Título
+- Descripción
+- Datos: Fecha, Lugar, Modalidad
+- Relación con libro
+- Llamada a acción: Enviar solicitud, Contactar
+- Pie
+
+---
+
+## 7. Archivo
+
+**Función:** explorar la obra como biblioteca.
+
+Bloques:
+
+- Cabecera
+- Título
+- Filtros: Tipo, Tema, Periodo
+- Lista de piezas (Título, Tipo, Libro)
+- Paginación o carga
+- Pie
+
+---
+
+## 8. Páginas fijas
+
+Estructura común: **Cabecera → Contenido editorial → Pie**
+
+| Página | Contenido |
+|--------|-----------|
+| **Sobre el autor** | Foto, Bio corta, Bio larga, Enlaces a libros |
+| **Correspondencia** | Texto editorial, Campo email, Botón “Recibir” |
+| **Contacto** | Texto breve, Formulario |
+| **Prensa** | Lista de piezas: Medio, Año, Enlace |
+| **Derechos** | Texto legal y permisos |
+
+---
+
+## Regla de validación
+
+Una pantalla es correcta si:
+
+1. Se entiende qué es en tres segundos.
+2. La lectura no se interrumpe por bloques inútiles.
+3. Siempre hay una salida hacia la obra completa.
+
+---
+
+**Versión del documento:** 1.1

@@ -1,123 +1,209 @@
-# Daniel Arella — Arquitectura editorial v2.0
+# Daniel Arella — Arquitectura editorial
 
-Esta capa se apoya en la identidad corporativa. No la reemplaza; la vuelve funcional. Define **cómo existe la obra dentro de WordPress como sistema**, no como posts sueltos. Su función es que el lector pueda recorrer un corpus sencillo, legible y navegable.
+**Versión 2.3**
 
----
+Esta capa se apoya en la identidad corporativa. No la reemplaza. La vuelve operativa.
 
-## 1. Entidades principales (qué existe)
+Define cómo existe la obra de Daniel Arella dentro de WordPress como un sistema editorial, no como una colección de entradas. Su función es permitir que el lector recorra un corpus de forma clara, estable y legible.
 
-Solo se modelan los tipos de contenido que el lector realmente necesita:
-
-| Tipo        | Qué representa                                       |
-|------------|-------------------------------------------------------|
-| **Poem**   | Poema individual                                     |
-| **Book**   | Libro o manuscrito (puede reunir poemas, ensayos, relatos) |
-| **Essay**  | Texto filosófico o crítico                           |
-| **Story**  | Relato o pieza narrativa                             |
-| **Workshop** | Taller o curso vinculado a la obra                 |
-| **Article** | Artículos o notas de blog                          |
-| **Page**   | Inicio, Sobre el autor, Archivo, Contacto, etc.      |
-
-En WordPress: `poem`, `book`, `essay`, `story`, `workshop` son **Custom Post Types**; `page` y `post` son tipos nativos. `post` se usa para **Article** (blog / notas).
-
-No se crean tipos adicionales para ciclos, series o estados. Esos conceptos se resuelven con texto editorial y relaciones simples.
+No organiza publicaciones. Organiza una obra.
 
 ---
 
-## 2. Qué **no** es un Post
+## 1. Entidades principales
 
-El tipo nativo **Post** solo se usa para: Artículos, Noticias, Notas, Actualizaciones. **Nunca** para poemas ni libros. Así se mantiene la **obra** separada del ruido temporal.
+Solo existen las entidades que un lector necesita para leer, recorrer y comprender la obra.
 
----
+| Tipo | Qué representa |
+|------|----------------|
+| Poem | Poema individual |
+| Book | Libro o manuscrito que puede reunir poemas, ensayos y relatos |
+| Essay | Texto de pensamiento, crítica o reflexión |
+| Story | Relato o pieza narrativa |
+| Workshop | Taller o curso vinculado a la obra |
+| Article | Artículos y notas del autor |
+| Page | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Prensa, Derechos |
 
-## 3. Taxonomías (cómo se organiza)
+En WordPress:
 
-Se reduce la clasificación a lo mínimo que mejora lectura y archivo.
+- `poem`, `book`, `essay`, `story`, `workshop` son Custom Post Types.
+- `page` se usa para páginas fijas.
+- `post` se usa solo para Article.
 
-**Globales:** `topic` (Tema), `period` (Periodo). Se aplican a poem, book, essay, story, post, workshop.
-
-No se añaden taxonomías para idioma (plugin de traducción), ni para estados internos, editorial, formato o modalidad; se resuelven con campos de texto.
-
----
-
-## 4. Relaciones (cómo se conectan las piezas)
-
-Solo se modelan las relaciones que crean caminos de lectura claros:
-
-- **Poem** → puede pertenecer a un **Book**.
-- **Essay** → puede pertenecer a un **Book**.
-- **Story** → puede pertenecer a un **Book**.
-- **Workshop** → puede estar vinculado a un **Book** (si el taller gira en torno a él).
-
-Se implementan con campos de relación simples (ACF, Meta Box o código propio). Los ciclos o conjuntos de poemas se narran editorialmente en la página del libro o con enlaces entre poemas; no se crea un tipo Poem Cycle ni taxonomías específicas.
+Un poema nunca es un post. Un libro nunca es una página.
 
 ---
 
-## 5. Navegación editorial
+## 2. Qué no existe
 
-Cada tipo tiene rutas claras y predecibles:
+No existen entidades técnicas para:
 
-| Tipo     | Patrón de URL        |
-|----------|----------------------|
-| Poem     | `/poem/slug`         |
-| Book     | `/book/slug`         |
-| Essay    | `/essay/slug`        |
-| Story    | `/story/slug`        |
-| Article  | `/blog/slug`         |
-| Workshop | `/talleres/slug`     |
+- ciclos
+- series
+- colecciones
+- estados
+- ediciones internas
+- versiones
 
-Con soporte **multilingüe**, las URLs se prefijan por idioma (ej. `/es/poem/slug`, `/en/poem/slug`).
+Todo eso se expresa editorialmente dentro de los libros, textos y relaciones entre piezas.
 
-**Enlaces contextuales:** “Este poema pertenece a: [Libro]”, “Abrir el libro”, “Más ensayos sobre este tema”.
+La arquitectura nunca duplica lo que la escritura ya puede decir.
 
 ---
 
-## 6. Editorial Home
+## 3. Organización
 
-La página de inicio **no** es un feed ni una portada congelada. Es una **superficie viva** que responde a una sola idea:
+La obra se organiza solo por dimensiones que un lector entiende y usa.
 
-> “Esta es la obra que estoy escribiendo ahora.”
+| Taxonomía | Uso |
+|-----------|-----|
+| topic | Tema |
+| period | Periodo o etapa de la obra |
 
-**Qué muestra el home:** Libro activo (obra en curso), Poema destacado, Ensayo reciente, Taller próximo, acceso claro al Archivo. **La obra primero. El tiempo después.**
+Se aplican a: poem, book, essay, story, workshop y article.
 
-**Relación directa:** El centro de la relación con el lector es el **email**. Llamadas como “Recibir nuevos textos”, “Carta del autor”; nunca “Suscríbete”, “Newsletter”. La implementación vive en la Estrategia de publicación.
+No existen taxonomías para:
 
-**Prueba social:** Editoriales, revistas, premios y prensa viven en las páginas de Book, Sobre el autor y Prensa/Contacto; no son el mensaje principal del Home.
+- idioma
+- estado
+- editorial
+- formato
+- modalidad
+
+Esos datos viven como campos simples dentro de cada pieza cuando es necesario mostrarlos.
 
 ---
 
-## 7. Archivo como biblioteca
+## 4. Relaciones
 
-El archivo debe poder verse por **tipo** (poemas, libros, ensayos, relatos), por **tema** (`topic`) y por **periodo** (`period`). No solo por fecha. Los filtros visibles se mantienen pocos y claros.
+Las únicas relaciones estructurales son las que crean caminos de lectura reales.
+
+| Desde | Hacia |
+|-------|-------|
+| Poem | Book |
+| Essay | Book |
+| Story | Book |
+| Workshop | Book |
+
+Esto permite:
+
+- “Este poema pertenece a [Libro]”
+- “Abrir el libro”
+- “Leer más del libro”
+
+No existen jerarquías laterales, grafos ni sistemas de colección paralelos.
+
+---
+
+## 5. Rutas y URLs
+
+Cada tipo tiene una ruta clara y estable.
+
+| Tipo | Ruta |
+|------|------|
+| Poem | /poem/slug |
+| Book | /book/slug |
+| Essay | /essay/slug |
+| Story | /story/slug |
+| Article | /blog/slug |
+| Workshop | /talleres/slug |
+
+Con idioma: `/es/...`, `/en/...`
+
+La estructura es idéntica en todos los idiomas.
+
+---
+
+## 6. Home editorial
+
+La home no es un feed ni una vitrina. Responde a una sola idea:
+
+**Esta es la obra que está viva ahora.**
+
+Muestra:
+
+- Libro activo
+- Poema destacado
+- Ensayo reciente
+- Taller próximo
+- Acceso al Archivo
+- Correspondencia
+
+El tiempo no manda. La obra manda.
+
+---
+
+## 7. Archivo
+
+El archivo funciona como una biblioteca. Se puede recorrer por:
+
+- Tipo (poemas, libros, ensayos, relatos)
+- Tema
+- Periodo
+
+Nunca solo por fecha. Los filtros son pocos, visibles y claros.
 
 ---
 
 ## 8. Descargas y derechos
 
-En las páginas de **Book** se concentran: descargas (PDF, EPUB si existen), datos básicos de edición (editorial, año, ISBN) como campos simples, y un aviso breve de **derechos**. Sin sistemas complejos de licencias.
+Las descargas existen solo dentro de Book. Ahí viven:
+
+- PDF
+- EPUB
+- Editorial
+- Año
+- ISBN
+- Aviso breve de derechos
+
+No hay tienda ni sistema de licencias. El libro se presenta como obra, no como producto.
 
 ---
 
-## 9. Multilingüe e internacionalización (i18n)
+## 9. Multilenguaje
 
-El sitio soporta **múltiples idiomas** sin cambiar el modelo de contenido. Lenguas principales: **español (es)** e **inglés (en)**.
+El sitio es multilingüe por diseño.
 
-**Principios:** Contenido por idioma (plugin de traducción); UI traducible (gettext / `.pot`); añadir idioma = locale + traducciones, sin tocar CPTs ni taxonomías.
+**Principios:**
 
-**URLs:** Prefijo por locale (`/es/...`, `/en/...`). Raíz `/` puede redirigir al idioma por defecto o mostrar selector. Uso de `hreflang` y selector de idioma.
+- Un contenido por idioma
+- Una sola estructura
+- Prefijo por idioma
+- Selector visible
 
-**Qué se traduce:** Páginas clave, fichas de Book y Workshop, bio, selección de poemas y ensayos. Términos de topic/period pueden traducirse o mantenerse en un idioma.
+**Se traducen:**
 
-La tipografía y el layout de `02-identidad-corporativa` aplican en todos los idiomas.
+- Páginas
+- Bio
+- Libros
+- Talleres
+- Selección de poemas y ensayos
+
+La identidad visual es la misma en todos los idiomas.
 
 ---
 
-## 10. Qué le da esto a Daniel Arella
+## 10. Qué permite este sistema
 
-Esta arquitectura permite: tratar la obra como un **corpus**; no perder poemas en un feed; publicar **libros web** y fragmentos; mantener el sitio legible aunque la obra crezca; sostener varios idiomas sin inflar el modelo. Es un sistema mínimo para una plataforma de autor.
+Daniel puede:
+
+- Publicar libros completos
+- Publicar poemas sueltos
+- Reordenar su obra
+- Traducir
+- Activar o cerrar talleres
+- Cambiar el foco del Home
+
+Sin que nada se rompa.
 
 ---
 
-**Versión del documento:** 2.0  
+## Regla final
+
+Si una estructura no ayuda a leer mejor o recordar mejor la obra, no existe.
+
+---
+
+**Versión:** 2.3  
 **Depende de:** `02-identidad-corporativa`  
-**Alimenta a:** `04-wordpress-content-model` y a la implementación del theme.
+**Alimenta a:** `04-wordpress-content-model`
