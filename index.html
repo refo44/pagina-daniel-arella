@@ -112,6 +112,35 @@
     .swatch--3 { background: var(--brand-3); }
     .swatch--4 { background: var(--brand-4); }
     .swatch--5 { background: var(--brand-5); }
+
+    /* Dark mode (reeasigna roles, sin nuevas paletas) */
+    html.dark-mode {
+      --bg: var(--brand-1);
+      --text: var(--brand-2);
+      --text-muted: var(--brand-3);
+      --surface: var(--brand-3);
+      --border: var(--brand-2);
+      --link: var(--brand-4);
+      --link-hover: var(--brand-5);
+      --focus: var(--brand-4);
+      --header-bg: var(--brand-1);
+      --footer-bg: var(--brand-1);
+      --primary: var(--brand-4);
+      --primary-hover: var(--brand-5);
+      --text-on-primary: var(--brand-1);
+    }
+
+    .dark-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: inherit;
+      cursor: pointer;
+    }
+    .dark-toggle input { cursor: pointer; }
   </style>
   <script>
     window.PALETTES = {
@@ -165,6 +194,10 @@
     <div class="o-container">
       <span class="palette-selector-bar__label">Paleta:</span>
       <label for="palette-select" class="u-visually-hidden">Cambiar paleta</label>
+      <label class="dark-toggle" title="Fondo oscuro y texto claro. Útil en ambientes con poca luz o de noche para reducir el brillo de la pantalla.">
+        <input type="checkbox" id="dark-toggle" aria-label="Modo oscuro">
+        <span>Modo oscuro</span>
+      </label>
       <select id="palette-select" class="palette-selector" aria-label="Seleccionar paleta">
         <option value="actual">Actual</option>
         <option value="A" selected>A — Tinta y papel</option>
@@ -280,24 +313,56 @@
   <script>
     (function() {
       var sel = document.getElementById('palette-select');
+      var darkCheck = document.getElementById('dark-toggle');
+
+      function applyDarkMode(on) {
+        if (on) {
+          document.documentElement.classList.add('dark-mode');
+          try { localStorage.setItem('darkMode', '1'); } catch (e) {}
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+          try { localStorage.setItem('darkMode', '0'); } catch (e) {}
+        }
+      }
+
       function updateLinks() {
         var val = sel.value;
+        var darkMode = darkCheck && darkCheck.checked;
         document.querySelectorAll('.js-palette-persist').forEach(function(a) {
-          var base = a.getAttribute('data-palette-href') || a.getAttribute('href').split('#')[0];
-          a.href = base + '#palette=' + val;
+          var base = (a.getAttribute('data-palette-href') || a.getAttribute('href')).split('#')[0].split('?')[0];
+          a.href = base + (darkMode ? '?dark=1' : '') + '#palette=' + val;
         });
       }
+
       var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
       if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
         sel.value = id;
         window.applyPalette(id);
       }
+
+      var darkParam = (new URLSearchParams(location.search)).get('dark');
+      var darkStored = false;
+      try { darkStored = localStorage.getItem('darkMode') === '1'; } catch (e) {}
+      var useDark = darkParam === '1' || (darkParam !== '0' && darkStored);
+      if (darkCheck) {
+        darkCheck.checked = useDark;
+        applyDarkMode(useDark);
+      }
+
       updateLinks();
+
       sel.addEventListener('change', function() {
         window.applyPalette(sel.value);
         location.hash = 'palette=' + sel.value;
         updateLinks();
       });
+
+      if (darkCheck) {
+        darkCheck.addEventListener('change', function() {
+          applyDarkMode(darkCheck.checked);
+          updateLinks();
+        });
+      }
     })();
   </script>
 </body>
