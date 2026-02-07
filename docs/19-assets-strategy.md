@@ -4,7 +4,7 @@
 
 Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, fuentes, iconos, favicon).
 
-**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tipografías y paleta)
+**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tipografías y paleta), `22-tendencias-ux-ui-sistema-editorial` (performance, JS mínimo)
 
 ---
 
@@ -14,9 +14,9 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 |------|----------|
 | **Iconos** | SVG inline como base; sprite SVG opcional si se repiten mucho. Sin icon fonts, sin Font Awesome por CDN. |
 | **Biblioteca de iconos** | Una sola, minimal: Heroicons, Lucide o Feather. Recomendado: Lucide. |
-| **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. |
+| **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
-| **JS** | Solo navegación, formularios, accesibilidad y mejoras que no alteran el contenido. Sin frameworks ni lógica de app. |
+| **JS** | Solo navegación, formularios, accesibilidad. Sin frameworks ni lógica de app. Todo con `defer`. Sin animaciones costosas ni librerías de motion. |
 
 ---
 
@@ -169,9 +169,10 @@ Nombres y rutas se mantienen en la migración a WordPress.
 ### Qué no entra
 
 - Sliders, carousels.
-- Animaciones de portada.
+- Animaciones de portada o motion decorativo.
 - Frameworks JS (React, Vue, etc.).
 - Lógica de aplicación.
+- Librerías de animación (doc 22: micro-interacciones solo funcionales; zero en zona de lectura).
 
 El sitio no es una aplicación. Es una biblioteca de lectura.
 

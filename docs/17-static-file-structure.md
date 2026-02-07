@@ -6,7 +6,7 @@ Este documento define la arquitectura definitiva de la maqueta estática. Todo l
 
 Misma arquitectura editorial, mismas pantallas, mismas rutas. Solo cambia el motor: archivos HTML hoy, PHP con WordPress después.
 
-**Depende de:** `16-theme-file-structure`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`
+**Depende de:** `16-theme-file-structure`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`, `18-css-architecture`, `22-tendencias-ux-ui-sistema-editorial`
 
 ---
 
@@ -79,12 +79,16 @@ daniel-arella-static/
 │   └── {slug}.html
 │
 ├── css/
-│   ├── main.css
-│   ├── layout.css
-│   └── components.css
+│   ├── main.css          (único entry point; importa el resto en orden ITCSS)
+│   ├── settings.css
+│   ├── generic.css
+│   ├── elements.css
+│   ├── objects.css
+│   ├── components.css
+│   └── utilities.css
 │
 ├── js/
-│   └── main.js
+│   └── main.js         (defer; solo navegación, formularios, accesibilidad)
 │
 ├── assets/
 │   ├── images/
@@ -173,6 +177,8 @@ En WordPress estos se convierten en `get_template_part()`.
 
 ## 8. CSS
 
+**Regla (22-tendencias-ux-ui-sistema-editorial):** 1 CSS principal (`main.css` importa todo). Sin fragmentos dispersos.
+
 Los nombres de clase deben ser semánticos y editoriales, no genéricos.
 
 **Ejemplos correctos:**
@@ -188,7 +194,7 @@ Los nombres de clase deben ser semánticos y editoriales, no genéricos.
 - `.sidebar`
 - `.widget`
 
-La maqueta ya debe hablar en el idioma del theme. Detalle de capas, BEM y variables en `18-css-architecture`.
+La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, variables y roles semánticos en `18-css-architecture`. Tokens y criterios en `22-tendencias-ux-ui-sistema-editorial`.
 
 ---
 

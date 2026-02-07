@@ -6,7 +6,7 @@ Este documento define la arquitectura definitiva de archivos del theme: qué pla
 
 No es un theme genérico. Es una biblioteca de obra. Esta estructura es la barrera que evita que poemas, libros y ensayos se conviertan en posts y que el archivo se vuelva un feed.
 
-**Depende de:** `04-wordpress-content-model`, `05-mapa-pantallas`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`
+**Depende de:** `04-wordpress-content-model`, `05-mapa-pantallas`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`, `22-tendencias-ux-ui-sistema-editorial`
 
 ---
 
@@ -184,7 +184,17 @@ Nada más. Nada menos.
 
 ---
 
-## 9. Regla de oro
+## 9. theme.json y control editorial
+
+**Según 22-tendencias-ux-ui-sistema-editorial:** `theme.json` debe bloquear paleta y tipografías; el editor no habilita estilos libres ni bloques con animación en contenido.
+
+- Paleta: solo los 5 colores de marca y roles semánticos de `02-identidad-corporativa`.
+- Tipografías: Fraunces, Source Sans 3. Sin familias adicionales.
+- Sin bloques de animación en área de lectura.
+
+---
+
+## 10. Regla de oro
 
 - No usar plantillas genéricas para tipos editoriales.
 - No inventar rutas fuera del árbol de URLs.
@@ -195,4 +205,4 @@ Si se respeta esta estructura, WordPress deja de ser un CMS y se convierte en un
 
 ---
 
-**Versión:** 1.1
+**Versión:** 1.2

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!-- Single ensayo — Alineado con docs: 02-identidad-corporativa, 13-wireframes, 14-arquitectura-informacion-navegacion, 22-tendencias-ux-ui-sistema-editorial -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Arella — La memoria y el cuerpo</title>
+  <meta name="description" content="Ensayo sobre la memoria, el cuerpo y el tiempo en la obra de Daniel Arella.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --brand-1: #1a1a1a;
+      --brand-2: #faf8f5;
+      --brand-3: #e8e2d9;
+      --brand-4: #c16b4a;
+      --brand-5: #8b4513;
+      --bg: var(--brand-2);
+      --text: var(--brand-1);
+      --text-muted: var(--brand-3);
+      --surface: var(--brand-3);
+      --border: var(--brand-3);
+      --link: var(--brand-4);
+      --link-hover: var(--brand-5);
+      --focus: var(--brand-4);
+      --header-bg: var(--brand-1);
+      --footer-bg: var(--brand-1);
+      --primary: var(--brand-4);
+      --primary-hover: var(--brand-5);
+      --text-on-primary: var(--brand-1);
+      --font-body: 'Fraunces', serif;
+      --font-heading: 'Fraunces', serif;
+      --font-ui: 'Source Sans 3', sans-serif;
+      --measure: 65ch;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .o-container {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .o-stack > * + * { margin-top: var(--space-8); }
+
+    .u-visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .u-visually-hidden:focus-visible {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0.5em 1em;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      background: var(--header-bg);
+      color: var(--brand-2);
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    /* Header */
+    .site-header {
+      background: var(--header-bg);
+      color: var(--brand-2);
+      padding: var(--space-6);
+      --link: var(--brand-2);
+      --link-hover: var(--brand-4);
+    }
+    .site-header .o-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--measure);
+    }
+    .site-header__brand {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .site-header__nav {
+      display: flex;
+      gap: var(--space-6);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+
+    /* Breadcrumbs (doc 10, 14) */
+    .breadcrumbs {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: var(--space-6) var(--space-6) 0;
+    }
+    .breadcrumbs .o-container {
+      max-width: var(--measure);
+    }
+    .breadcrumbs__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25em;
+    }
+    .breadcrumbs__item:not(:last-child)::after {
+      content: " → ";
+      margin-left: 0.25em;
+    }
+
+    /* Essay article */
+    .essay {
+      padding: var(--space-6) var(--space-6) var(--space-8);
+    }
+    .essay__title {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 600;
+      line-height: 1.3;
+      margin: 0 0 var(--space-6);
+    }
+    .essay__meta {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      margin-bottom: var(--space-6);
+    }
+    .essay__abstract {
+      font-family: var(--font-body);
+      font-style: italic;
+      margin-bottom: var(--space-8);
+      padding-left: 1em;
+      border-left: 3px solid var(--border);
+    }
+    .essay__body {
+      font-family: var(--font-body);
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+    .essay__body p {
+      margin: 0 0 1.5em;
+    }
+    .essay__body p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Figure (doc 22: imagen con pie editorial) */
+    .essay__figure {
+      margin: var(--space-8) 0;
+    }
+    .essay__figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+    }
+    .essay__figcaption {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      margin-top: 0.5em;
+    }
+
+    /* Notes */
+    .essay__notes {
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+    .essay__notes h3 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      margin: 0 0 0.5em;
+    }
+    .essay__notes ol {
+      margin: 0;
+      padding-left: 1.5em;
+    }
+    .essay__notes li {
+      margin-bottom: 0.5em;
+    }
+
+    /* Book context */
+    .essay__book {
+      margin-top: var(--space-8);
+      padding: var(--space-6);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+    .essay__book p {
+      margin: 0 0 0.5em;
+    }
+    .essay__book p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Essay navigation */
+    .essay-nav {
+      margin-top: var(--space-8);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--border);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-6);
+    }
+
+    /* Links */
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 0.18em;
+    }
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--brand-2);
+      padding: var(--space-8) var(--space-6);
+      margin-top: var(--space-8);
+      --link: var(--brand-2);
+      --link-hover: var(--brand-4);
+    }
+    .site-footer__nav {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="o-container">
+      <a href="preview-palette.html" class="site-header__brand">Daniel Arella</a>
+      <nav class="site-header__nav" aria-label="Principal">
+        <a href="preview-palette.html">Inicio</a>
+        <a href="preview-palette.html#archivo">Archivo</a>
+        <a href="preview-palette.html#autor">Sobre el autor</a>
+        <a href="preview-palette.html#talleres">Talleres</a>
+        <a href="preview-palette.html#correspondencia">Correspondencia</a>
+      </nav>
+    </div>
+  </header>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a href="preview-palette.html">Inicio</a></li>
+        <li class="breadcrumbs__item"><a href="preview-palette.html#archivo">Archivo</a></li>
+        <li class="breadcrumbs__item"><a href="#">Ensayos</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">La memoria y el cuerpo</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <article class="essay o-container">
+    <h1 class="essay__title">La memoria y el cuerpo</h1>
+    <p class="essay__meta">2024 · Ensayo</p>
+
+    <p class="essay__abstract">
+      Escribo desde la memoria, el cuerpo y el tiempo. Este ensayo explora la relación entre la experiencia corporal y la recuperación del pasado en la escritura.
+    </p>
+
+    <div class="essay__body">
+      <p>
+        La memoria no es un archivo. Es un cuerpo que recuerda. No se almacena en carpetas ni en índices; habita en el tacto, en el olfato, en el ritmo que el cuerpo repite sin saberlo.
+      </p>
+
+      <figure class="essay__figure">
+        <img
+          src="assets/images/espacios-gelindo-casasola-portada.jpg"
+          alt="Portada del libro Espacios, Gelindo Casasola (ilustración de Daniel Arella)."
+          width="576"
+          height="688"
+          loading="lazy"
+        >
+        <figcaption class="essay__figcaption">
+          Figura 1. Portada de <cite>Espacios</cite>, Gelindo Casasola.
+        </figcaption>
+      </figure>
+
+      <p>
+        Cuando escribo, no busco en el recuerdo como quien busca en un cajón. Escribo con el cuerpo que recuerda: la mano que traza, el pulso que empuja la frase, el espacio en blanco que precede a la palabra que aún no aparece.
+      </p>
+
+      <p>
+        El tiempo en la obra no es lineal. No avanza como una flecha. Se pliega, se condensa, se abre en capas. La memoria no es nostalgia; es una forma de presente.
+      </p>
+    </div>
+
+    <section class="essay__notes">
+      <h3>Notas</h3>
+      <ol>
+        <li>Primera versión leída en el taller de escritura, 2023.</li>
+        <li>Este ensayo forma parte del libro <em>El cuerpo que recuerda</em>, en preparación.</li>
+      </ol>
+    </section>
+
+    <aside class="essay__book">
+      <p>Este ensayo pertenece a: <a href="#">El cuerpo que recuerda</a></p>
+      <p><a href="#">Abrir el libro</a></p>
+    </aside>
+
+    <nav class="essay-nav" aria-label="Navegación del ensayo">
+      <a href="#">Ensayo anterior</a>
+      <a href="#">Siguiente ensayo</a>
+      <a href="#">Explorar ensayos</a>
+    </nav>
+  </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="o-container">
+      <nav class="site-footer__nav" aria-label="Pie">
+        <a href="#">Prensa</a>
+        <a href="#">Derechos y permisos</a>
+        <a href="#">Contacto</a>
+        <a href="#">Correspondencia</a>
+        <a href="#">Créditos del sitio</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

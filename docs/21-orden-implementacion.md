@@ -8,9 +8,10 @@ Secuencia acordada para llevar el sistema editorial a la web. **No saltar etapas
 
 1. **Maqueta responsiva** con:
    - HTML5 semántico
-   - CSS3
-   - Sin JavaScript de aplicación (solo lo imprescindible si hace falta)
+   - CSS3 (1 CSS principal, roles semánticos, sin hex en componentes)
+   - JS mínimo con `defer` (solo navegación, formularios, accesibilidad)
 2. Contenido y estructura según: `13-wireframes`, `14-arquitectura-informacion-navegacion`, `15-arbol-urls-final`, `02-identidad-corporativa`, `10-ui-copy-sheet`.
+3. **Validar contra checklist** de `22-tendencias-ux-ui-sistema-editorial` (sección 13.0) antes de dar por cerrada la fase.
 
 ---
 

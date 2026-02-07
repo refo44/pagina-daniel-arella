@@ -6,7 +6,7 @@ Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta e
 
 Encaja con: maqueta estática, migración literal a WordPress, sistema editorial donde el layout no debe contaminar la obra.
 
-**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tokens de marca)
+**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tokens de marca), `22-tendencias-ux-ui-sistema-editorial` (criterios de implementación)
 
 ---
 
@@ -127,13 +127,13 @@ Si empiezas a crear muchas utilities (decenas), se acerca a “utility-first” 
 
 ## 8. Variables CSS (Settings)
 
-En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`:
+En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. Los colores vienen de `02-identidad-corporativa`: 5 colores de marca (`--brand-*`) y roles semánticos (`--bg`, `--text`, `--link`, etc.). **Ningún componente usa hex directo; solo roles.**
 
 ```css
 :root {
-  /* Tipografía */
+  /* Tipografía (02-identidad-corporativa) */
   --font-body: 'Fraunces', serif;
-  --font-heading: '…', serif;
+  --font-heading: 'Fraunces', serif;
 
   /* Espaciado */
   --space-2: 0.5rem;
@@ -141,18 +141,16 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`:
   --space-6: 1.5rem;
   --space-8: 2rem;
 
-  /* Colores (según identidad-corporativa) */
-  --color-text: #111;
-  --color-text-muted: #555;
-  --color-bg: #fff;
+  /* Colores: solo roles semánticos (02-identidad-corporativa) */
+  /* --bg, --text, --text-muted, --link, --link-hover, --focus, --surface, --border, --header-bg, --footer-bg, --primary */
 
-  /* Breakpoints (para media queries) */
+  /* Breakpoints */
   --bp-medium: 40rem;
   --bp-wide: 64rem;
 }
 ```
 
-Los componentes y objects usan estas variables. Así se mantiene consistencia y los cambios globales se hacen en un solo lugar.
+Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
 
 ---
 
@@ -190,5 +188,18 @@ En WordPress no hay ventaja técnica directa por Sass; el CMS solo consume el CS
 
 ---
 
-**Versión:** 1.0  
-**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress.
+## 12. Criterios de validación (22-tendencias-ux-ui-sistema-editorial)
+
+Al implementar, verificar:
+
+- Tipografía: máximo 2 familias; jerarquías H1–H3 fijas.
+- Color: solo roles semánticos; nunca hex en componentes.
+- Lectura: ancho de columna 60–70ch; ritmo vertical consistente.
+- Motion: en páginas de texto, cero animaciones decorativas; solo focus y hover.
+- Respetar `prefers-reduced-motion` para usuarios que lo prefieran.
+- `:focus-visible` visible (p. ej. outline con `--focus`).
+
+---
+
+**Versión:** 1.1  
+**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress. Criterios de validación: `22-tendencias-ux-ui-sistema-editorial` sección 13.

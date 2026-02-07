@@ -4,7 +4,9 @@
 
 Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
-**Se apoya en:** `02-identidad-corporativa`, `10-ui-copy-sheet`
+**Se apoya en:** `02-identidad-corporativa`, `10-ui-copy-sheet`, `22-tendencias-ux-ui-sistema-editorial`
+
+**Regla (doc 22):** El objetivo de cada página debe ser evidente. En páginas de texto: cero animaciones decorativas; solo focus y hover.
 
 ---
 
@@ -161,6 +163,7 @@ Una pantalla es correcta si:
 1. Se entiende qué es en tres segundos.
 2. La lectura no se interrumpe por bloques inútiles.
 3. Siempre hay una salida hacia la obra completa.
+4. No hay animaciones decorativas en zona de lectura (doc 22).
 
 ---
 

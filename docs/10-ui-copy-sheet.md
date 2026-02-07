@@ -5,7 +5,7 @@
 
 Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
-**Está alineado con:** `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`
+**Está alineado con:** `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `14-arquitectura-informacion-navegacion`, `22-tendencias-ux-ui-sistema-editorial`
 
 **Regla central:** El sitio no vende. Invita a leer.
 
@@ -51,27 +51,27 @@ Leer, Abrir, Ver, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descar
 
 ## 2. Navegación global
 
-### 2.1 Menú principal
+**Regla (22-tendencias-ux-ui-sistema-editorial):** Menú de 3 a 5 ítems. Menos fricción cognitiva.
+
+### 2.1 Menú principal (cabecera)
 
 - Inicio
-- Poemas
-- Ensayos
-- Relatos
-- Libros
-- Talleres
 - Archivo
 - Sobre el autor
-- Contacto
+- Talleres
+- Correspondencia
 
-Si existe sección de textos no literarios: **Artículos** o **Escritura**
+El archivo agrupa poemas, ensayos, relatos y libros. Los listados por tipo se acceden desde el archivo o desde breadcrumbs. Ver `14-arquitectura-informacion-navegacion`.
 
 ### 2.2 Footer
 
 - Prensa
 - Derechos y permisos
-- Descargas
+- Contacto
 - Correspondencia
 - Créditos del sitio
+
+Opcional: Descargas (si aplica).
 
 ### 2.3 Migas de pan
 

@@ -16,6 +16,7 @@ Los documentos en `docs/` llevan prefijo de dos dígitos (`01-`, `02-`, …) par
 | **14–15** | Navegación y URLs | Arquitectura de información/navegación (enlaces por pantalla) y árbol de URLs. Dependen de pantallas, copy y recorridos. |
 | **16–19** | Implementación técnica | Theme y static file structure, CSS, assets. Convierten la arquitectura en archivos y código. |
 | **20–21** | Contenido e implementación | Inventario de fuentes de contenido y orden de implementación (secuencia de trabajo). Últimos porque referencian a casi todo lo anterior. |
+| **22** | Criterios contemporáneos | Lectura de tendencias UX/UI 2026 aplicada al sistema editorial. Filtro estratégico para decisiones futuras. Criterio de validación para la revisión de documentos (identidad, CSS, navegación, assets, implementación). |
 
 ---
 
@@ -48,3 +49,4 @@ Ningún documento debe depender de uno con número mayor. El documento `00-orden
 19. `19-assets-strategy`
 20. `20-content-source-inventario`
 21. `21-orden-implementacion`
+22. `22-tendencias-ux-ui-sistema-editorial`

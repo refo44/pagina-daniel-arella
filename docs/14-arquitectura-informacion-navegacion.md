@@ -11,7 +11,7 @@ Sirve para que:
 - El lector no se pierda.
 - La obra se lea como obra, no como feed.
 
-**Referencia:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`
+**Referencia:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`, `22-tendencias-ux-ui-sistema-editorial`
 
 ---
 
@@ -29,17 +29,23 @@ Sirve para que:
 
 ## 2. Navegación global
 
+**Regla de cantidad (22-tendencias-ux-ui-sistema-editorial):** Menú de 3 a 5 ítems. Menos opciones = menos fricción cognitiva.
+
 ### Cabecera
+
+Estructura consolidada (5 ítems máximo):
 
 | Enlace | Destino |
 |--------|---------|
 | Inicio | Home |
-| Archivo | Archivo general |
+| Archivo | Archivo general (poemas, ensayos, relatos, libros) |
 | Sobre el autor | Sobre el autor |
 | Talleres | Listado Talleres |
 | Correspondencia | Correspondencia |
-| Contacto | Contacto |
-| Idioma | Selector de idioma |
+
+**Opcional:** Selector de idioma como control auxiliar (icono), no como ítem principal.
+
+**En pie, no en cabecera:** Contacto, Prensa, Derechos. La cabecera prioriza orientación hacia la obra y el autor.
 
 No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros concretos.
 
