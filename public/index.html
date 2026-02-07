@@ -112,6 +112,44 @@
       font-family: var(--font-ui);
       font-size: 0.9rem;
     }
+    .palette-selector-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: fit-content;
+      background: #ff1744;
+      color: #fff;
+      padding: 0.5rem var(--space-6);
+      border-bottom: 3px solid #000;
+      border-radius: 0 0 6px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .palette-selector-bar .o-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: var(--measure);
+    }
+    .palette-selector-bar__label {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .palette-selector {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.4em 0.75em;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .palette-selector option {
+      background: #fff;
+      color: #000;
+    }
     .site-header {
       --link: var(--brand-2);
       --link-hover: var(--brand-4);
@@ -260,21 +298,86 @@
     .swatch--4 { background: var(--brand-4); }
     .swatch--5 { background: var(--brand-5); }
   </style>
+  <script>
+    window.PALETTES = {
+      actual: ['#000000','#fffffc','#beb7a4','#ff7f11','#ff3f00'],
+      A: ['#1a1a1a','#faf8f5','#e8e2d9','#c16b4a','#8b4513'],
+      B: ['#2c2c2c','#f8f9fa','#9ca3af','#4a6fa5','#2c3e50'],
+      C: ['#3d2c29','#f5f0e8','#c4b8a8','#b85c38','#6b7c3d'],
+      D: ['#000000','#fafafa','#a8a29e','#b87333','#8b5a2b'],
+      E: ['#2d2d2d','#fdfbf7','#e5dcc8','#b07d7d','#722f37'],
+      F: ['#1e3c2b','#f7f3ed','#8a9b6e','#d4a853','#8b6914'],
+      G: ['#2a2a2a','#f9f7f4','#b5a898','#7d6e5d','#4a3f35'],
+      H: ['#0f0f0f','#faf9f7','#d4cfc4','#6b5b4f','#4a3f36'],
+      I: ['#1a1f1e','#f8faf9','#b8c4c0','#3d7a6e','#2a5549'],
+      J: ['#1c1c1c','#f5f3ef','#c9c2b5','#8b7355','#5c4a3a'],
+      K: ['#1a1a1a','#f7f3ed','#d9d2c7','#b85c38','#8a3b12'],
+      L: ['#121212','#fafafa','#a8a29e','#b87333','#8c5a2b'],
+      M: ['#3d2c29','#f4efe7','#c7b8a3','#a45a3f','#6f3b2a'],
+      N: ['#2c2c2c','#f6f7f8','#b7bcc2','#4a6fa5','#2f4a73'],
+      O: ['#1e3c2b','#f5f1e8','#a8b39b','#c89f52','#8b6b2e'],
+      P: ['#2d2d2d','#fcf8f2','#e2d6c8','#b07d7d','#7a3e45'],
+      Q: ['#161616','#f8f6f1','#c9c3b5','#6b7c3d','#4f5c2a'],
+      R: ['#1f2a44','#f7f8fb','#c7ccd6','#9c5c3c','#6e3e2a']
+    };
+    window.applyPalette = function(id) {
+      var pal = window.PALETTES[id] || window.PALETTES[id.toLowerCase()];
+      if (!pal) return;
+      var s = document.getElementById('palette-override');
+      if (!s) {
+        s = document.createElement('style');
+        s.id = 'palette-override';
+        document.head.appendChild(s);
+      }
+      s.textContent = ':root{--brand-1:'+pal[0]+';--brand-2:'+pal[1]+';--brand-3:'+pal[2]+';--brand-4:'+pal[3]+';--brand-5:'+pal[4]+'}';
+    };
+    (function() {
+      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
+      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
+        window.applyPalette(id);
+      }
+    })();
+  </script>
 </head>
 <body>
   <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
   <header class="site-header">
     <div class="o-container">
-      <a href="preview-palette.html" class="site-header__brand">Daniel Arella</a>
+      <a href="index.html" class="site-header__brand">Daniel Arella</a>
       <nav class="site-header__nav" aria-label="Principal">
-        <a href="preview-palette.html">Inicio</a>
-        <a href="preview-palette.html#archivo">Archivo</a>
-        <a href="preview-palette.html#autor">Sobre el autor</a>
-        <a href="preview-palette.html#talleres">Talleres</a>
-        <a href="preview-palette.html#correspondencia">Correspondencia</a>
+        <a href="index.html">Inicio</a>
+        <a id="nav-to-essay" href="preview-essay.html">Ensayo</a>
       </nav>
     </div>
   </header>
+
+  <div class="palette-selector-bar">
+    <div class="o-container">
+      <span class="palette-selector-bar__label">Paleta:</span>
+      <label for="palette-select" class="u-visually-hidden">Cambiar paleta</label>
+      <select id="palette-select" class="palette-selector" aria-label="Seleccionar paleta">
+        <option value="actual">Actual</option>
+        <option value="A" selected>A — Tinta y papel</option>
+        <option value="B">B — Silencio frío</option>
+        <option value="C">C — Tierra y arcilla</option>
+        <option value="D">D — Monocromo cobre</option>
+        <option value="E">E — Atardecer suave</option>
+        <option value="F">F — Bosque y pergamino</option>
+        <option value="G">G — Ceniza y sepia</option>
+        <option value="H">H — Noche y lino</option>
+        <option value="I">I — Aurora</option>
+        <option value="J">J — Caliza y carbón</option>
+        <option value="K">K — Tinta editorial</option>
+        <option value="L">L — Monocromo + cobre</option>
+        <option value="M">M — Tierra bohemia</option>
+        <option value="N">N — Silencio frío (v)</option>
+        <option value="O">O — Pergamino y bosque</option>
+        <option value="P">P — Atardecer suave (v)</option>
+        <option value="Q">Q — Negro + oliva</option>
+        <option value="R">R — Tinta azul oscura</option>
+      </select>
+    </div>
+  </div>
 
   <section class="banner">
     <div class="o-container">
@@ -359,5 +462,28 @@
       </nav>
     </div>
   </footer>
+  <script>
+    (function() {
+      var sel = document.getElementById('palette-select');
+      var navLink = document.getElementById('nav-to-essay');
+      var cardLink = document.querySelector('.poem-card a[href="preview-essay.html"]');
+      function updateLinks() {
+        var val = sel.value;
+        var href = 'preview-essay.html#palette=' + val;
+        if (navLink) navLink.href = href;
+        if (cardLink) cardLink.href = href;
+      }
+      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
+      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
+        sel.value = id;
+      }
+      updateLinks();
+      sel.addEventListener('change', function() {
+        window.applyPalette(sel.value);
+        location.hash = 'palette=' + sel.value;
+        updateLinks();
+      });
+    })();
+  </script>
 </body>
 </html>
