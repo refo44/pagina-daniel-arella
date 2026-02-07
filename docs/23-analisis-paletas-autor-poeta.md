@@ -1,10 +1,40 @@
 # Paletas para sitio de autor poeta
 
-Lista de paletas alternativas. Sustituir `--brand-1` a `--brand-5` en `02-identidad-corporativa` (líneas 161–165).
+Lista de paletas alternativas para un sitio de autor. Sustituir `--brand-1` a `--brand-5` en `02-identidad-corporativa` (sección 6, tokens de marca).
 
 ---
 
-Paleta actual (02-identidad-corporativa)
+## Propósito del documento
+
+Este documento reúne paletas de 5 colores evaluadas para Daniel Arella: cada una mantiene la misma **arquitectura semántica** (2 neutros base + 1 neutro medio + 2 acentos). La idea es poder cambiar de paleta sin tocar la lógica de roles: solo se reemplazan los valores hex de `--brand-1` a `--brand-5`; los componentes siguen usando los mismos roles (`--text`, `--surface`, `--link`, etc.).
+
+---
+
+## Usos principales de los 5 colores
+
+Cada paleta tiene la misma estructura. Los usos por token:
+
+| Token | Uso principal | Ejemplos |
+|-------|----------------|----------|
+| **--brand-1** | Neutro oscuro principal | Cabecera, pie, texto de lectura, texto sobre botones |
+| **--brand-2** | Neutro claro base | Fondos, superficies de página |
+| **--brand-3** | Neutro medio | Cards, superficies elevadas, bordes, texto secundario, metadatos |
+| **--brand-4** | Acento base | Enlaces, botones, `:focus-visible`, acentos de interacción |
+| **--brand-5** | Acento intenso | Hover de enlaces y botones, énfasis |
+
+**Reglas:**
+
+- **brand-1 a brand-3:** neutros que sostienen la lectura; no compiten con el texto.
+- **brand-4 y brand-5:** acentos que guían la atención (links, acciones, foco); nunca más de uno visible por pantalla según minimalismo editorial.
+- Contraste mínimo AA entre texto y fondo; `focus` debe ser muy visible (brand-4 suele usarse como outline).
+
+Ver `02-identidad-corporativa.md` (sección 6) y `22-tendencias-ux-ui-sistema-editorial.md` para roles semánticos completos y criterios verificables.
+
+---
+
+## Paletas
+
+### Paleta actual (02-identidad-corporativa)
 
 --brand-1: #000000;
 --brand-2: #fffffc;
@@ -12,7 +42,7 @@ Paleta actual (02-identidad-corporativa)
 --brand-4: #ff7f11;
 --brand-5: #ff3f00;
 
-Paleta A: Tinta y papel
+### Paleta A: Tinta y papel
 
 --brand-1: #1a1a1a;
 --brand-2: #faf8f5;
@@ -20,7 +50,7 @@ Paleta A: Tinta y papel
 --brand-4: #c16b4a;
 --brand-5: #8b4513;
 
-Paleta B: Silencio frío
+### Paleta B: Silencio frío
 
 --brand-1: #2c2c2c;
 --brand-2: #f8f9fa;
@@ -28,7 +58,7 @@ Paleta B: Silencio frío
 --brand-4: #4a6fa5;
 --brand-5: #2c3e50;
 
-Paleta C: Tierra y arcilla
+### Paleta C: Tierra y arcilla
 
 --brand-1: #3d2c29;
 --brand-2: #f5f0e8;
@@ -36,7 +66,7 @@ Paleta C: Tierra y arcilla
 --brand-4: #b85c38;
 --brand-5: #6b7c3d;
 
-Paleta D: Monocromo con acento cobre
+### Paleta D: Monocromo con acento cobre
 
 --brand-1: #000000;
 --brand-2: #fafafa;
@@ -44,7 +74,7 @@ Paleta D: Monocromo con acento cobre
 --brand-4: #b87333;
 --brand-5: #8b5a2b;
 
-Paleta E: Atardecer suave
+### Paleta E: Atardecer suave
 
 --brand-1: #2d2d2d;
 --brand-2: #fdfbf7;
@@ -52,7 +82,7 @@ Paleta E: Atardecer suave
 --brand-4: #b07d7d;
 --brand-5: #722f37;
 
-Paleta F: Bosque y pergamino
+### Paleta F: Bosque y pergamino
 
 --brand-1: #1e3c2b;
 --brand-2: #f7f3ed;
@@ -60,7 +90,7 @@ Paleta F: Bosque y pergamino
 --brand-4: #d4a853;
 --brand-5: #8b6914;
 
-Paleta G: Ceniza y sepia
+### Paleta G: Ceniza y sepia
 
 --brand-1: #2a2a2a;
 --brand-2: #f9f7f4;
@@ -68,7 +98,7 @@ Paleta G: Ceniza y sepia
 --brand-4: #7d6e5d;
 --brand-5: #4a3f35;
 
-Paleta H: Noche y lino
+### Paleta H: Noche y lino
 
 --brand-1: #0f0f0f;
 --brand-2: #faf9f7;
@@ -76,7 +106,7 @@ Paleta H: Noche y lino
 --brand-4: #6b5b4f;
 --brand-5: #4a3f36;
 
-Paleta I: Aurora
+### Paleta I: Aurora
 
 --brand-1: #1a1f1e;
 --brand-2: #f8faf9;
@@ -84,7 +114,7 @@ Paleta I: Aurora
 --brand-4: #3d7a6e;
 --brand-5: #2a5549;
 
-Paleta J: Caliza y carbón
+### Paleta J: Caliza y carbón
 
 --brand-1: #1c1c1c;
 --brand-2: #f5f3ef;
@@ -92,7 +122,7 @@ Paleta J: Caliza y carbón
 --brand-4: #8b7355;
 --brand-5: #5c4a3a;
 
-Paleta K: Tinta editorial clásica
+### Paleta K: Tinta editorial clásica
 
 --brand-1: #1a1a1a;
 --brand-2: #f7f3ed;
@@ -100,7 +130,7 @@ Paleta K: Tinta editorial clásica
 --brand-4: #b85c38;
 --brand-5: #8a3b12;
 
-Paleta L: Monocromo + cobre
+### Paleta L: Monocromo + cobre
 
 --brand-1: #121212;
 --brand-2: #fafafa;
@@ -108,7 +138,7 @@ Paleta L: Monocromo + cobre
 --brand-4: #b87333;
 --brand-5: #8c5a2b;
 
-Paleta M: Tierra bohemia
+### Paleta M: Tierra bohemia
 
 --brand-1: #3d2c29;
 --brand-2: #f4efe7;
@@ -116,7 +146,7 @@ Paleta M: Tierra bohemia
 --brand-4: #a45a3f;
 --brand-5: #6f3b2a;
 
-Paleta N: Silencio frío (variante)
+### Paleta N: Silencio frío (variante)
 
 --brand-1: #2c2c2c;
 --brand-2: #f6f7f8;
@@ -124,7 +154,7 @@ Paleta N: Silencio frío (variante)
 --brand-4: #4a6fa5;
 --brand-5: #2f4a73;
 
-Paleta O: Pergamino y bosque
+### Paleta O: Pergamino y bosque
 
 --brand-1: #1e3c2b;
 --brand-2: #f5f1e8;
@@ -132,7 +162,7 @@ Paleta O: Pergamino y bosque
 --brand-4: #c89f52;
 --brand-5: #8b6b2e;
 
-Paleta P: Atardecer suave (variante)
+### Paleta P: Atardecer suave (variante)
 
 --brand-1: #2d2d2d;
 --brand-2: #fcf8f2;
@@ -140,7 +170,7 @@ Paleta P: Atardecer suave (variante)
 --brand-4: #b07d7d;
 --brand-5: #7a3e45;
 
-Paleta Q: Negro suave + oliva
+### Paleta Q: Negro suave + oliva
 
 --brand-1: #161616;
 --brand-2: #f8f6f1;
@@ -148,7 +178,7 @@ Paleta Q: Negro suave + oliva
 --brand-4: #6b7c3d;
 --brand-5: #4f5c2a;
 
-Paleta R: Tinta azul oscura
+### Paleta R: Tinta azul oscura
 
 --brand-1: #1f2a44;
 --brand-2: #f7f8fb;

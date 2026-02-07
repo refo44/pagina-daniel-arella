@@ -357,12 +357,12 @@ Qué se adopta y qué se evita (lectura, claridad, accesibilidad, performance vs
 Ahí se encuentra:
 
 - **Regla práctica:** adoptar lo que mejora lectura, claridad, accesibilidad y performance; evitar lo que introduce personalización, ruido visual o comportamiento invasivo.
-- **Filosofía de diseño editorial:** minimalismo como estructura, no como estética; principios, riesgos reales, decisiones permitidas y anti-patrones; equivalencia HTML/WordPress — sección 2 de ese documento.
-- **Minimalismo editorial (no comercial):** distinción conversión vs. lectura; definición “minimalismo editorial silencioso”; reglas aplicables (espacio, paleta, tipografía, navegación, micro-interacciones); checklist y anti-patrones; equivalencia maqueta/WordPress — tabla 3.0 y 3.1 de ese documento (minimalismo editorial como principio rector).
+- **Filosofía de diseño editorial:** minimalismo como estructura, no como estética; principios, riesgos reales, decisiones permitidas y anti-patrones; equivalencia HTML/WordPress — sección 1 de ese documento.
+- **Tabla de adopción y minimalismo:** qué adoptar, qué evitar; implementación — sección 2 de ese documento.
 - **Design tokens** (alineados con esta identidad), **performance-first**, **accesibilidad por defecto**, **micro-interacciones funcionales**, **storytelling editorial** (ritmo y jerarquía).
 - **Opcional:** dark mode, formas orgánicas en dosis mínimas.
 - **Evitar como base:** experiencias agentic, popups/smart triggers, motion “de show”.
-- **Bloque listo para implementación:** checklist de maqueta estática y equivalencia en WordPress (theme.json, style.css, enqueue, patterns) — sección 13 de ese documento.
+- **Bloque listo para implementación:** checklist de maqueta estática y equivalencia en WordPress — sección 4 de ese documento.
 
 ---
 
