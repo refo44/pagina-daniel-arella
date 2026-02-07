@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!-- Archivo de libros — Alineado con docs: 02-identidad-corporativa, 13-wireframes, 14-arquitectura-informacion-navegacion, 17-static-file-structure, 20-content-source-inventario -->
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daniel Arella — Libros</title>
+  <meta name="description" content="Catálogo de libros de Daniel Arella.">
+  <style>
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-400-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-400-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-600-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Source Sans 3';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/source-sans-3-latin-400-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Source Sans 3';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/source-sans-3-latin-600-normal.woff2') format('woff2');
+    }
+    :root {
+      --brand-1: #1a1a1a;
+      --brand-2: #faf8f5;
+      --brand-3: #e8e2d9;
+      --brand-4: #c16b4a;
+      --brand-5: #8b4513;
+      --bg: var(--brand-2);
+      --text: var(--brand-1);
+      --text-muted: var(--brand-3);
+      --surface: var(--brand-3);
+      --border: var(--brand-3);
+      --link: var(--brand-4);
+      --link-hover: var(--brand-5);
+      --focus: var(--brand-4);
+      --header-bg: var(--brand-1);
+      --footer-bg: var(--brand-1);
+      --primary: var(--brand-4);
+      --primary-hover: var(--brand-5);
+      --text-on-primary: var(--brand-1);
+      --font-body: 'Fraunces', serif;
+      --font-heading: 'Fraunces', serif;
+      --font-ui: 'Source Sans 3', sans-serif;
+      --measure: 65ch;
+      --space-4: 1rem;
+      --space-6: 1.5rem;
+      --space-8: 2rem;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .o-container {
+      max-width: var(--measure);
+      margin: 0 auto;
+      padding: 0 var(--space-6);
+    }
+
+    .o-stack > * + * { margin-top: var(--space-8); }
+
+    .u-visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+    .u-visually-hidden:focus-visible {
+      position: static;
+      width: auto;
+      height: auto;
+      padding: 0.5em 1em;
+      margin: 0;
+      overflow: visible;
+      clip: auto;
+      white-space: normal;
+      background: var(--header-bg);
+      color: var(--brand-2);
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .site-header {
+      background: var(--header-bg);
+      color: var(--brand-2);
+      padding: var(--space-6);
+      --link: var(--brand-2);
+      --link-hover: var(--brand-4);
+    }
+    .site-header .o-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: var(--measure);
+    }
+    .site-header__brand {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+    .site-header__nav {
+      display: flex;
+      gap: var(--space-6);
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+
+    .palette-selector-bar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: fit-content;
+      background: #ff1744;
+      color: #fff;
+      padding: 0.5rem var(--space-6);
+      border-bottom: 3px solid #000;
+      border-radius: 0 0 6px 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    .palette-selector-bar .o-container {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      max-width: var(--measure);
+    }
+    .palette-selector-bar__label {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+    .palette-selector {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      font-weight: 600;
+      padding: 0.4em 0.75em;
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .palette-selector option { background: #fff; color: #000; }
+
+    .breadcrumbs {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      padding: var(--space-6) var(--space-6) 0;
+    }
+    .breadcrumbs .o-container { max-width: var(--measure); }
+    .breadcrumbs__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25em;
+    }
+    .breadcrumbs__item:not(:last-child)::after {
+      content: " → ";
+      margin-left: 0.25em;
+    }
+
+    .banner {
+      background: var(--surface);
+      padding: var(--space-8) var(--space-6);
+      border-bottom: 2px solid var(--border);
+    }
+    .banner__title {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .banner__subtitle {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      margin: 0.25em 0 0;
+    }
+
+    .archive-books {
+      padding: var(--space-8) var(--space-6);
+    }
+    .archive-books .o-container {
+      max-width: min(90ch, 100%);
+    }
+    .archive-books__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: var(--space-8);
+      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+      align-items: start;
+    }
+    .book-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: var(--space-6);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      height: 440px;
+      overflow: hidden;
+    }
+    .book-card__cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+      margin-bottom: var(--space-4);
+      flex-shrink: 0;
+    }
+    .book-card__title {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin: 0 0 0.25em;
+      line-height: 1.3;
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+    }
+    .book-card__meta {
+      font-family: var(--font-ui);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      color: var(--text-muted);
+      margin: 0 0 var(--space-4);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .book-card__actions {
+      margin-top: auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+    }
+    .book-card__actions .button {
+      padding: 0.4em 0.8em;
+      font-size: 0.85rem;
+    }
+
+    .button {
+      display: inline-block;
+      font-family: var(--font-ui);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 0.6em 1.2em;
+      background: var(--primary);
+      color: var(--text-on-primary);
+      border: 2px solid var(--border);
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .button:hover {
+      background: var(--primary-hover);
+    }
+    .button:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+    a:hover {
+      color: var(--link-hover);
+    }
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    .site-footer {
+      background: var(--footer-bg);
+      color: var(--brand-2);
+      padding: var(--space-8) var(--space-6);
+      margin-top: var(--space-8);
+      --link: var(--brand-2);
+      --link-hover: var(--brand-4);
+    }
+    .site-footer__nav {
+      font-family: var(--font-ui);
+      font-size: 0.9rem;
+      display: flex;
+      gap: var(--space-6);
+      flex-wrap: wrap;
+    }
+  </style>
+  <script>
+    window.PALETTES = {
+      actual: ['#000000','#fffffc','#beb7a4','#ff7f11','#ff3f00'],
+      A: ['#1a1a1a','#faf8f5','#e8e2d9','#c16b4a','#8b4513'],
+      B: ['#2c2c2c','#f8f9fa','#9ca3af','#4a6fa5','#2c3e50'],
+      C: ['#3d2c29','#f5f0e8','#c4b8a8','#b85c38','#6b7c3d'],
+      D: ['#000000','#fafafa','#a8a29e','#b87333','#8b5a2b'],
+      E: ['#2d2d2d','#fdfbf7','#e5dcc8','#b07d7d','#722f37'],
+      F: ['#1e3c2b','#f7f3ed','#8a9b6e','#d4a853','#8b6914'],
+      G: ['#2a2a2a','#f9f7f4','#b5a898','#7d6e5d','#4a3f35'],
+      H: ['#0f0f0f','#faf9f7','#d4cfc4','#6b5b4f','#4a3f36'],
+      I: ['#1a1f1e','#f8faf9','#b8c4c0','#3d7a6e','#2a5549'],
+      J: ['#1c1c1c','#f5f3ef','#c9c2b5','#8b7355','#5c4a3a'],
+      K: ['#1a1a1a','#f7f3ed','#d9d2c7','#b85c38','#8a3b12'],
+      L: ['#121212','#fafafa','#a8a29e','#b87333','#8c5a2b'],
+      M: ['#3d2c29','#f4efe7','#c7b8a3','#a45a3f','#6f3b2a'],
+      N: ['#2c2c2c','#f6f7f8','#b7bcc2','#4a6fa5','#2f4a73'],
+      O: ['#1e3c2b','#f5f1e8','#a8b39b','#c89f52','#8b6b2e'],
+      P: ['#2d2d2d','#fcf8f2','#e2d6c8','#b07d7d','#7a3e45'],
+      Q: ['#161616','#f8f6f1','#c9c3b5','#6b7c3d','#4f5c2a'],
+      R: ['#1f2a44','#f7f8fb','#c7ccd6','#9c5c3c','#6e3e2a']
+    };
+    window.applyPalette = function(id) {
+      var pal = window.PALETTES[id] || window.PALETTES[id.toLowerCase()];
+      if (!pal) return;
+      var s = document.getElementById('palette-override');
+      if (!s) { s = document.createElement('style'); s.id = 'palette-override'; document.head.appendChild(s); }
+      s.textContent = ':root{--brand-1:'+pal[0]+';--brand-2:'+pal[1]+';--brand-3:'+pal[2]+';--brand-4:'+pal[3]+';--brand-5:'+pal[4]+'}';
+    };
+    (function() {
+      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
+      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) { window.applyPalette(id); }
+    })();
+  </script>
+</head>
+<body>
+  <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
+  <header class="site-header">
+    <div class="o-container">
+      <a href="../index.html" class="site-header__brand">Daniel Arella</a>
+      <nav class="site-header__nav" aria-label="Principal">
+        <a href="../index.html">Inicio</a>
+        <a id="nav-to-palette" href="../index.html">Paleta</a>
+        <a href="preview-essay.html">Ensayo</a>
+        <a href="preview-books.html">Libros</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="palette-selector-bar">
+    <div class="o-container">
+      <span class="palette-selector-bar__label">Paleta:</span>
+      <label for="palette-select" class="u-visually-hidden">Cambiar paleta</label>
+      <select id="palette-select" class="palette-selector" aria-label="Seleccionar paleta">
+        <option value="actual">Actual</option>
+        <option value="A" selected>A — Tinta y papel</option>
+        <option value="B">B — Silencio frío</option>
+        <option value="C">C — Tierra y arcilla</option>
+        <option value="D">D — Monocromo cobre</option>
+        <option value="E">E — Atardecer suave</option>
+        <option value="F">F — Bosque y pergamino</option>
+        <option value="G">G — Ceniza y sepia</option>
+        <option value="H">H — Noche y lino</option>
+        <option value="I">I — Aurora</option>
+        <option value="J">J — Caliza y carbón</option>
+        <option value="K">K — Tinta editorial</option>
+        <option value="L">L — Monocromo + cobre</option>
+        <option value="M">M — Tierra bohemia</option>
+        <option value="N">N — Silencio frío (v)</option>
+        <option value="O">O — Pergamino y bosque</option>
+        <option value="P">P — Atardecer suave (v)</option>
+        <option value="Q">Q — Negro + oliva</option>
+        <option value="R">R — Tinta azul oscura</option>
+      </select>
+    </div>
+  </div>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a href="../index.html">Inicio</a></li>
+        <li class="breadcrumbs__item"><a id="breadcrumb-palette" href="../index.html">Paleta</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Libros</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="banner">
+      <div class="o-container">
+        <h1 class="banner__title">Libros</h1>
+        <p class="banner__subtitle">Archivo de libros</p>
+      </div>
+    </section>
+
+    <section class="archive-books">
+      <div class="o-container">
+        <ul class="archive-books__list">
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/portada-al-fondo-de-la-transparencia.png"
+              alt="Portada de Al fondo de la transparencia"
+              width="291"
+              height="465"
+            >
+            <h2 class="book-card__title">Al fondo de la transparencia</h2>
+            <p class="book-card__meta">2012 · El perro y la rana</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-al-fondo-de-la-transparencia.pdf" class="button" download title="Descargar PDF de Al fondo de la transparencia">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/relatos-pioneros-portada.jpeg"
+              alt="Portada de Relatos pioneros de la ciencia ficción latinoamericana"
+              width="1536"
+              height="2048"
+            >
+            <h2 class="book-card__title">Relatos pioneros de la ciencia ficción latinoamericana</h2>
+            <p class="book-card__meta">Selección y prólogo · El perro y la rana</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-relatos-pioneros-ciencia-ficcion-latinoamericana.pdf" class="button" download title="Descargar PDF de Relatos pioneros de la ciencia ficción latinoamericana">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/book-cover-placeholder.svg"
+              alt=""
+              width="200"
+              height="300"
+            >
+            <h2 class="book-card__title">El arcángel</h2>
+            <p class="book-card__meta">Poesía</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-el-arcangel.pdf" class="button" download title="Descargar PDF de El arcángel">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/book-cover-placeholder.svg"
+              alt=""
+              width="200"
+              height="300"
+            >
+            <h2 class="book-card__title">El andrógino ebrio en el Haitón</h2>
+            <p class="book-card__meta">Poesía</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-el-androgino-ebrio-en-el-haiton.pdf" class="button" download title="Descargar PDF de El andrógino ebrio en el Haitón">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/book-cover-placeholder.svg"
+              alt=""
+              width="200"
+              height="300"
+            >
+            <h2 class="book-card__title">Me vibra II</h2>
+            <p class="book-card__meta">Poesía</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-me-vibra-ii.pdf" class="button" download title="Descargar PDF de Me vibra II">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/book-cover-placeholder.svg"
+              alt=""
+              width="200"
+              height="300"
+            >
+            <h2 class="book-card__title">Rostro de nadie</h2>
+            <p class="book-card__meta">Poesía</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/daniel-arella-rostro-de-nadie.pdf" class="button" download title="Descargar PDF de Rostro de nadie">Descargar PDF</a>
+            </div>
+          </li>
+          <li class="book-card">
+            <img
+              class="book-card__cover"
+              src="assets/images/espacios-gelindo-casasola-portada.jpg"
+              alt="Portada de Espacios, Gelindo Casasola"
+              width="1152"
+              height="1376"
+            >
+            <h2 class="book-card__title">Espacios</h2>
+            <p class="book-card__meta">Gelindo Casasola · Compiladores: Stephen Marsh Planchart, Daniel Arella</p>
+            <div class="book-card__actions">
+              <a href="assets/pdf/espacios-gelindo-casasola-daniel-arella.pdf" class="button" download title="Descargar PDF de Espacios">Descargar PDF</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="o-container">
+      <nav class="site-footer__nav" aria-label="Pie">
+        <a href="#">Prensa</a>
+        <a href="#">Derechos y permisos</a>
+        <a href="#">Contacto</a>
+        <a href="#">Correspondencia</a>
+        <a href="#">Créditos del sitio</a>
+      </nav>
+    </div>
+  </footer>
+  <script>
+    (function() {
+      var sel = document.getElementById('palette-select');
+      var navLink = document.getElementById('nav-to-palette');
+      var breadcrumbLink = document.getElementById('breadcrumb-palette');
+      function updateLinks() {
+        var href = '../index.html#palette=' + sel.value;
+        if (navLink) navLink.href = href;
+        if (breadcrumbLink) breadcrumbLink.href = href;
+      }
+      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
+      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
+        sel.value = id;
+      }
+      updateLinks();
+      sel.addEventListener('change', function() {
+        window.applyPalette(sel.value);
+        location.hash = 'palette=' + sel.value;
+        updateLinks();
+      });
+    })();
+  </script>
+</body>
+</html>
