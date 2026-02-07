@@ -152,11 +152,11 @@
   <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
   <header class="site-header">
     <div class="o-container">
-      <a href="index.html" class="site-header__brand">Daniel Arella</a>
+      <a href="index.html" class="site-header__brand js-palette-persist" data-palette-href="index.html">Daniel Arella</a>
       <nav class="site-header__nav" aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a href="public/preview-essay.html">Ensayo</a>
-        <a href="public/preview-books.html">Libros</a>
+        <a href="index.html" class="js-palette-persist" data-palette-href="index.html">Inicio</a>
+        <a href="public/preview-essay.html" class="js-palette-persist" data-palette-href="public/preview-essay.html">Ensayo</a>
+        <a href="public/preview-books.html" class="js-palette-persist" data-palette-href="public/preview-books.html">Libros</a>
       </nav>
     </div>
   </header>
@@ -219,12 +219,12 @@
         <article class="poem-card">
           <h3 class="poem-card__title">Ensayo reciente</h3>
           <p class="poem-card__excerpt">La memoria y el cuerpo.</p>
-          <a href="public/preview-essay.html">Leer</a>
+          <a href="public/preview-essay.html" class="js-palette-persist" data-palette-href="public/preview-essay.html">Leer</a>
         </article>
         <article class="poem-card">
           <h3 class="poem-card__title">Libros</h3>
           <p class="poem-card__excerpt">Catálogo de la obra.</p>
-          <a href="public/preview-books.html">Explorar</a>
+          <a href="public/preview-books.html" class="js-palette-persist" data-palette-href="public/preview-books.html">Explorar</a>
         </article>
       </div>
     </section>
@@ -280,16 +280,18 @@
   <script>
     (function() {
       var sel = document.getElementById('palette-select');
-      var navLink = document.getElementById('nav-to-essay');
-      var cardLink = document.querySelector('.poem-card a[href="public/preview-essay.html"]');
       function updateLinks() {
         var val = sel.value;
-        var href = 'public/preview-essay.html#palette=' + val;
-        if (navLink) navLink.href = href;
-        if (cardLink) cardLink.href = href;
+        document.querySelectorAll('.js-palette-persist').forEach(function(a) {
+          var base = a.getAttribute('data-palette-href') || a.getAttribute('href').split('#')[0];
+          a.href = base + '#palette=' + val;
+        });
       }
       var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
-      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) { sel.value = id; }
+      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
+        sel.value = id;
+        window.applyPalette(id);
+      }
       updateLinks();
       sel.addEventListener('change', function() {
         window.applyPalette(sel.value);

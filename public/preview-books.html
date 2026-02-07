@@ -371,12 +371,12 @@
   <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
   <header class="site-header">
     <div class="o-container">
-      <a href="../index.html" class="site-header__brand">Daniel Arella</a>
+      <a href="../index.html" class="site-header__brand js-palette-persist" data-palette-href="../index.html">Daniel Arella</a>
       <nav class="site-header__nav" aria-label="Principal">
-        <a href="../index.html">Inicio</a>
-        <a id="nav-to-palette" href="../index.html">Paleta</a>
-        <a href="preview-essay.html">Ensayo</a>
-        <a href="preview-books.html">Libros</a>
+        <a href="../index.html" class="js-palette-persist" data-palette-href="../index.html">Inicio</a>
+        <a id="nav-to-palette" href="../index.html" class="js-palette-persist" data-palette-href="../index.html">Paleta</a>
+        <a href="preview-essay.html" class="js-palette-persist" data-palette-href="preview-essay.html">Ensayo</a>
+        <a href="preview-books.html" class="js-palette-persist" data-palette-href="preview-books.html">Libros</a>
       </nav>
     </div>
   </header>
@@ -412,8 +412,8 @@
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a href="../index.html">Inicio</a></li>
-        <li class="breadcrumbs__item"><a id="breadcrumb-palette" href="../index.html">Paleta</a></li>
+        <li class="breadcrumbs__item"><a href="../index.html" class="js-palette-persist" data-palette-href="../index.html">Inicio</a></li>
+        <li class="breadcrumbs__item"><a id="breadcrumb-palette" href="../index.html" class="js-palette-persist" data-palette-href="../index.html">Paleta</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">Libros</span></li>
       </ol>
     </div>
@@ -547,16 +547,17 @@
   <script>
     (function() {
       var sel = document.getElementById('palette-select');
-      var navLink = document.getElementById('nav-to-palette');
-      var breadcrumbLink = document.getElementById('breadcrumb-palette');
       function updateLinks() {
-        var href = '../index.html#palette=' + sel.value;
-        if (navLink) navLink.href = href;
-        if (breadcrumbLink) breadcrumbLink.href = href;
+        var val = sel.value;
+        document.querySelectorAll('.js-palette-persist').forEach(function(a) {
+          var base = a.getAttribute('data-palette-href') || a.getAttribute('href').split('#')[0];
+          a.href = base + '#palette=' + val;
+        });
       }
       var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
       if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
         sel.value = id;
+        window.applyPalette(id);
       }
       updateLinks();
       sel.addEventListener('change', function() {
