@@ -47,7 +47,7 @@ Imagina el sitio así:
     Essay card
 --------------------------
 Text: Black
-Links: Vivid Tangerine → Blazing Flame en hover (sin subrayado por defecto; subrayado en hover)
+Links: Vivid Tangerine → Blazing Flame en hover (sin subrayado)
 Buttons: Vivid Tangerine con texto Black → Blazing Flame en hover
 ```
 
@@ -198,7 +198,7 @@ Los componentes solo consumen roles, nunca hex directo.
 - **Texto sobre fondo claro:** Black sobre Porcelain cumple AA sobrado.
 - **Vivid Tangerine** como texto sobre Porcelain no alcanza AA.
 - **Blazing Flame** como texto sobre Porcelain queda cerca pero no alcanza AA para texto normal.
-- **Solución:** Enlaces con color naranja. Sin subrayado por defecto; subrayado en hover para feedback. Se distinguen por color respecto al texto.
+- **Solución:** Enlaces con color naranja. Sin subrayado. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 ```css
 a {
@@ -207,9 +207,6 @@ a {
 }
 a:hover {
   color: var(--link-hover);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
 }
 :focus-visible {
   outline: 3px solid var(--focus);
@@ -282,13 +279,10 @@ Esto permite: Dark mode, Rebranding, Tema alterno — sin tocar componentes.
 }
 .poem-card__link:hover {
   color: var(--link-hover);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.18em;
 }
 ```
 
-No hay estilos arbitrarios. Todo fluye desde los tokens. Enlaces sin subrayado por defecto; subrayado en hover.
+No hay estilos arbitrarios. Todo fluye desde los tokens. Enlaces sin subrayado.
 
 ---
 
