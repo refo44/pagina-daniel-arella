@@ -202,8 +202,36 @@
       font-weight: 600;
       color: inherit;
       cursor: pointer;
+      position: relative;
     }
     .dark-toggle input { cursor: pointer; }
+    .dark-toggle::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(0.5em);
+      padding: 0.5em 0.75em;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 400;
+      white-space: normal;
+      max-width: 220px;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
+      pointer-events: none;
+      z-index: 1001;
+    }
+    .dark-toggle:hover::after,
+    .dark-toggle:focus-within::after {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0.25em);
+    }
 
     .breadcrumbs {
       font-family: var(--font-ui);
@@ -413,7 +441,7 @@
   <div class="palette-selector-bar">
     <div class="o-container">
       <span class="palette-selector-bar__label">Paleta:</span>
-      <label class="dark-toggle" title="Fondo oscuro y texto claro. Útil en ambientes con poca luz o de noche para reducir el brillo de la pantalla.">
+      <label class="dark-toggle" data-tooltip="Fondo oscuro y texto claro. Útil en ambientes con poca luz o de noche para reducir el brillo de la pantalla.">
         <input type="checkbox" id="dark-toggle" aria-label="Modo oscuro">
         <span>Modo oscuro</span>
       </label>
