@@ -6,10 +6,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel Arella — La memoria y el cuerpo</title>
   <meta name="description" content="Ensayo sobre la memoria, el cuerpo y el tiempo en la obra de Daniel Arella.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-400-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: italic;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-400-italic.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Fraunces';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/fraunces-latin-600-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Source Sans 3';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url('assets/fonts/source-sans-3-latin-400-normal.woff2') format('woff2');
+    }
+    @font-face {
+      font-family: 'Source Sans 3';
+      font-style: normal;
+      font-weight: 600;
+      font-display: swap;
+      src: url('assets/fonts/source-sans-3-latin-600-normal.woff2') format('woff2');
+    }
     :root {
       --brand-1: #1a1a1a;
       --brand-2: #faf8f5;
@@ -353,10 +385,10 @@
   <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
   <header class="site-header">
     <div class="o-container">
-      <a href="index.html" class="site-header__brand">Daniel Arella</a>
+      <a href="../index.html" class="site-header__brand">Daniel Arella</a>
       <nav class="site-header__nav" aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a id="nav-to-palette" href="index.html">Paleta</a>
+        <a href="../index.html">Inicio</a>
+        <a id="nav-to-palette" href="../index.html">Paleta</a>
       </nav>
     </div>
   </header>
@@ -392,8 +424,8 @@
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a href="index.html">Inicio</a></li>
-        <li class="breadcrumbs__item"><a id="breadcrumb-palette" href="index.html">Paleta</a></li>
+        <li class="breadcrumbs__item"><a href="../index.html">Inicio</a></li>
+        <li class="breadcrumbs__item"><a id="breadcrumb-palette" href="../index.html">Paleta</a></li>
         <li class="breadcrumbs__item"><a href="#">Ensayos</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">La memoria y el cuerpo</span></li>
       </ol>
@@ -474,7 +506,7 @@
       var navLink = document.getElementById('nav-to-palette');
       var breadcrumbLink = document.getElementById('breadcrumb-palette');
       function updateLinks() {
-        var href = 'index.html#palette=' + sel.value;
+        var href = '../index.html#palette=' + sel.value;
         if (navLink) navLink.href = href;
         if (breadcrumbLink) breadcrumbLink.href = href;
       }
