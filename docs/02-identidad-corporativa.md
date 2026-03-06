@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 1.7**
+**Versión 1.8**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -26,32 +26,44 @@ El sitio debe sentirse como una biblioteca íntima, no como una revista ni como 
 
 Solo existen cinco colores reales. No hay grises, no hay degradados, no hay extensiones.
 
+**Regla absoluta:** No puede existir ningún otro color que no esté en la paleta. Fondos, texto, bordes, sombras (con alpha de un color de la paleta), iconos, estados hover/focus — todo proviene exclusivamente de estos cinco hex.
+
+**Paleta: Silencio frío**
+
 | Nombre | Hex | Uso principal |
 |--------|-----|----------------|
-| Black | #000000 | Cabecera, pie, texto |
-| Porcelain | #fffffc | Fondos, superficies |
-| Khaki Beige | #beb7a4 | Superficies (cards), texto secundario, bordes |
-| Vivid Tangerine | #ff7f11 | Acento base: enlaces, botones, foco |
-| Blazing Flame | #ff3f00 | Acento intenso: hover, énfasis |
+| Charcoal | #2c2c2c | Cabecera, pie, texto |
+| Off-white | #f8f9fa | Fondos, superficies |
+| Slate Gray | #9ca3af | Superficies (cards), texto secundario, bordes |
+| Steel Blue | #4a6fa5 | Acento base: enlaces, botones, foco |
+| Deep Slate | #2c3e50 | Acento intenso: hover, énfasis |
 
 ### Guía visual
 
 Imagina el sitio así:
 
 ```
-[ Header: Black ]
+[ Header: Charcoal ]
     Daniel Arella
 --------------------------
-[ Surface: Khaki Beige ]
+[ Surface: Slate Gray ]
     Poem card
     Essay card
 --------------------------
-Text: Black
-Links: Vivid Tangerine → Blazing Flame en hover (sin subrayado)
-Buttons: Vivid Tangerine con texto Black → Blazing Flame en hover
+Text: Charcoal
+Links: Steel Blue → Deep Slate en hover (sin subrayado)
+Buttons: Steel Blue con texto Off-white → Deep Slate en hover
 ```
 
-Todo se construye con estas cinco tintas.
+Todo se construye con estas cinco tintas. Fondos y texto siempre provienen de la paleta.
+
+| Combinación | Fondo | Texto |
+|-------------|-------|-------|
+| Página general | Off-white | Charcoal |
+| Cabecera / pie | Charcoal | Off-white |
+| Cards / superficies | Slate Gray | Charcoal |
+| Botones / CTAs | Steel Blue | Off-white |
+| Hover botones | Deep Slate | Off-white |
 
 ---
 
@@ -158,11 +170,11 @@ Esto es una de las decisiones más importantes.
 Los únicos colores reales. El orden es semántico: 1–3 neutros, 4–5 acentos (4 = base, 5 = más intenso).
 
 ```css
---brand-1: #000000;  /* Black - neutro oscuro principal */
---brand-2: #fffffc;  /* Porcelain - neutro claro base */
---brand-3: #beb7a4;  /* Khaki Beige - neutro medio: superficies, bordes, texto secundario */
---brand-4: #ff7f11;  /* Vivid Tangerine - acento base de interacción */
---brand-5: #ff3f00;  /* Blazing Flame - acento intenso (hover, énfasis) */
+--brand-1: #2c2c2c;  /* Charcoal - neutro oscuro principal */
+--brand-2: #f8f9fa;  /* Off-white - neutro claro base */
+--brand-3: #9ca3af;  /* Slate Gray - neutro medio: superficies, bordes, texto secundario */
+--brand-4: #4a6fa5;  /* Steel Blue - acento base de interacción */
+--brand-5: #2c3e50;  /* Deep Slate - acento intenso (hover, énfasis) */
 ```
 
 ### Capa 2: Roles semánticos
@@ -171,34 +183,34 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 ```css
 /* Semantic roles */
---bg: var(--brand-2);           /* Porcelain */
---text: var(--brand-1);         /* Black */
---text-muted: var(--brand-3);  /* Khaki Beige - metadatos, UI secundaria (evita opacity) */
---surface: var(--brand-3);      /* Khaki Beige - cards, superficies */
---border: var(--brand-3);       /* Khaki Beige - bordes suaves, no Black (evita dureza) */
+--bg: var(--brand-2);           /* Off-white */
+--text: var(--brand-1);         /* Charcoal */
+--text-muted: var(--brand-3);  /* Slate Gray - metadatos, UI secundaria (evita opacity) */
+--surface: var(--brand-3);      /* Slate Gray - cards, superficies */
+--border: var(--brand-3);       /* Slate Gray - bordes suaves, no Charcoal (evita dureza) */
 
---link: var(--brand-4);         /* Vivid Tangerine - acento base */
---link-hover: var(--brand-5);   /* Blazing Flame - acento intenso */
---focus: var(--brand-4);        /* Vivid Tangerine - más sereno para lectura larga */
+--link: var(--brand-4);         /* Steel Blue - acento base */
+--link-hover: var(--brand-5);   /* Deep Slate - acento intenso */
+--focus: var(--brand-4);        /* Steel Blue - más sereno para lectura larga */
 
---header-bg: var(--brand-1);    /* Black */
---footer-bg: var(--brand-1);    /* Black */
+--header-bg: var(--brand-1);    /* Charcoal */
+--footer-bg: var(--brand-1);    /* Charcoal */
 
---primary: var(--brand-4);      /* Vivid Tangerine - acento base */
---primary-hover: var(--brand-5); /* Blazing Flame - acento intenso */
---text-on-primary: var(--brand-1); /* Black - texto sobre botones/CTAs */
+--primary: var(--brand-4);      /* Steel Blue - acento base */
+--primary-hover: var(--brand-5); /* Deep Slate - acento intenso */
+--text-on-primary: var(--brand-2); /* Off-white - texto sobre botones/CTAs */
 ```
 
 Los componentes solo consumen roles, nunca hex directo.
 
-**Surface y separación:** Porcelain y Khaki Beige son cercanos en valor. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
+**Surface y separación:** Off-white y Slate Gray contrastan bien. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
 
 ### Accesibilidad de contraste
 
-- **Texto sobre fondo claro:** Black sobre Porcelain cumple AA sobrado.
-- **Vivid Tangerine** como texto sobre Porcelain no alcanza AA.
-- **Blazing Flame** como texto sobre Porcelain queda cerca pero no alcanza AA para texto normal.
-- **Solución:** Enlaces con color naranja. Sin subrayado. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
+- **Texto sobre fondo claro:** Charcoal sobre Off-white cumple AA sobrado.
+- **Steel Blue** como texto sobre Off-white: verificar contraste AA.
+- **Deep Slate** como texto sobre Off-white: verificar contraste AA.
+- **Solución:** Enlaces con color azul. Sin subrayado. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 ```css
 a {
@@ -216,7 +228,7 @@ a:hover {
 
 **Focus:** En modo claro y oscuro, `--focus: var(--brand-4)` mantiene calma editorial. Si se prefiere focus más intenso (brand-5), usar `box-shadow` con alpha en lugar de outline sólido.
 
-**Botones y CTAs:** Contraste seguro = texto Black sobre fondos naranjas.
+**Botones y CTAs:** Contraste seguro = texto Off-white sobre fondos azules (Steel Blue / Deep Slate).
 
 ```css
 .button {
@@ -290,20 +302,20 @@ No hay estilos arbitrarios. Todo fluye desde los tokens. Enlaces sin subrayado.
 
 No se añaden colores. Solo se reasignan roles (`prefers-color-scheme: dark`). Opcional según `22-tendencias-ux-ui-sistema-editorial`.
 
-**Regla de focus:** En modo claro, focus = brand-4 (más sereno) o brand-5 (más intenso) según accesibilidad y fatiga visual. En modo oscuro, focus = brand-4 por legibilidad y menor agresividad sobre fondo negro.
+**Regla de focus:** En modo claro, focus = brand-4 (más sereno) o brand-5 (más intenso) según accesibilidad y fatiga visual. En modo oscuro, focus = brand-4 por legibilidad y menor agresividad sobre fondo oscuro.
 
-**Surface en dark mode:** Khaki Beige sobre negro crea contraste fuerte y deliberado; tarjetas como papel sobre fondo oscuro. Decisión estética clara, no error.
+**Surface en dark mode:** Slate Gray sobre Charcoal crea contraste moderado; tarjetas como papel sobre fondo oscuro. Decisión estética clara, no error.
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: var(--brand-1);       /* Black */
-    --text: var(--brand-2);     /* Porcelain */
+    --bg: var(--brand-1);       /* Charcoal */
+    --text: var(--brand-2);     /* Off-white */
     --text-muted: var(--brand-3);
-    --surface: var(--brand-3);  /* Khaki Beige - protagonista sobre negro */
-    --border: var(--brand-2);   /* Porcelain */
+    --surface: var(--brand-3);  /* Slate Gray - protagonista sobre oscuro */
+    --border: var(--brand-2);   /* Off-white */
 
-    --link: var(--brand-4);     /* Vivid Tangerine - contrasta bien en negro */
+    --link: var(--brand-4);     /* Steel Blue - contrasta bien en oscuro */
     --link-hover: var(--brand-5);
     --focus: var(--brand-4);    /* menor agresividad en lectura oscura */
 
@@ -374,5 +386,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 1.7  
-**Identidad:** Black, Porcelain, Khaki Beige, Vivid Tangerine, Blazing Flame.
+**Versión del documento:** 1.8  
+**Identidad:** Silencio frío — Charcoal, Off-white, Slate Gray, Steel Blue, Deep Slate.

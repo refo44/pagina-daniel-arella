@@ -43,11 +43,11 @@
       src: url('public/assets/fonts/source-sans-3-latin-600-normal.woff2') format('woff2');
     }
     :root {
-      --brand-1: #1a1a1a;
-      --brand-2: #faf8f5;
-      --brand-3: #e8e2d9;
-      --brand-4: #c16b4a;
-      --brand-5: #8b4513;
+      --brand-1: #2c2c2c;
+      --brand-2: #f8f9fa;
+      --brand-3: #9ca3af;
+      --brand-4: #4a6fa5;
+      --brand-5: #2c3e50;
       --bg: var(--brand-2);
       --text: var(--brand-1);
       --text-muted: var(--brand-3);
@@ -60,7 +60,7 @@
       --footer-bg: var(--brand-1);
       --primary: var(--brand-4);
       --primary-hover: var(--brand-5);
-      --text-on-primary: var(--brand-1);
+      --text-on-primary: var(--brand-2);
       --font-body: 'Fraunces', serif;
       --font-heading: 'Fraunces', serif;
       --font-ui: 'Source Sans 3', sans-serif;
@@ -79,11 +79,6 @@
     .site-header .o-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--measure); }
     .site-header__brand { font-family: var(--font-heading); font-size: 1.25rem; font-weight: 600; }
     .site-header__nav { display: flex; gap: var(--space-6); font-family: var(--font-ui); font-size: 0.9rem; }
-    .palette-selector-bar { position: sticky; top: 0; z-index: 1000; width: fit-content; background: #ff1744; color: #fff; padding: 0.5rem var(--space-6); border-bottom: 3px solid #000; border-radius: 0 0 6px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
-    .palette-selector-bar .o-container { display: inline-flex; align-items: center; gap: 0.75rem; max-width: var(--measure); }
-    .palette-selector-bar__label { font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600; }
-    .palette-selector { font-family: var(--font-ui); font-size: 0.9rem; font-weight: 600; padding: 0.4em 0.75em; background: #fff; color: #000; border: 2px solid #000; border-radius: 4px; cursor: pointer; }
-    .palette-selector option { background: #fff; color: #000; }
     .site-header { --link: var(--brand-2); --link-hover: var(--brand-4); }
     .banner { background: var(--surface); padding: var(--space-8) var(--space-6); border-bottom: 2px solid var(--border); }
     .banner__title { font-family: var(--font-heading); font-size: 1.5rem; margin: 0; }
@@ -101,7 +96,7 @@
     .form__group { margin-bottom: var(--space-6); }
     .form__label { display: block; font-family: var(--font-ui); font-size: 0.9rem; margin-bottom: 0.25em; }
     .form__input, .form__textarea { width: 100%; max-width: 40ch; font-family: var(--font-ui); font-size: 1rem; padding: 0.5em 0.75em; border: 2px solid var(--border); background: var(--bg); }
-    .form__input:focus, .form__textarea:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px rgb(255 127 17 / 0.30); }
+    .form__input:focus, .form__textarea:focus { outline: none; border-color: var(--focus); box-shadow: 0 0 0 3px rgb(74 111 165 / 0.30); }
     .form__textarea { min-height: 6em; resize: vertical; }
     .site-footer { background: var(--footer-bg); color: var(--brand-2); padding: var(--space-8) var(--space-6); margin-top: var(--space-8); --link: var(--brand-2); --link-hover: var(--brand-4); }
     .site-footer__nav { font-family: var(--font-ui); font-size: 0.9rem; display: flex; gap: var(--space-6); flex-wrap: wrap; }
@@ -113,147 +108,25 @@
     .swatch--4 { background: var(--brand-4); }
     .swatch--5 { background: var(--brand-5); }
 
-    /* Dark mode (reeasigna roles, sin nuevas paletas) */
-    html.dark-mode {
-      --bg: var(--brand-1);
-      --text: var(--brand-2);
-      --text-muted: var(--brand-3);
-      --surface: var(--brand-3);
-      --border: var(--brand-2);
-      --link: var(--brand-4);
-      --link-hover: var(--brand-5);
-      --focus: var(--brand-4);
-      --header-bg: var(--brand-1);
-      --footer-bg: var(--brand-1);
-      --primary: var(--brand-4);
-      --primary-hover: var(--brand-5);
-      --text-on-primary: var(--brand-1);
-    }
-
-    .dark-toggle {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5em;
-      font-family: var(--font-ui);
-      font-size: 0.9rem;
-      font-weight: 600;
-      color: inherit;
-      cursor: pointer;
-      position: relative;
-    }
-    .dark-toggle input { cursor: pointer; }
-    .dark-toggle::after {
-      content: attr(data-tooltip);
-      position: absolute;
-      top: 100%;
-      left: 50%;
-      transform: translateX(-50%) translateY(0.5em);
-      padding: 0.5em 0.75em;
-      background: #1a1a1a;
-      color: #fff;
-      font-size: 0.8rem;
-      font-weight: 400;
-      white-space: normal;
-      max-width: 220px;
-      border-radius: 4px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.15s, visibility 0.15s, transform 0.15s;
-      pointer-events: none;
-      z-index: 1001;
-    }
-    .dark-toggle:hover::after,
-    .dark-toggle:focus-within::after {
-      opacity: 1;
-      visibility: visible;
-      transform: translateX(-50%) translateY(0.25em);
-    }
   </style>
-  <script>
-    window.PALETTES = {
-      actual: ['#000000','#fffffc','#beb7a4','#ff7f11','#ff3f00'],
-      A: ['#1a1a1a','#faf8f5','#e8e2d9','#c16b4a','#8b4513'],
-      B: ['#2c2c2c','#f8f9fa','#9ca3af','#4a6fa5','#2c3e50'],
-      C: ['#3d2c29','#f5f0e8','#c4b8a8','#b85c38','#6b7c3d'],
-      D: ['#000000','#fafafa','#a8a29e','#b87333','#8b5a2b'],
-      E: ['#2d2d2d','#fdfbf7','#e5dcc8','#b07d7d','#722f37'],
-      F: ['#1e3c2b','#f7f3ed','#8a9b6e','#d4a853','#8b6914'],
-      G: ['#2a2a2a','#f9f7f4','#b5a898','#7d6e5d','#4a3f35'],
-      H: ['#0f0f0f','#faf9f7','#d4cfc4','#6b5b4f','#4a3f36'],
-      I: ['#1a1f1e','#f8faf9','#b8c4c0','#3d7a6e','#2a5549'],
-      J: ['#1c1c1c','#f5f3ef','#c9c2b5','#8b7355','#5c4a3a'],
-      K: ['#1a1a1a','#f7f3ed','#d9d2c7','#b85c38','#8a3b12'],
-      L: ['#121212','#fafafa','#a8a29e','#b87333','#8c5a2b'],
-      M: ['#3d2c29','#f4efe7','#c7b8a3','#a45a3f','#6f3b2a'],
-      N: ['#2c2c2c','#f6f7f8','#b7bcc2','#4a6fa5','#2f4a73'],
-      O: ['#1e3c2b','#f5f1e8','#a8b39b','#c89f52','#8b6b2e'],
-      P: ['#2d2d2d','#fcf8f2','#e2d6c8','#b07d7d','#7a3e45'],
-      Q: ['#161616','#f8f6f1','#c9c3b5','#6b7c3d','#4f5c2a'],
-      R: ['#1f2a44','#f7f8fb','#c7ccd6','#9c5c3c','#6e3e2a']
-    };
-    window.applyPalette = function(id) {
-      var pal = window.PALETTES[id] || window.PALETTES[id.toLowerCase()];
-      if (!pal) return;
-      var s = document.getElementById('palette-override');
-      if (!s) { s = document.createElement('style'); s.id = 'palette-override'; document.head.appendChild(s); }
-      s.textContent = ':root{--brand-1:'+pal[0]+';--brand-2:'+pal[1]+';--brand-3:'+pal[2]+';--brand-4:'+pal[3]+';--brand-5:'+pal[4]+'}';
-    };
-    (function() {
-      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
-      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) { window.applyPalette(id); }
-    })();
-  </script>
 </head>
 <body>
   <a href="#main" class="u-visually-hidden">Saltar al contenido</a>
   <header class="site-header">
     <div class="o-container">
-      <a href="index.html" class="site-header__brand js-palette-persist" data-palette-href="index.html">Daniel Arella</a>
+      <a href="index.html" class="site-header__brand">Daniel Arella</a>
       <nav class="site-header__nav" aria-label="Principal">
-        <a href="index.html" class="js-palette-persist" data-palette-href="index.html">Inicio</a>
-        <a href="public/preview-essay.html" class="js-palette-persist" data-palette-href="public/preview-essay.html">Ensayo</a>
-        <a href="public/preview-books.html" class="js-palette-persist" data-palette-href="public/preview-books.html">Libros</a>
+        <a href="index.html">Inicio</a>
+        <a href="public/preview-essay.html">Ensayo</a>
+        <a href="public/preview-books.html">Libros</a>
       </nav>
     </div>
   </header>
 
-  <div class="palette-selector-bar">
-    <div class="o-container">
-      <span class="palette-selector-bar__label">Paleta:</span>
-      <label for="palette-select" class="u-visually-hidden">Cambiar paleta</label>
-      <label class="dark-toggle" data-tooltip="Fondo oscuro y texto claro. Útil en ambientes con poca luz o de noche para reducir el brillo de la pantalla.">
-        <input type="checkbox" id="dark-toggle" aria-label="Modo oscuro">
-        <span>Modo oscuro</span>
-      </label>
-      <select id="palette-select" class="palette-selector" aria-label="Seleccionar paleta">
-        <option value="actual">Actual</option>
-        <option value="A" selected>A — Tinta y papel</option>
-        <option value="B">B — Silencio frío</option>
-        <option value="C">C — Tierra y arcilla</option>
-        <option value="D">D — Monocromo cobre</option>
-        <option value="E">E — Atardecer suave</option>
-        <option value="F">F — Bosque y pergamino</option>
-        <option value="G">G — Ceniza y sepia</option>
-        <option value="H">H — Noche y lino</option>
-        <option value="I">I — Aurora</option>
-        <option value="J">J — Caliza y carbón</option>
-        <option value="K">K — Tinta editorial</option>
-        <option value="L">L — Monocromo + cobre</option>
-        <option value="M">M — Tierra bohemia</option>
-        <option value="N">N — Silencio frío (v)</option>
-        <option value="O">O — Pergamino y bosque</option>
-        <option value="P">P — Atardecer suave (v)</option>
-        <option value="Q">Q — Negro + oliva</option>
-        <option value="R">R — Tinta azul oscura</option>
-      </select>
-    </div>
-  </div>
-
   <section class="banner">
     <div class="o-container">
       <h1 class="banner__title">Vista previa de paleta</h1>
-      <p class="banner__subtitle">Black, Porcelain, Khaki Beige, Vivid Tangerine, Blazing Flame</p>
+      <p class="banner__subtitle">Silencio frío — Charcoal, Off-white, Slate Gray, Steel Blue, Deep Slate</p>
     </div>
   </section>
 
@@ -261,11 +134,11 @@
     <section>
       <h2>Paleta de colores</h2>
       <div class="palette-swatches">
-        <div class="swatch swatch--1" title="Black"></div>
-        <div class="swatch swatch--2" title="Porcelain"></div>
-        <div class="swatch swatch--3" title="Khaki Beige"></div>
-        <div class="swatch swatch--4" title="Vivid Tangerine"></div>
-        <div class="swatch swatch--5" title="Blazing Flame"></div>
+        <div class="swatch swatch--1" title="Charcoal"></div>
+        <div class="swatch swatch--2" title="Off-white"></div>
+        <div class="swatch swatch--3" title="Slate Gray"></div>
+        <div class="swatch swatch--4" title="Steel Blue"></div>
+        <div class="swatch swatch--5" title="Deep Slate"></div>
       </div>
     </section>
 
@@ -280,12 +153,12 @@
         <article class="poem-card">
           <h3 class="poem-card__title">Ensayo reciente</h3>
           <p class="poem-card__excerpt">La memoria y el cuerpo.</p>
-          <a href="public/preview-essay.html" class="js-palette-persist" data-palette-href="public/preview-essay.html">Leer</a>
+          <a href="public/preview-essay.html">Leer</a>
         </article>
         <article class="poem-card">
           <h3 class="poem-card__title">Libros</h3>
           <p class="poem-card__excerpt">Catálogo de la obra.</p>
-          <a href="public/preview-books.html" class="js-palette-persist" data-palette-href="public/preview-books.html">Explorar</a>
+          <a href="public/preview-books.html">Explorar</a>
         </article>
       </div>
     </section>
@@ -338,60 +211,5 @@
       </nav>
     </div>
   </footer>
-  <script>
-    (function() {
-      var sel = document.getElementById('palette-select');
-      var darkCheck = document.getElementById('dark-toggle');
-
-      function applyDarkMode(on) {
-        if (on) {
-          document.documentElement.classList.add('dark-mode');
-          try { localStorage.setItem('darkMode', '1'); } catch (e) {}
-        } else {
-          document.documentElement.classList.remove('dark-mode');
-          try { localStorage.setItem('darkMode', '0'); } catch (e) {}
-        }
-      }
-
-      function updateLinks() {
-        var val = sel.value;
-        var darkMode = darkCheck && darkCheck.checked;
-        document.querySelectorAll('.js-palette-persist').forEach(function(a) {
-          var base = (a.getAttribute('data-palette-href') || a.getAttribute('href')).split('#')[0].split('?')[0];
-          a.href = base + (darkMode ? '?dark=1' : '') + '#palette=' + val;
-        });
-      }
-
-      var id = (location.hash.match(/^#palette=(.+)$/) || [])[1] || (new URLSearchParams(location.search)).get('palette');
-      if (id && (window.PALETTES[id] || window.PALETTES[id.toLowerCase()])) {
-        sel.value = id;
-        window.applyPalette(id);
-      }
-
-      var darkParam = (new URLSearchParams(location.search)).get('dark');
-      var darkStored = false;
-      try { darkStored = localStorage.getItem('darkMode') === '1'; } catch (e) {}
-      var useDark = darkParam === '1' || (darkParam !== '0' && darkStored);
-      if (darkCheck) {
-        darkCheck.checked = useDark;
-        applyDarkMode(useDark);
-      }
-
-      updateLinks();
-
-      sel.addEventListener('change', function() {
-        window.applyPalette(sel.value);
-        location.hash = 'palette=' + sel.value;
-        updateLinks();
-      });
-
-      if (darkCheck) {
-        darkCheck.addEventListener('change', function() {
-          applyDarkMode(darkCheck.checked);
-          updateLinks();
-        });
-      }
-    })();
-  </script>
 </body>
 </html>
