@@ -2,17 +2,18 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
+  <base href="/pagina-daniel-arella/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Daniel Arella</title>
   <meta name="description" content="Biblioteca viva de la obra de Daniel Arella: poemas, ensayos, libros, relatos y talleres.">
-  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/main.js" defer></script>
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body data-nav="home">
+<body data-nav="home" data-site-prefix="pagina-daniel-arella">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="/parts/header.html"></div>
+  <div data-include="parts/header.html"></div>
 
   <main id="main">
     <section class="hero-home">
@@ -22,8 +23,8 @@
           <h1>Daniel Arella: poesía, ensayo, narrativa y edición.</h1>
           <p class="hero-home__lede">Poeta, ensayista, narrador y editor. Licenciado en Letras, magíster en Filosofía y autor de libros de poesía, antologías y trabajo crítico en torno a la literatura latinoamericana.</p>
           <div class="button-row">
-            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="/book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
-            <a class="button-link" data-route="archivo/" href="/archivo/">Explorar archivo</a>
+            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+            <a class="button-link" data-route="archivo/" href="archivo/">Explorar archivo</a>
           </div>
         </div>
 
@@ -51,7 +52,7 @@
             <h3 class="card__title">Rostro de nadie</h3>
             <p class="card__excerpt">Poema incluido en la selección de Archivo Venezuela 2024 y también presente en el libro del mismo nombre.</p>
             <div class="card__actions">
-              <a class="button" data-route="poem/rostro-de-nadie.html" href="/poem/rostro-de-nadie.html">Leer el poema</a>
+              <a class="button" data-route="poem/rostro-de-nadie.html" href="poem/rostro-de-nadie.html">Leer el poema</a>
             </div>
           </article>
 
@@ -60,7 +61,7 @@
             <h3 class="card__title">Relatos pioneros de la ciencia ficción latinoamericana</h3>
             <p class="card__excerpt">Selección y prólogo de Daniel Arella, con edición impresa y materiales de presentación y portada en el archivo fuente.</p>
             <div class="card__actions">
-              <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="/book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+              <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
             </div>
           </article>
 
@@ -69,7 +70,7 @@
             <h3 class="card__title">Trayectoria, premios y trabajo editorial</h3>
             <p class="card__excerpt">Biografía larga, formación, premios y participación en revistas, congresos y talleres a partir del material documental del autor.</p>
             <div class="card__actions">
-              <a class="button" data-route="sobre-el-autor/" href="/sobre-el-autor/">Abrir perfil</a>
+              <a class="button" data-route="sobre-el-autor/" href="sobre-el-autor/">Abrir perfil</a>
             </div>
           </article>
         </div>
@@ -85,10 +86,10 @@
           </div>
           <p class="u-max-readable">El archivo reúne libros de poesía, antologías, poemas, páginas de prensa y recorridos temáticos construidos a partir de la biografía, CV, portadas, fotografías y PDFs reales del autor.</p>
           <div class="button-row">
-            <a class="button-link" data-route="poem/" href="/poem/">Poemas</a>
-            <a class="button-link" data-route="book/" href="/book/">Libros</a>
-            <a class="button-link" data-route="prensa/" href="/prensa/">Prensa</a>
-            <a class="button-link" data-route="sobre-el-autor/" href="/sobre-el-autor/">Sobre el autor</a>
+            <a class="button-link" data-route="poem/" href="poem/">Poemas</a>
+            <a class="button-link" data-route="book/" href="book/">Libros</a>
+            <a class="button-link" data-route="prensa/" href="prensa/">Prensa</a>
+            <a class="button-link" data-route="sobre-el-autor/" href="sobre-el-autor/">Sobre el autor</a>
           </div>
         </div>
 
@@ -113,7 +114,7 @@
             </div>
             <div class="button-row">
               <button class="button" type="submit">Recibir nuevos textos</button>
-              <a class="button-link" data-route="correspondencia/" href="/correspondencia/">Abrir correspondencia</a>
+              <a class="button-link" data-route="correspondencia/" href="correspondencia/">Abrir correspondencia</a>
             </div>
           </form>
           <p class="form-status" data-form-status aria-live="polite"></p>
@@ -122,6 +123,6 @@
     </section>
   </main>
 
-  <div data-include="/parts/footer.html"></div>
+  <div data-include="parts/footer.html"></div>
 </body>
 </html>

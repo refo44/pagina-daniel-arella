@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+  <base href="/pagina-daniel-arella/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Correspondencia | Daniel Arella</title>
   <meta name="description" content="Formulario de correspondencia para recibir nuevos textos de Daniel Arella.">
-  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="/assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="/css/main.css">
-  <script src="/js/main.js" defer></script>
+  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/main.js" defer></script>
 </head>
-<body data-nav="correspondencia">
+<body data-site-prefix="pagina-daniel-arella" data-nav="correspondencia">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="/parts/header.html"></div>
+  <div data-include="parts/header.html"></div>
 
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a data-route="" href="/">Inicio</a></li>
+        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">Correspondencia</span></li>
       </ol>
     </div>
@@ -38,7 +39,7 @@
         </div>
         <div class="button-row">
           <button class="button" type="submit">Recibir nuevos textos</button>
-          <a class="button-link" data-route="" href="/">Volver</a>
+          <a class="button-link" data-route="" href="">Volver</a>
         </div>
       </form>
 
@@ -46,6 +47,6 @@
     </div>
   </main>
 
-  <div data-include="/parts/footer.html"></div>
+  <div data-include="parts/footer.html"></div>
 </body>
 </html>
