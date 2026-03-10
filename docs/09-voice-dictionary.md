@@ -1,7 +1,7 @@
 # Daniel Arella — Voice Dictionary
 
 **Léxico editorial y UX del sistema**  
-**Versión 2.2**
+**Versión 2.3**
 
 Este diccionario define qué palabras existen dentro del territorio editorial de Daniel Arella y cuáles no pueden existir jamás. No es un diccionario literario. Es el léxico del espacio donde vive la obra.
 
@@ -45,17 +45,19 @@ Usar exclusivamente estos verbos en botones, enlaces, microcopy y mensajes.
 | Explorar | Archivo, temas, periodos |
 | Recibir | Correspondencia, textos |
 | Entrar | Secciones |
+| Ir | Navegación entre secciones |
 | Volver | Navegación |
 | Continuar | Lectura |
 | Adquirir | Compra editorial |
 | Descargar | Archivos |
 | Contactar | Comunicación |
 | Enviar | Formularios |
-| Guardar | Preferencias |
 | Cerrar | Modales |
 | Cambiar | Idioma, vista |
 
-**Nunca usar:** comprar, obtener, desbloquear, acceder, registrarse, suscribirse, activar, empezar, descubrir, probar, unirse, crear cuenta.
+**Nunca usar:** comprar, obtener, desbloquear, registrarse, suscribirse, activar, empezar, descubrir, probar, unirse, crear cuenta.
+
+**Evitar:** acceder
 
 ---
 
@@ -65,8 +67,8 @@ Usar exclusivamente estos verbos en botones, enlaces, microcopy y mensajes.
 |-----------|----------|
 | Obra | poema, libro, texto, ensayo, relato, cuaderno, fragmento |
 | Tiempo | periodo, etapa, año |
-| Edición | versión, edición, archivo |
-| Publicación | publicado, inédito, borrador |
+| Edición | edición, archivo |
+| Estado editorial | publicado, inédito, borrador |
 | Comunicación | carta, correspondencia |
 | Personas | lector, autor |
 | Actividad | lectura, escritura |
@@ -99,7 +101,7 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | En proceso | borrador |
 | Visible | publicado |
 | Retirado | retirado |
-| Archivado | archivo |
+| Archivado | archivado |
 
 **Nunca mostrar:** draft, hidden, private, archived.
 
@@ -121,9 +123,9 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | Press | Prensa |
 | Rights | Derechos (o Derechos y permisos) |
 | Correspondence | Correspondencia |
-| Blog | Artículos o Escritura |
+| Blog | Artículos |
 | Audio library | Biblioteca de audio |
-| Videoteca | Videoteca |
+| Video library | Videoteca |
 
 **Nunca:** dashboard, feed, profile, store, shop, portal.
 
@@ -135,12 +137,13 @@ El sistema no tiene newsletters. Tiene correspondencia.
 |---------|-------|
 | Leer poema | Leer el poema |
 | Leer libro | Abrir el libro |
-| Ver taller | Ver taller |
+| Ver taller | Abrir taller |
 | Email | Recibir nuevos textos |
 | Compra | Adquirir el libro |
 | Descarga | Descargar PDF o EPUB |
 | Archivo | Explorar archivo |
 | Idioma | Cambiar idioma |
+| Volver | Volver |
 | Envío | Enviar |
 | Cierre | Cerrar |
 
@@ -153,7 +156,8 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | Situación | Texto |
 |-----------|-------|
 | Sin resultados | “No hay textos en esta sección.” |
-| Sin filtros | “No hay textos con estos filtros.” |
+| Sin filtros | “No hay textos con este filtro.” |
+| Búsqueda | "No hay textos que coincidan con la búsqueda." |
 | Archivo vacío | “Este archivo aún está en construcción.” |
 | Error | “No fue posible mostrar este texto.” |
 | Eliminado | “Este texto fue retirado.” |
@@ -168,6 +172,7 @@ El sistema no tiene newsletters. Tiene correspondencia.
 
 **Reglas:**
 
+- Los títulos de secciones usan mayúscula inicial.
 - Secciones usan sustantivos simples.
 - Listas usan plural.
 - Obras usan su título real.
@@ -175,6 +180,8 @@ El sistema no tiene newsletters. Tiene correspondencia.
 **Correcto:** Poemas, Ensayos, Libros, Archivo
 
 **Incorrecto:** Mis poemas, Lo último de Daniel, Nuevos lanzamientos, Lo que tienes que leer
+
+Una misma función del sistema debe usar siempre la misma palabra en todo el sitio.
 
 ---
 
@@ -195,5 +202,4 @@ El sitio no vende. El sitio no empuja. El sitio acoge una obra.
 ---
 
 **Documento canónico.**  
-**Referencia cruzada:** `08-guia-voz-microcopy-ux`, `10-ui-copy-sheet`  
-**Versión:** 2.2
+**Referencia cruzada:** `08-guia-voz-microcopy-ux`, `10-ui-copy-sheet`

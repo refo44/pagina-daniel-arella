@@ -79,6 +79,8 @@ No redes sociales ni enlaces externos salvo prensa.
 
 **Nunca:** feeds cronológicos, carruseles, bloques de “lo más visto”, “más contenido”.
 
+Breadcrumb no aplica.
+
 ---
 
 ## 4. Single Poema
@@ -86,11 +88,11 @@ No redes sociales ni enlaces externos salvo prensa.
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | “Abrir el libro” (si pertenece a uno) | Single Libro | Primario |
-| “Siguiente poema” | Poema siguiente | Primario |
 | “Poema anterior” | Poema anterior | Secundario |
+| “Siguiente poema” | Poema siguiente | Primario |
 | “Volver al libro” | Single Libro | Secundario |
 | “Explorar archivo” | Archivo | Secundario |
-| Breadcrumb | Inicio → Archivo → Poemas → Poema | Secundario |
+| Breadcrumb | Inicio → Archivo → Poemas → [Título del poema] | Secundario |
 
 **Nunca:** poemas aleatorios, bloques de recomendación.
 
@@ -114,10 +116,10 @@ No redes sociales ni enlaces externos salvo prensa.
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | “Abrir el libro” (si pertenece) | Single Libro | Primario |
-| “Siguiente ensayo” | Ensayo siguiente | Primario |
 | “Ensayo anterior” | Ensayo anterior | Secundario |
+| “Siguiente ensayo” | Ensayo siguiente | Primario |
 | “Explorar ensayos” | Archivo Ensayos | Secundario |
-| Breadcrumb | Inicio → Archivo → Ensayos → Ensayo | Secundario |
+| Breadcrumb | Inicio → Archivo → Ensayos → [Título del ensayo] | Secundario |
 
 **Nunca:** listas genéricas de ensayos sin relación.
 
@@ -128,10 +130,10 @@ No redes sociales ni enlaces externos salvo prensa.
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | “Abrir el libro” (si pertenece) | Single Libro | Primario |
-| “Siguiente relato” | Relato siguiente | Primario |
 | “Relato anterior” | Relato anterior | Secundario |
+| “Siguiente relato” | Relato siguiente | Primario |
 | “Explorar relatos” | Archivo Relatos | Secundario |
-| Breadcrumb | Inicio → Archivo → Relatos → Relato | Secundario |
+| Breadcrumb | Inicio → Archivo → Relatos → [Título del relato] | Secundario |
 
 **Nunca:** listas genéricas de relatos sin relación.
 
@@ -142,55 +144,55 @@ No redes sociales ni enlaces externos salvo prensa.
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | Libro relacionado | Single Libro | Primario |
-| “Enviar solicitud” o “Contactar” | Contacto | Primario |
+| “Enviar solicitud de inscripción” o “Contactar” | Contacto | Primario |
 | “Volver a talleres” | Listado Talleres | Secundario |
 
 **Nunca:** otros talleres sueltos dentro del single.
 
 ---
 
-## 8.1 Single Artículo
+## 9. Single Artículo
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
-| “Siguiente artículo” | Artículo siguiente | Primario |
 | “Artículo anterior” | Artículo anterior | Secundario |
+| “Siguiente artículo” | Artículo siguiente | Primario |
 | “Explorar archivo” o “Artículos” | Archivo Blog | Secundario |
-| Breadcrumb | Inicio → Archivo → Artículos → Artículo | Secundario |
+| Breadcrumb | Inicio → Archivo → Artículos → [Título del artículo] | Secundario |
 
 **Nunca:** listas genéricas de artículos sin relación.
 
 ---
 
-## 9. Archivo y listados
+## 10. Archivo y listados
 
 Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres, Artículos).
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | Cada ítem | Single correspondiente | Primario |
-| Filtros (tipo, tema, periodo) | Mismo archivo refinado | Secundario |
+| Filtros: tipo, tema, periodo | Mismo archivo refinado | Secundario |
 | Inicio | Home | Secundario |
 
 **Nunca:** bloques de “destacados”, “sugeridos”, “más leídos”.
 
 ---
 
-## 9.1 Biblioteca de audio y Videoteca (plan maestro)
+## 10.1 Biblioteca de audio y videoteca (plan maestro)
 
 Cuando estén implementadas (`01-plataforma-autor-plan`):
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
-| Cada pieza de audio/vídeo | Single correspondiente (si existe) o reproductor externo (embed) | Primario |
+| Cada pieza de audio y video | Single correspondiente (si existe) o reproductor externo (embed) | Primario |
 | Filtros por tipo | Mismo listado refinado | Secundario |
 | “Explorar archivo” / Inicio | Archivo o Home | Secundario |
 
-Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El audio y el vídeo se alojan en servicios externos (YouTube, Vimeo, Instagram Reels, Spotify, etc.); el sitio solo enlaza o embebe.
+Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El audio y el video se alojan en servicios externos (YouTube, Vimeo, Instagram Reels, Spotify, etc.); el sitio solo enlaza o embebe.
 
 ---
 
-## 10. Tema y Periodo
+## 11. Tema y Periodo
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -201,7 +203,7 @@ Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El
 
 ---
 
-## 11. Sobre el autor
+## 12. Sobre el autor
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -212,7 +214,7 @@ Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El
 
 ---
 
-## 12. Correspondencia
+## 13. Correspondencia
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -223,7 +225,7 @@ Una sola acción.
 
 ---
 
-## 13. Contacto
+## 14. Contacto
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -232,15 +234,15 @@ Una sola acción.
 
 ---
 
-## 14. Prensa
+## 15. Prensa
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
-| Cada referencia | Medio externo | Secundario |
+| Cada referencia | Medio externo (nueva pestaña) | Secundario |
 
 ---
 
-## 15. Derechos
+## 16. Derechos
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -248,7 +250,7 @@ Una sola acción.
 
 ---
 
-## 16. Estados
+## 17. Estados
 
 ### Sin resultados
 
@@ -262,7 +264,7 @@ Una sola acción.
 | Enlace | Destino |
 |--------|---------|
 | “Explorar archivo” | Archivo |
-| “Volver” | Inicio |
+| “Volver” | Página anterior |
 
 ### Archivo vacío
 
@@ -275,7 +277,7 @@ Una sola acción.
 
 ---
 
-## 17. Regla final
+## 18. Regla final
 
 Si un enlace no empuja la lectura hacia:
 
@@ -288,7 +290,3 @@ Si un enlace no empuja la lectura hacia:
 
 Este sistema impide que el sitio se convierta en un feed, una tienda o un laberinto.
 
----
-
-**Versión:** 2.2  
-**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `05-mapa-pantallas`, `10-ui-copy-sheet`, `11-user-journey`, `13-wireframes`, `22-tendencias-ux-ui-sistema-editorial`

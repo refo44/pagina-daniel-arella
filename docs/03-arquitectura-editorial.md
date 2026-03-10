@@ -1,6 +1,6 @@
 # Daniel Arella — Arquitectura editorial
 
-**Versión 2.4**
+**Versión 2.6**
 
 Esta capa se apoya en la identidad corporativa y en el plan maestro (`01-plataforma-autor-plan`). No la reemplaza. La vuelve operativa.
 
@@ -21,7 +21,7 @@ Solo existen las entidades que un lector necesita para leer, recorrer y comprend
 | Essay | Texto de pensamiento, crítica o reflexión |
 | Story | Relato o pieza narrativa |
 | Workshop | Taller o curso vinculado a la obra |
-| Article | Artículos y notas del autor |
+| Article | Artículos, notas o textos breves publicados fuera de los libros |
 | Page | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Prensa, Derechos |
 
 En WordPress:
@@ -31,6 +31,10 @@ En WordPress:
 - `post` se usa solo para Article.
 
 Un poema nunca es un post. Un libro nunca es una página.
+
+**Essay** pertenece al corpus intelectual del autor. **Article** corresponde a textos circunstanciales (publicaciones externas, notas, columnas o reflexiones breves).
+
+**Book:** Un Book puede contener poemas, ensayos y relatos, pero también puede existir sin contenido interno (como obra editorial o referencia bibliográfica).
 
 ---
 
@@ -51,7 +55,7 @@ La arquitectura nunca duplica lo que la escritura ya puede decir.
 
 ---
 
-## 3. Organización
+## 3. Taxonomías
 
 La obra se organiza solo por dimensiones que un lector entiende y usa.
 
@@ -73,6 +77,10 @@ No existen taxonomías para:
 
 Esos datos viven como campos simples dentro de cada pieza cuando es necesario mostrarlos.
 
+El idioma se gestiona mediante el sistema multilenguaje del sitio (no como taxonomía editorial).
+
+**Regla de clasificación:** Cada pieza debería tener como máximo 1 periodo y 1–3 temas. Evitar clasificaciones excesivas.
+
 ---
 
 ## 4. Relaciones
@@ -85,6 +93,11 @@ Las únicas relaciones estructurales son las que crean caminos de lectura reales
 | Essay | Book |
 | Story | Book |
 | Workshop | Book |
+| Article | Book (opcional) |
+
+La relación con Book es opcional. Un poema, ensayo o relato puede existir fuera de un libro.
+
+**Book** muestra automáticamente: poemas del libro, ensayos del libro, relatos del libro, talleres relacionados. Esto aclara cómo se reconstruye el libro dentro del sitio.
 
 Esto permite:
 
@@ -109,9 +122,7 @@ Cada tipo tiene una ruta clara y estable.
 | Article | /blog/slug |
 | Workshop | /talleres/slug |
 
-Con idioma: `/es/...`, `/en/...`
-
-La estructura es idéntica en todos los idiomas.
+Las rutas base permanecen iguales en todos los idiomas. Solo cambia el prefijo de idioma. Ejemplo: `/es/poem/slug`, `/en/poem/slug`.
 
 ---
 
@@ -138,7 +149,7 @@ El tiempo no manda. La obra manda.
 
 El archivo funciona como una biblioteca. Se puede recorrer por:
 
-- Tipo (poemas, libros, ensayos, relatos)
+- Tipo (poemas, libros, ensayos, relatos, artículos)
 - Tema
 - Periodo
 
@@ -146,7 +157,7 @@ Nunca solo por fecha. Los filtros son pocos, visibles y claros.
 
 ---
 
-## 7.1 Biblioteca de audio y Videoteca (plan maestro)
+## 7.1 Biblioteca de audio y videoteca (plan maestro)
 
 Según `01-plataforma-autor-plan`, la arquitectura de información incluye dos secciones adicionales:
 
@@ -156,6 +167,8 @@ Según `01-plataforma-autor-plan`, la arquitectura de información incluye dos s
 **Alojamiento:** El audio y el vídeo **no se suben al servidor del sitio**. Se alojan en la nube o en servicios de terceros (p. ej. YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena enlaces o códigos de inserción (embed) y los muestra en listado o en ficha. Así se evita almacenar archivos pesados en el hosting y se aprovechan reproductores y CDN de esas plataformas.
 
 Estas secciones forman parte del territorio editorial. Su modelo de contenido (tipos, campos: URL externa, embed, miniatura) se definirá al implementarlas; hasta entonces se consideran listados navegables con posible ficha por pieza. La navegación y las URLs se describen en `14-arquitectura-informacion-navegacion` y `15-arbol-urls-final`.
+
+Estas piezas no forman parte del corpus textual (poem, essay, story). Funcionan como material audiovisual asociado a la obra.
 
 ---
 
@@ -171,6 +184,8 @@ Las descargas existen solo dentro de Book. Ahí viven:
 - Aviso breve de derechos
 
 No hay tienda ni sistema de licencias. El libro se presenta como obra, no como producto.
+
+El orden interno de un Book se define manualmente para respetar la secuencia editorial del libro.
 
 ---
 
@@ -218,6 +233,6 @@ Si una estructura no ayuda a leer mejor o recordar mejor la obra, no existe.
 
 ---
 
-**Versión:** 2.5  
+**Versión:** 2.6  
 **Depende de:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
 **Alimenta a:** `04-wordpress-content-model`

@@ -45,9 +45,9 @@ Cada tipo de obra tiene su propia plantilla de lectura y su propio archivo. Nunc
 | essay | `single-essay.php` | `archive-essay.php` |
 | story | `single-story.php` | `archive-story.php` |
 | workshop | `single-workshop.php` | `archive-workshop.php` |
-| post (blog) | `single.php` | `archive.php` |
+| post (blog) | `single.php` | `home.php` |
 
-Esto garantiza que cada género conserve su forma y jerarquía.
+El listado de Artículos usa `home.php` en lugar de `archive-post.php`, porque WordPress resuelve las entradas nativas mediante la plantilla del blog. Esto garantiza que cada género conserve su forma y jerarquía.
 
 ---
 
@@ -77,11 +77,11 @@ Los filtros editoriales también son vistas con jerarquía propia.
 
 | Taxonomía | Plantilla |
 |-----------|-----------|
-| Tema | `taxonomy-topic.php` |
-| Periodo | `taxonomy-period.php` |
-| Forma (opcional) | `taxonomy-form.php` |
+| tema | `taxonomy-topic.php` |
+| periodo | `taxonomy-period.php` |
+| forma (opcional) | `taxonomy-form.php` |
 
-Estas vistas funcionan como archivos filtrados, no como páginas sueltas. Forma se añade solo si se implementa (`03-arquitectura-editorial`).
+Estas vistas funcionan como archivos filtrados, no como páginas sueltas. Las taxonomías usan claves internas en inglés (topic, period, form), aunque los slugs públicos estén en español.
 
 ---
 
@@ -105,10 +105,10 @@ Componentes estructurales que se comparten entre plantillas.
 
 | Archivo | Función |
 |---------|---------|
-| `parts/header.php` | Cabecera y navegación global |
-| `parts/footer.php` | Pie editorial |
+| `header.php` | Cabecera y navegación global |
+| `footer.php` | Pie editorial |
 | `parts/navigation.php` | Menú |
-| `parts/breadcrumbs.php` | Migas de navegación |
+| `parts/breadcrumb.php` | Migas de navegación |
 | `parts/poem-card.php` | Tarjeta poema |
 | `parts/book-card.php` | Tarjeta libro |
 | `parts/essay-card.php` | Tarjeta ensayo |
@@ -126,7 +126,11 @@ Todo listado y todo home se arma con estas piezas.
 theme-daniel-arella/
 ├── style.css
 ├── functions.php
+├── .stylelintrc.json
+├── package.json
 ├── index.php
+├── header.php
+├── footer.php
 ├── front-page.php
 ├── single-poem.php
 ├── single-book.php
@@ -139,7 +143,7 @@ theme-daniel-arella/
 ├── archive-essay.php
 ├── archive-story.php
 ├── archive-workshop.php
-├── archive.php
+├── home.php
 ├── page-archivo.php
 ├── page-sobre-el-autor.php
 ├── page-correspondencia.php
@@ -153,11 +157,10 @@ theme-daniel-arella/
 ├── taxonomy-period.php
 ├── taxonomy-form.php
 ├── 404.php
+├── search.php
 └── parts/
-    ├── header.php
-    ├── footer.php
     ├── navigation.php
-    ├── breadcrumbs.php
+    ├── breadcrumb.php
     ├── poem-card.php
     ├── book-card.php
     ├── essay-card.php
@@ -166,7 +169,13 @@ theme-daniel-arella/
     └── article-card.php
 ```
 
-`taxonomy-form.php` y `article-card.php` son opcionales; se añaden cuando se implementan. Nada más. Nada menos.
+`taxonomy-form.php` solo se incluye si se activa la taxonomía form. `parts/article-card.php` también es opcional (se usa solo para el CPT post). Nada más. Nada menos.
+
+`index.php` actúa como fallback de WordPress y no se usa para rutas editoriales. `page.php` funciona como fallback para páginas que no tengan plantilla editorial específica. `search.php` existe como plantilla de respaldo para búsquedas del sistema, aunque la búsqueda editorial se integra dentro del Archivo.
+
+---
+
+Todas las URLs usan trailing slash final.
 
 ---
 
@@ -180,25 +189,27 @@ theme-daniel-arella/
 | `/es/correspondencia/` | `page-correspondencia.php` |
 | `/es/contacto/` | `page-contacto.php` |
 | `/es/poem/` | `archive-poem.php` |
-| `/es/poem/slug` | `single-poem.php` |
+| `/es/poem/{slug}/` | `single-poem.php` |
 | `/es/book/` | `archive-book.php` |
-| `/es/book/slug` | `single-book.php` |
+| `/es/book/{slug}/` | `single-book.php` |
 | `/es/essay/` | `archive-essay.php` |
-| `/es/essay/slug` | `single-essay.php` |
+| `/es/essay/{slug}/` | `single-essay.php` |
 | `/es/story/` | `archive-story.php` |
-| `/es/story/slug` | `single-story.php` |
+| `/es/story/{slug}/` | `single-story.php` |
 | `/es/talleres/` | `archive-workshop.php` |
-| `/es/talleres/slug` | `single-workshop.php` |
-| `/es/blog/` | `archive.php` |
-| `/es/blog/slug` | `single.php` |
-| `/es/tema/slug` | `taxonomy-topic.php` |
-| `/es/periodo/slug` | `taxonomy-period.php` |
-| `/es/forma/slug` | `taxonomy-form.php` |
+| `/es/talleres/{slug}/` | `single-workshop.php` |
+| `/es/blog/` | `home.php` |
+| `/es/blog/{slug}/` | `single.php` |
+| `/es/tema/{slug}/` | `taxonomy-topic.php` |
+| `/es/periodo/{slug}/` | `taxonomy-period.php` |
+| `/es/forma/{slug}/` | `taxonomy-form.php` |
 | `/es/prensa/` | `page-prensa.php` |
 | `/es/derechos/` | `page-derechos.php` |
 | `/es/biblioteca-audio/` | `page-biblioteca-audio.php` |
 | `/es/videoteca/` | `page-videoteca.php` |
 | Cualquier otra | `404.php` |
+
+Las rutas `/en/` usan exactamente las mismas plantillas. Los slugs públicos cambian cuando corresponde: `/en/about/`, `/en/contact/`, `/en/archive/`, `/en/workshops/`, `/en/audio-library/`, `/en/video-library/`, etc. Las páginas fijas traducidas conservan la misma relación plantilla → ruta con sus slugs equivalentes.
 
 ---
 
@@ -209,6 +220,22 @@ theme-daniel-arella/
 - Paleta: solo los 5 colores de marca y roles semánticos de `02-identidad-corporativa`.
 - Tipografías: Fraunces, Source Sans 3. Sin familias adicionales.
 - Sin bloques de animación en área de lectura.
+
+### 9.1 Stylelint
+
+El CSS del theme se valida con Stylelint.
+
+- **Configuración:** `.stylelintrc.json` en la raíz del theme.
+- **Reglas definidas en:** `18-css-architecture`.
+- **Archivos validados:** `style.css` y `css/**/*.css`.
+
+Script recomendado en `package.json`:
+
+```json
+"lint:css": "stylelint \"css/**/*.css\" \"style.css\""
+```
+
+Stylelint asegura que el CSS respete ITCSS, BEM, tokens CSS y restricciones editoriales del sistema.
 
 ---
 
@@ -221,6 +248,4 @@ theme-daniel-arella/
 
 Si se respeta esta estructura, WordPress deja de ser un CMS y se convierte en una máquina de lectura.
 
----
-
-**Versión:** 1.3
+Validación CSS: `18-css-architecture` (Stylelint).

@@ -7,8 +7,8 @@ Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta e
 
 Encaja con: maqueta estática, migración literal a WordPress, sistema editorial donde el layout no debe contaminar la obra.
 
-**Se apoya en:** `02-identidad-corporativa`, `16-theme-file-structure`, `17-static-file-structure`, `22-tendencias-ux-ui-sistema-editorial`  
-**Alimenta a:** `17-static-file-structure` (maqueta), theme WordPress
+**Se apoya en:** `02-identidad-corporativa`, `16-theme-file-structure`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `17-static-file-structure`, theme WordPress
 
 ---
 
@@ -42,14 +42,13 @@ En `css/main.css` se importan en este orden:
 | Orden | Capa | Contenido |
 |-------|------|-----------|
 | 1 | **Settings** | Variables y tokens: tipografías, tamaños, espaciados, colores, breakpoints. |
-| 2 | **Tools** | Helpers o mixins si hubiera preprocesador. En CSS nativo se omite. |
-| 3 | **Generic** | Reset o normalize, `box-sizing`. |
-| 4 | **Elements** | Estilos base para `body`, `a`, `h1`–`h6`, `p`, `blockquote`, etc. |
-| 5 | **Objects** | Patrones de layout sin estética: contenedores, grid, flujo vertical. |
-| 6 | **Components** | Bloques concretos: header, nav, cards, breadcrumbs, footer. |
-| 7 | **Utilities** | Clases de una sola función, pocas y claras. |
+| 2 | **Generic** | Reset o normalize, `box-sizing`. |
+| 3 | **Elements** | Estilos base para `body`, `a`, `h1`–`h6`, `p`, `blockquote`, etc. |
+| 4 | **Objects** | Patrones de layout sin estética: contenedores, grid, flujo vertical. |
+| 5 | **Components** | Bloques concretos: header, nav, cards, breadcrumbs, footer. |
+| 6 | **Utilities** | Clases de una sola función, pocas y claras. |
 
-La especificidad crece de abajo hacia arriba en la cascada; el orden de las capas evita que Objects y Components se pisen entre sí.
+La especificidad y la cercanía al componente aumentan progresivamente desde Settings hasta Utilities. El orden de las capas evita que Objects y Components se pisen entre sí.
 
 ---
 
@@ -57,12 +56,14 @@ La especificidad crece de abajo hacia arriba en la cascada; el orden de las capa
 
 La misma estructura sirve para la maqueta estática y para el theme (donde todo puede compilarse o concatenarse en un solo `style.css`).
 
+En la maqueta estática, `main.css` importa el resto mediante `@import`. En WordPress, puede mantenerse igual o concatenarse en un único `style.css`.
+
 ```
 css/
 ├── settings.css     Variables, fuentes, colores, espaciados
 ├── generic.css      Reset / normalize
 ├── elements.css     body, h1–h6, p, a, blockquote
-├── objects.css      Contenedores, grid, stack
+├── objects.css      Contenedores, grid, stack, flow
 ├── components.css  poem-card, book-card, essay-card, story-card, workshop-card, article-card, header, footer, breadcrumbs, nav
 ├── utilities.css    .u-visually-hidden, .u-muted, etc.
 └── main.css         Importa todo en el orden ITCSS
@@ -98,6 +99,7 @@ Ejemplos alineados con la arquitectura editorial:
 Reglas:
 
 - Evitar BEM “profundo”. Máximo unos dos niveles suele bastar.
+- Evitar selectores del tipo .book-card__meta a span o .archive__list li a. Preferir clases explícitas en los elementos internos.
 - Usar modificadores solo para variaciones reales (ej. `.poem-card--featured`), no para todo.
 - No usar nombres genéricos de blog: `.post-item`, `.sidebar`, `.widget`. Usar nombres editoriales: `.poem-card`, `.archive-list`, `.book-header`.
 
@@ -111,9 +113,48 @@ Objetos = patrones de layout sin estética. Prefijo sugerido: `o-`.
 |-------|-----|
 | `.o-container` | Ancho máximo, padding horizontal. |
 | `.o-stack` | Espaciado vertical consistente entre hijos (ritmo vertical). |
-| `.o-grid` | Listados en grid (archivos, tarjetas). |
+| `.o-flow` | Flujo vertical de lectura para piezas largas y contenido editorial. |
+| `.o-grid` | Composición ligera para listados y bloques secundarios, nunca como base de lectura principal. |
 
 El layout se mantiene estable en todas las plantillas sin duplicar reglas. La “obra” (títulos, textos, imágenes) vive dentro de Components; los Objects solo ordenan el espacio.
+
+### Objeto .o-flow
+
+Objeto utilitario para ritmo vertical dentro de contenido tipográfico. Complemento de `.o-stack` para contenido editorial.
+
+**Se usa principalmente en:** artículos, ensayos, poemas, bloques editoriales, contenido WYSIWYG de WordPress.
+
+**Regla conceptual:** `.o-flow` controla el espaciado vertical automático entre elementos hermanos consecutivos. No se aplica margen manual a párrafos, listas o citas.
+
+**Implementación CSS:**
+
+```css
+.o-flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+```
+
+Variable `--flow-space` define el espaciado (ej. `1.2rem`). Puede modificarse según contexto (texto largo, listas, citas).
+
+**Ejemplo HTML:**
+
+```html
+<article class="o-flow">
+  <p>Primer párrafo.</p>
+  <p>Segundo párrafo.</p>
+  <blockquote>Una cita.</blockquote>
+  <p>Tercer párrafo.</p>
+</article>
+```
+
+**Relación con .o-stack:**
+
+| Objeto | Uso |
+|--------|-----|
+| `.o-stack` | Espaciado entre bloques de layout |
+| `.o-flow` | Espaciado dentro de contenido tipográfico |
+
+Patrón típico: `section.o-stack` → `article.o-flow`. Nunca mezclar márgenes manuales dentro de `.o-flow`.
 
 ---
 
@@ -125,10 +166,10 @@ Prefijo: `u-`. Solo clases que de verdad reduzcan repetición.
 |-------|-----|
 | `.u-visually-hidden` | Ocultar visualmente manteniendo accesibilidad (lectores de pantalla). |
 | `.u-muted` | Tono tipográfico secundario (texto discreto). |
-| `.u-center` | Centrado cuando aplique. |
+| `.u-center-text` | Centrado de texto en casos excepcionales. |
 | `.u-max-readable` | Ancho máximo de lectura (ej. 65ch). |
 
-Si empiezas a crear muchas utilities (decenas), se acerca a “utility-first” agresivo; no es necesario en este proyecto.
+Las utilities no sustituyen componentes ni objetos. Se usan solo como apoyo puntual. Si empiezas a crear muchas (decenas), se acerca a “utility-first” agresivo; no es necesario en este proyecto.
 
 ---
 
@@ -141,18 +182,23 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
   /* Tipografía (02-identidad-corporativa) */
   --font-body: 'Fraunces', serif;
   --font-heading: 'Fraunces', serif;
-  --font-meta: 'Source Sans 3', sans-serif;
+  --font-meta: 'Source Sans 3', sans-serif;   /* Metadatos, fechas, etiquetas */
+  --font-ui: 'Source Sans 3', sans-serif;     /* Controles, navegación */
+
+  /* Medida de lectura */
+  --measure-readable: 65ch;
 
   /* Espaciado */
+  --flow-space: 1.2rem;   /* o-flow: espaciado entre elementos en contenido editorial */
   --space-2: 0.5rem;
   --space-4: 1rem;
   --space-6: 1.5rem;
   --space-8: 2rem;
 
-  /* Colores: solo roles semánticos (02-identidad-corporativa) */
-  /* --bg, --text, --text-muted, --link, --link-hover, --focus, --surface, --border, --header-bg, --footer-bg, --primary */
+  /* Colores: roles semánticos se definen en 02-identidad-corporativa y deben copiarse aquí sin modificación */
 
-  /* Breakpoints */
+  /* Breakpoints: se documentan como referencia de sistema.
+     En CSS nativo, los media queries se escriben con valores literales equivalentes (40rem, 64rem). */
   --bp-medium: 40rem;
   --bp-wide: 64rem;
 }
@@ -160,9 +206,80 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
 
 Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
 
+Los tokens CSS deben mantenerse alineados con `theme.json` para evitar divergencias entre front-end y editor.
+
 ---
 
-## 9. Qué no se usa como base
+## 9. Stylelint (linter)
+
+Stylelint valida que el CSS respete esta arquitectura. Se instala y configura en el proyecto; este documento define los lineamientos.
+
+### Instalación
+
+```bash
+npm install -D stylelint stylelint-config-standard
+```
+
+### Configuración base
+
+Crear `.stylelintrc.json` (o `stylelint.config.js`) en la raíz del proyecto:
+
+```json
+{
+  "extends": ["stylelint-config-standard"],
+  "rules": {
+    "selector-class-pattern": [
+      "^(o-[a-z][a-z0-9-]*|u-[a-z][a-z0-9-]*|([a-z][a-z0-9]*)(-[a-z0-9]+)*(__[a-z][a-z0-9-]+)?(--[a-z][a-z0-9-]+)?)$",
+      { "resolveNestedSelectors": true }
+    ],
+    "custom-property-pattern": "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$",
+    "color-hex-length": "long",
+    "color-no-hex": null,
+    "declaration-block-no-redundant-longhand-properties": null,
+    "no-descending-specificity": null
+  },
+  "ignoreFiles": ["**/node_modules/**", "**/dist/**"]
+}
+```
+
+### Reglas alineadas con esta arquitectura
+
+| Regla | Propósito |
+|-------|-----------|
+| `selector-class-pattern` | Acepta BEM (`block__element--modifier`), objects (`o-`), utilities (`u-`). La regex valida formato, no semántica editorial; nombres genéricos como `.post-item`, `.sidebar` o `.widget` deben evitarse por convención del proyecto. |
+| `custom-property-pattern` | Variables CSS en kebab-case (`--font-body`, `--space-4`). La regla valida el nombre interno de la custom property, no incluye el prefijo `--`. |
+| `color-hex-length` | Hex siempre largo (`#000000`). |
+| `color-no-hex` | Si se quiere prohibir hex en components, habrá que usar una configuración adicional por overrides o una revisión manual. |
+
+### Archivos a lintear
+
+```
+css/**/*.css
+```
+
+En la maqueta estática: `css/`. En el theme: `style.css` o la carpeta equivalente.
+
+### Script recomendado
+
+En `package.json`:
+
+```json
+{
+  "scripts": {
+    "lint:css": "stylelint \"css/**/*.css\" \"style.css\""
+  }
+}
+```
+
+En la maqueta estática basta con `css/**/*.css`. En el theme WordPress, ajustar el script para incluir `style.css` si vive en la raíz.
+
+### Integración con preprocesador
+
+Si más adelante se usa Vite, Eleventy o Astro para la maqueta, el plugin `stylelint` se integra en el pipeline. Misma configuración; solo cambia el comando o el hook.
+
+---
+
+## 10. Qué no se usa como base
 
 - **Atomic Design puro o utility-first agresivo:** dificulta coherencia editorial y migración a plantillas WordPress limpias.
 - **SMACSS solo:** funciona, pero ITCSS da una jerarquía de capas más clara para crecer.
@@ -171,20 +288,15 @@ Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca he
 
 ---
 
-## 10. Regla editorial
+## 11. Regla editorial
 
-El CSS no debe “saber” qué es un poema o un libro como concepto de contenido. Debe saber qué es:
-
-- `.poem-card`
-- `.book-index`
-- `.archive-list`
-- `.breadcrumbs`
+El CSS no debe depender del tipo de dato ni de la lógica del CMS. Puede nombrar estructuras editoriales visibles como `.poem-card`, `.book-index` o `.archive-list`.
 
 La obra queda separada del motor. El layout y los componentes son estructuras y patrones; el contenido lo inyecta HTML (estático o WordPress).
 
 ---
 
-## 11. Cuándo valorar Sass (opcional)
+## 12. Cuándo valorar Sass (opcional)
 
 Mantener **CSS nativo** para la maqueta estática y para la primera versión del theme. Valorar Sass solo si:
 
@@ -196,18 +308,14 @@ En WordPress no hay ventaja técnica directa por Sass; el CMS solo consume el CS
 
 ---
 
-## 12. Criterios de validación (22-tendencias-ux-ui-sistema-editorial)
+## 13. Criterios de validación (22-tendencias-ux-ui-sistema-editorial)
 
 Al implementar, verificar:
 
 - Tipografía: máximo 2 familias; jerarquías H1–H3 fijas.
 - Color: solo roles semánticos; nunca hex en componentes.
 - Lectura: ancho de columna 60–70ch; ritmo vertical consistente.
-- Motion: en páginas de texto, cero animaciones decorativas; solo focus y hover.
+- Motion: en páginas de texto, cero animaciones decorativas; solo focus y hover. Las transiciones deben limitarse a `color`, `background-color`, `border-color`, `opacity` y `outline`.
 - Respetar `prefers-reduced-motion` para usuarios que lo prefieran.
 - `:focus-visible` visible (p. ej. outline con `--focus`).
 
----
-
-**Versión:** 1.2  
-**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress. Criterios de validación: `22-tendencias-ux-ui-sistema-editorial` sección 4.

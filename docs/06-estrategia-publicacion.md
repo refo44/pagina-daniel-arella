@@ -1,6 +1,6 @@
 # Daniel Arella — Estrategia de publicación
 
-**Versión 2.2**
+**Versión 2.3**
 
 Este documento no define qué va a escribir Daniel Arella. Define cómo la obra puede vivir en el tiempo dentro de la plataforma sin romper la arquitectura, la navegación ni la identidad editorial.
 
@@ -31,7 +31,7 @@ Daniel puede elegir cualquier ritmo sin romper el sistema. Existen dos grandes m
 
 La obra se organiza en torno a libros, publicados o en proceso.
 
-- Cada book representa una etapa de escritura.
+- Cada book puede representar una etapa de escritura.
 - Poemas, ensayos y relatos se asocian a ese libro.
 - El Home muestra siempre el libro activo como obra en curso.
 - El archivo permite recorrer libros pasados como capas de una trayectoria.
@@ -47,6 +47,8 @@ La obra se publica por fecha, sin separar estrictamente por libros.
 - El Home sigue mostrando una obra en curso, aunque no esté definida como libro.
 
 Este modo favorece presencia constante sin necesidad de cerrar libros.
+
+Las piezas pueden existir sin relación con book.
 
 **Ambos modos pueden coexistir.** El sistema no obliga a elegir uno solo.
 
@@ -64,16 +66,20 @@ Daniel decide:
 - Cuándo cambia.
 - Si se nombra explícitamente o se sugiere por selección de textos.
 
+Un ciclo no es una entidad técnica del sistema. Se expresa editorialmente mediante selección de textos o libros.
+
 **Implementación:**
 
-- Un book marcado como activo o destacado.
+- Un book marcado como destacado (featured).
 - Poemas y ensayos relacionados a ese libro alimentan los bloques del Home.
 - El texto editorial del Home lo nombra o lo insinúa.
 - Nada más.
 
+El Home nunca muestra más de una obra principal simultáneamente.
+
 ---
 
-## 4. Qué entra al archivo
+## 4. Curaduría del archivo
 
 El archivo no es una obligación de transparencia total. Es una curaduría de la obra.
 
@@ -91,7 +97,13 @@ Existen tres niveles posibles, todos soportados:
 | **Nivel 2. Edición extendida** | PDFs o EPUBs con versiones completas o académicas. |
 | **Nivel 3. Referencia editorial** | Información, índices, citas, enlaces a editoriales. |
 
+Cada libro debe mantener coherencia interna. No mezclar niveles de publicación dentro del mismo texto.
+
 El lector no debe sentirse engañado. Debe entender siempre qué está viendo.
+
+### Artículos
+
+Los artículos son textos circunstanciales (publicaciones externas, notas o reflexiones). No forman parte del corpus principal de libros.
 
 ---
 
@@ -105,6 +117,8 @@ Los libros pueden existir en tres formas:
 
 Daniel define por libro: qué se puede descargar, qué solo se puede leer, qué se debe adquirir fuera del sitio.
 
+Las descargas viven siempre dentro de la página del libro. No existen páginas independientes de descarga.
+
 **Reglas editoriales:**
 
 - Libros agotados o fuera de circulación pueden abrirse en PDF.
@@ -117,7 +131,7 @@ La interfaz nunca debe parecer una tienda. La compra es un gesto secundario a la
 
 ## 6. Correspondencia
 
-La correspondencia es una extensión de la obra, no un canal de marketing.
+La correspondencia se publica como textos breves dentro de la sección Correspondencia. Es una extensión de la obra, no un canal de marketing.
 
 Daniel decide: cuándo escribir, con qué frecuencia, qué tipo de textos enviar.
 
@@ -142,10 +156,12 @@ Daniel decide:
 - Cuáles se muestran solo cuando están activos.
 - Cuáles quedan archivados como parte de su trayectoria.
 
+Un taller puede estar visible solo cuando está activo.
+
 **Buenas prácticas:**
 
 - Talleres activos aparecen en el Home.
-- Talleres pasados quedan en el archivo de Talleres.
+- Talleres pasados permanecen accesibles en el archivo de talleres.
 - Talleres relacionados a un libro se vinculan a él.
 
 Un taller no es un producto. Es una puerta a una zona de la obra.
@@ -157,6 +173,10 @@ Un taller no es un producto. Es una puerta a una zona de la obra.
 El sitio soporta español e inglés.
 
 Daniel decide: qué libros se traducen, qué poemas se mantienen solo en español, qué ensayos se adaptan o se reescriben.
+
+Un texto puede existir en un solo idioma. No todas las piezas requieren traducción.
+
+Si una obra existe en dos idiomas, cada idioma mantiene su propia versión editorial.
 
 **Reglas editoriales:**
 
@@ -177,8 +197,9 @@ Daniel controla:
 - Qué se muestra completo o fragmentado.
 - Qué se traduce.
 - Qué se descarga.
-- Qué se vende.
+- Qué libros se pueden adquirir mediante enlace editorial.
 - Qué secciones están activas (Biblioteca de audio, Videoteca, cuando se implementen). Ver `01-plataforma-autor-plan`.
+- Cuándo activar Biblioteca de audio o Videoteca.
 
 La plataforma no fuerza nada. Solo garantiza que la obra no se fracture.
 
@@ -194,6 +215,5 @@ Independientemente de las decisiones de Daniel, el sistema garantiza:
 - Que el Home siga teniendo una sola tesis.
 - Que la voz editorial no se diluya.
 
----
+Las decisiones de publicación nunca deben alterar la estructura de la obra ya publicada.
 
-**Versión del documento:** 2.2

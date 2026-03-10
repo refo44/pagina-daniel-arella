@@ -1,6 +1,6 @@
 # Daniel Arella — User Journey
 
-**Versión 1.3**
+**Versión 1.4**
 
 Este documento describe cómo se mueve un lector real dentro del territorio editorial. No es un diagrama técnico ni un flujo de conversión. Es una serie de recorridos de lectura y encuentro.
 
@@ -30,7 +30,7 @@ Sirve para validar:
 - → Continúa leyendo dentro del mismo universo
 - → “Explorar archivo” cuando quiere ampliar
 
-El lector nunca aterriza en un menú primero. Siempre entra por una pieza viva.
+El lector no debería llegar primero a un menú. Siempre entra por una pieza viva. También puede entrar por el Archivo si busca explorar la obra completa.
 
 ---
 
@@ -42,13 +42,13 @@ El lector nunca aterriza en un menú primero. Siempre entra por una pieza viva.
 
 - Archivo
 - → Elige tipo (Poemas, Ensayos, Relatos, Libros, Artículos)
-- → Aplica filtro por Tema o Periodo
+- → Aplica filtro por tema o periodo
 - → Abre una pieza
 - → Ve el contexto: “Este poema pertenece a [Libro]” o “Más textos de este tema”
 - → Abre el libro o sigue explorando por filtros
 - → Vuelve al Archivo si quiere cambiar de eje
 
-El lector siempre sabe si está leyendo una pieza suelta o un fragmento de una obra mayor.
+El lector siempre sabe si está leyendo una pieza independiente o parte de un libro.
 
 ---
 
@@ -63,7 +63,7 @@ El lector siempre sabe si está leyendo una pieza suelta o un fragmento de una o
 - → Entra al índice
 - → Abre un poema, ensayo o relato
 - → “Siguiente” o “Anterior”
-- → Regresa al índice o al libro
+- → Regresa al índice del libro
 - → Descarga PDF o EPUB si existe
 - → Vuelve al Archivo o al Home
 
@@ -98,7 +98,7 @@ No se pide registro. No se empuja. Se invita.
 - → Lee texto breve sobre qué recibirá
 - → Introduce su correo
 - → “Recibir nuevos textos”
-- → Mensaje de confirmación
+- → Ve mensaje de confirmación
 - → Sale sin ruido
 
 La experiencia se siente como una carta, no como una campaña.
@@ -114,16 +114,16 @@ La experiencia se siente como una carta, no como una campaña.
 - Inicio o menú
 - → Talleres
 - → Ve lista de próximos o activos
-- → “Ver taller”
+- → “Abrir el taller”
 - → Lee descripción, fechas y relación con libros
-- → “Enviar solicitud” o “Contactar”
+- → “Enviar solicitud de inscripción” o “Contactar”
 - → Sale
 
 Los talleres se leen como una extensión de la obra, no como un producto.
 
 ---
 
-## 6.1 Lector explora audio y vídeo (plan maestro)
+## 6.1 Lector explora audio y video (cuando exista)
 
 **Objetivo:** escuchar o ver la obra cuando estén disponibles Biblioteca de audio y Videoteca.
 
@@ -143,13 +143,15 @@ Misma lógica que el resto del archivo: la obra se recorre sin ruido. Ver `01-pl
 
 **Objetivo:** no perderse si llega por un enlace directo.
 
+Puede llegar desde un buscador, una revista, un enlace o una cita.
+
 **Recorrido:**
 
 - Llega a un poema, ensayo, relato, libro o artículo desde Google, una revista o un PDF
 - → Lee la pieza
 - → Ve el breadcrumb y el contexto
 - → “Abrir el libro” o “Explorar archivo”
-- → Entra al sistema completo
+- → Entra al territorio completo de la obra
 
 Ninguna pieza es un callejón sin salida.
 
@@ -160,6 +162,7 @@ Ninguna pieza es un callejón sin salida.
 Cuando algo no existe o no está disponible:
 
 - “Este texto no existe o fue retirado.”
+- "No hay textos que coincidan con la búsqueda."
 - “Este contenido no está disponible.” → “Explorar archivo” → “Volver”
 
 Siempre hay un camino de regreso a la obra.
@@ -172,9 +175,6 @@ Un recorrido es correcto si:
 
 1. El lector puede empezar a leer en menos de dos clics.
 2. Siempre hay un “siguiente”, un “volver” o un “abrir el libro”.
-3. Nunca se queda en una pantalla muerta.
+3. Siempre existe un camino hacia otra pieza de la obra.
 4. Nunca siente que entró en una app o en una tienda.
 
----
-
-**Versión del documento:** 1.3

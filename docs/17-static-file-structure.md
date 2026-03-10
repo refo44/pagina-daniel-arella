@@ -32,9 +32,15 @@ Se trabaja en un solo idioma en la maqueta inicial. La raíz del proyecto es la 
 - `/poem/` → `poem/index.html`
 - `/poem/mi-poema` → `poem/mi-poema.html`
 
-No se usan extensiones en la URL pública. El servidor estático (GitHub Pages) sirve `index.html` por defecto dentro de cada carpeta.
+Las URLs públicas no muestran extensiones cuando el recurso es una carpeta con index.html. Las fichas individuales pueden usar `{slug}.html` en la maqueta.
 
-Si luego se agregan idiomas, se duplica este árbol bajo `/es/` y `/en/`.
+En WordPress las fichas pasarán a `/poem/{slug}/`. En la maqueta estática se usan archivos `{slug}.html`.
+
+La maqueta inicial funciona sin prefijo de idioma. Cuando se añadan idiomas, todo el árbol se moverá bajo `/es/` y `/en/`.
+
+---
+
+Todas las rutas usan trailing slash cuando corresponden a carpetas.
 
 ---
 
@@ -44,6 +50,7 @@ Si luego se agregan idiomas, se duplica este árbol bajo `/es/` y `/en/`.
 daniel-arella-static/
 ├── index.html
 ├── 404.html
+├── sitemap.html          (opcional; útil para revisar estructura)
 │
 ├── archivo/
 │   └── index.html
@@ -83,11 +90,14 @@ daniel-arella-static/
 │   └── {slug}.html
 │
 ├── tema/
-│   └── {slug}.html
+│   └── {slug}/
+│       └── index.html
 ├── periodo/
-│   └── {slug}.html
+│   └── {slug}/
+│       └── index.html
 ├── forma/
-│   └── {slug}.html
+│   └── {slug}/
+│       └── index.html
 │
 ├── css/
 │   ├── main.css          (único entry point; importa el resto en orden ITCSS)
@@ -104,6 +114,7 @@ daniel-arella-static/
 ├── assets/
 │   ├── images/
 │   ├── icons/
+│   ├── svg/
 │   ├── fonts/
 │   └── favicon/
 │
@@ -111,7 +122,7 @@ daniel-arella-static/
     ├── header.html
     ├── footer.html
     ├── navigation.html
-    ├── breadcrumbs.html
+    ├── breadcrumb.html
     ├── poem-card.html
     ├── book-card.html
     ├── essay-card.html
@@ -120,7 +131,7 @@ daniel-arella-static/
     └── article-card.html
 ```
 
-`forma/` y `article-card.html` son opcionales; se añaden cuando se implementan. Nada más. Nada menos.
+La carpeta `forma/` solo existe si se implementa la taxonomía form. No se permite JavaScript para animaciones en contenido de lectura (doc 22). Nada más. Nada menos.
 
 ---
 
@@ -153,7 +164,7 @@ Cada tipo es una carpeta con su archivo y sus piezas.
 | workshop | `/talleres/index.html` | `/talleres/{slug}.html` |
 | blog (artículos) | `/blog/index.html` | `/blog/{slug}.html` |
 
-No existen URLs fuera de esto.
+El CPT interno es workshop pero el slug público es `/talleres/`. No existen URLs fuera de esto.
 
 ---
 
@@ -163,9 +174,9 @@ Son archivos filtrados.
 
 | Vista | Ruta |
 |-------|------|
-| Tema | `/tema/{slug}.html` |
-| Periodo | `/periodo/{slug}.html` |
-| Forma (opcional) | `/forma/{slug}.html` |
+| tema | `/tema/{slug}/` |
+| periodo | `/periodo/{slug}/` |
+| forma (opcional) | `/forma/{slug}/` |
 
 Usan el mismo layout que un archivo por tipo. Forma se añade solo si se implementa (`03-arquitectura-editorial`).
 
@@ -175,11 +186,13 @@ Usan el mismo layout que un archivo por tipo. Forma se añade solo si se impleme
 
 Todo se arma con piezas. No se duplica estructura.
 
+Durante la maqueta estos archivos se insertan manualmente o mediante un preprocesador (Vite, Eleventy, Astro).
+
 | Parte | Uso |
 |-------|-----|
 | header.html | Cabecera |
 | navigation.html | Menú |
-| breadcrumbs.html | Ruta |
+| breadcrumb.html | Ruta |
 | footer.html | Pie |
 | poem-card.html | Tarjeta poema |
 | book-card.html | Tarjeta libro |
@@ -188,13 +201,15 @@ Todo se arma con piezas. No se duplica estructura.
 | workshop-card.html | Tarjeta taller |
 | article-card.html | Tarjeta artículo |
 
-En WordPress estos se convierten en `get_template_part()`.
+`article-card.html` se usa solo para el CPT post (Artículos). En WordPress estos se convierten en `get_template_part()`.
 
 ---
 
 ## 8. CSS
 
 **Regla (22-tendencias-ux-ui-sistema-editorial):** 1 CSS principal (`main.css` importa todo). Sin fragmentos dispersos.
+
+El HTML solo carga `main.css`. Los demás archivos se importan dentro de `main.css`.
 
 Los nombres de clase deben ser semánticos y editoriales, no genéricos.
 
@@ -211,7 +226,7 @@ Los nombres de clase deben ser semánticos y editoriales, no genéricos.
 - `.sidebar`
 - `.widget`
 
-La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, variables y roles semánticos en `18-css-architecture`. Tokens y criterios en `22-tendencias-ux-ui-sistema-editorial`.
+La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, variables y roles semánticos en `18-css-architecture`. Stylelint (sección 9 de 18) valida el cumplimiento. Tokens y criterios en `22-tendencias-ux-ui-sistema-editorial`.
 
 ---
 
@@ -230,11 +245,11 @@ La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, v
 | story/slug.html | single-story.php |
 | talleres/index.html | archive-workshop.php |
 | talleres/slug.html | single-workshop.php |
-| blog/index.html | archive.php |
+| blog/index.html | home.php |
 | blog/slug.html | single.php |
-| tema/slug.html | taxonomy-topic.php |
-| periodo/slug.html | taxonomy-period.php |
-| forma/slug.html | taxonomy-form.php |
+| tema/{slug}/index.html | taxonomy-topic.php |
+| periodo/{slug}/index.html | taxonomy-period.php |
+| forma/{slug}/index.html | taxonomy-form.php |
 | 404.html | 404.php |
 
 Migrar es copiar el markup y envolverlo con loops de WordPress. Nada se vuelve a pensar.

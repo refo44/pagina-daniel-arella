@@ -1,6 +1,6 @@
 # Daniel Arella — WordPress Content Model
 
-**Versión 2.3**
+**Versión 2.4**
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés, etiquetas visibles traducidas vía i18n. Suficiente para desarrollo, legible para el autor.
 
@@ -38,9 +38,6 @@ Clasificación mínima para navegar el corpus.
 |-----|----------|------|----------|
 | topic | Tema | Jerárquica | poem, book, essay, story, post, workshop |
 | period | Periodo | Jerárquica | poem, book, essay, story, post, workshop |
-| form | Forma | Jerárquica | poem, book, essay, story, post, workshop |
-
-`form` es opcional; se implementa solo si el corpus lo requiere. Ver `03-arquitectura-editorial`.
 
 No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven en campos simples o en el sistema de traducción.
 
@@ -48,43 +45,49 @@ No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven
 
 ## 3. Custom Post Types
 
+**Featured image:** thumbnail opcional en poem, essay y story; obligatorio en book y workshop.
+
 ### poem
 
 - Slug: /poem/
-- Tiene archivo
+- Tiene archive
 - Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
 - Relación: poem_book → book (0 o 1)
+- Orden dentro del libro (opcional): book_order → integer
 
 ### book
 
 - Slug: /book/
-- Tiene archivo
-- Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
+- Tiene archive
+- Soporta: title, editor, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
-- Campos: book_year, book_publisher, book_isbn, book_pdf, book_epub, book_buy_link
+- Campos: book_year, book_publisher, book_isbn, book_pdf, book_epub, book_buy_url
+- Los contenidos del libro se ordenan manualmente.
 
 ### essay
 
 - Slug: /essay/
-- Tiene archivo
+- Tiene archive
 - Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
 - Campos: essay_abstract
 - Relación: essay_book → book (0 o 1)
+- Orden dentro del libro (opcional): book_order → integer
 
 ### story
 
 - Slug: /story/
-- Tiene archivo
+- Tiene archive
 - Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
 - Relación: story_book → book (0 o 1)
+- Orden dentro del libro (opcional): book_order → integer
 
 ### workshop
 
-- Slug: /talleres/
-- Tiene archivo
+- Slug: /talleres/ (traducible según idioma)
+- Tiene archive
 - Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
 - Campos: workshop_start_date, workshop_end_date, workshop_place, workshop_status, workshop_signup_url
@@ -93,32 +96,37 @@ No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven
 ### post
 
 - Slug: /blog/
+- Tiene archive
+- Soporta: title, editor, excerpt, thumbnail, revisions
 - Uso: artículos, notas, textos circunstanciales
 - Taxonomías: topic, period
 
 ### page
 
 - Uso: Inicio, Sobre el autor, Archivo, Correspondencia, Contacto, Prensa, Derechos
+- Soporta: title, editor, excerpt, thumbnail
 - Sin taxonomías
 
 ---
 
 ## 4. Relaciones
 
-Relaciones mínimas que crean lectura en profundidad:
+Relaciones mínimas que crean lectura en profundidad. Las relaciones con book son opcionales.
 
 - poem → book
 - essay → book
 - story → book
 - workshop → book
 
-Implementadas como campos de relación simples. No existen ciclos, series ni capas adicionales.
+Implementadas como campos de relación (post ID) hacia book. No existen ciclos, series ni capas adicionales.
 
 ---
 
 ## 5. Idiomas y URLs
 
 Idiomas gestionados por plugin de traducción. Prefijo por idioma: /es/, /en/
+
+Las rutas base se mantienen iguales entre idiomas, salvo slugs traducibles como /talleres/.
 
 Ejemplos: /es/poem/slug, /en/book/slug, /es/talleres/slug
 
@@ -136,10 +144,11 @@ Solo lo necesario para mostrar la obra:
 - single-story, archive-story
 - single-workshop, archive-workshop
 - single.php, archive.php (post/blog)
-- front-page
-- page
+- front-page.php
+- page.php
+- taxonomy-topic.php, taxonomy-period.php (fallback: archive.php)
 
-No hay plantillas especiales para taxonomías que no existen.
+No hay plantillas especiales para taxonomías; las de topic y period usan archive.php como base.
 
 ---
 
@@ -149,6 +158,3 @@ Todo en este modelo existe para una sola cosa: que la obra pueda leerse, encontr
 
 No hay capas para marketing, funnels ni growth. Solo obra, libros, pensamiento y lectores.
 
----
-
-**Versión del documento:** 2.3

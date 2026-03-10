@@ -3,9 +3,9 @@
 **Documento único de estándares de accesibilidad**  
 **Versión 1.0**
 
-Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido editorial, checklist de implementación y pruebas. Alineado con WCAG 2.1/2.2 Nivel AA.
+Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido editorial, checklist de implementación y pruebas. Alineado con WCAG 2.2 Nivel AA.
 
-**Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`, `21-orden-implementacion`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`, `18-css-architecture`, `22-tendencias-ux-ui-sistema-editorial`, `24-principios-layout`
 
 **Alimenta a:** `18-css-architecture`, `21-orden-implementacion`
 
@@ -14,7 +14,8 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 ## 1. Estrategia
 
 - **Compromiso:** Cualquier persona puede leer, orientarse y comprender el contenido sin fricción.
-- **Referencia:** WCAG 2.1 Nivel AA (mínimo) o WCAG 2.2 Nivel AA (recomendado).
+- **Referencia:** WCAG 2.2 Nivel AA.
+- **Compatibilidad:** WCAG 2.1 Nivel AA.
 - **Filosofía:** La accesibilidad como parte del diseño y el contenido, no como añadido posterior.
 
 ---
@@ -45,8 +46,8 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 ## 4. Reglas de diseño
 
 - **Tipografía legible:** Tamaños cómodos, jerarquía clara (H1–H3).
-- **Contraste:** Mínimo AA (4,5:1 texto normal, 3:1 texto grande).
-- **Objetivos:** Áreas clicables adecuadas (~44×44px cuando sea posible).
+- **Contraste:** Mínimo AA (4,5:1 texto normal, 3:1 texto grande). Elementos UI (iconos, botones, focus): mínimo 3:1.
+- **Objetivos:** Áreas clicables adecuadas (~44×44px cuando sea posible; WCAG 2.2 Target Size).
 - **Color:** No depender solo del color para transmitir significado.
 - **Lenguaje:** Claro y directo (alineado con la guía de voz).
 
@@ -54,13 +55,16 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 
 - **Skip link:** "Saltar al contenido" visible al recibir foco.
 - **Idioma:** `lang` en `<html>`; consistente por página.
-- **Orden de foco:** Lógico, predecible (orden de tabulación).
+- **Orden de foco:** Debe seguir el orden visual y lógico del contenido.
 - **Foco visible:** No `outline: none` sin reemplazo (`:focus-visible`).
+- **Focus Not Obscured (WCAG 2.2):** El elemento con foco no debe quedar completamente oculto por headers fijos, banners o overlays.
 - **Reflow y zoom:** Usable al 200% de zoom y 320px de ancho.
-- **Landmarks:** Un `<main>` por página; header/nav/main/footer consistentes.
-- **Headings:** Sin saltos (H1→H3); jerarquía según contenido.
+- **Landmarks:** Un `<main>` por página; header, nav, main, aside, footer consistentes.
+- **Headings:** Jerarquía lógica (evitar saltos innecesarios).
 - **Enlaces:** Distinguibles sin depender solo del color.
-- **Formularios:** Labels, autocomplete, mensajes de error claros.
+- **Formularios:** Labels asociados a inputs, autocomplete, mensajes de error claros.
+- **Teclado:** Todo elemento interactivo debe ser operable con teclado.
+- **Título de página:** Cada página debe tener un título único y descriptivo.
 
 ---
 
@@ -69,7 +73,7 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 ### Base
 
 1. **HTML semántico primero.** Usar elementos nativos (`button`, `a`, `input`, `nav`, `main`, etc.).
-2. **ARIA solo** cuando HTML sea insuficiente (UI dinámica, componentes personalizados).
+2. **No usar ARIA** cuando HTML nativo ya resuelve el problema. Usar ARIA solo para UI dinámica o componentes personalizados.
 3. **No usar ARIA para corregir markup incorrecto.**
 
 ### Cuándo usar ARIA
@@ -89,7 +93,7 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 
 ### Botones con icono
 
-Proporcionar nombre accesible: (1) texto visible, (2) texto `.visually-hidden`, (3) `aria-labelledby`, (4) `aria-label` como último recurso. Iconos decorativos: `aria-hidden="true"`, `focusable="false"`. Ver `19-assets-strategy`.
+Proporcionar nombre accesible: (1) texto visible, (2) texto `.u-visually-hidden` (ver `18-css-architecture`), (3) `aria-labelledby`, (4) `aria-label` como último recurso. Iconos decorativos: `aria-hidden="true"`, `focusable="false"`. Ver `19-assets-strategy`.
 
 ---
 
@@ -98,8 +102,8 @@ Proporcionar nombre accesible: (1) texto visible, (2) texto `.visually-hidden`, 
 - **Headings:** H1–H3 ordenados; un H1 por página.
 - **Texto alt:** Todas las imágenes informativas; descriptivo y conciso. Decorativas: `alt=""`.
 - **Enlaces:** Texto descriptivo (evitar "aquí", "clic", "más" sin contexto).
-- **Enlaces externos:** Indicar "se abre en nueva pestaña" cuando `target="_blank"`.
-- **Media:** Subtítulos o transcripción para vídeo/audio informativo.
+- **Enlaces externos:** Indicar cuando un enlace abre nueva pestaña o cambia contexto.
+- **Media:** Subtítulos o transcripción para video/audio informativo.
 
 ---
 
@@ -111,7 +115,7 @@ Proporcionar nombre accesible: (1) texto visible, (2) texto `.visually-hidden`, 
 - [ ] Foco visible; no `outline: none` sin reemplazo
 - [ ] Usable al 200% de zoom y 320px de ancho
 - [ ] Imágenes con alt apropiado
-- [ ] Formularios con labels reales; errores vinculados (aria-describedby, aria-invalid)
+- [ ] Formularios con labels asociados a inputs; errores vinculados (aria-describedby, aria-invalid)
 - [ ] Sin animación agresiva; respetar `prefers-reduced-motion`
 - [ ] Sin contenido parpadeante
 - [ ] Contraste AA en texto, enlaces, botones
@@ -123,19 +127,17 @@ Proporcionar nombre accesible: (1) texto visible, (2) texto `.visually-hidden`, 
 
 - **Teclado:** Tab por todos los interactivos; sin trampas de foco.
 - **Foco visible:** Claro en enlaces, botones, inputs.
-- **Lighthouse:** Sin fallos críticos de accesibilidad.
-- **Formularios:** Label asociado, error visible y legible.
-- **Lector de pantalla (recomendado):** Probar flujos clave (nav, formulario de contacto).
+- **Herramientas:** Lighthouse, Axe DevTools, WAVE (sin fallos críticos de accesibilidad).
+- **Formularios:** Label asociado a input, error visible y legible.
+- **Lector de pantalla (recomendado):** NVDA, VoiceOver o JAWS; probar flujos clave (nav, formulario de contacto).
 
 ---
 
 ## 9. Relación con otros documentos
 
 - **Identidad:** `02-identidad-corporativa` define paleta y contraste; este documento extiende los criterios de accesibilidad.
-- **CSS:** `18-css-architecture` implementa `:focus-visible`, roles y espaciado; criterios en sección 12.
+- **CSS:** `18-css-architecture` implementa `:focus-visible`, roles y espaciado; criterios definidos en este documento.
 - **Tendencias:** `22-tendencias-ux-ui-sistema-editorial` incluye accesibilidad en su checklist; este documento lo detalla.
+- **Layout:** `24-principios-layout` define contraste en texto sobre imagen; criterios en este documento.
 
----
-
-**Versión:** 1.0  
-**Estándar:** WCAG 2.1 / 2.2 (W3C)
+**Estándar:** WCAG 2.2 (W3C)

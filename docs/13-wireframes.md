@@ -29,16 +29,16 @@ Bloques en orden vertical:
 - **Ensayo reciente**
   - Título
   - Fragmento
-  - Enlace “Leer”
+  - Enlace “Leer el ensayo”
 - **Taller próximo**
   - Título
   - Fecha y modalidad
-  - Enlace “Ver taller”
+  - Enlace “Abrir el taller”
 - **Entrada al archivo**
   - Enlace “Explorar archivo”
 - **Correspondencia**
   - Texto breve
-  - Campo de email
+  - Campo de correo
   - Botón “Recibir nuevos textos”
 - **Pie**
 
@@ -56,7 +56,7 @@ Bloques:
 - Breadcrumb
 - Título
 - Texto del poema
-- Pertenece al libro → Enlace al libro
+- Este texto pertenece al libro → Enlace al libro
 - Navegación: Anterior, Siguiente, Volver al archivo
 - Pie
 
@@ -69,6 +69,7 @@ Bloques:
 Bloques:
 
 - Cabecera
+- Breadcrumb
 - Título
 - Descripción editorial
 - Metadatos: Año, Editorial, ISBN
@@ -90,8 +91,8 @@ Bloques:
 - Abstract
 - Cuerpo del ensayo
 - Notas o referencias
-- Pertenece al libro
-- Navegación: Anterior, Siguiente, Volver
+- Este texto pertenece al libro
+- Navegación: Ensayo anterior, Siguiente ensayo, Volver al archivo
 - Pie
 
 ---
@@ -106,8 +107,8 @@ Bloques:
 - Breadcrumb
 - Título
 - Texto del relato
-- Pertenece al libro
-- Navegación: Anterior, Siguiente, Volver
+- Este texto pertenece al libro
+- Navegación: Relato anterior, Siguiente relato, Volver al archivo
 - Pie
 
 ---
@@ -138,7 +139,7 @@ Bloques:
 - Breadcrumb
 - Título
 - Texto del artículo
-- Navegación: Anterior, Siguiente, Volver (o Explorar archivo)
+- Navegación: Explorar artículos o Volver al archivo
 - Pie
 
 Ver `07-sistema-editorial-web` (4.3), `10-ui-copy-sheet` (6.6).
@@ -153,9 +154,9 @@ Bloques:
 
 - Cabecera
 - Título
-- Filtros: Tipo, Tema, Periodo (y Forma, si está implementada)
+- Filtros: tipo, tema, periodo (y forma, si está implementada)
 - Lista de piezas (Título, Tipo, Libro)
-- Paginación o carga
+- Paginación
 - Pie
 
 ---
@@ -170,7 +171,7 @@ Bloques previstos:
 
 - Cabecera
 - Título (“Biblioteca de audio”)
-- Listado de piezas (título, tipo, duración; enlace o embed al servicio externo)
+- Listado de piezas (título, tipo, enlace o embed)
 - Filtros opcionales (tipo: poema, audiolibro, podcast)
 - Pie
 
@@ -180,15 +181,15 @@ La ficha de cada pieza (single) se definirá al implementar el modelo de conteni
 
 ## 8.2 Videoteca (plan maestro)
 
-**Función:** ofrecer la obra en formato vídeo (poemas leídos, videopoemas, conferencias, clases, música).
+**Función:** ofrecer la obra en formato video (poemas leídos, videopoemas, conferencias, clases, música).
 
-**Alojamiento:** El vídeo no se sube al servidor; vive en servicios de terceros (YouTube, Vimeo, Instagram Reels, etc.). El sitio muestra enlaces o reproductores embebidos (embed).
+**Alojamiento:** El video no se sube al servidor; vive en servicios de terceros (YouTube, Vimeo, Instagram Reels, etc.). El sitio muestra enlaces o reproductores embebidos (embed).
 
 Bloques previstos:
 
 - Cabecera
-- Título (“Videoteca”)
-- Listado de piezas (título, tipo, miniatura; enlace o embed al servicio externo)
+- Título: Videoteca
+- Listado de piezas (título, tipo, enlace o embed)
 - Filtros opcionales (tipo: poema leído, conferencia, etc.)
 - Pie
 
@@ -202,8 +203,8 @@ Estructura común: **Cabecera → Contenido editorial → Pie**
 
 | Página | Contenido |
 |--------|-----------|
-| **Sobre el autor** | Foto, Bio corta, Bio larga, Enlaces a libros |
-| **Correspondencia** | Texto editorial, Campo email, Botón “Recibir nuevos textos” |
+| **Sobre el autor** | Cabecera, Breadcrumb, Contenido editorial (Foto, Bio corta, Bio larga, Enlaces a libros), Pie |
+| **Correspondencia** | Texto editorial, Campo de correo, Botón “Recibir nuevos textos” |
 | **Contacto** | Texto breve, Formulario |
 | **Prensa** | Lista de piezas: Medio, Año, Enlace |
 | **Derechos** | Texto legal y permisos |
@@ -219,6 +220,3 @@ Una pantalla es correcta si:
 3. Siempre hay una salida hacia la obra completa.
 4. No hay animaciones decorativas en zona de lectura (doc 22).
 
----
-
-**Versión del documento:** 1.3

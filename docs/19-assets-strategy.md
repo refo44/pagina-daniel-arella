@@ -1,10 +1,12 @@
 # Daniel Arella — Estrategia de assets
 
-**Iconos, fuentes, favicon y scripts: reglas y estructura**
+**Iconos, fuentes, favicon y scripts: reglas y estructura**  
+**Versión 1.1**
 
-Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, fuentes, iconos, favicon).
+Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, iconos, fuentes, favicon).
 
-**Se apoya en:** `02-identidad-corporativa`, `16-theme-file-structure`, `17-static-file-structure`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `02-identidad-corporativa`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `17-static-file-structure`, `16-theme-file-structure`
 
 ---
 
@@ -16,8 +18,9 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 | **Biblioteca de iconos** | Una sola, minimal: Heroicons, Lucide o Feather. Recomendado: Lucide. |
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
+| **Imágenes** | Optimizar antes de subir (WebP o AVIF cuando sea posible). |
 | **JS** | Solo navegación, formularios, accesibilidad. Sin frameworks ni lógica de app. Todo con `defer`. Sin animaciones costosas ni librerías de motion. |
-| **Audio y vídeo (Biblioteca de audio, Videoteca)** | No se alojan en el servidor ni en `assets/`. Viven en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena URL o código de embed y muestra reproductor embebido o enlace. Ver `01-plataforma-autor-plan`, `03-arquitectura-editorial`. |
+| **Audio y video (Biblioteca de audio, Videoteca)** | No se alojan en el servidor ni en `assets/`. Viven en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena URL o código de embed y muestra reproductor embebido o enlace. Ver `01-plataforma-autor-plan`, `03-arquitectura-editorial`. |
 
 ---
 
@@ -28,9 +31,9 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 ```
 assets/
 ├── icons/          SVGs inline o referenciados (sprite / archivos sueltos)
-├── images/         Fotos, portadas de libros, ilustraciones
+├── images/         Fotos, portadas de libros, ilustraciones (optimizar: WebP o AVIF cuando sea posible)
 ├── fonts/          Tipografías autohospedadas (woff2)
-└── favicon/        ico, svg, png, webmanifest
+└── favicon/        ico, svg, png, webmanifest (agrupa todos los archivos de icono del sitio: favicon, apple-touch-icon, manifest)
 
 js/                 Scripts mínimos (navegación, formularios, accesibilidad)
 ├── main.js         (o navigation.js, forms.js, accessibility.js)
@@ -76,13 +79,13 @@ assets/icons/
 
 **Opción A — SVG inline**
 
-- Insertar el SVG dentro del botón o enlace.
+- Insertar el SVG dentro del botón o enlace. Los SVGs deben limpiarse (SVGO o similar) antes de incluirse en el proyecto.
 - **Accesibilidad:** si el icono es decorativo: `aria-hidden="true"`. Si comunica significado y no hay texto visible: `aria-label` en el botón o enlace.
 
 **Opción B — Sprite SVG**
 
 - Archivo: `assets/icons/sprite.svg`.
-- En el HTML: `<svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#icon-mail"></use></svg>` (ajustar ruta según raíz del proyecto).
+- En el HTML: `<svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"></use></svg>` o usar rutas relativas: `assets/icons/sprite.svg#mail` (ajustar según raíz del proyecto).
 
 ---
 
@@ -108,7 +111,7 @@ assets/fonts/
     source-sans-3-semibold.woff2
 ```
 
-Formato: **woff2**. Declaración en `css/settings.css` (o equivalente) con `@font-face`. Las variables CSS (`--font-body`, `--font-heading`, `--font-meta`) apuntan a estas familias. Ver `18-css-architecture`.
+Formato: **woff2**. Los nombres de archivo deben estar en kebab-case. Declaración en `css/settings.css` (o equivalente) con `@font-face`. Las declaraciones `@font-face` deben usar `font-display: swap`. Las variables CSS (`--font-body`, `--font-heading`, `--font-meta`) apuntan a estas familias. Ver `18-css-architecture`.
 
 ---
 
@@ -128,6 +131,8 @@ assets/favicon/
   apple-touch-icon.png
   site.webmanifest
 ```
+
+`site.webmanifest` puede permanecer en `assets/favicon` o moverse a la raíz del sitio si el servidor lo requiere.
 
 ### Checklist
 
@@ -153,7 +158,7 @@ Solo scripts que cumplan una de estas funciones:
 | **Navegación** | Menú móvil, abrir/cerrar paneles, toggles. |
 | **Formularios** | Validación ligera, feedback de envío, submit por fetch si hace falta. |
 | **Accesibilidad** | Foco, skip links, control de teclado en menús. |
-| **Mejoras no editoriales** | Lazy loading si no se usa el nativo, pequeños efectos que no alteran el contenido. |
+| **Mejoras no editoriales** | Preferir lazy loading nativo con `loading="lazy"`. JS solo si el navegador no lo soporta. Pequeños efectos que no alteran el contenido. |
 
 ### Ejemplos de archivos válidos
 
@@ -165,7 +170,7 @@ js/
 └── accessibility.js
 ```
 
-Nombres y rutas se mantienen en la migración a WordPress.
+Todos los archivos JS deben usar kebab-case. Nombres y rutas se mantienen en la migración a WordPress.
 
 ### Qué no entra
 
@@ -200,7 +205,8 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 - **assets/** se replica dentro del theme (p. ej. `theme-daniel-arella/assets/`).
 - **js/** se replica en la raíz del theme (p. ej. `theme-daniel-arella/js/`).
-- No se cambian nombres de archivos ni estructura; solo el punto de partida (raíz del proyecto vs raíz del theme). Fuentes, iconos y favicon se encolan o referencian desde `assets/`; scripts desde `js/`.
+- No se cambian nombres de archivos ni estructura; solo el punto de partida (raíz del proyecto vs raíz del theme). Fuentes, iconos y favicon se encolan o referencian desde `assets/`; scripts se encolan en `functions.php` mediante `wp_enqueue_script()`.
+- Assets deben servirse con `cache-control` largo en producción. Esto no afecta la maqueta pero sí el sitio final.
 
 ---
 
@@ -208,8 +214,5 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 - **Estructura de archivos:** `17-static-file-structure` incluye `assets/` (images, icons, fonts, favicon) y `js/` en la raíz; este documento detalla iconos, fuentes, favicon y reglas para JS.
 - **Identidad:** `02-identidad-corporativa` define tipografías y paleta; las fuentes listadas aquí son las que se autohospedan para esa identidad.
-- **CSS:** `18-css-architecture` define variables de fuente (`--font-body`, `--font-heading`, `--font-meta`) que apuntan a las fuentes en `assets/fonts/`.
+- **CSS:** `18-css-architecture` define variables de fuente (`--font-body`, `--font-heading`, `--font-meta`) que apuntan a las fuentes en `assets/fonts/`. Las fuentes declaradas aquí se referencian mediante variables CSS definidas en `18-css-architecture`.
 
----
-
-**Versión:** 1.1

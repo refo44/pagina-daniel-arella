@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 1.8**
+**Versión 1.9**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -34,7 +34,7 @@ Solo existen cinco colores reales. No hay grises, no hay degradados, no hay exte
 |--------|-----|----------------|
 | Charcoal | #2c2c2c | Cabecera, pie, texto |
 | Off-white | #f8f9fa | Fondos, superficies |
-| Slate Gray | #9ca3af | Superficies (cards), texto secundario, bordes |
+| Slate Gray | #9ca3af | Superficies editoriales, texto secundario, bordes |
 | Steel Blue | #4a6fa5 | Acento base: enlaces, botones, foco |
 | Deep Slate | #2c3e50 | Acento intenso: hover, énfasis |
 
@@ -46,12 +46,11 @@ Imagina el sitio así:
 [ Header: Charcoal ]
     Daniel Arella
 --------------------------
-[ Surface: Slate Gray ]
-    Poem card
-    Essay card
+[ Superficie editorial: Slate Gray ]
+    Destacado
 --------------------------
 Text: Charcoal
-Links: Steel Blue → Deep Slate en hover (sin subrayado)
+Links: Steel Blue → Deep Slate en hover
 Buttons: Steel Blue con texto Off-white → Deep Slate en hover
 ```
 
@@ -61,7 +60,7 @@ Todo se construye con estas cinco tintas. Fondos y texto siempre provienen de la
 |-------------|-------|-------|
 | Página general | Off-white | Charcoal |
 | Cabecera / pie | Charcoal | Off-white |
-| Cards / superficies | Slate Gray | Charcoal |
+| Superficies editoriales | Slate Gray | Charcoal |
 | Botones / CTAs | Steel Blue | Off-white |
 | Hover botones | Deep Slate | Off-white |
 
@@ -97,6 +96,17 @@ Infraestructura editorial.
 - Fechas
 
 Nunca se mezclan. Nunca se introduce una tercera.
+
+### Jerarquía tipográfica
+
+| Elemento | Fuente | Tamaño sugerido |
+|----------|--------|-----------------|
+| Título de obra / página (H1) | Fraunces | 2–2.4rem |
+| Subtítulo (H2) | Fraunces | 1.5–1.7rem |
+| Secciones (H3) | Fraunces | 1.2–1.3rem |
+| Texto corriente | Fraunces | 18px |
+| Metadatos | Source Sans 3 | 0.9rem |
+| Captions / notas | Source Sans 3 | 0.85rem |
 
 ---
 
@@ -135,11 +145,13 @@ Visualmente discretos. Nunca dominan la obra.
 
 | Regla | Significado |
 |-------|-------------|
-| Una columna | Lectura vertical |
+| Una columna | La lectura principal de poemas y ensayos ocurre en una sola columna. |
 | 65ch | Ancho humano |
 | Espacio | Respiración |
 | Sin grids densos | No revista |
 | Flujo | No tarjetas tipo app |
+
+Las páginas de exploración (archivo, listados, talleres, publicaciones) pueden usar composición secundaria siempre subordinada al ritmo editorial.
 
 Ejemplo visual:
 
@@ -172,7 +184,7 @@ Los únicos colores reales. El orden es semántico: 1–3 neutros, 4–5 acentos
 ```css
 --brand-1: #2c2c2c;  /* Charcoal - neutro oscuro principal */
 --brand-2: #f8f9fa;  /* Off-white - neutro claro base */
---brand-3: #9ca3af;  /* Slate Gray - neutro medio: superficies, bordes, texto secundario */
+--brand-3: #9ca3af;  /* Slate Gray - neutro medio: superficies editoriales, bordes, texto secundario */
 --brand-4: #4a6fa5;  /* Steel Blue - acento base de interacción */
 --brand-5: #2c3e50;  /* Deep Slate - acento intenso (hover, énfasis) */
 ```
@@ -186,7 +198,7 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 --bg: var(--brand-2);           /* Off-white */
 --text: var(--brand-1);         /* Charcoal */
 --text-muted: var(--brand-3);  /* Slate Gray - metadatos, UI secundaria (evita opacity) */
---surface: var(--brand-3);      /* Slate Gray - cards, superficies */
+--surface: var(--brand-3);      /* Slate Gray - superficies editoriales */
 --border: var(--brand-3);       /* Slate Gray - bordes suaves, no Charcoal (evita dureza) */
 
 --link: var(--brand-4);         /* Steel Blue - acento base */
@@ -203,23 +215,29 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 Los componentes solo consumen roles, nunca hex directo.
 
+**Regla de superficie:** Off-white es el fondo dominante del sitio. Slate Gray se usa solo para superficies editoriales puntuales (destacados, bloques contextuales, navegación secundaria). No debe convertirse en fondo extensivo de lectura.
+
 **Surface y separación:** Off-white y Slate Gray contrastan bien. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
+
+**Separación visual:** (1) Primero: whitespace. (2) Segundo: ritmo vertical. (3) Tercero: borde suave (brand-3). Evitar contornos fuertes o marcos pesados.
 
 ### Accesibilidad de contraste
 
 - **Texto sobre fondo claro:** Charcoal sobre Off-white cumple AA sobrado.
 - **Steel Blue** como texto sobre Off-white: verificar contraste AA.
 - **Deep Slate** como texto sobre Off-white: verificar contraste AA.
-- **Solución:** Enlaces con color azul. Sin subrayado. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
+- **Solución:** Enlaces con color azul. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
+
+**Enlaces de navegación o interfaz:** sin subrayado.
+
+**Enlaces dentro de texto editorial** (ensayos, notas, etc.): subrayado discreto para claridad de lectura.
 
 ```css
-a {
-  color: var(--link);
-  text-decoration: none;
-}
-a:hover {
-  color: var(--link-hover);
-}
+/* Navegación / interfaz: sin subrayado */
+a { color: var(--link); text-decoration: none; }
+/* Texto editorial: subrayado discreto (clase .prose a o selector en cuerpo de ensayo) */
+.prose a { text-decoration: underline; text-underline-offset: 0.2em; }
+a:hover { color: var(--link-hover); }
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
@@ -250,10 +268,12 @@ Nunca usan hex ni brand tokens.
   color: var(--text-on-primary);
 }
 
-.card {
+.surface-editorial {
   background: var(--surface);
 }
 ```
+
+**Regla editorial de superficies:** Las superficies editoriales son contenedores ocasionales para destacados o contexto. La obra principal se presenta directamente sobre el fondo de lectura. Se usan para: destacados, navegación contextual, módulos secundarios. No para envolver sistemáticamente todos los textos.
 
 Esto permite: Dark mode, Rebranding, Tema alterno — sin tocar componentes.
 
@@ -294,7 +314,7 @@ Esto permite: Dark mode, Rebranding, Tema alterno — sin tocar componentes.
 }
 ```
 
-No hay estilos arbitrarios. Todo fluye desde los tokens. Enlaces sin subrayado.
+No hay estilos arbitrarios. Todo fluye desde los tokens.
 
 ---
 
@@ -313,7 +333,7 @@ No se añaden colores. Solo se reasignan roles (`prefers-color-scheme: dark`). O
     --text: var(--brand-2);     /* Off-white */
     --text-muted: var(--brand-3);
     --surface: var(--brand-3);  /* Slate Gray - protagonista sobre oscuro */
-    --border: var(--brand-2);   /* Off-white */
+    --border: var(--brand-2);   /* Off-white — usar con moderación; preferir separación por espacio antes que por contorno */
 
     --link: var(--brand-4);     /* Steel Blue - contrasta bien en oscuro */
     --link-hover: var(--brand-5);
@@ -342,6 +362,14 @@ Este sistema se traduce directamente a:
 - Tokens de editor
 
 El editor no puede romper la identidad.
+
+**Restricciones del editor:**
+
+- Paleta bloqueada a los tokens del sistema
+- Tipografías bloqueadas a Fraunces y Source Sans 3
+- Sin colores personalizados por bloque
+- Sin tamaños tipográficos arbitrarios
+- Espaciados gobernados por tokens del sistema
 
 ---
 
@@ -384,7 +412,9 @@ Nada visual se decide fuera de este sistema. Ni en HTML. Ni en WordPress. Ni en 
 
 La obra vive dentro de esta gramática.
 
+**La lectura siempre domina sobre la interfaz. La interfaz nunca debe competir visualmente con la obra.**
+
 ---
 
-**Versión del documento:** 1.8  
+**Versión del documento:** 1.9  
 **Identidad:** Silencio frío — Charcoal, Off-white, Slate Gray, Steel Blue, Deep Slate.

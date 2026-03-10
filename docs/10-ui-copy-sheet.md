@@ -1,7 +1,7 @@
 # Daniel Arella — UI Copy Sheet
 
 **Repertorio de microcopy, navegación y sistema**  
-**Versión 2.3**
+**Versión 2.4**
 
 Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
@@ -44,7 +44,7 @@ Preferir siempre formulaciones editoriales:
 
 ### 1.3 Verbos permitidos
 
-Leer, Abrir, Ver, Buscar, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Guardar, Cerrar, Cambiar.
+Leer, Abrir, Ver, Buscar, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Cerrar, Cambiar.
 
 **Nunca:** suscribirse, comprar, empezar, desbloquear, registrarse.
 
@@ -105,7 +105,7 @@ La Home responde una sola cosa: **“Esto es lo que estoy escribiendo ahora.”*
 - Leer el poema
 - Leer el ensayo
 - Abrir el libro
-- Ver taller
+- Abrir el taller
 - Explorar archivo
 - Recibir nuevos textos
 
@@ -121,6 +121,8 @@ La Home responde una sola cosa: **“Esto es lo que estoy escribiendo ahora.”*
 
 ### 4.1 Títulos
 
+Los nombres de secciones usan plural: Poemas, Ensayos, Relatos, Libros.
+
 Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Videoteca
 
 ### 4.2 Archivo por tipo
@@ -135,7 +137,7 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Vid
 
 ### 4.3 Etiquetas de estado
 
-**Textos:** Publicado, Inédito, Borrador, Retirado, En archivo
+**Textos:** Publicado, Inédito, Borrador, Retirado, Archivado
 
 **Talleres:** Próximo, En curso, Finalizado
 
@@ -153,7 +155,7 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Vid
 
 **Etiquetas:** Tipo, Tema, Periodo (y Forma, si está implementada)
 
-**Acciones:** Aplicar, Quitar filtros, Ver todo
+**Acciones:** Aplicar, Quitar filtro, Ver todo
 
 **Estados:** Filtros, Sin filtros
 
@@ -170,11 +172,11 @@ Más reciente, Más antiguo, Por título, Por libro
 - Siguiente poema
 - Poema anterior
 - Explorar archivo
-- **Contexto:** “Este poema pertenece a: [Libro]”, “Abrir el libro”
+- **Contexto:** “Este poema pertenece al libro: [Libro]”, “Abrir el libro”
 
 ### 6.2 Libro
 
-**Acciones:** Abrir el libro, Ver índice, Leer fragmentos, Descargar PDF, Descargar EPUB, Adquirir el libro
+**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Descargar PDF, Descargar EPUB, Adquirir el libro
 
 **Secciones:** Descripción, Índice, Edición, Descargas, Prensa, Derechos
 
@@ -193,7 +195,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ### 6.5 Taller
 
-- Ver taller
+- Abrir el taller
 - Enviar solicitud (formulario de inscripción)
 - Contactar
 - **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
@@ -203,7 +205,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 - Leer el artículo
 - Siguiente artículo, Artículo anterior
-- Explorar archivo (o Artículos)
+- Explorar artículos
 
 ---
 
@@ -220,7 +222,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 - **Descripción:** “Para prensa, edición o lecturas.”
 - **Campos:** Nombre, Correo, Asunto, Mensaje
-- **Placeholders:** Tu nombre, Tu correo, Motivo del mensaje, Escribe aquí
+- **Placeholders:** Tu nombre, Tu correo, Asunto, Escribe aquí
 - **Botón:** Enviar
 - **Mensajes:** “Mensaje enviado.”, “No fue posible enviar el mensaje.”
 
@@ -230,7 +232,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 **Vacíos:** “Aún no hay textos en esta sección.”, “Este archivo aún está en construcción.”, “No hay talleres programados por ahora.”
 
-**Filtros:** “No hay textos con estos filtros.”
+**Filtros:** “No hay textos con este filtro.”
 
 **404:** “Este texto no existe o fue retirado.”
 
@@ -240,7 +242,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ## 10. Modales y acciones menores
 
-- Cerrar, Volver, Continuar
+- Cerrar, Volver, Volver al archivo, Continuar
 - Copiar enlace, Descargar
 - **Mensajes:** “Enlace copiado.”
 
@@ -249,7 +251,7 @@ Más reciente, Más antiguo, Por título, Por libro
 ## 11. Idioma
 
 - Cambiar idioma
-- Español, English
+- Español, Inglés
 - **Nota opcional:** “El contenido puede variar según el idioma.”
 
 ---
@@ -273,5 +275,4 @@ Antes de aprobar cualquier texto:
 
 ---
 
-**Versión:** 2.3  
 **Documento canónico para todo el copy del sistema.**

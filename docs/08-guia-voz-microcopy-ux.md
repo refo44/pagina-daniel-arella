@@ -1,6 +1,6 @@
 # Daniel Arella — Guía de voz, microcopy y escritura UX
 
-**Versión 1.2**
+**Versión 1.3**
 
 Este documento define cómo habla el sitio web de Daniel Arella. No define su poesía ni su pensamiento. Define la voz del sistema editorial que contiene su obra.
 
@@ -38,8 +38,8 @@ La voz del sistema tiene tres atributos obligatorios.
 | Incorrecto | Correcto |
 |------------|----------|
 | “Descubre mis poemas más increíbles” | “Poemas recientes” |
-| | “Poemas de este periodo” |
-| | “Textos nuevos” |
+| "Descubre mis poemas más increíbles" | “Poemas de este periodo” |
+| "Descubre mis poemas más increíbles" | “Textos nuevos” |
 
 ---
 
@@ -49,7 +49,7 @@ El sitio usa tres voces, según el contexto.
 
 | Contexto | Voz |
 |----------|-----|
-| Navegación | Neutra |
+| Navegación | Sustantiva y neutra |
 | Editorial | Primera persona del autor |
 | UX y sistema | Segunda persona suave |
 
@@ -59,6 +59,10 @@ El sitio usa tres voces, según el contexto.
 - **Editorial:** “Estoy escribiendo sobre la memoria y el cuerpo.” “Este libro reúne poemas escritos entre…”
 - **UX:** “Leer el poema”, “Recibir nuevos textos”, “Este archivo aún no tiene contenido.”
 
+Las etiquetas de navegación siempre usan sustantivos, no frases ni verbos.
+
+Las secciones se nombran en plural (Poemas, Ensayos, Relatos, Libros).
+
 Nunca se habla del autor en tercera persona dentro del sistema. Nunca: “Daniel Arella presenta…” Eso es lenguaje de nota de prensa.
 
 ---
@@ -67,13 +71,15 @@ Nunca se habla del autor en tercera persona dentro del sistema. Nunca: “Daniel
 
 Estas palabras no deben aparecer en ningún lugar del sitio.
 
-**Prohibidas:** increíble, imperdible, best seller, no te lo pierdas, compra ahora, oferta, exclusivo, contenido premium, gratis
+**Prohibidas:** increíble, imperdible, best seller, no te lo pierdas, compra ahora, oferta, exclusivo, contenido premium, gratuito
 
 Se sustituyen por lenguaje editorial.
 
+Las palabras prohibidas pueden aparecer solo si forman parte de una cita o referencia externa.
+
 | En lugar de | Usar |
 |-------------|------|
-| gratis | sin costo o no se menciona |
+| gratuito | sin costo o no se menciona |
 | exclusivo | inédito |
 | compra ahora | adquirir el libro |
 | suscríbete | recibir |
@@ -83,6 +89,8 @@ Se sustituyen por lenguaje editorial.
 ## 5. Llamadas a la acción
 
 Las acciones nunca son órdenes. Son invitaciones.
+
+Nunca se usan más de dos acciones principales en una misma pantalla.
 
 **Jerarquía natural:**
 
@@ -99,11 +107,16 @@ Las acciones nunca son órdenes. Son invitaciones.
 
 ---
 
+Los botones usan verbos en infinitivo. Ejemplo: Leer el poema, Recibir nuevos textos, Adquirir el libro.
+
+---
+
 ## 6. El correo
 
 El email no es un newsletter. Es una correspondencia del autor.
 
-**Nombres válidos:** Carta, Correspondencia, Cuaderno, Textos nuevos
+**Nombres preferidos:** Correspondencia, Carta  
+**Nombres posibles:** Cuaderno, Textos nuevos
 
 **Ejemplo de botón:** “Recibir nuevos textos”
 
@@ -113,13 +126,14 @@ El email no es un newsletter. Es una correspondencia del autor.
 
 ## 7. Estados vacíos
 
-Nunca se usa lenguaje de software.
+Nunca se usa lenguaje de software. Los estados vacíos siempre usan frases completas.
 
 | Situación | Texto |
 |-----------|-------|
 | No hay poemas en un tema | “Aún no hay poemas en este tema.” |
 | No hay talleres | “No hay talleres programados por ahora.” |
 | Archivo vacío | “Este archivo aún está en construcción.” |
+| Búsqueda sin resultados | "No hay textos que coincidan con la búsqueda." |
 
 **Nunca:** “No se encontraron resultados”, “Empty”
 
@@ -132,6 +146,7 @@ Nunca se usa lenguaje de software.
 | Página no existe | “Este texto no existe o fue retirado.” |
 | Acceso bloqueado | “Este contenido no está disponible.” |
 | Error técnico | “No fue posible mostrar este texto.” |
+| Error de carga | "No fue posible cargar este contenido." |
 
 No se usan códigos ni tecnicismos visibles.
 
@@ -143,7 +158,7 @@ Evitar nombres de marketing o de plataformas. Ver `03-arquitectura-editorial`, `
 
 | Función | Nombre correcto |
 |---------|-----------------|
-| Blog | Artículos o Escritura |
+| Blog | Artículos |
 | About | Sobre el autor |
 | Store | Libros |
 | Press | Prensa |
@@ -151,6 +166,8 @@ Evitar nombres de marketing o de plataformas. Ver `03-arquitectura-editorial`, `
 | Archive | Archivo |
 | Contact | Contacto |
 | Rights | Derechos (o Derechos y permisos) |
+
+Los nombres de secciones usan capitalización simple: Poemas, Ensayos, Libros, Archivo.
 
 ---
 
@@ -172,6 +189,10 @@ Evitar nombres de marketing o de plataformas. Ver `03-arquitectura-editorial`, `
 | Prensa | Informativo, neutro |
 | Derechos | Formal, breve |
 
+Ninguna sección utiliza lenguaje promocional.
+
+El microcopy debe ser breve. Evitar frases de más de dos líneas.
+
 ---
 
 ## 11. Regla de oro
@@ -187,6 +208,3 @@ Si un texto suena a:
 
 Debe sonar como: **Una editorial pequeña, seria y viva.**
 
----
-
-**Versión del documento:** 1.2

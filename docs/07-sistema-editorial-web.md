@@ -1,6 +1,6 @@
 # Daniel Arella — Sistema editorial para la web
 
-**Versión 2.2**
+**Versión 2.3**
 
 Este documento define el marco para escribir, editar y presentar textos en el sitio. No define la poética de Daniel, sino la forma en que la obra habita la pantalla.
 
@@ -46,7 +46,7 @@ Rangos orientativos:
 
 - **Breve:** 800 a 1500 palabras
 - **Medio:** 1500 a 3000
-- **Largo:** más de 3000, considerar formato de libro web o PDF
+- **Largo:** más de 3000, considerar formato de libro web o PDF. Dividir en secciones si supera 5000 palabras.
 
 La longitud nunca es una restricción estética, solo una guía de legibilidad.
 
@@ -60,6 +60,8 @@ Un ensayo estándar contiene:
 - Notas o referencias si aplica
 
 No se interrumpe el flujo con cajas, popups o llamadas externas.
+
+Evitar párrafos excesivamente largos.
 
 ### 2.3 Notas
 
@@ -83,11 +85,16 @@ No se interrumpe el flujo con cajas, popups o llamadas externas.
 
 - Mostrar título
 - Opcionalmente uno a tres versos o líneas
+- El excerpt no debe superar tres líneas
 
 **En página individual:**
 
 - El poema completo, sin cortes.
 - Si se muestra un fragmento, debe indicarse con claridad.
+
+### 3.3 Títulos
+
+El título forma parte del poema. Nunca se sustituye por encabezados editoriales.
 
 ---
 
@@ -106,10 +113,11 @@ Cada relato es una unidad:
 - Página individual
 - Navegación anterior y siguiente
 - Enlace a archivo de relatos
+- Los relatos no se dividen en múltiples páginas
 
 ### 4.3 Artículos y notas (blog)
 
-Los artículos y notas del autor (`03-arquitectura-editorial`, Article) siguen las reglas de voz y legibilidad. Estructura más flexible que los ensayos; pueden ser breves o extensos según el propósito. Nunca lenguaje promocional.
+Los artículos y notas del autor (definidos como Article en `03-arquitectura-editorial`) siguen las reglas de voz y legibilidad. En WordPress se implementan como post. Estructura más flexible que los ensayos; pueden ser breves o extensos según el propósito. Nunca lenguaje promocional.
 
 ---
 
@@ -119,7 +127,7 @@ La biografía es una entrada editorial a la obra, no un currículum.
 
 **Reglas:**
 
-- Bio corta para Home y cabecera.
+- Bio corta para Home y navegación.
 - Bio larga para Sobre el autor.
 - Logros, premios y publicaciones se mencionan sin lenguaje de marketing.
 
@@ -138,6 +146,8 @@ La sección Prensa muestra dónde aparece la obra.
 
 No se reproducen artículos completos salvo permiso explícito.
 
+No añadir comentarios editoriales a las referencias.
+
 ---
 
 ## 7. Idiomas
@@ -148,13 +158,17 @@ No se reproducen artículos completos salvo permiso explícito.
 - Bio y páginas fijas siempre traducidas.
 - Libros y poemas mantienen su título original salvo decisión expresa.
 
+Un mismo texto no mezcla idiomas.
+
+Las traducciones conservan la estructura del original.
+
 **Ejemplo:** “El Arcángel” se mantiene como título. En inglés se puede añadir una nota breve.
 
 ---
 
 ## 8. Jerarquía visual y tipografía
 
-Desde `02-identidad-corporativa`:
+Las reglas tipográficas se definen en `02-identidad-corporativa`:
 
 - Un H1 por página.
 - H2 y H3 solo para estructura real.
@@ -175,6 +189,8 @@ El sistema no decide:
 
 Solo asegura que la obra no se rompa al pasar por la web.
 
+La voz editorial debe permanecer coherente en todo el sitio.
+
 ---
 
 ## 10. Checklist editorial
@@ -186,9 +202,7 @@ Antes de publicar:
 3. ¿La voz es sobria y clara?
 4. ¿Las notas no interrumpen la lectura?
 5. ¿Se entiende en móvil sin perder ritmo?
+6. ¿Los fragmentos o citas indican claramente si el texto está incompleto?
 
 **Si la respuesta es sí, el texto pertenece a este territorio.**
 
----
-
-**Versión del documento:** 2.2
