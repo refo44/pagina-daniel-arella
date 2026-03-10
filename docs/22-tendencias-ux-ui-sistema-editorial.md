@@ -2,6 +2,12 @@
 
 Define qué tendencias fortalecen un sitio de autor y cuáles deben evitarse para proteger la lectura, la claridad y la voz editorial.
 
+**Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`
+
+**Alimenta a:** `17-static-file-structure`, `18-css-architecture`, `19-assets-strategy`, `21-orden-implementacion`
+
+---
+
 **Regla práctica del proyecto:**
 
 > Se adopta todo lo que mejora **lectura, claridad, accesibilidad y performance**.  
@@ -36,7 +42,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 - Tipografía = voz; espacio en blanco = ritmo.
 - Jerarquía con tamaño, interlineado, espaciado vertical, peso. **No** con colores, cajas, fondos ni módulos.
-- Menú de 3 a 5 ítems. Estructura exacta se define en el plan maestro.
+- Menú de 3 a 5 ítems. Estructura exacta se define en `01-plataforma-autor-plan`.
 
 ### 1.3 Anti-patrones y reglas operativas
 
@@ -74,7 +80,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 ### 2.2 Design tokens
 
-`:root` con `--brand-*` y roles (`--bg`, `--text`, `--link`, `--surface`, etc.); componentes solo consumen roles, nunca hex. Ver `02-identidad-corporativa` sección 6.
+`:root` con `--brand-*` y roles (`--bg`, `--text`, `--link`, `--surface`, etc.); componentes solo consumen roles, nunca hex. Ver `02-identidad-corporativa` §6 (Arquitectura de color por capas).
 
 ### 2.3 Performance
 
@@ -103,7 +109,7 @@ Solo donde confirman una acción: hover de links, focus de inputs, estados de bo
 
 **Evitar:** IA (no se contempla); AR/VR; 3D; motion en artículos; experiencias agentic; anti-grid y brutalismo.
 
-**Menú:** estructura exacta se define en el plan maestro.
+**Menú:** estructura exacta se define en `01-plataforma-autor-plan`.
 
 ---
 
@@ -131,3 +137,15 @@ Solo donde confirman una acción: hover de links, focus de inputs, estados de bo
 | Accesibilidad | Contraste y focus en CSS; headings y landmarks en templates. |
 
 Design tokens y roles en `theme.json` + `style.css`. Performance vía un CSS, JS defer, imágenes con dimensiones y lazy. Accesibilidad en markup y CSS. Sin capas comerciales como base del sistema.
+
+---
+
+## 5. Relación con otros documentos
+
+- **Identidad:** `02-identidad-corporativa` define paleta, tipografías (Fraunces, Source Sans 3) y roles semánticos; este documento aplica el filtro de tendencias a esas decisiones.
+- **CSS:** `18-css-architecture` implementa tokens y roles; la sección 12 de 18 remite a este documento para criterios de validación.
+- **Implementación:** `21-orden-implementacion` valida la Fase 1 contra el checklist de la sección 4 antes de dar por cerrada la maqueta estática.
+
+---
+
+**Versión:** 1.1

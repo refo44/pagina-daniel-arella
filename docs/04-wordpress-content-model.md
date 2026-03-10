@@ -1,10 +1,10 @@
 # Daniel Arella — WordPress Content Model
 
-**Versión 2.1**
+**Versión 2.3**
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés, etiquetas visibles traducidas vía i18n. Suficiente para desarrollo, legible para el autor.
 
-**Depende de:** `02-identidad-corporativa`, `03-arquitectura-editorial`
+**Depende de:** `01-plataforma-autor-plan`, `02-identidad-corporativa`, `03-arquitectura-editorial`
 
 ---
 
@@ -20,9 +20,13 @@ Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en ing
 | story | Relatos | /story/ | Narrativa breve |
 | workshop | Talleres | /talleres/ | Talleres y cursos |
 | post | Artículos | /blog/ | Notas y artículos |
-| page | Páginas | por página | Inicio, Sobre, Archivo, Contacto |
+| page | Páginas | por página | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Prensa, Derechos |
 
 post existe solo para notas y artículos. La obra vive en poem, book, essay, story y workshop.
+
+### Secciones del plan maestro (por implementar)
+
+Según `01-plataforma-autor-plan`, la arquitectura incluye **Biblioteca de audio** y **Videoteca**. Cuando se implementen, se definirán los CPT y campos necesarios (p. ej. `audio` para poemas en audio, audiolibros, podcast; `video` para videopoemas, conferencias, clases). **El audio y el vídeo no se alojan en el servidor:** se guardan en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.); el modelo solo almacenará URL externa, código de embed y metadatos (título, tipo, duración, miniatura). Por ahora quedan como secciones previstas; las rutas y la navegación se documentan en `15-arbol-urls-final` y `14-arquitectura-informacion-navegacion`.
 
 ---
 
@@ -34,6 +38,9 @@ Clasificación mínima para navegar el corpus.
 |-----|----------|------|----------|
 | topic | Tema | Jerárquica | poem, book, essay, story, post, workshop |
 | period | Periodo | Jerárquica | poem, book, essay, story, post, workshop |
+| form | Forma | Jerárquica | poem, book, essay, story, post, workshop |
+
+`form` es opcional; se implementa solo si el corpus lo requiere. Ver `03-arquitectura-editorial`.
 
 No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven en campos simples o en el sistema de traducción.
 
@@ -128,6 +135,7 @@ Solo lo necesario para mostrar la obra:
 - single-essay, archive-essay
 - single-story, archive-story
 - single-workshop, archive-workshop
+- single.php, archive.php (post/blog)
 - front-page
 - page
 
@@ -143,4 +151,4 @@ No hay capas para marketing, funnels ni growth. Solo obra, libros, pensamiento y
 
 ---
 
-**Versión del documento:** 2.1
+**Versión del documento:** 2.3

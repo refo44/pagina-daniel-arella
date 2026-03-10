@@ -1,12 +1,13 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
-**Estructura de archivos del sitio previo a WordPress**
+**Estructura de archivos del sitio previo a WordPress**  
+**Versión 1.3**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
 Misma arquitectura editorial, mismas pantallas, mismas rutas. Solo cambia el motor: archivos HTML hoy, PHP con WordPress después.
 
-**Depende de:** `16-theme-file-structure`, `15-arbol-urls-final`, `14-arquitectura-informacion-navegacion`, `13-wireframes`, `18-css-architecture`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `01-plataforma-autor-plan`, `13-wireframes`, `14-arquitectura-informacion-navegacion`, `15-arbol-urls-final`, `16-theme-file-structure`, `18-css-architecture`, `22-tendencias-ux-ui-sistema-editorial`
 
 ---
 
@@ -57,6 +58,11 @@ daniel-arella-static/
 ├── derechos/
 │   └── index.html
 │
+├── biblioteca-audio/
+│   └── index.html
+├── videoteca/
+│   └── index.html
+│
 ├── poem/
 │   ├── index.html
 │   └── {slug}.html
@@ -72,10 +78,15 @@ daniel-arella-static/
 ├── talleres/
 │   ├── index.html
 │   └── {slug}.html
+├── blog/
+│   ├── index.html
+│   └── {slug}.html
 │
 ├── tema/
 │   └── {slug}.html
 ├── periodo/
+│   └── {slug}.html
+├── forma/
 │   └── {slug}.html
 │
 ├── css/
@@ -105,10 +116,11 @@ daniel-arella-static/
     ├── book-card.html
     ├── essay-card.html
     ├── story-card.html
-    └── workshop-card.html
+    ├── workshop-card.html
+    └── article-card.html
 ```
 
-Nada más. Nada menos.
+`forma/` y `article-card.html` son opcionales; se añaden cuando se implementan. Nada más. Nada menos.
 
 ---
 
@@ -123,6 +135,8 @@ Nada más. Nada menos.
 | Contacto | `/contacto/index.html` | `page-contacto.php` |
 | Prensa | `/prensa/index.html` | `page-prensa.php` |
 | Derechos | `/derechos/index.html` | `page-derechos.php` |
+| Biblioteca de audio | `/biblioteca-audio/index.html` | `page-biblioteca-audio.php` |
+| Videoteca | `/videoteca/index.html` | `page-videoteca.php` |
 
 ---
 
@@ -137,12 +151,13 @@ Cada tipo es una carpeta con su archivo y sus piezas.
 | essay | `/essay/index.html` | `/essay/{slug}.html` |
 | story | `/story/index.html` | `/story/{slug}.html` |
 | workshop | `/talleres/index.html` | `/talleres/{slug}.html` |
+| blog (artículos) | `/blog/index.html` | `/blog/{slug}.html` |
 
 No existen URLs fuera de esto.
 
 ---
 
-## 6. Tema y Periodo
+## 6. Tema, Periodo y Forma
 
 Son archivos filtrados.
 
@@ -150,8 +165,9 @@ Son archivos filtrados.
 |-------|------|
 | Tema | `/tema/{slug}.html` |
 | Periodo | `/periodo/{slug}.html` |
+| Forma (opcional) | `/forma/{slug}.html` |
 
-Usan el mismo layout que un archivo por tipo.
+Usan el mismo layout que un archivo por tipo. Forma se añade solo si se implementa (`03-arquitectura-editorial`).
 
 ---
 
@@ -170,6 +186,7 @@ Todo se arma con piezas. No se duplica estructura.
 | essay-card.html | Tarjeta ensayo |
 | story-card.html | Tarjeta relato |
 | workshop-card.html | Tarjeta taller |
+| article-card.html | Tarjeta artículo |
 
 En WordPress estos se convierten en `get_template_part()`.
 
@@ -205,7 +222,19 @@ La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, v
 | index.html | front-page.php |
 | poem/index.html | archive-poem.php |
 | poem/slug.html | single-poem.php |
-| tema/memoria.html | taxonomy-topic.php |
+| book/index.html | archive-book.php |
+| book/slug.html | single-book.php |
+| essay/index.html | archive-essay.php |
+| essay/slug.html | single-essay.php |
+| story/index.html | archive-story.php |
+| story/slug.html | single-story.php |
+| talleres/index.html | archive-workshop.php |
+| talleres/slug.html | single-workshop.php |
+| blog/index.html | archive.php |
+| blog/slug.html | single.php |
+| tema/slug.html | taxonomy-topic.php |
+| periodo/slug.html | taxonomy-period.php |
+| forma/slug.html | taxonomy-form.php |
 | 404.html | 404.php |
 
 Migrar es copiar el markup y envolverlo con loops de WordPress. Nada se vuelve a pensar.
@@ -224,4 +253,4 @@ La maqueta ya es la obra.
 
 ---
 
-**Versión:** 1.1
+**Versión:** 1.3

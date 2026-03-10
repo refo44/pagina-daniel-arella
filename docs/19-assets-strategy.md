@@ -4,7 +4,7 @@
 
 Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, fuentes, iconos, favicon).
 
-**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tipografías y paleta), `22-tendencias-ux-ui-sistema-editorial` (performance, JS mínimo)
+**Se apoya en:** `02-identidad-corporativa`, `16-theme-file-structure`, `17-static-file-structure`, `22-tendencias-ux-ui-sistema-editorial`
 
 ---
 
@@ -17,6 +17,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
 | **JS** | Solo navegación, formularios, accesibilidad. Sin frameworks ni lógica de app. Todo con `defer`. Sin animaciones costosas ni librerías de motion. |
+| **Audio y vídeo (Biblioteca de audio, Videoteca)** | No se alojan en el servidor ni en `assets/`. Viven en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena URL o código de embed y muestra reproductor embebido o enlace. Ver `01-plataforma-autor-plan`, `03-arquitectura-editorial`. |
 
 ---
 
@@ -107,7 +108,7 @@ assets/fonts/
     source-sans-3-semibold.woff2
 ```
 
-Formato: **woff2**. Declaración en `css/settings.css` (o equivalente) con `@font-face`. Las variables CSS (`--font-body`, `--font-heading`) apuntan a estas familias.
+Formato: **woff2**. Declaración en `css/settings.css` (o equivalente) con `@font-face`. Las variables CSS (`--font-body`, `--font-heading`, `--font-meta`) apuntan a estas familias. Ver `18-css-architecture`.
 
 ---
 
@@ -207,8 +208,8 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 - **Estructura de archivos:** `17-static-file-structure` incluye `assets/` (images, icons, fonts, favicon) y `js/` en la raíz; este documento detalla iconos, fuentes, favicon y reglas para JS.
 - **Identidad:** `02-identidad-corporativa` define tipografías y paleta; las fuentes listadas aquí son las que se autohospedan para esa identidad.
-- **CSS:** `css-architecture.md` define variables de fuente (`--font-body`, etc.) que apuntan a las fuentes en `assets/fonts/`.
+- **CSS:** `18-css-architecture` define variables de fuente (`--font-body`, `--font-heading`, `--font-meta`) que apuntan a las fuentes en `assets/fonts/`.
 
 ---
 
-**Versión:** 1.0
+**Versión:** 1.1

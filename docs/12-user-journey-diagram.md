@@ -1,6 +1,11 @@
 # User Journey Diagram — Daniel Arella
 
-Diagrama en Mermaid. Basado en `11-user-journey` v1.1. Score 1–5: fluidez del paso (5 = sin fricción). Actor: **Lector**.
+**Versión 1.2**
+
+Diagrama en Mermaid. Basado en `11-user-journey`. Score 1–5: fluidez del paso (5 = sin fricción). Actor: **Lector**.
+
+**Se apoya en:** `11-user-journey`  
+**Alimenta a:** `14-arquitectura-informacion-navegacion`
 
 ---
 
@@ -15,7 +20,7 @@ journey
       Explorar archivo: 5: Lector
     section Explora corpus
       Entra al Archivo: 5: Lector
-      Elige tipo (Poemas, Ensayos, Relatos, Libros): 5: Lector
+      Elige tipo (Poemas, Ensayos, Relatos, Libros, Artículos): 5: Lector
       Filtro por Tema o Periodo: 5: Lector
       Abre una pieza: 5: Lector
       Ve contexto (pertenece a Libro): 5: Lector
@@ -34,19 +39,24 @@ journey
     section Correspondencia
       Lee qué recibirá: 5: Lector
       Introduce correo: 5: Lector
-      Recibir: 5: Lector
+      Recibir nuevos textos: 5: Lector
       Confirmación y sale: 5: Lector
     section Busca talleres
       Entra a Talleres: 5: Lector
       Ve próximos o activos: 5: Lector
-      Abre un taller: 5: Lector
+      Ver taller: 5: Lector
       Lee descripción, fechas y relación con libros: 5: Lector
       Enviar solicitud o Contactar: 5: Lector
     section Llega desde afuera
-      Llega a pieza (Google, revista, PDF): 5: Lector
+      Llega a pieza (poema, ensayo, relato, libro, artículo): 5: Lector
       Lee la pieza: 5: Lector
       Ve breadcrumb y contexto: 5: Lector
       Abrir libro o Explorar archivo: 5: Lector
+    section Explora audio y vídeo (plan maestro)
+      Entra a Biblioteca de audio o Videoteca: 5: Lector
+      Ve listado de piezas: 5: Lector
+      Reproduce (embed o enlace externo): 5: Lector
+      Explorar archivo o Volver: 5: Lector
     section Estado de fricción
       Contenido no existe o no disponible: 2: Lector
       Explorar archivo o Volver: 5: Lector
@@ -54,4 +64,5 @@ journey
 
 ---
 
+**Versión del documento:** 1.2  
 **Referencia:** `11-user-journey`

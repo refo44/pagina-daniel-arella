@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura de información y flujo de navegación
 
 **Mapa de navegación y enlaces vivos**  
-**Versión 2.0**
+**Versión 2.2**
 
 Este documento define qué enlaces salen de cada pantalla, a dónde van, en qué orden y cuáles no deben existir. No describe diseño ni layout. Es la capa que conecta el sistema editorial con el código y con la experiencia real del lector.
 
@@ -11,7 +11,8 @@ Sirve para que:
 - El lector no se pierda.
 - La obra se lea como obra, no como feed.
 
-**Referencia:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `05-mapa-pantallas`, `10-ui-copy-sheet`, `11-user-journey`, `13-wireframes`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `15-arbol-urls-final`, `16-theme-file-structure`, `17-static-file-structure`
 
 ---
 
@@ -38,10 +39,12 @@ Estructura consolidada (5 ítems máximo):
 | Enlace | Destino |
 |--------|---------|
 | Inicio | Home |
-| Archivo | Archivo general (poemas, ensayos, relatos, libros) |
+| Archivo | Archivo general (poemas, ensayos, relatos, libros, artículos) |
 | Sobre el autor | Sobre el autor |
 | Talleres | Listado Talleres |
 | Correspondencia | Correspondencia |
+
+**Opcional (plan maestro):** Biblioteca de audio, Videoteca — accesibles desde Archivo o como ítem de cabecera según decisión de menú (máx. 5 ítems en cabecera). Ver `01-plataforma-autor-plan`.
 
 **Opcional:** Selector de idioma como control auxiliar (icono), no como ítem principal.
 
@@ -146,9 +149,22 @@ No redes sociales ni enlaces externos salvo prensa.
 
 ---
 
+## 8.1 Single Artículo
+
+| Enlace | Destino | Tipo |
+|--------|---------|------|
+| “Siguiente artículo” | Artículo siguiente | Primario |
+| “Artículo anterior” | Artículo anterior | Secundario |
+| “Explorar archivo” o “Artículos” | Archivo Blog | Secundario |
+| Breadcrumb | Inicio → Archivo → Artículos → Artículo | Secundario |
+
+**Nunca:** listas genéricas de artículos sin relación.
+
+---
+
 ## 9. Archivo y listados
 
-Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres).
+Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres, Artículos).
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -157,6 +173,20 @@ Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres).
 | Inicio | Home | Secundario |
 
 **Nunca:** bloques de “destacados”, “sugeridos”, “más leídos”.
+
+---
+
+## 9.1 Biblioteca de audio y Videoteca (plan maestro)
+
+Cuando estén implementadas (`01-plataforma-autor-plan`):
+
+| Enlace | Destino | Tipo |
+|--------|---------|------|
+| Cada pieza de audio/vídeo | Single correspondiente (si existe) o reproductor externo (embed) | Primario |
+| Filtros por tipo | Mismo listado refinado | Secundario |
+| “Explorar archivo” / Inicio | Archivo o Home | Secundario |
+
+Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El audio y el vídeo se alojan en servicios externos (YouTube, Vimeo, Instagram Reels, Spotify, etc.); el sitio solo enlaza o embebe.
 
 ---
 
@@ -186,7 +216,7 @@ Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres).
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
-| “Recibir” | Confirmación en la misma página | Primario |
+| “Recibir nuevos textos” | Confirmación en la misma página | Primario |
 | “Volver” | Home o Sobre el autor | Secundario |
 
 Una sola acción.
@@ -260,5 +290,5 @@ Este sistema impide que el sitio se convierta en un feed, una tienda o un laberi
 
 ---
 
-**Versión:** 2.0  
-**Depende de:** `05-mapa-pantallas`, `13-wireframes`, `11-user-journey`, `03-arquitectura-editorial`, `10-ui-copy-sheet`
+**Versión:** 2.2  
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `05-mapa-pantallas`, `10-ui-copy-sheet`, `11-user-journey`, `13-wireframes`, `22-tendencias-ux-ui-sistema-editorial`

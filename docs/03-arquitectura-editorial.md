@@ -1,8 +1,8 @@
 # Daniel Arella — Arquitectura editorial
 
-**Versión 2.3**
+**Versión 2.4**
 
-Esta capa se apoya en la identidad corporativa. No la reemplaza. La vuelve operativa.
+Esta capa se apoya en la identidad corporativa y en el plan maestro (`01-plataforma-autor-plan`). No la reemplaza. La vuelve operativa.
 
 Define cómo existe la obra de Daniel Arella dentro de WordPress como un sistema editorial, no como una colección de entradas. Su función es permitir que el lector recorra un corpus de forma clara, estable y legible.
 
@@ -59,8 +59,9 @@ La obra se organiza solo por dimensiones que un lector entiende y usa.
 |-----------|-----|
 | topic | Tema |
 | period | Periodo o etapa de la obra |
+| form | Forma (opcional; solo si se usa) |
 
-Se aplican a: poem, book, essay, story, workshop y article.
+Se aplican a: poem, book, essay, story, workshop y article. La taxonomía `form` se añade solo si el corpus lo requiere.
 
 No existen taxonomías para:
 
@@ -145,6 +146,19 @@ Nunca solo por fecha. Los filtros son pocos, visibles y claros.
 
 ---
 
+## 7.1 Biblioteca de audio y Videoteca (plan maestro)
+
+Según `01-plataforma-autor-plan`, la arquitectura de información incluye dos secciones adicionales:
+
+- **Biblioteca de audio:** poemas en audio, temas musicales, audiolibros, podcast.
+- **Videoteca:** música, poemas leídos, videopoemas, rap, conferencias, clases.
+
+**Alojamiento:** El audio y el vídeo **no se suben al servidor del sitio**. Se alojan en la nube o en servicios de terceros (p. ej. YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena enlaces o códigos de inserción (embed) y los muestra en listado o en ficha. Así se evita almacenar archivos pesados en el hosting y se aprovechan reproductores y CDN de esas plataformas.
+
+Estas secciones forman parte del territorio editorial. Su modelo de contenido (tipos, campos: URL externa, embed, miniatura) se definirá al implementarlas; hasta entonces se consideran listados navegables con posible ficha por pieza. La navegación y las URLs se describen en `14-arquitectura-informacion-navegacion` y `15-arbol-urls-final`.
+
+---
+
 ## 8. Descargas y derechos
 
 Las descargas existen solo dentro de Book. Ahí viven:
@@ -204,6 +218,6 @@ Si una estructura no ayuda a leer mejor o recordar mejor la obra, no existe.
 
 ---
 
-**Versión:** 2.3  
-**Depende de:** `02-identidad-corporativa`  
+**Versión:** 2.5  
+**Depende de:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
 **Alimenta a:** `04-wordpress-content-model`

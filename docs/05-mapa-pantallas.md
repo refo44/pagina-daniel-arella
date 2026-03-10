@@ -4,7 +4,7 @@ Lista de qué pantallas existen. No describe diseño; solo qué vistas hay que c
 
 Es el índice de lo que se wireframea y se implementa.
 
-**Referencia:** `03-arquitectura-editorial`, `04-wordpress-content-model`
+**Referencia:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`
 
 ---
 
@@ -20,6 +20,15 @@ Es el índice de lo que se wireframea y se implementa.
 
 ---
 
+## Secciones del plan maestro (por implementar)
+
+- Biblioteca de audio (listado; posible ficha por pieza)  
+- Videoteca (listado; posible ficha por pieza)  
+
+Definidas en `01-plataforma-autor-plan`. Estructura de listado y ficha se detalla en `13-wireframes` cuando se implementen.
+
+---
+
 ## Vistas de contenido (single)
 
 - Poema  
@@ -27,6 +36,7 @@ Es el índice de lo que se wireframea y se implementa.
 - Ensayo  
 - Relato  
 - Taller  
+- Artículo  
 
 ---
 
@@ -37,6 +47,7 @@ Es el índice de lo que se wireframea y se implementa.
 - Ensayos  
 - Relatos  
 - Talleres  
+- Blog (artículos)  
 - Tema (archivo por tema)  
 - Periodo (archivo por periodo)  
 
@@ -50,4 +61,4 @@ Es el índice de lo que se wireframea y se implementa.
 
 ---
 
-**Versión:** 1.0
+**Versión:** 1.2

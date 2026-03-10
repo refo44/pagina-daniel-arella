@@ -1,12 +1,14 @@
 # Daniel Arella — Arquitectura CSS
 
-**Decisión técnica: CSS nativo con ITCSS + BEM + variables CSS**
+**Decisión técnica: CSS nativo con ITCSS + BEM + variables CSS**  
+**Versión 1.2**
 
 Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta estática primero, theme WordPress después. No hay Sass, no hay preprocesador, no hay framework. La misma estructura sirve para ambos.
 
 Encaja con: maqueta estática, migración literal a WordPress, sistema editorial donde el layout no debe contaminar la obra.
 
-**Depende de:** `17-static-file-structure`, `16-theme-file-structure`, `02-identidad-corporativa` (tokens de marca), `22-tendencias-ux-ui-sistema-editorial` (criterios de implementación)
+**Se apoya en:** `02-identidad-corporativa`, `16-theme-file-structure`, `17-static-file-structure`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `17-static-file-structure` (maqueta), theme WordPress
 
 ---
 
@@ -61,7 +63,7 @@ css/
 ├── generic.css      Reset / normalize
 ├── elements.css     body, h1–h6, p, a, blockquote
 ├── objects.css      Contenedores, grid, stack
-├── components.css  poem-card, book-card, header, footer, breadcrumbs, nav
+├── components.css  poem-card, book-card, essay-card, story-card, workshop-card, article-card, header, footer, breadcrumbs, nav
 ├── utilities.css    .u-visually-hidden, .u-muted, etc.
 └── main.css         Importa todo en el orden ITCSS
 ```
@@ -85,6 +87,11 @@ Ejemplos alineados con la arquitectura editorial:
 | Cabecera | `.site-header` | `__nav`, `__brand` | — |
 | Archivo / listado | `.archive` | `__filters`, `__list` | `--by-topic` |
 | Tarjeta poema | `.poem-card` | `__title`, `__excerpt` | `--featured` |
+| Tarjeta libro | `.book-card` | `__title`, `__cover`, `__meta` | — |
+| Tarjeta ensayo | `.essay-card` | `__title`, `__excerpt` | — |
+| Tarjeta relato | `.story-card` | `__title`, `__excerpt` | — |
+| Tarjeta taller | `.workshop-card` | `__title`, `__meta` | — |
+| Tarjeta artículo | `.article-card` | `__title`, `__excerpt` | — |
 | Migas | `.breadcrumbs` | `__item`, `__link` | — |
 | Ficha libro | `.book` | `__meta`, `__index` | — |
 
@@ -134,6 +141,7 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
   /* Tipografía (02-identidad-corporativa) */
   --font-body: 'Fraunces', serif;
   --font-heading: 'Fraunces', serif;
+  --font-meta: 'Source Sans 3', sans-serif;
 
   /* Espaciado */
   --space-2: 0.5rem;
@@ -201,5 +209,5 @@ Al implementar, verificar:
 
 ---
 
-**Versión:** 1.1  
-**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress. Criterios de validación: `22-tendencias-ux-ui-sistema-editorial` sección 13.
+**Versión:** 1.2  
+**Relación:** Define la base CSS para `17-static-file-structure` (maqueta) y para el theme WordPress. Criterios de validación: `22-tendencias-ux-ui-sistema-editorial` sección 4.

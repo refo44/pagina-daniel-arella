@@ -1,6 +1,6 @@
 # Daniel Arella — User Journey
 
-**Versión 1.1**
+**Versión 1.3**
 
 Este documento describe cómo se mueve un lector real dentro del territorio editorial. No es un diagrama técnico ni un flujo de conversión. Es una serie de recorridos de lectura y encuentro.
 
@@ -11,7 +11,8 @@ Sirve para validar:
 - Microcopy
 - Jerarquía de pantallas
 
-Se apoya en **arquitectura-editorial** y **ui-copy-sheet**.
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `05-mapa-pantallas`, `10-ui-copy-sheet`  
+**Alimenta a:** `12-user-journey-diagram`, `14-arquitectura-informacion-navegacion`
 
 ---
 
@@ -40,7 +41,7 @@ El lector nunca aterriza en un menú primero. Siempre entra por una pieza viva.
 **Recorrido:**
 
 - Archivo
-- → Elige tipo (Poemas, Ensayos, Relatos, Libros)
+- → Elige tipo (Poemas, Ensayos, Relatos, Libros, Artículos)
 - → Aplica filtro por Tema o Periodo
 - → Abre una pieza
 - → Ve el contexto: “Este poema pertenece a [Libro]” o “Más textos de este tema”
@@ -96,7 +97,7 @@ No se pide registro. No se empuja. Se invita.
 - Correspondencia
 - → Lee texto breve sobre qué recibirá
 - → Introduce su correo
-- → “Recibir”
+- → “Recibir nuevos textos”
 - → Mensaje de confirmación
 - → Sale sin ruido
 
@@ -113,12 +114,28 @@ La experiencia se siente como una carta, no como una campaña.
 - Inicio o menú
 - → Talleres
 - → Ve lista de próximos o activos
-- → Abre un taller
+- → “Ver taller”
 - → Lee descripción, fechas y relación con libros
 - → “Enviar solicitud” o “Contactar”
 - → Sale
 
 Los talleres se leen como una extensión de la obra, no como un producto.
+
+---
+
+## 6.1 Lector explora audio y vídeo (plan maestro)
+
+**Objetivo:** escuchar o ver la obra cuando estén disponibles Biblioteca de audio y Videoteca.
+
+**Recorrido previsto:**
+
+- Archivo o menú
+- → Biblioteca de audio o Videoteca
+- → Listado de piezas (poemas en audio, audiolibros, podcast; o poemas leídos, conferencias, clases) — cada pieza enlaza o embebe contenido en servicios externos (YouTube, Vimeo, Spotify, etc.)
+- → Reproduce en la plataforma externa o en embed
+- → “Explorar archivo” o “Volver”
+
+Misma lógica que el resto del archivo: la obra se recorre sin ruido. Ver `01-plataforma-autor-plan`.
 
 ---
 
@@ -128,7 +145,7 @@ Los talleres se leen como una extensión de la obra, no como un producto.
 
 **Recorrido:**
 
-- Llega a un poema, ensayo o libro desde Google, una revista o un PDF
+- Llega a un poema, ensayo, relato, libro o artículo desde Google, una revista o un PDF
 - → Lee la pieza
 - → Ve el breadcrumb y el contexto
 - → “Abrir el libro” o “Explorar archivo”
@@ -160,4 +177,4 @@ Un recorrido es correcto si:
 
 ---
 
-**Versión del documento:** 1.1
+**Versión del documento:** 1.3

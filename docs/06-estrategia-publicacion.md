@@ -1,12 +1,13 @@
 # Daniel Arella — Estrategia de publicación
 
-**Versión 2.1**
+**Versión 2.2**
 
 Este documento no define qué va a escribir Daniel Arella. Define cómo la obra puede vivir en el tiempo dentro de la plataforma sin romper la arquitectura, la navegación ni la identidad editorial.
 
 Es un marco de decisión autorial. El sistema sostiene. El autor decide.
 
-**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`  
+**Alimenta a:** `07-sistema-editorial-web`
 
 ---
 
@@ -177,6 +178,7 @@ Daniel controla:
 - Qué se traduce.
 - Qué se descarga.
 - Qué se vende.
+- Qué secciones están activas (Biblioteca de audio, Videoteca, cuando se implementen). Ver `01-plataforma-autor-plan`.
 
 La plataforma no fuerza nada. Solo garantiza que la obra no se fracture.
 
@@ -194,4 +196,4 @@ Independientemente de las decisiones de Daniel, el sistema garantiza:
 
 ---
 
-**Versión del documento:** 2.1
+**Versión del documento:** 2.2

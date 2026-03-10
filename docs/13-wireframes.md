@@ -1,10 +1,11 @@
 # Daniel Arella — Wireframes. Estructura de pantallas
 
-**Versión 1.1**
+**Versión 1.3**
 
 Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
-**Se apoya en:** `02-identidad-corporativa`, `10-ui-copy-sheet`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`, `05-mapa-pantallas`, `07-sistema-editorial-web`, `10-ui-copy-sheet`, `11-user-journey`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `14-arquitectura-informacion-navegacion`, `16-theme-file-structure`, `17-static-file-structure`
 
 **Regla (doc 22):** El objetivo de cada página debe ser evidente. En páginas de texto: cero animaciones decorativas; solo focus y hover.
 
@@ -38,7 +39,7 @@ Bloques en orden vertical:
 - **Correspondencia**
   - Texto breve
   - Campo de email
-  - Botón “Recibir”
+  - Botón “Recibir nuevos textos”
 - **Pie**
 
 Nada en Home es una lista larga. Todo es selección editorial.
@@ -127,7 +128,24 @@ Bloques:
 
 ---
 
-## 7. Archivo
+## 7. Single artículo
+
+**Función:** lectura de notas y artículos del autor.
+
+Bloques:
+
+- Cabecera
+- Breadcrumb
+- Título
+- Texto del artículo
+- Navegación: Anterior, Siguiente, Volver (o Explorar archivo)
+- Pie
+
+Ver `07-sistema-editorial-web` (4.3), `10-ui-copy-sheet` (6.6).
+
+---
+
+## 8. Archivo
 
 **Función:** explorar la obra como biblioteca.
 
@@ -135,21 +153,57 @@ Bloques:
 
 - Cabecera
 - Título
-- Filtros: Tipo, Tema, Periodo
+- Filtros: Tipo, Tema, Periodo (y Forma, si está implementada)
 - Lista de piezas (Título, Tipo, Libro)
 - Paginación o carga
 - Pie
 
 ---
 
-## 8. Páginas fijas
+## 8.1 Biblioteca de audio (plan maestro)
+
+**Función:** ofrecer la obra en formato sonoro (poemas, audiolibros, podcast, temas musicales).
+
+**Alojamiento:** El audio no se sube al servidor; vive en servicios de terceros (Spotify, SoundCloud, etc.). El sitio muestra enlaces o reproductores embebidos.
+
+Bloques previstos:
+
+- Cabecera
+- Título (“Biblioteca de audio”)
+- Listado de piezas (título, tipo, duración; enlace o embed al servicio externo)
+- Filtros opcionales (tipo: poema, audiolibro, podcast)
+- Pie
+
+La ficha de cada pieza (single) se definirá al implementar el modelo de contenido. Ver `01-plataforma-autor-plan`, `05-mapa-pantallas`.
+
+---
+
+## 8.2 Videoteca (plan maestro)
+
+**Función:** ofrecer la obra en formato vídeo (poemas leídos, videopoemas, conferencias, clases, música).
+
+**Alojamiento:** El vídeo no se sube al servidor; vive en servicios de terceros (YouTube, Vimeo, Instagram Reels, etc.). El sitio muestra enlaces o reproductores embebidos (embed).
+
+Bloques previstos:
+
+- Cabecera
+- Título (“Videoteca”)
+- Listado de piezas (título, tipo, miniatura; enlace o embed al servicio externo)
+- Filtros opcionales (tipo: poema leído, conferencia, etc.)
+- Pie
+
+La ficha de cada pieza (single) se definirá al implementar el modelo de contenido. Ver `01-plataforma-autor-plan`, `05-mapa-pantallas`.
+
+---
+
+## 9. Páginas fijas
 
 Estructura común: **Cabecera → Contenido editorial → Pie**
 
 | Página | Contenido |
 |--------|-----------|
 | **Sobre el autor** | Foto, Bio corta, Bio larga, Enlaces a libros |
-| **Correspondencia** | Texto editorial, Campo email, Botón “Recibir” |
+| **Correspondencia** | Texto editorial, Campo email, Botón “Recibir nuevos textos” |
 | **Contacto** | Texto breve, Formulario |
 | **Prensa** | Lista de piezas: Medio, Año, Enlace |
 | **Derechos** | Texto legal y permisos |
@@ -167,4 +221,4 @@ Una pantalla es correcta si:
 
 ---
 
-**Versión del documento:** 1.1
+**Versión del documento:** 1.3

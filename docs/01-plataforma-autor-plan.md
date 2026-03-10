@@ -1,6 +1,6 @@
 # Daniel Arella — Plan Maestro de la Plataforma de Autor
 
-**Versión 1.6**
+**Versión 1.7**
 
 La identidad corporativa definida en `02-identidad-corporativa` es una capa visual y editorial ya cerrada.
 
@@ -9,7 +9,8 @@ Este documento define algo más profundo: el sistema que permite que la obra de 
 Este sitio no es una web.  
 Es un territorio editorial.
 
-El problema que resuelve este plan no es estético. Es ontológico:
+El problema que resuelve este plan no es estético.  
+Es ontológico:
 
 - ¿Qué es un poema aquí?
 - ¿Qué es un libro?
@@ -19,7 +20,8 @@ El problema que resuelve este plan no es estético. Es ontológico:
 
 ## Principios operativos
 
-Los grandes sitios de autor no funcionan como portafolios ni como tiendas. Funcionan como espacios vivos de obra.
+Los grandes sitios de autor no funcionan como portafolios ni como tiendas.  
+Funcionan como espacios vivos de obra.
 
 | Principio | Qué significa |
 |-----------|----------------|
@@ -29,13 +31,15 @@ Los grandes sitios de autor no funcionan como portafolios ni como tiendas. Funci
 | **Relación directa** | El lector se conecta con el autor, no con plataformas. |
 | **Prueba social silenciosa** | Premios y editoriales existen, pero no gritan. |
 
-Este plan no imita esos sitios. Los convierte en arquitectura.
+Este plan no imita esos sitios.  
+Los convierte en arquitectura.
 
 ---
 
 ## Las ocho capas
 
-La plataforma está diseñada en capas que no se contaminan entre sí. Cada capa cumple una función precisa.
+La plataforma está diseñada en capas que no se contaminan entre sí.  
+Cada capa cumple una función precisa.
 
 ### Capa 1. Identidad
 
@@ -67,11 +71,16 @@ Un sitio de autor serio necesita:
 | Narrativa | Relatos y cuentos |
 | Talleres | Actividad pedagógica |
 | Archivo | Biblioteca completa |
+| Biblioteca de audio | Poemas, temas musicales, audiolibros, podcast |
+| Videoteca | Música, poemas leídos, videopoemas, rap, conferencias, clases |
 | Sobre el autor | Biografía intelectual |
 | Publicaciones | Libros y PDFs |
 | Contacto | Prensa, editores, lectores |
 
-El archivo no es un feed. Es una biblioteca navegable.
+**Audio y vídeo:** El contenido de Biblioteca de audio y Videoteca no se sube al servidor del sitio. Se aloja en la nube o en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo enlaza o inserta reproductores (embed); no almacena archivos de audio ni vídeo.
+
+El archivo no es un feed.  
+Es una biblioteca navegable.
 
 ### Capa 3. Modelo de contenido
 

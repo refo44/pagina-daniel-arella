@@ -1,16 +1,12 @@
 # Daniel Arella — Árbol de URLs final
 
 **Geografía oficial de la obra**  
-**Versión 2.0**
+**Versión 2.2**
 
 Este documento define todas las rutas reales del sitio por idioma, tipo de obra y archivo. No es un menú ni un sitemap técnico. Es el mapa del territorio que WordPress y el theme deben respetar.
 
-Este árbol es la traducción directa de:
-
-- `04-wordpress-content-model`
-- `05-mapa-pantallas`
-- `03-arquitectura-editorial`
-- `14-arquitectura-informacion-navegacion`
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `05-mapa-pantallas`, `14-arquitectura-informacion-navegacion`  
+**Alimenta a:** `16-theme-file-structure`, `17-static-file-structure`
 
 **Si una URL no está aquí, no existe.**
 
@@ -62,8 +58,10 @@ Una página por función editorial. Un slug por idioma.
 | Contacto | `/es/contacto/` | `/en/contact/` |
 | Prensa | `/es/prensa/` | `/en/press/` |
 | Derechos | `/es/derechos/` | `/en/rights/` |
+| Biblioteca de audio | `/es/biblioteca-audio/` | `/en/audio-library/` |
+| Videoteca | `/es/videoteca/` | `/en/videoteca/` |
 
-No existen variantes ni duplicados.
+No existen variantes ni duplicados. Biblioteca de audio y Videoteca según `01-plataforma-autor-plan`; las rutas de fichas (single) se añadirán cuando se defina el modelo de contenido.
 
 ---
 
@@ -115,6 +113,14 @@ Ejemplo: `/es/tema/memoria`, `/en/topic/memory`
 
 Ejemplo: `/es/periodo/2019-2022`
 
+### Forma (opcional)
+
+Si se implementa la taxonomía `form` (`03-arquitectura-editorial`):
+
+| ES | EN |
+|-----|-----|
+| `/es/forma/{slug}` | `/en/form/{slug}` |
+
 ---
 
 ## 6. Árbol completo (esqueleto)
@@ -128,6 +134,8 @@ Ejemplo: `/es/periodo/2019-2022`
 /es/contacto/
 /es/prensa/
 /es/derechos/
+/es/biblioteca-audio/
+/es/videoteca/
 
 /es/poem/
 /es/poem/{slug}
@@ -148,7 +156,7 @@ Ejemplo: `/es/periodo/2019-2022`
 /en/… (espejo exacto)
 ```
 
-Nada más existe.
+Nada más existe. Las rutas `/es/biblioteca-audio/` y `/es/videoteca/` (y sus singles, si se implementan) se detallan al desarrollar según `01-plataforma-autor-plan`.
 
 ---
 
@@ -182,6 +190,16 @@ Ejemplo:
 |-----|-----------|
 | `/es/poem/slug` | single-poem.php |
 | `/es/poem/` | archive-poem.php |
+| `/es/book/slug` | single-book.php |
+| `/es/book/` | archive-book.php |
+| `/es/essay/slug` | single-essay.php |
+| `/es/essay/` | archive-essay.php |
+| `/es/story/slug` | single-story.php |
+| `/es/story/` | archive-story.php |
+| `/es/talleres/slug` | single-workshop.php |
+| `/es/talleres/` | archive-workshop.php |
+| `/es/blog/slug` | single.php |
+| `/es/blog/` | archive.php |
 | `/es/tema/memoria` | taxonomy-topic.php |
 | `/es/periodo/2019-2022` | taxonomy-period.php |
 | `/es/archivo/` | page-archivo.php |
@@ -194,5 +212,5 @@ Este árbol es el territorio oficial de la obra. WordPress no puede inventar rut
 
 ---
 
-**Versión:** 2.0  
-**Depende de:** `04-wordpress-content-model`, `05-mapa-pantallas`, `03-arquitectura-editorial`, `14-arquitectura-informacion-navegacion`
+**Versión:** 2.2  
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `05-mapa-pantallas`, `14-arquitectura-informacion-navegacion`

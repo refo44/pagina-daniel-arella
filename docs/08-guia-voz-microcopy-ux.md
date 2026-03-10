@@ -1,10 +1,13 @@
 # Daniel Arella — Guía de voz, microcopy y escritura UX
 
-**Versión 1.1**
+**Versión 1.2**
 
 Este documento define cómo habla el sitio web de Daniel Arella. No define su poesía ni su pensamiento. Define la voz del sistema editorial que contiene su obra.
 
 El objetivo es que todo el sitio suene como una editorial de autor, no como un blog, ni una tienda, ni una plataforma.
+
+**Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
+**Alimenta a:** `09-voice-dictionary`, `10-ui-copy-sheet`
 
 ---
 
@@ -136,7 +139,7 @@ No se usan códigos ni tecnicismos visibles.
 
 ## 9. Nombres de secciones
 
-Evitar nombres de marketing o de plataformas.
+Evitar nombres de marketing o de plataformas. Ver `03-arquitectura-editorial`, `14-arquitectura-informacion-navegacion`.
 
 | Función | Nombre correcto |
 |---------|-----------------|
@@ -145,6 +148,9 @@ Evitar nombres de marketing o de plataformas.
 | Store | Libros |
 | Press | Prensa |
 | Newsletter | Carta o Correspondencia |
+| Archive | Archivo |
+| Contact | Contacto |
+| Rights | Derechos (o Derechos y permisos) |
 
 ---
 
@@ -153,11 +159,18 @@ Evitar nombres de marketing o de plataformas.
 | Sección | Tono |
 |---------|------|
 | Home | Editorial, presente, íntimo |
+| Archivo | Ordenado, navegable |
 | Poemas | Silencioso, limpio |
 | Ensayos | Claro, reflexivo |
+| Relatos | Narrativo, contenido |
 | Libros | Editorial, informativo |
 | Talleres | Preciso, sin hype |
+| Artículos | Breve, circunstancial |
+| Sobre el autor | Cercano, intelectual |
+| Correspondencia | Íntimo, directo |
 | Contacto | Cortés, simple |
+| Prensa | Informativo, neutro |
+| Derechos | Formal, breve |
 
 ---
 
@@ -176,4 +189,4 @@ Debe sonar como: **Una editorial pequeña, seria y viva.**
 
 ---
 
-**Versión del documento:** 1.1
+**Versión del documento:** 1.2

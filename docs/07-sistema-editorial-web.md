@@ -1,10 +1,11 @@
 # Daniel Arella — Sistema editorial para la web
 
-**Versión 2.1**
+**Versión 2.2**
 
 Este documento define el marco para escribir, editar y presentar textos en el sitio. No define la poética de Daniel, sino la forma en que la obra habita la pantalla.
 
-**Complementa:** `02-identidad-corporativa`, `01-plataforma-autor-plan`, `08-guia-voz-microcopy-ux`, `09-voice-dictionary`
+**Complementa:** `02-identidad-corporativa`, `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `05-mapa-pantallas`, `06-estrategia-publicacion`, `08-guia-voz-microcopy-ux`, `09-voice-dictionary`  
+**Alimenta a:** `10-ui-copy-sheet`, `13-wireframes`
 
 ---
 
@@ -106,6 +107,10 @@ Cada relato es una unidad:
 - Navegación anterior y siguiente
 - Enlace a archivo de relatos
 
+### 4.3 Artículos y notas (blog)
+
+Los artículos y notas del autor (`03-arquitectura-editorial`, Article) siguen las reglas de voz y legibilidad. Estructura más flexible que los ensayos; pueden ser breves o extensos según el propósito. Nunca lenguaje promocional.
+
 ---
 
 ## 5. Biografía y Sobre el autor
@@ -147,7 +152,7 @@ No se reproducen artículos completos salvo permiso explícito.
 
 ---
 
-## 8. Jerarquía visual
+## 8. Jerarquía visual y tipografía
 
 Desde `02-identidad-corporativa`:
 
@@ -155,6 +160,7 @@ Desde `02-identidad-corporativa`:
 - H2 y H3 solo para estructura real.
 - Texto de cuerpo legible en móvil y escritorio.
 - Nunca usar títulos como decoración.
+- Tipografía: Fraunces para obra y títulos; Source Sans 3 para metadatos y UI. Ritmo y medida en 02.
 
 ---
 
@@ -185,4 +191,4 @@ Antes de publicar:
 
 ---
 
-**Versión del documento:** 2.1
+**Versión del documento:** 2.2

@@ -1,13 +1,16 @@
 # Daniel Arella — Voice Dictionary
 
 **Léxico editorial y UX del sistema**  
-**Versión 2.1**
+**Versión 2.2**
 
 Este diccionario define qué palabras existen dentro del territorio editorial de Daniel Arella y cuáles no pueden existir jamás. No es un diccionario literario. Es el léxico del espacio donde vive la obra.
 
 Todas las interfaces, botones, menús, mensajes y formularios del sitio deben obedecer este documento.
 
 La voz y el tono se definen en `08-guia-voz-microcopy-ux`.
+
+**Se apoya en:** `08-guia-voz-microcopy-ux`, `03-arquitectura-editorial`  
+**Alimenta a:** `10-ui-copy-sheet`
 
 ---
 
@@ -38,6 +41,7 @@ Usar exclusivamente estos verbos en botones, enlaces, microcopy y mensajes.
 | Leer | Acción principal de la plataforma |
 | Abrir | Libros, PDFs, EPUB |
 | Ver | Listas, catálogos |
+| Buscar | Búsqueda en archivo |
 | Explorar | Archivo, temas, periodos |
 | Recibir | Correspondencia, textos |
 | Entrar | Secciones |
@@ -115,7 +119,11 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | About | Sobre el autor |
 | Contact | Contacto |
 | Press | Prensa |
-| Articles (si existen) | Artículos o Escritura |
+| Rights | Derechos (o Derechos y permisos) |
+| Correspondence | Correspondencia |
+| Blog | Artículos o Escritura |
+| Audio library | Biblioteca de audio |
+| Videoteca | Videoteca |
 
 **Nunca:** dashboard, feed, profile, store, shop, portal.
 
@@ -127,6 +135,7 @@ El sistema no tiene newsletters. Tiene correspondencia.
 |---------|-------|
 | Leer poema | Leer el poema |
 | Leer libro | Abrir el libro |
+| Ver taller | Ver taller |
 | Email | Recibir nuevos textos |
 | Compra | Adquirir el libro |
 | Descarga | Descargar PDF o EPUB |
@@ -187,4 +196,4 @@ El sitio no vende. El sitio no empuja. El sitio acoge una obra.
 
 **Documento canónico.**  
 **Referencia cruzada:** `08-guia-voz-microcopy-ux`, `10-ui-copy-sheet`  
-**Versión:** 2.1
+**Versión:** 2.2

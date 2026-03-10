@@ -2,7 +2,13 @@
 
 Referencia rápida de qué hay en `content-source/`, **dimensiones y tamaños**, y cómo usarlo en el sitio.
 
-**Importante:** `content-source/` **solo existe en local** (no se despliega). Para la maqueta estática y el sitio en GitHub o servidor final, hay que **duplicar y copiar** el material necesario en una carpeta dentro de **`public/`** (por ejemplo `public/assets/images/`, `public/assets/pdf/`) y usar esos archivos como assets. No enlazar nunca a `content-source/` desde el código.
+**Se apoya en:** `01-plataforma-autor-plan`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `17-static-file-structure`, `19-assets-strategy`
+
+**Alimenta a:** `21-orden-implementacion`
+
+---
+
+**Importante:** `content-source/` **solo existe en local** (no se despliega). Para la maqueta estática y el sitio en GitHub o servidor final, hay que **duplicar y copiar** el material necesario en **`assets/`** (o `public/assets/` según la estructura del proyecto): `assets/images/`, `assets/pdf/`, etc. Enlazar siempre a rutas bajo la raíz desplegada, nunca a `content-source/`. Ver `17-static-file-structure`, `19-assets-strategy`.
 
 ### Estructura del directorio (reorganizada)
 
@@ -294,4 +300,12 @@ Para el resto de archivos de la carpeta (~250 en total), usar **Caption** = “D
 
 ---
 
-**Versión:** 1.7 — Renombrado de archivos: kebab-case, descriptivos; author-photos → daniel-arella-NN; books/covers y books/pdf con nombres canónicos; press-events → premio-rey-david-2021, press-01…50. Correspondencia en `content-source/RENAME-MAP.md`.
+## 8. Relación con otros documentos
+
+- **Estructura y assets:** `17-static-file-structure` define `assets/images/` en la raíz del proyecto; `19-assets-strategy` detalla iconos, fuentes, favicon y reglas para imágenes. Este inventario describe el **origen** (content-source) y el destino (assets/).
+- **Arquitectura:** `03-arquitectura-editorial` define Book, Poem, Essay, Story; las portadas, PDFs y descargas de este inventario se asocian a esas entidades. `04-wordpress-content-model` implementa el modelo.
+- **Implementación:** `21-orden-implementacion` usa este inventario en la Fase 3 (subir contenido al servidor, asociar imágenes y PDFs a fichas).
+
+---
+
+**Versión:** 1.8 — Se apoya en / Alimenta a; relación con 17, 19, 21; destino assets/ coherente con estructura estática.

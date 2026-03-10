@@ -1,11 +1,12 @@
 # Daniel Arella — UI Copy Sheet
 
 **Repertorio de microcopy, navegación y sistema**  
-**Versión 2.1**
+**Versión 2.3**
 
 Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
-**Está alineado con:** `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `14-arquitectura-informacion-navegacion`, `22-tendencias-ux-ui-sistema-editorial`
+**Se apoya en:** `07-sistema-editorial-web`, `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `14-arquitectura-informacion-navegacion`, `22-tendencias-ux-ui-sistema-editorial`  
+**Alimenta a:** `13-wireframes`, `14-arquitectura-informacion-navegacion`, `16-theme-file-structure`
 
 **Regla central:** El sitio no vende. Invita a leer.
 
@@ -43,7 +44,7 @@ Preferir siempre formulaciones editoriales:
 
 ### 1.3 Verbos permitidos
 
-Leer, Abrir, Ver, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Guardar, Cerrar, Cambiar.
+Leer, Abrir, Ver, Buscar, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir, Descargar, Contactar, Enviar, Guardar, Cerrar, Cambiar.
 
 **Nunca:** suscribirse, comprar, empezar, desbloquear, registrarse.
 
@@ -104,6 +105,7 @@ La Home responde una sola cosa: **“Esto es lo que estoy escribiendo ahora.”*
 - Leer el poema
 - Leer el ensayo
 - Abrir el libro
+- Ver taller
 - Explorar archivo
 - Recibir nuevos textos
 
@@ -119,13 +121,17 @@ La Home responde una sola cosa: **“Esto es lo que estoy escribiendo ahora.”*
 
 ### 4.1 Títulos
 
-Poemas, Ensayos, Relatos, Libros, Talleres, Artículos (si existe)
+Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Videoteca
 
 ### 4.2 Archivo por tipo
 
 - “Archivo de poemas”
 - “Archivo de ensayos”
 - “Archivo de relatos”
+- “Archivo de libros”
+- “Archivo de talleres”
+- “Biblioteca de audio” (poemas en audio, audiolibros, podcast)
+- “Videoteca” (poemas leídos, videopoemas, conferencias, clases)
 
 ### 4.3 Etiquetas de estado
 
@@ -145,7 +151,7 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos (si existe)
 
 ### 5.2 Filtros
 
-**Etiquetas:** Tipo, Tema, Periodo, Forma, Estatus
+**Etiquetas:** Tipo, Tema, Periodo (y Forma, si está implementada)
 
 **Acciones:** Aplicar, Quitar filtros, Ver todo
 
@@ -187,11 +193,17 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ### 6.5 Taller
 
-- Ver detalles
-- Enviar solicitud
+- Ver taller
+- Enviar solicitud (formulario de inscripción)
 - Contactar
 - **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
 - **Estados:** “No hay talleres programados por ahora.”, “Este taller ya finalizó.”
+
+### 6.6 Artículo
+
+- Leer el artículo
+- Siguiente artículo, Artículo anterior
+- Explorar archivo (o Artículos)
 
 ---
 
@@ -257,9 +269,9 @@ Antes de aprobar cualquier texto:
 1. ¿Suena a editorial, no a marketing?
 2. ¿Usa Leer, Abrir o Recibir en vez de Comprar o Suscribirse?
 3. ¿Es claro sin explicar de más?
-4. ¿Respeta el Voice Dictionary?
+4. ¿Respeta el Voice Dictionary? (`09-voice-dictionary`)
 
 ---
 
-**Versión:** 2.1  
+**Versión:** 2.3  
 **Documento canónico para todo el copy del sistema.**
