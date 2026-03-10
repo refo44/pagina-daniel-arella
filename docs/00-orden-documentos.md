@@ -17,6 +17,8 @@ Los documentos en `docs/` llevan prefijo de dos dígitos (`01-`, `02-`, …) par
 | **16–19** | Implementación técnica | Theme y static file structure, CSS, assets. Convierten la arquitectura en archivos y código. |
 | **20–21** | Contenido e implementación | Inventario de fuentes de contenido y orden de implementación (secuencia de trabajo). Últimos porque referencian a casi todo lo anterior. |
 | **22** | Criterios contemporáneos | Lectura de tendencias UX/UI 2026 aplicada al sistema editorial. Filtro estratégico para decisiones futuras. Criterio de validación para la revisión de documentos (identidad, CSS, navegación, assets, implementación). |
+| **23** | Accesibilidad | Estándares de accesibilidad: estrategia, principios WCAG, reglas de diseño, HTML semántico, ARIA, checklist y pruebas. WCAG 2.1/2.2 AA. |
+| **24** | Layout | Principios de layout: ancho de lectura, ritmo vertical, uso del blanco, relación tipografía/imagen, grid y responsive. Cierra el sistema visual antes de escribir HTML. |
 
 ---
 
@@ -50,3 +52,5 @@ Ningún documento debe depender de uno con número mayor. El documento `00-orden
 20. `20-content-source-inventario`
 21. `21-orden-implementacion`
 22. `22-tendencias-ux-ui-sistema-editorial`
+23. `23-estandares-accesibilidad`
+24. `24-principios-layout`
