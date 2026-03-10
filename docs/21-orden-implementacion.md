@@ -65,18 +65,18 @@ Eso formaliza el criterio de paso a WordPress.
 **Prioridad de contenido:**
 1. Fotos de autor
 2. Portadas de libros
-3. PDFs de libros
+3. PDFs de libros (solo si se publican)
 4. Prensa y eventos
 5. Ilustraciones de terceros
 
-2. Asociar imágenes y PDFs a entidades.
+2. Asociar imágenes y, si aplica, PDFs a entidades.
 3. Configurar hosting.
 4. Validar en vivo:
    - Enlaces rotos
    - SEO técnico básico
    - Performance
    - Formularios
-   - Carga de PDFs e imágenes
+   - Carga de imágenes y documentos públicos
 
 **No importar automáticamente todo `content-source/`.** Solo se publica el material seleccionado y optimizado para web.
 

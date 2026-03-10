@@ -176,9 +176,11 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ### 6.2 Libro
 
-**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Descargar PDF, Descargar EPUB, Adquirir el libro
+**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro
 
-**Secciones:** Descripción, Índice, Edición, Descargas, Prensa, Derechos
+**Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
+
+**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Prensa, Derechos
 
 ### 6.3 Ensayo
 

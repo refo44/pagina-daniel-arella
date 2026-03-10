@@ -8,7 +8,7 @@ Referencia rápida de qué hay en `content-source/`, **dimensiones y tamaños**,
 
 ---
 
-**Importante:** `content-source/` **solo existe en local** (no se despliega). Para la maqueta estática y el sitio en GitHub o servidor final, hay que **duplicar y copiar** el material necesario en **`assets/`** (o `public/assets/` según la estructura del proyecto): `assets/images/`, `assets/pdf/`, etc. Enlazar siempre a rutas bajo la raíz desplegada, nunca a `content-source/`. Ver `17-static-file-structure`, `19-assets-strategy`.
+**Importante:** `content-source/` **solo existe en local** (no se despliega). Para la maqueta estática y el sitio en GitHub o servidor final, hay que **duplicar y copiar** el material necesario en **`assets/`** (o `assets/` en la raíz del sitio): `assets/images/`, `assets/pdf/`, etc. Enlazar siempre a rutas bajo la raíz desplegada, nunca a `content-source/`. Ver `17-static-file-structure`, `19-assets-strategy`.
 
 ### Estructura del directorio (reorganizada)
 
@@ -112,7 +112,7 @@ Correspondencia **nombre nuevo ↔ nombre WhatsApp antiguo** y orden: `content-s
 | press-33.jpeg | Cartel Poesía Sci-Fi (1280×720) |
 | press-39.jpeg | Diploma Ida Gramcko (2048×1448) |
 | press-43.jpeg | Interior «Relatos pioneros» autores/bios (1152×2048) |
-| press-44.jpeg | Portada «Relatos pioneros…» (1536×2048) |
+| press-44.jpeg | Registro etiquetado como portada «Relatos pioneros…» (1536×2048); verificar archivo antes de publicar |
 | press-45.jpeg | Gato (no editorial) (1080×607) |
 
 El resto (press-03 a press-13, 15 a 22, 24 a 31, 34 a 38, 40 a 42, 46 a 48) revisar contenido; dimensiones por archivo en RENAME-MAP o inspección con `sips`.
@@ -142,7 +142,7 @@ El resto (press-03 a press-13, 15 a 22, 24 a 31, 34 a 38, 40 a 42, 46 a 48) revi
 | Archivo | Uso sugerido |
 |---------|----------------|
 | daniel-arella-al-fondo-de-la-transparencia.pdf | Libro — ficha Book, descarga |
-| daniel-arella-relatos-pioneros-ciencia-ficcion-latinoamericana.pdf | Libro — ficha Book, descarga |
+| daniel-arella-relatos-pioneros-ciencia-ficcion-latinoamericana.pdf | Libro — ficha Book, fuente bibliográfica o extracción de portada; descarga solo si se autoriza |
 | daniel-arella-el-arcangel.pdf | Libro — ficha Book, descarga |
 | daniel-arella-el-androgino-ebrio-en-el-haiton.pdf | Libro / obra — ficha |
 | daniel-arella-me-vibra-ii.pdf | Libro / obra — ficha |
@@ -257,7 +257,7 @@ Textos listos para copiar al CMS (alt, título, pie de foto, descripción). Gene
 | **press-23.jpeg** | Cartel — Presentación «Relatos pioneros…» FILBo 30 | Presentación del libro en Feria del Libro de Bogotá, 24 abril. | Cartel naranja FILBo 30 (18 abril–2 mayo): portada “Relatos pioneros de la ciencia ficción latinoamericana”, Daniel Arella y Rebeca Roca; foto de Daniel Arella; presentación 24 abril, 1:00 p.m., Sala Jorge Isaacs; Venezuela, Monte Ávila, El perro y la rana. Para Libro / Prensa. |
 | **press-28.jpeg** | Cartel — Galería Siete Piezas (poesía, 27 abril) | Daniel Arella en lectura de poesía, evento Galería Siete Piezas. | Cartel: “GALERÍA SIETE PIEZAS”; viernes y sábado 27 abril; Birosca Carioca AV2 C24; POESÍA: Rolando Ramírez, Daniel Arella (viernes y sábado 7:30 p.m.); dibujo, fotografía, escultura, pintura, cortometrajes. Para Prensa / eventos. |
 | **press-43.jpeg** | Contraportada / interior — Relatos pioneros (autores y bios) | Interior del libro con lista de autores y biografías de Daniel Arella y Rebeca Roca. | Página: título “Relatos pioneros de la ciencia ficción latinoamericana”; texto del compilador Daniel Arella; lista de autores (Nervo, Darío, Palma, Lugones, Quiroga, Borges, Cortázar, etc.); biografías Daniel Arella (Caracas 1988, Letras ULA, premio cuento 2009, Free-jazz 2010, Al fondo de la transparencia 2012) y Rebeca Roca (ilustradora). Para ficha del libro. |
-| **press-44.jpeg** | Portada — Relatos pioneros de la ciencia ficción latinoamericana | Portada del libro; Daniel Arella selección y prólogo, Rebeca Roca ilustraciones. | Portada en gris: “Daniel Arella · Selección y prólogo”; “RELATOS PIONEROS DE LA CIENCIA FICCIÓN LATINOAMERICANA”; “Rebeca Roca · Ilustraciones”; dibujo B/N de hombre con sombrero y brazo mecánico (estilo steampunk); logo El perro y la rana. Para ficha del libro / portada. |
+| **press-44.jpeg** | Registro etiquetado como portada — Relatos pioneros de la ciencia ficción latinoamericana | El inventario original la identifica como portada del libro. | **Verificar antes de publicar.** En la maqueta estática se detectó una copia contaminada con contenido no editorial. La portada pública debe salir de una fuente verificada (imagen correcta o extracción de la primera página del PDF). |
 | **press-45.jpeg** | (Uso no editorial) | Gato gris, primer plano. | Retrato de gato; ojos verdes, fondo desenfocado. No usar como asset del sitio salvo decisión explícita (ej. sección personal). |
 | **press-03 … press-50** (resto) | (Revisar por archivo) | Revisar cada imagen: evento, presentación, prensa, retrato. | Asignar title/caption/description al subir; renombrar (ej. evento-fecha-descripcion). Ver tabla 3.2 para dimensiones. Todos en `press-events/`. |
 
@@ -295,7 +295,7 @@ Para el resto de archivos de la carpeta (~250 en total), usar **Caption** = “D
 | Portadas / libros  | `books/covers/`, `books/pdf/` (7 PDF)     | Asociar a cada Book; redimensionar imágenes a 600–800 px. |
 | Eventos / prensa   | `press-events/` (premio-rey-david-2021, press-01…50) | Ver §3.2 y RENAME-MAP; usar las ≥ 800 px. |
 | Ilustración editorial | `illustrations/` (250 imgs, 95 autores) | Selección; servir a 800–1200 px; créditos y derechos; ver §2.2 listado autores. |
-| Descargas libro   | `books/pdf/`                              | Vincular PDF a fichas Book; ver §3.4. |
+| Descargas libro   | `books/pdf/`                              | Vincular PDF a fichas Book solo si habrá descarga pública; si no, usarlo como fuente editorial privada. |
 | Textos (CV, bio)   | `documents/`                              | Contenido para Sobre el autor, etc. |
 
 ---
@@ -304,7 +304,7 @@ Para el resto de archivos de la carpeta (~250 en total), usar **Caption** = “D
 
 - **Estructura y assets:** `17-static-file-structure` define `assets/images/` en la raíz del proyecto; `19-assets-strategy` detalla iconos, fuentes, favicon y reglas para imágenes. Este inventario describe el **origen** (content-source) y el destino (assets/).
 - **Arquitectura:** `03-arquitectura-editorial` define Book, Poem, Essay, Story; las portadas, PDFs y descargas de este inventario se asocian a esas entidades. `04-wordpress-content-model` implementa el modelo.
-- **Implementación:** `21-orden-implementacion` usa este inventario en la Fase 3 (subir contenido al servidor, asociar imágenes y PDFs a fichas).
+- **Implementación:** `21-orden-implementacion` usa este inventario para seleccionar qué se publica. No todo PDF del inventario pasa al servidor; algunos se usan solo como fuente editorial privada.
 
 ---
 

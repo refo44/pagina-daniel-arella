@@ -174,10 +174,12 @@ Estas piezas no forman parte del corpus textual (poem, essay, story). Funcionan 
 
 ## 8. Descargas y derechos
 
-Las descargas existen solo dentro de Book. Ahí viven:
+Las descargas, si existen, viven solo dentro de Book. Un Book también puede funcionar solo como ficha editorial y bibliográfica, sin archivos públicos.
 
-- PDF
-- EPUB
+Ahí pueden vivir:
+
+- PDF (si se publica)
+- EPUB (si se publica)
 - Editorial
 - Año
 - ISBN

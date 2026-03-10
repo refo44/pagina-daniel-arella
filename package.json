@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint:css": "stylelint \"public/css/**/*.css\""
+    "lint:css": "stylelint \"css/**/*.css\""
   },
   "devDependencies": {
     "@fontsource/fraunces": "^5.2.9",

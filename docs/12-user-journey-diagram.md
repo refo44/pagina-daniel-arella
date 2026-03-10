@@ -34,7 +34,7 @@ journey
       Abrir índice del libro: 5: Lector
       Abre poema, ensayo o relato: 5: Lector
       Siguiente pieza o Anterior: 5: Lector
-      Descarga PDF o EPUB: 5: Lector
+      Consulta ficha, prensa o descarga si existe: 5: Lector
     section Se acerca al autor
       Sobre el autor: 5: Lector
       Lee biografía y trayectoria: 5: Lector

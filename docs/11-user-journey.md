@@ -64,7 +64,7 @@ El lector siempre sabe si está leyendo una pieza independiente o parte de un li
 - → Abre un poema, ensayo o relato
 - → “Siguiente” o “Anterior”
 - → Regresa al índice del libro
-- → Descarga PDF o EPUB si existe
+- → Consulta ficha bibliográfica, prensa o descarga si existe
 - → Vuelve al Archivo o al Home
 
 El libro se comporta como una unidad de lectura, no como una página aislada.

@@ -103,7 +103,7 @@ Breadcrumb no aplica.
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | Cada texto del índice | Poema, Ensayo o Relato | Primario |
-| “Descargar PDF / EPUB” | Descarga | Secundario |
+| “Descargar PDF / EPUB” (si existe) | Descarga | Secundario |
 | “Explorar archivo” | Archivo | Secundario |
 | Breadcrumb | Inicio → Archivo → Libros → Libro | Secundario |
 

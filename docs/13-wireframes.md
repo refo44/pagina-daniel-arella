@@ -73,8 +73,10 @@ Bloques:
 - Título
 - Descripción editorial
 - Metadatos: Año, Editorial, ISBN
+- Cita o fragmento breve
 - Índice de textos: Poemas, Ensayos, Relatos
-- Descargas: PDF, EPUB. Enlace a editorial
+- Referencia editorial o prensa
+- Descargas: PDF, EPUB. Enlace a editorial (solo si aplica)
 - Pie
 
 ---

@@ -19,6 +19,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
 | **Imágenes** | Optimizar antes de subir (WebP o AVIF cuando sea posible). |
+| **Documentos (PDF/EPUB)** | No forman parte del árbol base. Solo crear una carpeta pública para documentos si un título debe ofrecer descarga de forma explícita. |
 | **JS** | Solo navegación, formularios, accesibilidad. Sin frameworks ni lógica de app. Todo con `defer`. Sin animaciones costosas ni librerías de motion. |
 | **Audio y video (Biblioteca de audio, Videoteca)** | No se alojan en el servidor ni en `assets/`. Viven en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena URL o código de embed y muestra reproductor embebido o enlace. Ver `01-plataforma-autor-plan`, `03-arquitectura-editorial`. |
 
@@ -40,6 +41,8 @@ js/                 Scripts mínimos (navegación, formularios, accesibilidad)
 ```
 
 La misma estructura se replica en la maqueta estática y dentro del theme. En `02-identidad-corporativa` se definen las familias tipográficas (Fraunces, Source Sans 3) y su uso.
+
+Los documentos descargables no son obligatorios en la maqueta ni en el theme. Si un libro no ofrece descarga pública, el PDF o EPUB permanece fuera del árbol público y el sitio muestra solo la ficha editorial.
 
 ---
 

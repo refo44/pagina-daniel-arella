@@ -109,20 +109,21 @@ Los artículos son textos circunstanciales (publicaciones externas, notas o refl
 
 ## 5. PDFs, EPUBs y adquisiciones
 
-Los libros pueden existir en tres formas:
+Los libros pueden existir en cuatro formas:
 
 - Lectura web (fragmentos o textos completos).
-- Descarga (PDF o EPUB).
-- Enlace editorial para adquirir.
+- Ficha editorial y bibliográfica sin descarga.
+- Descarga (PDF o EPUB), si se autoriza.
+- Enlace editorial para adquirir, si aplica.
 
-Daniel define por libro: qué se puede descargar, qué solo se puede leer, qué se debe adquirir fuera del sitio.
+Daniel define por libro: qué se puede descargar, qué solo se puede leer, qué se muestra solo como ficha editorial y qué se debe adquirir fuera del sitio.
 
-Las descargas viven siempre dentro de la página del libro. No existen páginas independientes de descarga.
+Las descargas, cuando existen, viven siempre dentro de la página del libro. No existen páginas independientes de descarga.
 
 **Reglas editoriales:**
 
 - Libros agotados o fuera de circulación pueden abrirse en PDF.
-- Libros activos en editoriales se muestran como fragmentos con “Adquirir el libro”.
+- Libros activos en editoriales pueden mostrarse como ficha editorial, con fragmentos o con “Adquirir el libro”, según decisión de Daniel.
 - Ensayos largos pueden ofrecerse como PDF con aviso de uso personal o académico.
 
 La interfaz nunca debe parecer una tienda. La compra es un gesto secundario a la lectura.

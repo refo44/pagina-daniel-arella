@@ -74,7 +74,7 @@ Un sitio de autor serio necesita:
 | Biblioteca de audio | Poemas, temas musicales, audiolibros, podcast |
 | Videoteca | Música, poemas leídos, videopoemas, rap, conferencias, clases |
 | Sobre el autor | Biografía intelectual |
-| Publicaciones | Libros y PDFs |
+| Publicaciones | Libros y, si aplica, PDFs |
 | Contacto | Prensa, editores, lectores |
 
 **Audio y vídeo:** El contenido de Biblioteca de audio y Videoteca no se sube al servidor del sitio. Se aloja en la nube o en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo enlaza o inserta reproductores (embed); no almacena archivos de audio ni vídeo.
@@ -121,7 +121,7 @@ Incluye:
 
 - Publicar por libros
 - Abrir o cerrar etapas
-- Publicar PDFs
+- Publicar o no PDFs
 - Mostrar obra inédita
 - Activar o desactivar secciones
 - Definir qué está vivo ahora en el home
