@@ -63,3 +63,6 @@ wp-config.php
 .cursorrules.json
 .cursorrules.jsonc
 .cursorrules.json5
+
+# Node.js
+node_modules
