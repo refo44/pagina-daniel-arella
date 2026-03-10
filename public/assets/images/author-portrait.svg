@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Retrato editorial de Daniel Arella</title>
+  <desc id="desc">Ilustración tipográfica sobria para la maqueta estática del autor.</desc>
+  <rect width="800" height="1000" fill="#f8f9fa"/>
+  <rect x="72" y="72" width="656" height="856" rx="24" fill="#9ca3af"/>
+  <circle cx="400" cy="360" r="150" fill="#2c3e50"/>
+  <path d="M245 760c48-118 122-177 155-177s107 59 155 177" fill="#2c3e50"/>
+  <path d="M270 350c16-101 79-166 130-166 60 0 126 79 130 166-36-32-82-48-130-48s-94 16-130 48Z" fill="#2c2c2c"/>
+  <text x="400" y="858" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#2c2c2c">Daniel Arella</text>
+</svg>

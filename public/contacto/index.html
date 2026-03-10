@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | Daniel Arella</title>
+  <meta name="description" content="Contacto para prensa, edición, lecturas y talleres de Daniel Arella.">
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
+  <div data-include="/parts/header.html"></div>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a data-route="" href="/">Inicio</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Contacto</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="content-shell">
+    <div class="o-container form-panel">
+      <div class="o-flow">
+        <p class="content-kicker">Contacto</p>
+        <h1>Para prensa, edición o lecturas.</h1>
+        <p>Este formulario reúne solicitudes relacionadas con prensa, edición, lecturas públicas y talleres.</p>
+      </div>
+
+      <form class="form-grid" data-static-form data-success-message="Mensaje enviado.">
+        <div class="form-field">
+          <label for="contact-name">Nombre</label>
+          <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-email">Correo</label>
+          <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="Tu correo" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-subject">Asunto</label>
+          <input id="contact-subject" name="subject" type="text" placeholder="Asunto" required>
+        </div>
+        <div class="form-field">
+          <label for="contact-message">Mensaje</label>
+          <textarea id="contact-message" name="message" placeholder="Escribe aquí" required></textarea>
+        </div>
+        <div class="button-row">
+          <button class="button" type="submit">Enviar</button>
+          <a class="button-link" data-route="" href="/">Volver</a>
+        </div>
+      </form>
+
+      <p class="form-status" data-form-status aria-live="polite"></p>
+    </div>
+  </main>
+
+  <div data-include="/parts/footer.html"></div>
+</body>
+</html>

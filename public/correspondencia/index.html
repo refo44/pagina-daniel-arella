@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Correspondencia | Daniel Arella</title>
+  <meta name="description" content="Formulario de correspondencia para recibir nuevos textos de Daniel Arella.">
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body data-nav="correspondencia">
+  <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
+  <div data-include="/parts/header.html"></div>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a data-route="" href="/">Inicio</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Correspondencia</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main" class="content-shell">
+    <div class="o-container form-panel">
+      <div class="o-flow">
+        <p class="content-kicker">Correspondencia</p>
+        <h1>Recibir nuevos textos</h1>
+        <p>Una carta breve cuando una pieza nueva entre en circulación o cuando el trabajo en curso abra una nueva etapa de lectura.</p>
+      </div>
+
+      <form class="form-grid" data-static-form data-success-message="Listo. A partir de ahora recibirás nuevos textos.">
+        <div class="form-field">
+          <label for="newsletter-email">Tu correo</label>
+          <input id="newsletter-email" name="email" type="email" autocomplete="email" placeholder="Tu correo" required>
+        </div>
+        <div class="button-row">
+          <button class="button" type="submit">Recibir nuevos textos</button>
+          <a class="button-link" data-route="" href="/">Volver</a>
+        </div>
+      </form>
+
+      <p class="form-status" data-form-status aria-live="polite"></p>
+    </div>
+  </main>
+
+  <div data-include="/parts/footer.html"></div>
+</body>
+</html>

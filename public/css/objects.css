@@ -1,0 +1,39 @@
+.o-container {
+  width: min(100% - (2 * var(--space-6)), var(--measure-page));
+  margin-inline: auto;
+}
+
+.o-container--wide {
+  width: min(100% - (2 * var(--space-6)), var(--measure-wide));
+}
+
+.o-stack > * + * {
+  margin-block-start: var(--stack-space, var(--space-7));
+}
+
+.o-flow > * + * {
+  margin-block-start: var(--flow-space, 1.1em);
+}
+
+.o-grid {
+  display: grid;
+  gap: var(--grid-gap, var(--space-6));
+}
+
+.o-cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-gap, var(--space-3));
+  align-items: center;
+}
+
+.o-sidebar {
+  display: grid;
+  gap: var(--space-7);
+}
+
+@media (width >= 64rem) {
+  .o-sidebar {
+    grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 0.85fr);
+  }
+}

@@ -1,0 +1,115 @@
+html {
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  line-height: var(--line-body);
+  text-rendering: optimizelegibility;
+}
+
+main {
+  display: block;
+}
+
+a {
+  color: var(--link);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  line-height: var(--line-heading);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.25rem, 3vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 2vw, 1.6rem);
+}
+
+p,
+li,
+dd {
+  max-width: var(--measure-readable);
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
+}
+
+blockquote {
+  padding-left: var(--space-5);
+  border-left: 3px solid var(--border);
+  font-style: italic;
+}
+
+figure {
+  gap: var(--space-3);
+}
+
+figcaption,
+label,
+small,
+input,
+textarea,
+button,
+select {
+  font-family: var(--font-ui);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-1);
+  background: var(--bg);
+  color: var(--text);
+}
+
+textarea {
+  min-height: 9rem;
+  resize: vertical;
+}
+
+button {
+  cursor: pointer;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Daniel Arella",
+  "short_name": "Arella",
+  "icons": [
+    {
+      "src": "/assets/favicon/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#2c2c2c",
+  "background_color": "#f8f9fa",
+  "display": "standalone"
+}

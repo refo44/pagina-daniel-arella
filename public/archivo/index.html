@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Archivo | Daniel Arella</title>
+  <meta name="description" content="Archivo editorial de Daniel Arella: libros, poemas, ensayos, relatos, talleres y artículos.">
+  <link rel="icon" href="/assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="/css/main.css">
+  <script src="/js/main.js" defer></script>
+</head>
+<body data-nav="archivo">
+  <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
+  <div data-include="/parts/header.html"></div>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a data-route="" href="/">Inicio</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Archivo</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="archive-intro">
+      <div class="o-container archive-intro__layout">
+        <div class="o-stack">
+          <p class="content-kicker">Archivo</p>
+          <h1>Explorar la obra como biblioteca.</h1>
+          <p class="u-max-readable">Cada pieza conserva su relación con libros, temas y periodos. Esta versión ya toma títulos, biografía, imágenes y PDFs desde el archivo real del autor.</p>
+          <form class="form-grid u-max-readable">
+            <div class="form-field">
+              <label for="search-archive">Buscar en el archivo</label>
+              <input id="search-archive" name="q" type="search" placeholder="Buscar en el archivo">
+            </div>
+          </form>
+        </div>
+
+        <aside class="content-panel o-stack">
+          <div>
+            <p class="archive-filter__label">Filtros</p>
+            <div class="archive-filter">
+              <a class="archive-filter__chip" data-route="poem/" href="/poem/">Poemas</a>
+              <a class="archive-filter__chip" data-route="book/" href="/book/">Libros</a>
+              <a class="archive-filter__chip" data-route="prensa/" href="/prensa/">Prensa</a>
+              <a class="archive-filter__chip" data-route="tema/memoria/" href="/tema/memoria/">Tema</a>
+              <a class="archive-filter__chip" data-route="periodo/2019-2024/" href="/periodo/2019-2024/">Periodo</a>
+            </div>
+          </div>
+          <p class="status-note">Puedes buscar por título, tema o periodo.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section-panel">
+      <div class="o-container archive-list">
+        <article class="archive-row">
+          <p class="archive-row__meta">Libro · poesía</p>
+          <h2 class="archive-row__title">El Arcángel</h2>
+          <p>Libro de poesía de Daniel Arella, documentado en el archivo de premios y disponible en PDF.</p>
+          <div class="card__actions">
+            <a class="button" data-route="book/el-arcangel.html" href="/book/el-arcangel.html">Abrir el libro</a>
+          </div>
+        </article>
+
+        <article class="archive-row">
+          <p class="archive-row__meta">Poema · Archivo Venezuela 2024</p>
+          <h2 class="archive-row__title">Rostro de nadie</h2>
+          <p>Poema disponible en la selección de Archivo Venezuela y relacionado con el libro homónimo presente en PDF.</p>
+          <div class="card__actions">
+            <a class="button-link" data-route="poem/rostro-de-nadie.html" href="/poem/rostro-de-nadie.html">Leer el poema</a>
+          </div>
+        </article>
+
+        <article class="archive-row">
+          <p class="archive-row__meta">Libro / antología crítica</p>
+          <h2 class="archive-row__title">Relatos pioneros de la ciencia ficción latinoamericana</h2>
+          <p>Selección y prólogo de Daniel Arella con portada, material promocional y PDF incorporados desde `content-source/`.</p>
+          <div class="card__actions">
+            <a class="button-link" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="/book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+          </div>
+        </article>
+
+        <article class="archive-row">
+          <p class="archive-row__meta">Perfil de autor</p>
+          <h2 class="archive-row__title">Biografía larga y CV</h2>
+          <p>Información real de trayectoria, formación, premios, publicaciones y talleres del autor.</p>
+          <div class="card__actions">
+            <a class="button-link" data-route="sobre-el-autor/" href="/sobre-el-autor/">Leer perfil</a>
+          </div>
+        </article>
+
+        <article class="archive-row">
+          <p class="archive-row__meta">Prensa y eventos</p>
+          <h2 class="archive-row__title">Carteles, premios y retratos</h2>
+          <p>Selección de materiales gráficos: FILBo, Premio Rey David, Poesía Sci-Fi, premio Ida Gramcko y fotos de autor.</p>
+          <div class="card__actions">
+            <a class="button-link" data-route="prensa/" href="/prensa/">Abrir prensa</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="/parts/footer.html"></div>
+</body>
+</html>
