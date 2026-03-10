@@ -18,17 +18,27 @@
   <main id="main">
     <section class="hero-home">
       <div class="o-container hero-home__inner">
-        <div class="o-stack">
-          <p class="hero-home__eyebrow">Obra</p>
-          <h1>Daniel Arella: poesía, ensayo, narrativa y edición.</h1>
-          <p class="hero-home__lede">Poeta, ensayista, narrador y editor. Licenciado en Letras, magíster en Filosofía y autor de libros de poesía, antologías y trabajo crítico en torno a la literatura latinoamericana.</p>
-          <div class="button-row">
-            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
-            <a class="button-link" data-route="archivo/" href="archivo/">Explorar archivo</a>
+        <div class="hero-home__main o-stack">
+          <figure class="hero-home__portrait">
+            <img src="assets/images/daniel-arella-12.jpg" alt="Retrato de Daniel Arella, poeta, ensayista y narrador." width="540" height="675" fetchpriority="high">
+          </figure>
+          <div class="o-stack">
+            <p class="hero-home__eyebrow">Obra</p>
+            <h1>Daniel Arella: poesía, ensayo, narrativa y edición.</h1>
+            <p class="hero-home__lede">Poeta, ensayista, narrador y editor. Licenciado en Letras, magíster en Filosofía y autor de libros de poesía, antologías y trabajo crítico en torno a la literatura latinoamericana.</p>
+            <div class="button-row">
+              <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+              <a class="button-link" data-route="archivo/" href="archivo/">Explorar archivo</a>
+            </div>
           </div>
         </div>
 
         <aside class="hero-home__aside o-stack">
+          <figure class="hero-home__book-cover">
+            <a href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" aria-hidden="true">
+              <img src="assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg" alt="Portada del libro Relatos pioneros de la ciencia ficción latinoamericana." width="399" height="622" loading="lazy">
+            </a>
+          </figure>
           <div>
             <p class="content-kicker">Libro destacado</p>
             <h2>Relatos pioneros de la ciencia ficción latinoamericana</h2>
@@ -48,29 +58,38 @@
 
         <div class="card-grid card-grid--compact">
           <article class="card card--featured">
-            <p class="card__meta">Poema destacado</p>
-            <h3 class="card__title">Rostro de nadie</h3>
-            <p class="card__excerpt">Poema incluido en la selección de Archivo Venezuela 2024 y también presente en el libro del mismo nombre.</p>
-            <div class="card__actions">
-              <a class="button" data-route="poem/rostro-de-nadie.html" href="poem/rostro-de-nadie.html">Leer el poema</a>
+            <img class="card__cover" src="assets/images/arthur-rimbaud.jpg" alt="Ilustración de Arthur Rimbaud, referencia literaria." width="400" height="541" loading="lazy">
+            <div class="card__body">
+              <p class="card__meta">Poema destacado</p>
+              <h3 class="card__title">Rostro de nadie</h3>
+              <p class="card__excerpt">Poema incluido en la selección de Archivo Venezuela 2024 y también presente en el libro del mismo nombre.</p>
+              <div class="card__actions">
+                <a class="button" data-route="poem/rostro-de-nadie.html" href="poem/rostro-de-nadie.html">Leer el poema</a>
+              </div>
             </div>
           </article>
 
           <article class="card card--featured">
-            <p class="card__meta">Antología y crítica</p>
-            <h3 class="card__title">Relatos pioneros de la ciencia ficción latinoamericana</h3>
-            <p class="card__excerpt">Selección y prólogo de Daniel Arella, con edición impresa y materiales de presentación y portada en el archivo fuente.</p>
-            <div class="card__actions">
-              <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+            <img class="card__cover card__cover--book" src="assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg" alt="Portada del libro Relatos pioneros de la ciencia ficción latinoamericana." width="399" height="622" loading="lazy">
+            <div class="card__body">
+              <p class="card__meta">Antología y crítica</p>
+              <h3 class="card__title">Relatos pioneros de la ciencia ficción latinoamericana</h3>
+              <p class="card__excerpt">Selección y prólogo de Daniel Arella, con edición impresa y materiales de presentación y portada en el archivo fuente.</p>
+              <div class="card__actions">
+                <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+              </div>
             </div>
           </article>
 
           <article class="card card--featured">
-            <p class="card__meta">Sobre el autor</p>
-            <h3 class="card__title">Trayectoria, premios y trabajo editorial</h3>
-            <p class="card__excerpt">Biografía larga, formación, premios y participación en revistas, congresos y talleres a partir del material documental del autor.</p>
-            <div class="card__actions">
-              <a class="button" data-route="sobre-el-autor/" href="sobre-el-autor/">Abrir perfil</a>
+            <img class="card__cover card__cover--portrait" src="assets/images/daniel-arella-02.jpg" alt="Retrato de Daniel Arella con gafas y bufanda." width="384" height="512" loading="lazy">
+            <div class="card__body">
+              <p class="card__meta">Sobre el autor</p>
+              <h3 class="card__title">Trayectoria, premios y trabajo editorial</h3>
+              <p class="card__excerpt">Biografía larga, formación, premios y participación en revistas, congresos y talleres a partir del material documental del autor.</p>
+              <div class="card__actions">
+                <a class="button" data-route="sobre-el-autor/" href="sobre-el-autor/">Abrir perfil</a>
+              </div>
             </div>
           </article>
         </div>
@@ -93,7 +112,10 @@
           </div>
         </div>
 
-        <aside class="quote-panel">
+        <aside class="quote-panel quote-panel--with-image">
+          <figure class="quote-panel__figure">
+            <img src="assets/images/franz-kafka-1.jpg" alt="Dibujo de Franz Kafka." width="320" height="433" loading="lazy">
+          </figure>
           <p>“Poeta, ensayista, narrador y editor.”</p>
         </aside>
       </div>
