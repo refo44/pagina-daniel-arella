@@ -213,6 +213,12 @@
   background: var(--surface);
 }
 
+.card__cover--book {
+  aspect-ratio: auto;
+  object-fit: contain;
+  background: var(--bg);
+}
+
 .card__actions,
 .entry-nav,
 .archive-filter,
@@ -448,20 +454,29 @@
 }
 
 .author-layout__portrait {
-  max-width: 24rem;
-  border: 1px solid var(--border);
-  border-radius: var(--radius-2);
-  background: var(--surface);
-  overflow: hidden;
+  width: min(100%, 22rem);
+  margin: 0 auto;
 }
 
 .author-layout__portrait img {
   width: 100%;
   height: auto;
+  border-radius: 50% / 42%;
+}
+
+.book-single__cover {
+  width: min(100%, 28rem);
+  height: auto;
+  margin-inline: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-1);
+  background: var(--bg);
 }
 
 .author-layout__portrait figcaption {
-  padding: var(--space-3) var(--space-4);
+  max-width: 28ch;
+  margin: var(--space-3) auto 0;
+  text-align: center;
 }
 
 @media (width >= 48rem) {
@@ -470,6 +485,15 @@
   .author-layout {
     grid-template-columns: minmax(0, 1.4fr) minmax(18rem, 0.8fr);
     align-items: start;
+  }
+
+  .author-layout {
+    grid-template-columns: minmax(16rem, 0.75fr) minmax(0, 1.25fr);
+    gap: var(--space-8);
+  }
+
+  .author-layout__portrait {
+    margin: 0;
   }
 
   .site-header__toggle {
