@@ -31,8 +31,9 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 
 ```
 assets/
-├── icons/          SVGs inline o referenciados (sprite / archivos sueltos)
-├── images/         Fotos, portadas de libros, ilustraciones (optimizar: WebP o AVIF cuando sea posible)
+├── icons/          Lucide Icons (SVG)
+├── illustrations/  Open Doodles (SVG) para hero, secciones y estados vacíos
+├── images/         Fotos, portadas de libros (optimizar: WebP o AVIF cuando sea posible)
 ├── fonts/          Tipografías autohospedadas (woff2)
 └── favicon/        ico, svg, png, webmanifest (agrupa todos los archivos de icono del sitio: favicon, apple-touch-icon, manifest)
 
@@ -48,47 +49,253 @@ Los documentos descargables no son obligatorios en la maqueta ni en el theme. Si
 
 ## 3. Iconos
 
-### Regla base
+### Biblioteca oficial: Lucide Icons
 
-- **SVG inline** como opción por defecto: control con CSS, accesible, sin dependencia de red, render nítido.
-- **Sprite SVG** solo si hay muchos iconos repetidos en muchas páginas (p. ej. 10–20 iconos): un solo archivo y `<use href="...">`.
-- **No usar** icon fonts (iconos como fuente): problemas de accesibilidad, fallback y render.
-- **No depender** de Font Awesome por CDN en un sitio editorial mínimo.
+- **Biblioteca seleccionada:** Lucide Icons
+- **Formato:** SVG
+- **Uso:** inline SVG o archivos SVG locales
+- **Ubicación:** `assets/icons/`
 
-### Cuándo usar cada forma
+**Licencia:** Lucide se distribuye bajo licencia ISC, que permite usar, modificar y distribuir los iconos para cualquier propósito, incluso comercial. No se requiere atribución.
 
-| Forma | Uso |
-|-------|-----|
-| **SVG inline** | Botones y UI: idioma, volver, siguiente, descargar, enviar, enlace externo. Recomendado para la mayoría del sitio. |
-| **Sprite SVG** | Si los mismos iconos se repiten en muchas páginas y quieres evitar duplicar markup. |
-
-Regla práctica: pocos iconos → inline. Muchos repetidos → sprite.
+Lucide ofrece más de mil iconos vectoriales consistentes: grid 24×24, stroke 2px, sin relleno por defecto, color heredado del texto (`currentColor`).
 
 ### Estructura de archivos (iconos)
 
 ```
 assets/icons/
-  sprite.svg              (opcional; si usas sprite)
-  ui/                     (si usas inline por archivo)
-    arrow-left.svg
-    arrow-right.svg
-    external-link.svg
-    mail.svg
-    download.svg
-    language.svg
+  book.svg
+  book-open.svg
+  notebook.svg
+  archive.svg
+  download.svg
+  mail.svg
+  search.svg
+  menu.svg
+  arrow-right.svg
+  arrow-left.svg
+  external-link.svg
+  quote.svg
+  pen-tool.svg
+  bookmark.svg
+  feather.svg
 ```
 
 ### Uso en HTML
 
-**Opción A — SVG inline**
+**Método recomendado — SVG con `<use>`**
 
-- Insertar el SVG dentro del botón o enlace. Los SVGs deben limpiarse (SVGO o similar) antes de incluirse en el proyecto.
-- **Accesibilidad:** si el icono es decorativo: `aria-hidden="true"`. Si comunica significado y no hay texto visible: `aria-label` en el botón o enlace.
+```html
+<a href="/book/">
+  <svg class="icon" aria-hidden="true">
+    <use href="/assets/icons/book.svg#icon"></use>
+  </svg>
+  Libros
+</a>
+```
 
-**Opción B — Sprite SVG**
+**Alternativa — SVG inline**
 
-- Archivo: `assets/icons/sprite.svg`.
-- En el HTML: `<svg class="icon" aria-hidden="true"><use href="/assets/icons/sprite.svg#mail"></use></svg>` o usar rutas relativas: `assets/icons/sprite.svg#mail` (ajustar según raíz del proyecto).
+```html
+<svg class="icon" aria-hidden="true">
+  <path d="..." />
+</svg>
+```
+
+### CSS base para iconos
+
+```css
+.icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 2;
+}
+```
+
+Ventajas: hereda el color del texto, escala automáticamente, mantiene consistencia.
+
+### Accesibilidad
+
+- Si el icono es decorativo: `aria-hidden="true"`
+- Si el icono comunica significado sin texto visible: `aria-label` en el botón o enlace (ej. `aria-label="Descargar libro"`)
+
+### Iconos recomendados para el sitio
+
+| Categoría | Iconos |
+|-----------|--------|
+| Navegación | menu, x, search, languages |
+| Contenido editorial | book, book-open, notebook, archive |
+| Acciones | download, mail, share, external-link |
+| Navegación interna | arrow-right, arrow-left, corner-up-left |
+
+Con 15 iconos se cubre todo el sitio.
+
+### Mapeo página → icono
+
+| Página | Icono |
+|--------|-------|
+| book | book |
+| essay | notebook |
+| poem | feather |
+| archivo | archive |
+| contacto | mail |
+| blog | book-open |
+| navegación | menu |
+| buscar | search |
+
+### Iconos decorativos (acentos visuales)
+
+Los iconos grandes pueden usarse como elementos decorativos con moderación: separadores, encabezados de sección, fondos sutiles, citas.
+
+**Tamaños recomendados:**
+
+| Uso | Tamaño |
+|-----|--------|
+| Iconos UI | 16–24px |
+| Iconos en botones | 20–24px |
+| Iconos decorativos | 48–96px (3–6rem) |
+| Iconos de fondo | 120–220px (7.5–14rem) |
+
+**Clases CSS:** `.icon-large`, `.icon-decorative`, `.icon-bg`, `.icon-quote`
+
+**Reglas editoriales:**
+
+- ✔ Pocos
+- ✔ Discretos (baja opacidad)
+- ✔ Relacionados con el contenido
+- ✖ Evitar muchos iconos, coloridos, iconos grandes cerca del texto de lectura
+
+**Iconos Lucide para decoración:**
+
+| Icono | Uso |
+|-------|-----|
+| feather | poesía |
+| book | libros |
+| pen-tool | escritura |
+| archive | archivo |
+| bookmark | biblioteca |
+| quote | citas |
+
+**Ejemplos de uso:**
+
+```html
+<!-- Separador entre secciones -->
+<div class="section-divider">
+  <svg class="icon-decorative" aria-hidden="true">
+    <use href="/assets/icons/feather.svg#icon"></use>
+  </svg>
+</div>
+
+<!-- Encabezado de sección -->
+<h2 class="section-title">
+  <svg class="icon-large" aria-hidden="true">
+    <use href="/assets/icons/book.svg#icon"></use>
+  </svg>
+  Libros
+</h2>
+
+<!-- Fondo decorativo -->
+<div class="section-decoration">
+  <svg class="icon-bg" aria-hidden="true">
+    <use href="/assets/icons/feather.svg#icon"></use>
+  </svg>
+  <!-- contenido -->
+</div>
+
+<!-- Cita -->
+<blockquote class="quote-block">
+  <svg class="icon-quote" aria-hidden="true">
+    <use href="/assets/icons/quote.svg#icon"></use>
+  </svg>
+  <p>Texto de la cita…</p>
+</blockquote>
+```
+
+**Jerarquía visual del sistema:** Ilustraciones Open Doodles → iconos decorativos Lucide → iconos funcionales → tipografía
+
+---
+
+## 3.1 Ilustraciones
+
+### Biblioteca oficial: Open Doodles
+
+- **Biblioteca seleccionada:** Open Doodles
+- **Formato:** SVG
+- **Uso:** hero, cabeceras de sección y estados vacíos
+- **Ubicación:** `assets/illustrations/`
+
+**Licencia:** Open Doodles está publicado bajo CC0 (dominio público), lo que permite copiar, editar, modificar y usar las ilustraciones para cualquier propósito sin necesidad de atribución.
+
+Open Doodles incluye escenas de personas leyendo, escribiendo, pensando, trabajando, etc. Estilo doodle dibujado a mano.
+
+### Estructura de archivos (ilustraciones)
+
+```
+assets/illustrations/
+  reading.svg
+  writing.svg
+  thinking.svg
+  papers.svg
+  sitting-reading.svg
+```
+
+### Uso en HTML
+
+**Método 1 — `<img>` (recomendado)**
+
+```html
+<img src="/assets/illustrations/reading.svg" alt="Persona leyendo" class="illustration">
+```
+
+**Ejemplo hero para index.html**
+
+```html
+<section class="hero">
+  <div class="hero-text">
+    <h1>Daniel Arella</h1>
+    <p>Ensayos, ficción y archivo literario.</p>
+  </div>
+  <div class="hero-illustration">
+    <img src="/assets/illustrations/reading.svg" alt="Persona leyendo" class="illustration">
+  </div>
+</section>
+```
+
+**Método 2 — SVG inline**
+
+```html
+<svg class="illustration">...</svg>
+```
+
+### CSS base para ilustraciones
+
+```css
+.illustration {
+  max-width: 420px;
+  height: auto;
+}
+```
+
+### Dónde usar ilustraciones
+
+- Hero de la página principal (persona leyendo o escribiendo)
+- Página Sobre el autor (persona reflexionando)
+- Cabeceras de secciones: libros, ensayos, archivo
+- Estados vacíos (cuando no hay contenido)
+
+Regla: máximo 3–5 ilustraciones en todo el sitio. No competir con el texto.
+
+### Mapeo página → ilustración
+
+| Página | Ilustración |
+|--------|-------------|
+| home (index) | reading |
+| sobre-el-autor | thinking |
+| book | writing |
+| essay | papers |
+| archivo | sitting-reading |
 
 ---
 

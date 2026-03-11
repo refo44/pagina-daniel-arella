@@ -1,3 +1,25 @@
+const FALLBACK_HEADER = `<header class="site-header">
+  <div class="o-container site-header__inner">
+    <a class="site-header__brand" data-route="" href="">Daniel Arella</a>
+    <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Abrir menú de navegación" data-menu-toggle>Menú</button>
+    <nav class="site-header__nav" id="site-navigation" aria-label="Principal" data-menu-panel>
+      <ul class="site-header__list">
+        <li><a class="site-header__link" data-nav-item="home" data-route="" href="">Inicio</a></li>
+        <li><a class="site-header__link" data-nav-item="archivo" data-route="archivo/" href="archivo/">Archivo</a></li>
+        <li><a class="site-header__link" data-nav-item="autor" data-route="sobre-el-autor/" href="sobre-el-autor/">Sobre el autor</a></li>
+        <li><a class="site-header__link" data-nav-item="talleres" data-route="talleres/" href="talleres/">Talleres</a></li>
+        <li><a class="site-header__link" data-nav-item="correspondencia" data-route="correspondencia/" href="correspondencia/">Correspondencia</a></li>
+      </ul>
+      <ul class="site-header__list site-header__list--sub">
+        <li><a class="site-header__link" data-nav-item="blog" data-route="blog/" href="blog/">Blog</a></li>
+        <li><a class="site-header__link" data-nav-item="eventos" data-route="eventos/" href="eventos/">Eventos</a></li>
+        <li><a class="site-header__link" data-nav-item="galeria" data-route="galeria/" href="galeria/">Galería</a></li>
+        <li><a class="site-header__link" data-nav-item="multimedia" data-route="multimedia/" href="multimedia/">Videos y audios</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>`;
+
 const loadIncludes = async () => {
   const includeNodes = document.querySelectorAll("[data-include]");
 
@@ -31,8 +53,25 @@ const loadIncludes = async () => {
           node.innerHTML = html;
         }
       } catch (error) {
-        node.innerHTML = "";
-        console.error(error);
+        if (includePath.includes("header.html")) {
+          const template = document.createElement("template");
+          template.innerHTML = FALLBACK_HEADER.trim();
+          const content = template.content.firstElementChild;
+          if (content) {
+            node.replaceWith(content);
+          }
+        } else if (includePath.includes("footer.html")) {
+          const footerHtml = '<footer class="site-footer"><div class="o-container site-footer__inner"><ul class="site-footer__nav"><li><a data-route="prensa/" href="prensa/">Prensa</a></li><li><a data-route="derechos/" href="derechos/">Derechos</a></li><li><a data-route="contacto/" href="contacto/">Contacto</a></li><li><a data-route="correspondencia/" href="correspondencia/">Correspondencia</a></li></ul><p class="site-footer__credit">Sitio estático editorial preparado para migración directa a WordPress.</p></div></footer>';
+          const template = document.createElement("template");
+          template.innerHTML = footerHtml.trim();
+          const content = template.content.firstElementChild;
+          if (content) {
+            node.replaceWith(content);
+          }
+        } else {
+          node.innerHTML = "";
+        }
+        console.warn("Include fallback used (run with a local server for full includes):", includePath, error);
       }
     })
   );

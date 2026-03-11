@@ -48,6 +48,13 @@ Cierra el sistema visual: ancho de lectura, ritmo vertical, uso del blanco, rela
 - **Texto sobre imagen:** Asegurar contraste (overlay, sombra o zona sólida para garantizar contraste AA). Criterios en `23-estandares-accesibilidad`.
 - **Alt y contexto:** Toda imagen con alt significativo; la relación es semántica también.
 
+### 4.1 Ilustraciones
+
+- **Estilo:** Open Doodles
+- **Función:** Acompañar el contenido editorial
+- **Ubicación:** Hero y cabeceras de sección
+- **Regla:** Máximo una ilustración por sección
+
 ---
 
 ## 5. Sistema de grid

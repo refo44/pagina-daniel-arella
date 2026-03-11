@@ -40,13 +40,21 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 | Página de sección | Organizar contenido |
 | Página de autor | Contextualizar la voz |
 
-### 1.2 Sistema: tipografía, blanco, jerarquía
+### 1.2 Iconografía
+
+- **Iconos funcionales:** Lucide Icons. Navegación, acciones, enlaces interactivos. Estilo outline minimalista. Tamaño estándar: 16–24px.
+- **Iconos decorativos:** Uso moderado como acentos visuales. Separadores, encabezados de sección, fondos sutiles (opacidad baja), citas. Tamaño: 48–96px decorativos, 120–220px fondo. Regla: pocos, discretos, relacionados con el contenido.
+- **Ilustraciones:** Open Doodles. Hero, cabeceras de sección, estados vacíos. Máximo 3–5 ilustraciones en todo el sitio.
+
+**Jerarquía visual:** Ilustraciones → iconos decorativos → iconos funcionales → tipografía.
+
+### 1.3 Sistema: tipografía, blanco, jerarquía
 
 - Tipografía = voz; espacio en blanco = ritmo.
 - Jerarquía con tamaño, interlineado, espaciado vertical, peso. **No** con colores, cajas, fondos ni módulos.
 - Menú de 3 a 5 ítems. Estructura exacta se define en `01-plataforma-autor-plan`.
 
-### 1.3 Anti-patrones y reglas operativas
+### 1.4 Anti-patrones y reglas operativas
 
 **Riesgos:** Minimalismo sin personalidad (identidad en tipografía, no en efectos); simplificar y perder acceso al contenido; “minimalismo caliente” en artículos (distrae). Para leads, conversiones, CTAs: ver Regla práctica.
 

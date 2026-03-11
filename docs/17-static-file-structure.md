@@ -113,7 +113,8 @@ daniel-arella-static/
 │   ├── js/
 │   │   └── main.js         (defer; solo navegación, formularios, accesibilidad)
 │   ├── images/
-│   ├── icons/
+│   ├── icons/              (Lucide Icons)
+│   ├── illustrations/      (Open Doodles)
 │   ├── svg/
 │   ├── fonts/
 │   └── favicon/

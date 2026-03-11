@@ -168,6 +168,8 @@ Prefijo: `u-`. Solo clases que de verdad reduzcan repetición.
 | `.u-muted` | Tono tipográfico secundario (texto discreto). |
 | `.u-center-text` | Centrado de texto en casos excepcionales. |
 | `.u-max-readable` | Ancho máximo de lectura (ej. 65ch). |
+| `.icon` | Iconos Lucide: 1.25rem, stroke currentColor, fill none. En `elements.css`. Ver `19-assets-strategy`. |
+| `.illustration` | Ilustraciones Open Doodles: max-width 420px, height auto. En `elements.css`. Ver `19-assets-strategy`. |
 
 Las utilities no sustituyen componentes ni objetos. Se usan solo como apoyo puntual. Si empiezas a crear muchas (decenas), se acerca a “utility-first” agresivo; no es necesario en este proyecto.
 
