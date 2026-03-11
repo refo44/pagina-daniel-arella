@@ -16,7 +16,20 @@ const loadIncludes = async () => {
           throw new Error(`Include not found: ${includePath}`);
         }
 
-        node.innerHTML = await response.text();
+        const html = await response.text();
+        const isHeaderOrFooter =
+          includePath.includes("header.html") || includePath.includes("footer.html");
+
+        if (isHeaderOrFooter) {
+          const template = document.createElement("template");
+          template.innerHTML = html.trim();
+          const content = template.content.firstElementChild;
+          if (content) {
+            node.replaceWith(content);
+          }
+        } else {
+          node.innerHTML = html;
+        }
       } catch (error) {
         node.innerHTML = "";
         console.error(error);
@@ -82,6 +95,7 @@ const bindMenuToggle = () => {
     const nextState = `${!isExpanded}`;
 
     toggle.setAttribute("aria-expanded", nextState);
+    toggle.setAttribute("aria-label", nextState === "true" ? "Cerrar menú de navegación" : "Abrir menú de navegación");
     nav.classList.toggle("is-open", !isExpanded);
   });
 };

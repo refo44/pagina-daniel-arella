@@ -39,7 +39,7 @@ El idioma es siempre el primer nivel del árbol.
 
 | Prefijo | Idioma |
 |---------|--------|
-| `/es/` | Español |
+| `/es/` | Español (neutro venezolano) |
 | `/en/` | English |
 
 La raíz `/` solo redirige a `/es/` o muestra selector de idioma. No se sirve contenido sin prefijo de idioma.

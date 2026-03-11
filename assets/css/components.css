@@ -38,6 +38,8 @@
 .site-header__nav {
   display: none;
   width: 100%;
+  flex-basis: 100%;
+  order: 10;
 }
 
 .site-header__nav.is-open {
@@ -459,6 +461,14 @@
   display: grid;
 }
 
+.content-body figure img {
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  align-self: start;
+}
+
 .content-panel {
   display: grid;
   gap: var(--space-4);
@@ -678,7 +688,68 @@
   margin-top: var(--space-6);
 }
 
+.goodreads-link {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  background: var(--surface);
+}
+
+.goodreads-link__anchor {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-family: var(--font-ui);
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--link);
+}
+
+.goodreads-link__anchor:hover {
+  color: var(--link-hover);
+}
+
+.goodreads-link__anchor::after {
+  content: "";
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 2px solid currentcolor;
+  border-left: none;
+  border-bottom: none;
+  transform: rotate(45deg);
+  margin-left: 0.2rem;
+  vertical-align: 0.1em;
+}
+
 .quote-panel {
+  font-style: italic;
+}
+
+.quote-block {
+  display: grid;
+  gap: var(--space-3);
+  margin: 0;
+}
+
+.quote-block__quote {
+  margin: 0;
+  padding: var(--space-6);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2);
+  background: var(--bg);
+  font-style: italic;
+}
+
+.quote-block__attribution {
+  font-family: var(--font-meta);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin: 0;
+  font-style: normal;
+}
+
+.quote-block__attribution cite {
   font-style: italic;
 }
 
@@ -889,6 +960,8 @@
   .site-header__nav {
     display: block;
     width: auto;
+    flex-basis: auto;
+    order: unset;
   }
 
   .site-header__list {

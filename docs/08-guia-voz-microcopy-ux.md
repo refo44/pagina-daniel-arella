@@ -1,10 +1,12 @@
 # Daniel Arella — Guía de voz, microcopy y escritura UX
 
-**Versión 1.3**
+**Versión 1.4**
 
 Este documento define cómo habla el sitio web de Daniel Arella. No define su poesía ni su pensamiento. Define la voz del sistema editorial que contiene su obra.
 
 El objetivo es que todo el sitio suene como una editorial de autor, no como un blog, ni una tienda, ni una plataforma.
+
+**Variante del español:** El autor es venezolano. El español del sitio debe ser **español neutro venezolano**: léxico, ortografía y giros compatibles con el uso venezolano, sin regionalismos extremos, comprensible en toda Hispanoamérica.
 
 **Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
 **Alimenta a:** `09-voice-dictionary`, `10-ui-copy-sheet`

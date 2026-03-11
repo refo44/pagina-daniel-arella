@@ -253,7 +253,7 @@ Más reciente, Más antiguo, Por título, Por libro
 ## 11. Idioma
 
 - Cambiar idioma
-- Español, Inglés
+- Español (neutro venezolano), Inglés
 - **Nota opcional:** “El contenido puede variar según el idioma.”
 
 ---

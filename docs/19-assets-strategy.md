@@ -14,8 +14,8 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 
 | Área | Decisión |
 |------|----------|
-| **Iconos** | SVG inline como base; sprite SVG opcional si se repiten mucho. Sin icon fonts, sin Font Awesome por CDN. |
-| **Biblioteca de iconos** | Una sola, minimal: Heroicons, Lucide o Feather. Recomendado: Lucide. |
+| **Iconos** | Lucide Icons. SVG inline o archivos locales. Sin icon fonts, sin Font Awesome por CDN. |
+| **Ilustraciones** | Open Doodles. SVG para hero, cabeceras de sección y estados vacíos. |
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
 | **Imágenes** | Optimizar antes de subir (WebP o AVIF cuando sea posible). |

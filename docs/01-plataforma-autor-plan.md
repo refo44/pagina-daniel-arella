@@ -9,6 +9,8 @@ Este documento define algo más profundo: el sistema que permite que la obra de 
 Este sitio no es una web.  
 Es un territorio editorial.
 
+**Contexto:** Daniel Arella es autor venezolano. El español del sitio usa variante neutra venezolana (ver `08-guia-voz-microcopy-ux`).
+
 El problema que resuelve este plan no es estético.  
 Es ontológico:
 

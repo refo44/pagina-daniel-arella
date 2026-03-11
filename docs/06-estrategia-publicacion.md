@@ -173,6 +173,8 @@ Un taller no es un producto. Es una puerta a una zona de la obra.
 
 El sitio soporta español e inglés.
 
+**Español:** Variante neutra venezolana (el autor es venezolano). Léxico y ortografía compatibles con el uso venezolano, comprensible en toda Hispanoamérica.
+
 Daniel decide: qué libros se traducen, qué poemas se mantienen solo en español, qué ensayos se adaptan o se reescriben.
 
 Un texto puede existir en un solo idioma. No todas las piezas requieren traducción.

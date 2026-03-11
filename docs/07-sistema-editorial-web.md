@@ -155,6 +155,7 @@ No añadir comentarios editoriales a las referencias.
 **Principios:**
 
 - La estructura del sitio es la misma en todos los idiomas.
+- El español usa variante neutra venezolana (autor venezolano).
 - Bio y páginas fijas siempre traducidas.
 - Libros y poemas mantienen su título original salvo decisión expresa.
 

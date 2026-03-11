@@ -201,8 +201,10 @@ Durante la maqueta estos archivos se insertan manualmente o mediante un preproce
 | story-card.html | Tarjeta relato |
 | workshop-card.html | Tarjeta taller |
 | article-card.html | Tarjeta artículo |
+| quote-block.html | Bloque de cita (texto + atribución). Reutilizable para citas de libros del autor o de otros. |
+| goodreads-link.html | Enlace a Goodreads para fichas de libro. |
 
-`article-card.html` se usa solo para el CPT post (Artículos). En WordPress estos se convierten en `get_template_part()`.
+`article-card.html` se usa solo para el CPT post (Artículos). `quote-block` y `goodreads-link` se incluyen en singles de libro según corresponda. En WordPress estos se convierten en `get_template_part()`.
 
 ---
 

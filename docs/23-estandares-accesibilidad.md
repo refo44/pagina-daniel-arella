@@ -54,7 +54,7 @@ Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido edit
 ### Reglas mínimas (alto impacto, bajo coste)
 
 - **Skip link:** "Saltar al contenido" visible al recibir foco.
-- **Idioma:** `lang` en `<html>`; consistente por página.
+- **Idioma:** `lang` en `<html>`; consistente por página. Español: `lang="es"` o `lang="es-VE"` (variante venezolana, autor venezolano).
 - **Orden de foco:** Debe seguir el orden visual y lógico del contenido.
 - **Foco visible:** No `outline: none` sin reemplazo (`:focus-visible`).
 - **Focus Not Obscured (WCAG 2.2):** El elemento con foco no debe quedar completamente oculto por headers fijos, banners o overlays.
