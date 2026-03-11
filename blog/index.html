@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <base href="/pagina-daniel-arella/">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Artículos | Daniel Arella</title>
-  <meta name="description" content="Archivo de artículos y notas de Daniel Arella.">
-  <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
-  <link rel="manifest" href="assets/favicon/site.webmanifest">
-  <link rel="stylesheet" href="css/main.css">
-  <script src="js/main.js" defer></script>
+  <title>Blog | Daniel Arella</title>
+  <meta name="description" content="Artículos, reflexiones y notas de Daniel Arella.">
+  <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/main.js" defer></script>
 </head>
-<body data-site-prefix="pagina-daniel-arella" data-nav="archivo">
+<body data-site-prefix="pagina-daniel-arella" data-nav="blog">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="parts/header.html"></div>
+  <div data-include="../parts/header.html"></div>
 
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
         <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
-        <li class="breadcrumbs__item"><a data-route="archivo/" href="archivo/">Archivo</a></li>
-        <li class="breadcrumbs__item"><span aria-current="page">Artículos</span></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Blog</span></li>
       </ol>
     </div>
   </nav>
@@ -28,24 +26,44 @@
   <main id="main">
     <section class="archive-intro">
       <div class="o-container">
-        <p class="content-kicker">Archivo de artículos</p>
-        <h1>Artículos</h1>
+        <p class="content-kicker">Artículos y notas</p>
+        <h1>Blog</h1>
+        <p class="u-max-readable">Reflexiones, ensayos breves y notas sobre literatura, ciencia ficción y edición.</p>
       </div>
     </section>
 
     <section class="section-panel">
       <div class="o-container">
-        <section class="state-panel o-flow">
-          <p>Aún no hay artículos publicados en esta sección.</p>
-          <p>Las publicaciones, premios y referencias externas del autor ya están reunidas en `Prensa`. Cuando se incorporen artículos con fuente confirmada, aparecerán aquí.</p>
-          <div class="button-row">
-            <a class="button-link" data-route="prensa/" href="prensa/">Ver prensa</a>
-          </div>
-        </section>
+        <ul class="card-grid card-grid--archive" role="list">
+          <li>
+            <article class="card">
+              <a class="card__link" href="desde-el-inframundo-del-lenguaje/">
+                <img class="card__cover" src="../assets/images/daniel-arella-02.jpg" alt="Retrato de Daniel Arella." width="384" height="512" loading="lazy">
+                <div class="card__body">
+                  <p class="card__meta">Ensayo · 2024</p>
+                  <h2 class="card__title">Desde el inframundo del lenguaje</h2>
+                  <p class="card__excerpt">Mención honrosa en el I Premio de Ensayo sobre la obra de Ida Gramcko. Reflexión sobre el lenguaje y la escritura.</p>
+                </div>
+              </a>
+            </article>
+          </li>
+          <li>
+            <article class="card">
+              <a class="card__link" href="ciencia-ficcion-latinoamericana/">
+                <img class="card__cover card__cover--book" src="../assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg" alt="Portada de Relatos pioneros de la ciencia ficción latinoamericana." width="399" height="622" loading="lazy">
+                <div class="card__body">
+                  <p class="card__meta">Nota editorial · 2015</p>
+                  <h2 class="card__title">La ciencia ficción latinoamericana antes de Asimov</h2>
+                  <p class="card__excerpt">En Latinoamérica se escribía ciencia ficción antes de que Asimov pensara en escribir su Fundación. Fragmento del prólogo a la antología.</p>
+                </div>
+              </a>
+            </article>
+          </li>
+        </ul>
       </div>
     </section>
   </main>
 
-  <div data-include="parts/footer.html"></div>
+  <div data-include="../parts/footer.html"></div>
 </body>
 </html>

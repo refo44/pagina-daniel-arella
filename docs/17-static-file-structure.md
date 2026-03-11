@@ -69,6 +69,8 @@ daniel-arella-static/
 │   └── index.html
 ├── videoteca/
 │   └── index.html
+├── multimedia/
+│   └── index.html          (Videos, Audios, Reels)
 │
 ├── poem/
 │   ├── index.html
@@ -99,19 +101,17 @@ daniel-arella-static/
 │   └── {slug}/
 │       └── index.html
 │
-├── css/
-│   ├── main.css          (único entry point; importa el resto en orden ITCSS)
-│   ├── settings.css
-│   ├── generic.css
-│   ├── elements.css
-│   ├── objects.css
-│   ├── components.css
-│   └── utilities.css
-│
-├── js/
-│   └── main.js         (defer; solo navegación, formularios, accesibilidad)
-│
 ├── assets/
+│   ├── css/
+│   │   ├── main.css          (único entry point; importa el resto en orden ITCSS)
+│   │   ├── settings.css
+│   │   ├── generic.css
+│   │   ├── elements.css
+│   │   ├── objects.css
+│   │   ├── components.css
+│   │   └── utilities.css
+│   ├── js/
+│   │   └── main.js         (defer; solo navegación, formularios, accesibilidad)
 │   ├── images/
 │   ├── icons/
 │   ├── svg/
@@ -148,6 +148,7 @@ La carpeta `forma/` solo existe si se implementa la taxonomía form. No se permi
 | Derechos | `/derechos/index.html` | `page-derechos.php` |
 | Biblioteca de audio | `/biblioteca-audio/index.html` | `page-biblioteca-audio.php` |
 | Videoteca | `/videoteca/index.html` | `page-videoteca.php` |
+| Multimedia (Videos, Audios, Reels) | `/multimedia/index.html` | `page-multimedia.php` |
 
 ---
 

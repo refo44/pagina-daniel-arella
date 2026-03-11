@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "lint:css": "stylelint \"css/**/*.css\""
+    "lint:css": "stylelint \"assets/css/**/*.css\"",
+    "serve": "npx --yes serve -l 5550"
   },
   "devDependencies": {
     "@fontsource/fraunces": "^5.2.9",

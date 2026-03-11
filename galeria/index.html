@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Galería | Daniel Arella</title>
+  <meta name="description" content="Retratos, prensa e ilustraciones del archivo editorial de Daniel Arella.">
+  <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="../assets/favicon/site.webmanifest">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <script src="../assets/js/main.js" defer></script>
+</head>
+<body data-site-prefix="pagina-daniel-arella" data-nav="galeria">
+  <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
+  <div data-include="../parts/header.html"></div>
+
+  <nav class="breadcrumbs" aria-label="Migas de pan">
+    <div class="o-container">
+      <ol class="breadcrumbs__list">
+        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Galería</span></li>
+      </ol>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="archive-intro">
+      <div class="o-container">
+        <p class="content-kicker">Archivo visual</p>
+        <h1>Galería</h1>
+        <p class="u-max-readable">Retratos del autor, carteles de eventos, referencias de prensa e ilustraciones del archivo editorial.</p>
+      </div>
+    </section>
+
+    <script type="application/json" id="gallery-data">
+    [
+      {"src":"../assets/images/daniel-arella-12.jpg","alt":"Retrato de Daniel Arella"},
+      {"src":"../assets/images/daniel-arella-02.jpg","alt":"Retrato de Daniel Arella con gafas y bufanda"},
+      {"src":"../assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg","alt":"Portada del libro Relatos pioneros de la ciencia ficción latinoamericana"},
+      {"src":"../assets/images/press-02.jpeg","alt":"Cartel del Festival Kaníbal, Quito"},
+      {"src":"../assets/images/press-23.jpeg","alt":"Cartel de presentación en la FILBo"},
+      {"src":"../assets/images/press-33.jpeg","alt":"Cartel del evento Poesía Sci-Fi"},
+      {"src":"../assets/images/press-39.jpeg","alt":"Diploma mención honrosa Ida Gramcko"},
+      {"src":"../assets/images/arthur-rimbaud.jpg","alt":"Dibujo de Arthur Rimbaud"},
+      {"src":"../assets/images/franz-kafka-1.jpg","alt":"Dibujo de Franz Kafka"},
+      {"src":"../assets/images/lewis-carroll-1.jpg","alt":"Dibujo de Lewis Carroll"},
+      {"src":"../assets/images/man-ray.jpg","alt":"Dibujo de Man Ray"}
+    ]
+    </script>
+    <div id="gallery-grid" class="gallery-grid" aria-busy="false"></div>
+    <nav class="gallery-pagination" aria-label="Paginación de la galería" id="gallery-pagination"></nav>
+
+    <section class="section-panel">
+      <div class="o-container">
+        <div class="button-row">
+          <a class="button-link" data-route="prensa/" href="prensa/">Ver prensa</a>
+          <a class="button-link" data-route="" href="">Volver al inicio</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div data-include="../parts/footer.html"></div>
+  <script src="../assets/js/gallery.js" defer></script>
+</body>
+</html>

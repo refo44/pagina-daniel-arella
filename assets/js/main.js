@@ -108,6 +108,9 @@ const bindStaticForms = () => {
 };
 
 const init = async () => {
+  if (typeof location !== "undefined" && location.pathname.indexOf("/pagina-daniel-arella") !== 0) {
+    document.body.removeAttribute("data-site-prefix");
+  }
   await loadIncludes();
   hydrateRoutes();
   highlightNavigation();
