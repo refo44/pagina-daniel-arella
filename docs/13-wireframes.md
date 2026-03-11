@@ -1,6 +1,6 @@
 # Daniel Arella — Wireframes. Estructura de pantallas
 
-**Versión 1.6**
+**Versión 1.8**
 
 Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
@@ -174,6 +174,8 @@ Bloques:
 - Paginación
 - Pie
 
+Regla: `Archivo` no absorbe `Libros`. Los libros tienen su propio listado principal en `/book/` y acceso directo desde cabecera.
+
 ---
 
 ## 8.1 Biblioteca de audio (plan maestro)
@@ -218,7 +220,7 @@ Estructura común: **Cabecera → Contenido editorial → Pie**
 
 | Página | Contenido |
 |--------|-----------|
-| **Sobre el autor** | Cabecera, Breadcrumb, Contenido editorial (Foto, Bio corta, Bio larga, Enlaces a libros), Pie |
+| **Sobre el autor** | Cabecera, Breadcrumb, Contenido editorial (Foto, Bio corta, Bio larga, Bloque breve de premios y reconocimientos, Enlaces a libros), Pie |
 | **Servicios editoriales** | Cabecera, Breadcrumb, Introducción breve, Lista de servicios, Para quién está dirigido, Trayectoria, Llamada a Contacto, Pie |
 | **Correspondencia** | Texto editorial, Campo de correo, Botón “Recibir nuevos textos” |
 | **Contacto** | Texto breve, Formulario |
@@ -226,6 +228,8 @@ Estructura común: **Cabecera → Contenido editorial → Pie**
 | **Derechos** | Texto legal y permisos |
 
 Regla para `Servicios editoriales`: no mostrar tarifas ni paquetes. La única salida comercial es “Solicitar información” o “Contactar”.
+
+Regla para `Sobre el autor`: los premios se resumen dentro de la página como trayectoria breve. No generan sección autónoma, categoría ni URL propia.
 
 ---
 

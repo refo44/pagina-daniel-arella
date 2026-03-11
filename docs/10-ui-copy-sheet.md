@@ -1,7 +1,7 @@
 # Daniel Arella — UI Copy Sheet
 
 **Repertorio de microcopy, navegación y sistema**  
-**Versión 2.5**
+**Versión 2.8**
 
 Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
@@ -24,7 +24,7 @@ Este documento define todos los textos que la interfaz puede usar. Es la fuente 
 
 **Ejemplos:**
 
-- Navegación: “Poemas”, “Ensayos”, “Archivo”
+- Navegación: “Libros”, “Poemas”, “Archivo”
 - Sistema: “No fue posible mostrar este texto.”
 - Editorial: “Escribo desde la memoria y el cuerpo.”
 
@@ -52,17 +52,19 @@ Leer, Abrir, Ver, Buscar, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir
 
 ## 2. Navegación global
 
-**Regla (22-tendencias-ux-ui-sistema-editorial):** Menú de 3 a 5 ítems. Menos fricción cognitiva.
+**Regla:** la cabecera debe ser clara y corta, pero puede superar 5 ítems si eso evita esconder una sección estructural.
 
 ### 2.1 Menú principal (cabecera)
 
 - Inicio
 - Archivo
+- Libros
 - Sobre el autor
+- Servicios editoriales
 - Talleres
 - Contacto
 
-El archivo agrupa poemas, ensayos, relatos y libros. Los listados por tipo se acceden desde el archivo o desde breadcrumbs. Ver `14-arquitectura-informacion-navegacion`.
+`Libros` tiene acceso directo desde cabecera. `Archivo` agrupa poemas, ensayos, relatos y artículos; los listados por tipo se acceden desde el archivo o desde breadcrumbs. Ver `14-arquitectura-informacion-navegacion`.
 
 ### 2.2 Footer
 
@@ -82,6 +84,7 @@ Opcional: Descargas (si aplica).
 - Inicio → Poemas → El Arcángel → [Poema]
 - Inicio → Ensayos → Mística → [Ensayo]
 - Inicio → Archivo → Periodo → [Pieza]
+- Inicio → Libros → [Libro]
 
 **Botones de retorno:** “Volver”, “Volver al archivo”, “Volver al libro”, “Volver a Poemas”
 
@@ -131,7 +134,7 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Vid
 - “Archivo de poemas”
 - “Archivo de ensayos”
 - “Archivo de relatos”
-- “Archivo de libros”
+- “Libros”
 - “Archivo de talleres”
 - “Biblioteca de audio” (poemas en audio, audiolibros, podcast)
 - “Videoteca” (poemas leídos, videopoemas, conferencias, clases)
@@ -182,6 +185,8 @@ Más reciente, Más antiguo, Por título, Por libro
 **Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
 
 **Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Prensa y referencias, Derechos
+
+**Breadcrumb:** Inicio → Libros → [Libro]
 
 **Regla editorial:** enlaces como Goodreads, editorial, librería o marketplace van en “Dónde encontrar el libro”, no en “Prensa”.
 
@@ -243,7 +248,15 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 10. Estados y errores
+## 10. Sobre el autor
+
+- **Bloque breve:** Premios y reconocimientos
+- **Regla:** se integra dentro de `Sobre el autor` como parte de la trayectoria
+- **Nunca:** Premio, Premios o Reconocimientos como sección autónoma del sitio o como CTA principal
+
+---
+
+## 11. Estados y errores
 
 **Vacíos:** “Aún no hay textos en esta sección.”, “Este archivo aún está en construcción.”, “No hay talleres programados por ahora.”
 
@@ -253,7 +266,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 **Error:** “No fue posible mostrar este texto.”
 
-### 9.1 Referencias externas
+### 11.1 Referencias externas
 
 - **Activo:** “Abrir sitio”
 - **Archivado:** “Ver archivo”
@@ -261,7 +274,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 10. Modales y acciones menores
+## 12. Modales y acciones menores
 
 - Cerrar, Volver, Volver al archivo, Continuar
 - Copiar enlace, Descargar
@@ -269,7 +282,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 11. Idioma
+## 13. Idioma
 
 - Cambiar idioma
 - Español (neutro venezolano), Inglés
@@ -277,7 +290,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 12. Accesibilidad
+## 14. Accesibilidad
 
 **Alt text:** “Portada de El Arcángel”, “Retrato de Daniel Arella”, “Descargar PDF de [título]”
 
@@ -285,7 +298,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 13. Checklist editorial
+## 15. Checklist editorial
 
 Antes de aprobar cualquier texto:
 

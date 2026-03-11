@@ -1,6 +1,6 @@
 # Daniel Arella — Guía de voz, microcopy y escritura UX
 
-**Versión 1.4**
+**Versión 1.5**
 
 Este documento define cómo habla el sitio web de Daniel Arella. No define su poesía ni su pensamiento. Define la voz del sistema editorial que contiene su obra.
 
@@ -170,6 +170,8 @@ Evitar nombres de marketing o de plataformas. Ver `03-arquitectura-editorial`, `
 | Rights | Derechos (o Derechos y permisos) |
 
 Los nombres de secciones usan capitalización simple: Poemas, Ensayos, Libros, Archivo.
+
+Regla de sistema: `Libros` es una sección editorial autónoma y puede aparecer en cabecera aunque el menú supere cinco ítems.
 
 ---
 

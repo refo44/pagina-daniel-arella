@@ -1,6 +1,6 @@
 # Daniel Arella — Arquitectura editorial
 
-**Versión 2.8**
+**Versión 2.9**
 
 Esta capa se apoya en la identidad corporativa y en el plan maestro (`01-plataforma-autor-plan`). No la reemplaza. La vuelve operativa.
 
@@ -47,8 +47,11 @@ No existen entidades técnicas independientes para:
 - colecciones
 - estados
 - versiones
+- premios
 
 Las ediciones no se modelan como entidad, CPT, taxonomía ni URL propia. Se expresan dentro de cada `Book` como información editorial anidada: sello, año, ISBN, cubierta, formato, enlaces de compra o descarga.
+
+Los premios y reconocimientos tampoco generan entidad, categoría, taxonomía ni página propia. Se integran como bloque breve dentro de `Sobre el autor` o como contexto editorial dentro de una pieza cuando sea relevante.
 
 La arquitectura nunca duplica lo que la escritura ya puede decir.
 
@@ -148,11 +151,13 @@ El tiempo no manda. La obra manda.
 
 El archivo funciona como una biblioteca. Se puede recorrer por:
 
-- Tipo (poemas, libros, ensayos, relatos, artículos)
+- Tipo (poemas, ensayos, relatos, artículos)
 - Tema
 - Periodo
 
 Nunca solo por fecha. Los filtros son pocos, visibles y claros.
+
+`Libros` conserva su propio listado editorial y su acceso directo desde navegación principal. No se presenta como subnivel de `Archivo`.
 
 ---
 

@@ -1,6 +1,6 @@
 # Daniel Arella — Plan Maestro de la Plataforma de Autor
 
-**Versión 1.8**
+**Versión 1.9**
 
 La identidad corporativa definida en `02-identidad-corporativa` es una capa visual y editorial ya cerrada.
 
@@ -77,7 +77,7 @@ Un sitio de autor serio necesita:
 | Biblioteca de audio | Poemas, temas musicales, audiolibros, podcast |
 | Videoteca | Música, poemas leídos, videopoemas, rap, conferencias, clases |
 | Sobre el autor | Biografía intelectual |
-| Publicaciones | Libros y, si aplica, PDFs |
+| Libros | Obras publicadas y, si aplica, PDFs |
 | Contacto | Prensa, editores, lectores, servicios |
 
 **Audio y vídeo:** El contenido de Biblioteca de audio y Videoteca no se sube al servidor del sitio. Se aloja en la nube o en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo enlaza o inserta reproductores (embed); no almacena archivos de audio ni vídeo.
@@ -112,7 +112,8 @@ Incluye:
 - Breadcrumbs por libro
 - “Del mismo libro”
 - “Textos relacionados”
-- Archivo navegable por: Tipo, Tema, Periodo, Libro
+- Archivo navegable por: Tipo, Tema, Periodo
+- Acceso directo a Libros desde navegación principal
 
 El lector siempre sabe dónde está dentro del cuerpo de la obra.
 

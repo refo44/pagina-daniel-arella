@@ -53,10 +53,98 @@ const bindStaticForms = () => {
   });
 };
 
+const bindCarousel = () => {
+  const carousel = document.querySelector("[data-carousel]");
+
+  if (!(carousel instanceof HTMLElement)) {
+    return;
+  }
+
+  const slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+  const prevButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const AUTOPLAY_MS = 5000;
+
+  if (
+    slides.length === 0 ||
+    !(prevButton instanceof HTMLButtonElement) ||
+    !(nextButton instanceof HTMLButtonElement)
+  ) {
+    return;
+  }
+
+  let currentIndex = 0;
+  let autoplayId = null;
+
+  const setActiveSlide = (nextIndex) => {
+    currentIndex = (nextIndex + slides.length) % slides.length;
+
+    slides.forEach((slide, index) => {
+      const isActive = index === currentIndex;
+      slide.hidden = !isActive;
+      slide.classList.toggle("is-active", isActive);
+    });
+  };
+
+  const stopAutoplay = () => {
+    if (autoplayId !== null) {
+      window.clearInterval(autoplayId);
+      autoplayId = null;
+    }
+  };
+
+  const startAutoplay = () => {
+    stopAutoplay();
+
+    if (reducedMotion.matches) {
+      return;
+    }
+
+    autoplayId = window.setInterval(() => {
+      setActiveSlide(currentIndex + 1);
+    }, AUTOPLAY_MS);
+  };
+
+  const stepTo = (nextIndex) => {
+    setActiveSlide(nextIndex);
+    startAutoplay();
+  };
+
+  prevButton.addEventListener("click", () => {
+    stepTo(currentIndex - 1);
+  });
+
+  nextButton.addEventListener("click", () => {
+    stepTo(currentIndex + 1);
+  });
+
+  carousel.addEventListener("mouseenter", stopAutoplay);
+  carousel.addEventListener("mouseleave", startAutoplay);
+  carousel.addEventListener("focusin", stopAutoplay);
+  carousel.addEventListener("focusout", (event) => {
+    const nextFocusedElement = event.relatedTarget;
+
+    if (nextFocusedElement instanceof Node && carousel.contains(nextFocusedElement)) {
+      return;
+    }
+
+    startAutoplay();
+  });
+
+  reducedMotion.addEventListener("change", () => {
+    startAutoplay();
+  });
+
+  setActiveSlide(0);
+  startAutoplay();
+};
+
 const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
+  bindCarousel();
 };
 
 window.addEventListener("DOMContentLoaded", () => {

@@ -1,6 +1,6 @@
 # Daniel Arella — Sistema editorial para la web
 
-**Versión 2.3**
+**Versión 2.4**
 
 Este documento define el marco para escribir, editar y presentar textos en el sitio. No define la poética de Daniel, sino la forma en que la obra habita la pantalla.
 
@@ -130,6 +130,7 @@ La biografía es una entrada editorial a la obra, no un currículum.
 - Bio corta para Home y navegación.
 - Bio larga para Sobre el autor.
 - Logros, premios y publicaciones se mencionan sin lenguaje de marketing.
+- Los premios aparecen como bloque breve dentro de `Sobre el autor`; no abren categoría, archivo ni página independiente.
 
 ---
 

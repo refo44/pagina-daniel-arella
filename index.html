@@ -29,7 +29,11 @@
       <ul class="site-header__list">
         <li><a class="site-header__link" data-nav-item="home" data-route="" href="">Inicio</a></li>
         <li><a class="site-header__link" data-nav-item="archivo" data-route="archivo/" href="archivo/">Archivo</a></li>
+
+        <li><a class="site-header__link" data-nav-item="libros" data-route="book/" href="book/">Libros</a></li>
         <li><a class="site-header__link" data-nav-item="autor" data-route="sobre-el-autor/" href="sobre-el-autor/">Sobre el autor</a></li>
+
+        <li><a class="site-header__link" data-nav-item="servicios" href="servicios-editoriales/">Servicios editoriales</a></li>
         <li><a class="site-header__link" data-nav-item="talleres" data-route="talleres/" href="talleres/">Talleres</a></li>
         <li><a class="site-header__link" data-nav-item="contacto" data-route="contacto/" href="contacto/">Contacto</a></li>
       </ul>
@@ -44,46 +48,91 @@
 </header>
 
   <main id="main">
-    <section class="hero-home section-decoration">
-      <svg class="icon-bg" aria-hidden="true">
-        <use href="assets/icons/feather.svg#icon"></use>
-      </svg>
-      <div class="o-container hero-home__inner">
-        <div class="hero-home__main">
+    <section class="hero-home" aria-labelledby="hero-carousel-title">
+      <div class="o-container hero-carousel" data-carousel>
+        <div class="hero-carousel__intro">
           <p class="hero-home__eyebrow">Biblioteca de autor</p>
-          <h1>Daniel Arella</h1>
-          <p class="hero-home__lede">Poesía, ensayo, narrativa y edición crítica en torno a la literatura latinoamericana.</p>
-          <div class="button-row">
-            <a class="button" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons/book-open.svg#icon"></use>
-              </svg>
-              Abrir el libro
-            </a>
-            <a class="button-link" href="archivo/">
-              <svg class="icon" aria-hidden="true">
-                <use href="assets/icons/archive.svg#icon"></use>
-              </svg>
-              Explorar archivo
-            </a>
-          </div>
+          <h1 id="hero-carousel-title">Daniel Arella</h1>
+          <p class="hero-home__lede">Poesía, ensayo, narrativa, eventos y trabajo editorial reunidos en una portada de lectura y recorrido.</p>
         </div>
 
-        <figure class="hero-home__portrait">
-          <img src="assets/images/daniel-arella-12.jpg" alt="Retrato de Daniel Arella, poeta, ensayista y narrador." width="540" height="675" fetchpriority="high">
-        </figure>
+        <div class="hero-carousel__viewport">
+          <button class="hero-carousel__arrow hero-carousel__arrow--prev" type="button" data-carousel-prev aria-label="Ver destacado anterior">
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons/arrow-left.svg#icon"></use>
+            </svg>
+            <span class="u-visually-hidden">Anterior</span>
+          </button>
 
-        <figure class="hero-home__illustration">
-          <img src="assets/illustrations/reading.svg" alt="" loading="lazy">
-        </figure>
+          <article class="hero-slide is-active" data-carousel-slide id="hero-slide-book" aria-labelledby="hero-slide-book-title">
+            <figure class="hero-slide__media">
+              <img src="assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg" alt="Portada del libro Relatos pioneros de la ciencia ficción latinoamericana." width="399" height="622" fetchpriority="high">
+            </figure>
+            <div class="hero-slide__panel">
+              <p class="hero-slide__eyebrow">Libro activo</p>
+              <h2 id="hero-slide-book-title">Relatos pioneros de la ciencia ficción latinoamericana</h2>
+              <p class="hero-slide__text">Una antología preparada por Daniel Arella que abre un recorrido crítico por las escrituras tempranas de la ciencia ficción latinoamericana.</p>
+              <div class="hero-slide__actions">
+                <a class="button" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+                <a class="button-link" href="book/">Ver libros</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-carousel-slide id="hero-slide-event" aria-labelledby="hero-slide-event-title" hidden>
+            <figure class="hero-slide__media">
+              <img src="assets/images/press-33.jpeg" alt="Cartel del evento Poesía Sci-Fi." width="640" height="360" loading="lazy">
+            </figure>
+            <div class="hero-slide__panel">
+              <p class="hero-slide__eyebrow">Evento</p>
+              <h2 id="hero-slide-event-title">Poesía Sci-Fi</h2>
+              <p class="hero-slide__text">Lectura y conversación literaria conservada como memoria editorial del sitio, con fecha, contexto y salida propia dentro de Eventos.</p>
+              <div class="hero-slide__actions">
+                <a class="button" href="eventos/poesia-sci-fi.html">Abrir evento</a>
+                <a class="button-link" href="eventos/">Ver eventos</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-carousel-slide id="hero-slide-article" aria-labelledby="hero-slide-article-title" hidden>
+            <figure class="hero-slide__media">
+              <img src="assets/images/daniel-arella-02.jpg" alt="Retrato de Daniel Arella para el artículo Desde el inframundo del lenguaje." width="384" height="512" loading="lazy">
+            </figure>
+            <div class="hero-slide__panel">
+              <p class="hero-slide__eyebrow">Artículo</p>
+              <h2 id="hero-slide-article-title">Desde el inframundo del lenguaje</h2>
+              <p class="hero-slide__text">Ensayo distinguido con mención honrosa en torno a la obra de Ida Gramcko, incorporado aquí como una entrada de lectura crítica.</p>
+              <div class="hero-slide__actions">
+                <a class="button" href="blog/desde-el-inframundo-del-lenguaje/">Leer el artículo</a>
+                <a class="button-link" href="blog/">Abrir blog</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="hero-slide" data-carousel-slide id="hero-slide-services" aria-labelledby="hero-slide-services-title" hidden>
+            <figure class="hero-slide__media">
+              <img src="assets/images/daniel-arella-14.jpeg" alt="Daniel Arella frente a una biblioteca, en una imagen asociada a sus servicios editoriales." width="1600" height="900" loading="lazy">
+            </figure>
+            <div class="hero-slide__panel">
+              <p class="hero-slide__eyebrow">Servicios editoriales</p>
+              <h2 id="hero-slide-services-title">Edición, corrección y lectura crítica</h2>
+              <p class="hero-slide__text">Una invitación a consultar procesos de edición y acompañamiento de manuscritos sin paquetes cerrados ni tarifas públicas en portada.</p>
+              <div class="hero-slide__actions">
+                <a class="button" href="servicios-editoriales/">Abrir servicios</a>
+                <a class="button-link" href="contacto/">Solicitar información</a>
+              </div>
+            </div>
+          </article>
+
+          <button class="hero-carousel__arrow hero-carousel__arrow--next" type="button" data-carousel-next aria-label="Ver siguiente destacado">
+            <span class="u-visually-hidden">Siguiente</span>
+            <svg class="icon" aria-hidden="true">
+              <use href="assets/icons/arrow-right.svg#icon"></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </section>
-
-    <div class="section-divider">
-      <svg class="icon-decorative" aria-hidden="true">
-        <use href="assets/icons/book.svg#icon"></use>
-      </svg>
-    </div>
 
     <section class="section-panel section-panel--surface">
       <div class="o-container">
@@ -130,18 +179,13 @@
               <p class="card__excerpt">Biografía larga, formación, premios y participación en revistas, congresos y talleres a partir del material documental del autor.</p>
               <div class="card__actions">
                 <a class="button" data-route="sobre-el-autor/" href="sobre-el-autor/">Abrir perfil</a>
+                <a class="button-link" href="servicios-editoriales/">Servicios editoriales</a>
               </div>
             </div>
           </article>
         </div>
       </div>
     </section>
-
-    <div class="section-divider">
-      <svg class="icon-decorative" aria-hidden="true">
-        <use href="assets/icons/archive.svg#icon"></use>
-      </svg>
-    </div>
 
     <section class="section-panel">
       <div class="o-container o-sidebar">
@@ -155,10 +199,11 @@
               La obra como biblioteca
             </h2>
           </div>
-          <p class="u-max-readable">El archivo reúne libros de poesía, antologías, poemas, páginas de prensa y recorridos temáticos construidos a partir de la biografía, CV, portadas, fotografías y PDFs reales del autor.</p>
+          <p class="u-max-readable">El sitio reúne libros, poemas, artículos, eventos, prensa externa y recorridos temáticos construidos a partir de la biografía, portadas, fotografías y documentos reales del autor.</p>
           <div class="button-row">
             <a class="button-link" data-route="poem/" href="poem/">Poemas</a>
             <a class="button-link" data-route="book/" href="book/">Libros</a>
+            <a class="button-link" href="eventos/">Eventos</a>
             <a class="button-link" data-route="prensa/" href="prensa/">Prensa</a>
             <a class="button-link" data-route="sobre-el-autor/" href="sobre-el-autor/">Sobre el autor</a>
           </div>
@@ -175,12 +220,6 @@
         </aside>
       </div>
     </section>
-
-    <div class="section-divider">
-      <svg class="icon-decorative" aria-hidden="true">
-        <use href="assets/icons/mail.svg#icon"></use>
-      </svg>
-    </div>
 
     <section class="section-panel section-panel--surface">
       <div class="o-container">

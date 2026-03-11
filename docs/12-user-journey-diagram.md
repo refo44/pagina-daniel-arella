@@ -1,6 +1,6 @@
 # User Journey Diagram — Daniel Arella
 
-**Versión 1.4**
+**Versión 1.5**
 
 Diagrama en Mermaid. Basado en `11-user-journey`. Score 1–5: fluidez del paso (5 = sin fricción). Actor: **Lector**.
 
@@ -23,13 +23,14 @@ journey
       Explorar archivo: 5: Lector
     section Explora corpus
       Entra al Archivo: 5: Lector
-      Elige tipo (Poemas, Ensayos, Relatos, Libros, Artículos): 5: Lector
+      Elige tipo (Poemas, Ensayos, Relatos, Artículos): 5: Lector
       Filtro por tema o periodo: 5: Lector
       Abrir una pieza: 5: Lector
       Ve contexto (pertenece a un libro): 5: Lector
       Abre libro o sigue explorando: 5: Lector
     section Sigue un libro
-      Entra al Libro: 5: Lector
+      Entra a Libros: 5: Lector
+      Abre un libro: 5: Lector
       Lee descripción: 5: Lector
       Abrir índice del libro: 5: Lector
       Abre poema, ensayo o relato: 5: Lector

@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contacto | Daniel Arella</title>
-  <meta name="description" content="Contacto para prensa, edición, lecturas y talleres de Daniel Arella.">
+  <title>Servicios editoriales | Daniel Arella</title>
+  <meta name="description" content="Edición, corrección y lectura crítica de manuscritos con Daniel Arella.">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../assets/favicon/site.webmanifest">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
-<body data-nav="contacto" data-site-prefix="pagina-daniel-arella">
+<body data-site-prefix="pagina-daniel-arella" data-nav="servicios">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
   <header class="site-header">
   <div class="o-container site-header__inner">
@@ -20,7 +20,6 @@
       <ul class="site-header__list">
         <li><a class="site-header__link" data-nav-item="home" href="../">Inicio</a></li>
         <li><a class="site-header__link" data-nav-item="archivo" href="../archivo/">Archivo</a></li>
-
         <li><a class="site-header__link" data-nav-item="libros" href="../book/">Libros</a></li>
         <li><a class="site-header__link" data-nav-item="autor" href="../sobre-el-autor/">Sobre el autor</a></li>
 
@@ -41,47 +40,50 @@
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
-        <li class="breadcrumbs__item"><span aria-current="page">Contacto</span></li>
+        <li class="breadcrumbs__item"><a href="../">Inicio</a></li>
+        <li class="breadcrumbs__item"><a href="../sobre-el-autor/">Sobre el autor</a></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Servicios editoriales</span></li>
       </ol>
     </div>
   </nav>
 
   <main id="main" class="content-shell">
-    <div class="o-container form-panel">
-      <div class="o-flow">
-        <p class="content-kicker">Contacto</p>
-        <h1>Para prensa, edición o lecturas.</h1>
-        <p>Este formulario reúne solicitudes relacionadas con prensa, edición, lecturas públicas, servicios editoriales y talleres.</p>
-        <div class="button-row">
-          <a class="button-link" href="../servicios-editoriales/">Ver servicios editoriales</a>
+    <div class="o-container o-sidebar">
+      <article class="o-flow">
+        <p class="content-kicker">Servicios editoriales</p>
+        <h1>Edición, corrección y lectura crítica de manuscritos.</h1>
+        <p>Este espacio reúne una forma de trabajo ligada a la lectura atenta, la claridad del texto y el acompañamiento editorial de proyectos en proceso.</p>
+        <p>Los servicios no se presentan como paquetes cerrados ni con tarifas públicas. Cada consulta parte del manuscrito, del momento en que se encuentra y del tipo de trabajo que necesita.</p>
+        <div class="content-panel o-flow">
+          <h2>Servicios</h2>
+          <p><strong>Edición literaria.</strong> Trabajo de estructura, ritmo, enfoque, consistencia de voz y construcción general del manuscrito.</p>
+          <p><strong>Corrección de estilo.</strong> Revisión de sintaxis, puntuación, precisión verbal y legibilidad sin borrar la voz del texto.</p>
+          <p><strong>Lectura crítica.</strong> Devolución argumentada sobre fortalezas, problemas y posibilidades de desarrollo de una obra.</p>
+          <p><strong>Acompañamiento de manuscritos.</strong> Seguimiento por etapas para libros de poesía, ensayo, narrativa o proyectos híbridos.</p>
         </div>
-      </div>
+        <div class="content-panel o-flow">
+          <h2>Para quién está dirigido</h2>
+          <p>Para autores, investigadores, lectores, editores o equipos que necesiten una lectura exigente y una intervención editorial sobria, sin sobreactuación promocional ni recetas prefabricadas.</p>
+        </div>
+      </article>
 
-      <form class="form-grid" data-static-form data-success-message="Mensaje enviado.">
-        <div class="form-field">
-          <label for="contact-name">Nombre</label>
-          <input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required>
+      <aside class="content-panel o-stack">
+        <div>
+          <h2>Trayectoria</h2>
+          <p class="content-meta">Poeta, ensayista, narrador y editor.</p>
+          <p class="content-meta">Trabajo en poesía, ensayo, crítica literaria y ciencia ficción latinoamericana.</p>
+          <p class="content-meta">Experiencia en edición, lectura crítica, talleres y acompañamiento de procesos de escritura.</p>
         </div>
-        <div class="form-field">
-          <label for="contact-email">Correo</label>
-          <input id="contact-email" name="email" type="email" autocomplete="email" placeholder="Tu correo" required>
-        </div>
-        <div class="form-field">
-          <label for="contact-subject">Asunto</label>
-          <input id="contact-subject" name="subject" type="text" placeholder="Asunto" required>
-        </div>
-        <div class="form-field">
-          <label for="contact-message">Mensaje</label>
-          <textarea id="contact-message" name="message" placeholder="Escribe aquí" required></textarea>
+        <div>
+          <h2>Modo de contacto</h2>
+          <p class="content-meta">La consulta se canaliza desde la página de contacto.</p>
+          <p class="content-meta">Puedes escribir indicando tipo de manuscrito, estado del proyecto y necesidad principal.</p>
         </div>
         <div class="button-row">
-          <button class="button" type="submit">Enviar</button>
-          <a class="button-link" data-route="" href="../">Volver</a>
+          <a class="button" href="../contacto/">Solicitar información</a>
+          <a class="button-link" href="../sobre-el-autor/">Sobre el autor</a>
         </div>
-      </form>
-
-      <p class="form-status" data-form-status aria-live="polite"></p>
+      </aside>
     </div>
   </main>
 

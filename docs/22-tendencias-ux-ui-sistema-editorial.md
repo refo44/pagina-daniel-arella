@@ -2,7 +2,7 @@
 
 Define qué tendencias fortalecen un sitio de autor y cuáles deben evitarse para proteger la lectura, la claridad y la voz editorial.
 
-**Versión 1.1**
+**Versión 1.2**
 
 **Se apoya en:** `01-plataforma-autor-plan`, `02-identidad-corporativa`, `18-css-architecture`, `23-estandares-accesibilidad`, `24-principios-layout`
 
@@ -52,7 +52,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 - Tipografía = voz; espacio en blanco = ritmo.
 - Jerarquía con tamaño, interlineado, espaciado vertical, peso. **No** con colores, cajas, fondos ni módulos.
-- Menú de 3 a 5 ítems. Estructura exacta se define en `01-plataforma-autor-plan`.
+- La cabecera debe ser corta y clara, pero puede superar 5 ítems si eso evita esconder una sección estructural. En este proyecto, `Libros` tiene acceso directo en el menú principal.
 
 ### 1.4 Anti-patrones y reglas operativas
 

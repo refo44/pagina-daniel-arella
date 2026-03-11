@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura de información y flujo de navegación
 
 **Mapa de navegación y enlaces vivos**  
-**Versión 2.3**
+**Versión 2.6**
 
 Este documento define qué enlaces salen de cada pantalla, a dónde van, en qué orden y cuáles no deben existir. No describe diseño ni layout. Es la capa que conecta el sistema editorial con el código y con la experiencia real del lector.
 
@@ -30,25 +30,29 @@ Sirve para que:
 
 ## 2. Navegación global
 
-**Regla de cantidad (22-tendencias-ux-ui-sistema-editorial):** Menú de 3 a 5 ítems. Menos opciones = menos fricción cognitiva.
+**Regla de cantidad:** la cabecera debe ser clara y legible, pero puede superar 5 ítems si eso evita esconder una sección estructural.
 
 ### Cabecera
 
-Estructura consolidada (5 ítems máximo):
+Estructura consolidada:
 
 | Enlace | Destino |
 |--------|---------|
 | Inicio | Home |
-| Archivo | Archivo general (poemas, ensayos, relatos, libros, artículos) |
+| Archivo | Archivo general (poemas, ensayos, relatos, artículos) |
+| Libros | Listado Libros |
 | Sobre el autor | Sobre el autor |
+| Servicios editoriales | Servicios editoriales |
 | Talleres | Listado Talleres |
 | Contacto | Contacto |
 
-**Opcional (plan maestro):** Biblioteca de audio, Videoteca — accesibles desde Archivo o como ítem de cabecera según decisión de menú (máx. 5 ítems en cabecera). Ver `01-plataforma-autor-plan`.
+`Libros` no cuelga de `Archivo`: es una sección editorial con acceso directo desde cabecera.
+
+**Opcional (plan maestro):** Biblioteca de audio, Videoteca — accesibles desde Archivo o como ítem de cabecera según decisión de menú. Ver `01-plataforma-autor-plan`.
 
 **Opcional:** Selector de idioma como control auxiliar (icono), no como ítem principal.
 
-**En pie, no en cabecera:** Servicios editoriales, Prensa, Derechos, Correspondencia. La cabecera prioriza orientación hacia la obra y el autor.
+**En pie, no en cabecera:** Prensa, Derechos, Correspondencia. La cabecera prioriza orientación hacia la obra y el autor.
 
 No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros concretos.
 
@@ -108,8 +112,8 @@ Breadcrumb no aplica.
 | “Descargar PDF / EPUB” (si existe) | Descarga | Secundario |
 | Goodreads / editorial / librería / marketplace (si existe) | Sitio externo | Secundario |
 | “Presentación en prensa” o referencias externas | Medio externo o página Prensa | Secundario |
-| “Explorar archivo” | Archivo | Secundario |
-| Breadcrumb | Inicio → Archivo → Libros → Libro | Secundario |
+| “Explorar libros” | Listado Libros | Secundario |
+| Breadcrumb | Inicio → Libros → [Libro] | Secundario |
 
 **Nunca:** “otros libros”, “libros relacionados”.
 
@@ -170,7 +174,7 @@ Breadcrumb no aplica.
 
 ## 10. Archivo y listados
 
-Archivo general y por tipo (Poemas, Libros, Ensayos, Relatos, Talleres, Artículos).
+Archivo general y por tipo (Poemas, Ensayos, Relatos, Talleres, Artículos). Libros se accede desde su propio listado principal.
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -215,7 +219,9 @@ Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El
 | “Contactar” | Contacto | Secundario |
 | “Servicios editoriales” | Servicios editoriales | Secundario |
 
-**Nunca:** listas de obras dentro del texto salvo mención editorial explícita.
+Los premios y reconocimientos se leen dentro de la misma página como parte de la trayectoria, sin abrir una navegación aparte.
+
+**Nunca:** listas de obras dentro del texto salvo mención editorial explícita, ni enlaces a una supuesta sección autónoma de premios.
 
 ---
 

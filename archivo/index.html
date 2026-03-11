@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Archivo | Daniel Arella</title>
-  <meta name="description" content="Archivo editorial de Daniel Arella: libros, poemas, ensayos, relatos, talleres y artículos.">
+  <meta name="description" content="Archivo editorial de Daniel Arella: poemas, ensayos, relatos, artículos y recorridos por tema y periodo.">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../assets/favicon/site.webmanifest">
   <link rel="stylesheet" href="../assets/css/main.css">
@@ -20,7 +20,11 @@
       <ul class="site-header__list">
         <li><a class="site-header__link" data-nav-item="home" href="../">Inicio</a></li>
         <li><a class="site-header__link" data-nav-item="archivo" href="../archivo/">Archivo</a></li>
+
+        <li><a class="site-header__link" data-nav-item="libros" href="../book/">Libros</a></li>
         <li><a class="site-header__link" data-nav-item="autor" href="../sobre-el-autor/">Sobre el autor</a></li>
+
+        <li><a class="site-header__link" data-nav-item="servicios" href="../servicios-editoriales/">Servicios editoriales</a></li>
         <li><a class="site-header__link" data-nav-item="talleres" href="../talleres/">Talleres</a></li>
         <li><a class="site-header__link" data-nav-item="contacto" href="../contacto/">Contacto</a></li>
       </ul>
@@ -44,15 +48,12 @@
   </nav>
 
   <main id="main">
-    <section class="archive-intro section-decoration">
-      <svg class="icon-bg" aria-hidden="true">
-        <use href="../assets/icons/archive.svg#icon"></use>
-      </svg>
+    <section class="archive-intro">
       <div class="o-container archive-intro__layout">
         <div class="o-stack">
           <p class="content-kicker">Archivo</p>
           <h1>Explorar la obra como biblioteca.</h1>
-          <p class="u-max-readable">Cada pieza conserva su relación con libros, temas y periodos. Esta versión ya toma títulos, biografía, imágenes y PDFs desde el archivo real del autor.</p>
+          <p class="u-max-readable">Cada pieza conserva su relación con temas y periodos. Esta versión pública organiza el archivo textual por recorridos editoriales, mientras Libros, Eventos y Prensa mantienen su propia entrada.</p>
           <form class="form-grid u-max-readable">
             <div class="form-field">
               <label for="search-archive">Buscar en el archivo</label>
@@ -66,9 +67,8 @@
             <p class="archive-filter__label">Filtros</p>
             <div class="archive-filter">
               <a class="archive-filter__chip" data-route="poem/" href="../poem/">Poemas</a>
-              <a class="archive-filter__chip" data-route="book/" href="../book/">Libros</a>
-              <a class="archive-filter__chip" data-route="prensa/" href="../prensa/">Prensa</a>
-              <a class="archive-filter__chip" data-route="tema/memoria/" href="../tema/memoria/">Tema</a>
+              <a class="archive-filter__chip" data-route="blog/" href="../blog/">Artículos</a>
+              <a class="archive-filter__chip" data-route="essay/" href="../essay/">Ensayos</a>
               <a class="archive-filter__chip" data-route="periodo/2019-2024/" href="../periodo/2019-2024/">Periodo</a>
             </div>
           </div>
@@ -79,15 +79,6 @@
 
     <section class="section-panel">
       <div class="o-container archive-list">
-        <article class="archive-row">
-          <p class="archive-row__meta">Libro / antología crítica</p>
-          <h2 class="archive-row__title">Relatos pioneros de la ciencia ficción latinoamericana</h2>
-          <p>Selección y prólogo de Daniel Arella, con materiales de presentación y referencia editorial.</p>
-          <div class="card__actions">
-            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="../book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
-          </div>
-        </article>
-
         <article class="archive-row">
           <p class="archive-row__meta">Poema · Archivo Venezuela 2024</p>
           <h2 class="archive-row__title">Rostro de nadie</h2>
@@ -100,16 +91,25 @@
         <article class="archive-row">
           <p class="archive-row__meta">Perfil de autor</p>
           <h2 class="archive-row__title">Biografía larga y CV</h2>
-          <p>Información real de trayectoria, formación, premios, publicaciones y talleres del autor.</p>
+          <p>Información real de trayectoria, formación, publicaciones, bloque breve de premios y trabajo editorial del autor.</p>
           <div class="card__actions">
             <a class="button-link" data-route="sobre-el-autor/" href="../sobre-el-autor/">Leer perfil</a>
           </div>
         </article>
 
         <article class="archive-row">
-          <p class="archive-row__meta">Prensa y eventos</p>
-          <h2 class="archive-row__title">Carteles, premios, retratos y referencias visuales</h2>
-          <p>Selección pública mínima de materiales gráficos y referencias visuales ya curadas desde `press-events/` e `illustrations/`.</p>
+          <p class="archive-row__meta">Eventos</p>
+          <h2 class="archive-row__title">Lecturas, presentaciones y festivales</h2>
+          <p>Memoria editorial de actividades y participaciones del autor, con fichas propias, carteles y contexto de cada encuentro.</p>
+          <div class="card__actions">
+            <a class="button-link" href="../eventos/">Abrir eventos</a>
+          </div>
+        </article>
+
+        <article class="archive-row">
+          <p class="archive-row__meta">Prensa</p>
+          <h2 class="archive-row__title">Noticias, artículos y referencias externas</h2>
+          <p>Solo referencias publicadas en medios de terceros sobre el autor o su obra, sin carteles, diplomas ni materiales internos.</p>
           <div class="card__actions">
             <a class="button-link" data-route="prensa/" href="../prensa/">Abrir prensa</a>
           </div>

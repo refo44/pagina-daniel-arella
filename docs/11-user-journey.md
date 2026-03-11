@@ -1,6 +1,6 @@
 # Daniel Arella — User Journey
 
-**Versión 1.5**
+**Versión 1.6**
 
 Este documento describe cómo se mueve un lector real dentro del territorio editorial. No es un diagrama técnico ni un flujo de conversión. Es una serie de recorridos de lectura y encuentro.
 
@@ -30,7 +30,7 @@ Sirve para validar:
 - → Continúa leyendo dentro del mismo universo
 - → “Explorar archivo” cuando quiere ampliar
 
-El lector no debería llegar primero a un menú. Siempre entra por una pieza viva. También puede entrar por el Archivo si busca explorar la obra completa.
+El lector no debería llegar primero a un menú. Siempre entra por una pieza viva. También puede entrar por el Archivo si busca explorar la obra completa o por Libros si quiere recorrer la obra editorial publicada.
 
 ---
 
@@ -41,7 +41,7 @@ El lector no debería llegar primero a un menú. Siempre entra por una pieza viv
 **Recorrido:**
 
 - Archivo
-- → Elige tipo (Poemas, Ensayos, Relatos, Libros, Artículos)
+- → Elige tipo (Poemas, Ensayos, Relatos, Artículos)
 - → Aplica filtro por tema o periodo
 - → Abre una pieza
 - → Ve el contexto: “Este poema pertenece a [Libro]” o “Más textos de este tema”
@@ -58,7 +58,8 @@ El lector siempre sabe si está leyendo una pieza independiente o parte de un li
 
 **Recorrido:**
 
-- Libro
+- Libros
+- → Entra a un libro
 - → Lee la descripción
 - → Entra al índice
 - → Abre un poema, ensayo o relato
@@ -77,7 +78,7 @@ El libro se comporta como una unidad de lectura, no como una página aislada.
 
 **Recorrido:**
 
-- Inicio o Archivo
+- Inicio, Archivo o Libros
 - → Sobre el autor
 - → Lee biografía y trayectoria
 - → Decide:

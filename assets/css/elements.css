@@ -135,18 +135,20 @@ hr {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  opacity: 0.85;
+  opacity: 0.42;
+  pointer-events: none;
 }
 
 .icon-decorative {
-  width: 5rem;
-  height: 5rem;
+  width: 7.5rem;
+  height: 7.5rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  opacity: 0.6;
+  opacity: 0.2;
+  pointer-events: none;
 }
 
 .icon-bg {
