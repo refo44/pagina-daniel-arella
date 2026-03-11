@@ -1,14 +1,14 @@
 # Daniel Arella — UI Copy Sheet
 
 **Repertorio de microcopy, navegación y sistema**  
-**Versión 2.4**
+**Versión 2.5**
 
 Este documento define todos los textos que la interfaz puede usar. Es la fuente única de verdad para botones, menús, mensajes, formularios y estados.
 
 **Se apoya en:** `07-sistema-editorial-web`, `08-guia-voz-microcopy-ux`, `09-voice-dictionary`, `03-arquitectura-editorial`, `04-wordpress-content-model`, `14-arquitectura-informacion-navegacion`, `22-tendencias-ux-ui-sistema-editorial`  
 **Alimenta a:** `13-wireframes`, `14-arquitectura-informacion-navegacion`, `16-theme-file-structure`
 
-**Regla central:** El sitio no vende. Invita a leer.
+**Regla central:** El sitio no funciona como tienda. Invita a leer, contactar o solicitar información.
 
 ---
 
@@ -60,13 +60,14 @@ Leer, Abrir, Ver, Buscar, Explorar, Recibir, Entrar, Volver, Continuar, Adquirir
 - Archivo
 - Sobre el autor
 - Talleres
-- Correspondencia
+- Contacto
 
 El archivo agrupa poemas, ensayos, relatos y libros. Los listados por tipo se acceden desde el archivo o desde breadcrumbs. Ver `14-arquitectura-informacion-navegacion`.
 
 ### 2.2 Footer
 
 - Prensa
+- Servicios editoriales
 - Derechos y permisos
 - Contacto
 - Correspondencia
@@ -176,11 +177,13 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ### 6.2 Libro
 
-**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro
+**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro, Dónde encontrar el libro
 
 **Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
 
-**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Prensa, Derechos
+**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Prensa y referencias, Derechos
+
+**Regla editorial:** enlaces como Goodreads, editorial, librería o marketplace van en “Dónde encontrar el libro”, no en “Prensa”.
 
 ### 6.3 Ensayo
 
@@ -211,16 +214,26 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 7. Correspondencia
+## 7. Servicios editoriales
 
-- **Nombre:** Correspondencia, Carta
-- **Botón:** Recibir nuevos textos
-- **Campos:** Tu correo
-- **Mensajes:** “Listo. A partir de ahora recibirás nuevos textos.”, “Revisa tu correo para confirmar.”, “No fue posible enviar la solicitud.”
+- **Nombre:** Servicios editoriales
+- **Descripción:** “Edición, corrección y lectura crítica de manuscritos.”
+- **Servicios:** Edición literaria, Corrección de estilo, Lectura crítica, Acompañamiento de manuscritos
+- **Botón:** Solicitar información
+- **Regla:** no mostrar precios públicos; la salida siempre deriva a Contacto
 
 ---
 
-## 8. Contacto
+## 8. Correspondencia
+
+- **Nombre:** Lista de correos, Correspondencia
+- **Botón:** Suscribirme
+- **Campos:** Tu correo
+- **Mensajes:** “Listo. Ya estás en la lista.”, “Revisa tu correo para confirmar.”, “No fue posible enviar la solicitud.”
+
+---
+
+## 9. Contacto
 
 - **Descripción:** “Para prensa, edición o lecturas.”
 - **Campos:** Nombre, Correo, Asunto, Mensaje
@@ -230,7 +243,7 @@ Más reciente, Más antiguo, Por título, Por libro
 
 ---
 
-## 9. Estados y errores
+## 10. Estados y errores
 
 **Vacíos:** “Aún no hay textos en esta sección.”, “Este archivo aún está en construcción.”, “No hay talleres programados por ahora.”
 
@@ -239,6 +252,12 @@ Más reciente, Más antiguo, Por título, Por libro
 **404:** “Este texto no existe o fue retirado.”
 
 **Error:** “No fue posible mostrar este texto.”
+
+### 9.1 Referencias externas
+
+- **Activo:** “Abrir sitio”
+- **Archivado:** “Ver archivo”
+- **Sin enlace activo:** “Enlace original no disponible”
 
 ---
 

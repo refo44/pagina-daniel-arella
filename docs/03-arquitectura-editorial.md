@@ -1,6 +1,6 @@
 # Daniel Arella — Arquitectura editorial
 
-**Versión 2.6**
+**Versión 2.8**
 
 Esta capa se apoya en la identidad corporativa y en el plan maestro (`01-plataforma-autor-plan`). No la reemplaza. La vuelve operativa.
 
@@ -22,7 +22,7 @@ Solo existen las entidades que un lector necesita para leer, recorrer y comprend
 | Story | Relato o pieza narrativa |
 | Workshop | Taller o curso vinculado a la obra |
 | Article | Artículos, notas o textos breves publicados fuera de los libros |
-| Page | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Prensa, Derechos |
+| Page | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Servicios editoriales, Prensa, Derechos |
 
 En WordPress:
 
@@ -34,22 +34,21 @@ Un poema nunca es un post. Un libro nunca es una página.
 
 **Essay** pertenece al corpus intelectual del autor. **Article** corresponde a textos circunstanciales (publicaciones externas, notas, columnas o reflexiones breves).
 
-**Book:** Un Book puede contener poemas, ensayos y relatos, pero también puede existir sin contenido interno (como obra editorial o referencia bibliográfica).
+**Book:** Un Book puede contener poemas, ensayos y relatos, pero también puede existir sin contenido interno (como obra editorial o referencia bibliográfica). Un Book representa la obra como unidad editorial estable, aunque esa obra tenga varias ediciones, reimpresiones o cubiertas distintas.
 
 ---
 
 ## 2. Qué no existe
 
-No existen entidades técnicas para:
+No existen entidades técnicas independientes para:
 
 - ciclos
 - series
 - colecciones
 - estados
-- ediciones internas
 - versiones
 
-Todo eso se expresa editorialmente dentro de los libros, textos y relaciones entre piezas.
+Las ediciones no se modelan como entidad, CPT, taxonomía ni URL propia. Se expresan dentro de cada `Book` como información editorial anidada: sello, año, ISBN, cubierta, formato, enlaces de compra o descarga.
 
 La arquitectura nunca duplica lo que la escritura ya puede decir.
 
@@ -176,16 +175,20 @@ Estas piezas no forman parte del corpus textual (poem, essay, story). Funcionan 
 
 Las descargas, si existen, viven solo dentro de Book. Un Book también puede funcionar solo como ficha editorial y bibliográfica, sin archivos públicos.
 
-Ahí pueden vivir:
+Ahí pueden vivir, a nivel de obra o de edición:
 
 - PDF (si se publica)
 - EPUB (si se publica)
 - Editorial
 - Año
 - ISBN
+- Cubierta
+- Enlaces externos de compra o consulta (Amazon, editorial, librería o marketplace)
 - Aviso breve de derechos
 
-No hay tienda ni sistema de licencias. El libro se presenta como obra, no como producto.
+No hay tienda ni sistema de licencias dentro del sitio. El libro se presenta como obra, no como producto, pero puede enlazar a puntos externos de compra o consulta cuando eso ayuda a localizar una edición real.
+
+Si una obra tiene varias ediciones, la página del Book las presenta como variantes editoriales de la misma obra, no como libros distintos ni como duplicados del archivo.
 
 El orden interno de un Book se define manualmente para respetar la secuencia editorial del libro.
 
@@ -235,6 +238,6 @@ Si una estructura no ayuda a leer mejor o recordar mejor la obra, no existe.
 
 ---
 
-**Versión:** 2.6  
+**Versión:** 2.8  
 **Depende de:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
 **Alimenta a:** `04-wordpress-content-model`

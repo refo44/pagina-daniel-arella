@@ -1,7 +1,7 @@
 # Daniel Arella — Árbol de URLs final
 
 **Geografía oficial de la obra**  
-**Versión 2.2**
+**Versión 2.3**
 
 Este documento define todas las rutas reales del sitio por idioma, tipo de obra y archivo. No es un menú ni un sitemap técnico. Es el mapa del territorio que WordPress y el theme deben respetar.
 
@@ -57,6 +57,7 @@ Una página por función editorial. Un slug por idioma.
 | Sobre el autor | `/es/sobre-el-autor/` | `/en/about/` |
 | Correspondencia | `/es/correspondencia/` | `/en/correspondence/` |
 | Contacto | `/es/contacto/` | `/en/contact/` |
+| Servicios editoriales | `/es/servicios-editoriales/` | `/en/editorial-services/` |
 | Prensa | `/es/prensa/` | `/en/press/` |
 | Derechos | `/es/derechos/` | `/en/rights/` |
 | Biblioteca de audio | `/es/biblioteca-audio/` | `/en/audio-library/` |
@@ -137,6 +138,7 @@ Si se implementa la taxonomía `form` (`03-arquitectura-editorial`):
 /es/sobre-el-autor/
 /es/correspondencia/
 /es/contacto/
+/es/servicios-editoriales/
 /es/prensa/
 /es/derechos/
 /es/biblioteca-audio/
@@ -213,6 +215,7 @@ Ejemplo:
 | `/es/archivo/` | page-archivo.php |
 | `/es/sobre-el-autor/` | page-sobre-el-autor.php |
 | `/es/contacto/` | page-contacto.php |
+| `/es/servicios-editoriales/` | page-servicios-editoriales.php |
 | `/es/prensa/` | page-prensa.php |
 | `/es/derechos/` | page-derechos.php |
 | `/es/correspondencia/` | page-correspondencia.php |

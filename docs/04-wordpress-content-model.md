@@ -1,6 +1,6 @@
 # Daniel Arella — WordPress Content Model
 
-**Versión 2.4**
+**Versión 2.6**
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés, etiquetas visibles traducidas vía i18n. Suficiente para desarrollo, legible para el autor.
 
@@ -20,7 +20,7 @@ Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en ing
 | story | Relatos | /story/ | Narrativa breve |
 | workshop | Talleres | /talleres/ | Talleres y cursos |
 | post | Artículos | /blog/ | Notas y artículos |
-| page | Páginas | por página | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Prensa, Derechos |
+| page | Páginas | por página | Inicio, Archivo, Sobre el autor, Correspondencia, Contacto, Servicios editoriales, Prensa, Derechos |
 
 post existe solo para notas y artículos. La obra vive en poem, book, essay, story y workshop.
 
@@ -39,7 +39,7 @@ Clasificación mínima para navegar el corpus.
 | topic | Tema | Jerárquica | poem, book, essay, story, post, workshop |
 | period | Periodo | Jerárquica | poem, book, essay, story, post, workshop |
 
-No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven en campos simples o en el sistema de traducción.
+No existen taxonomías de idioma, formato, editorial, edición ni estado. Esos datos viven en campos simples o en el sistema de traducción.
 
 ---
 
@@ -62,8 +62,25 @@ No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven
 - Tiene archive
 - Soporta: title, editor, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
-- Campos: book_year, book_publisher, book_isbn, book_pdf, book_epub, book_buy_url
+- Campos base: book_subtitle, book_abstract, book_rights_note
+- Ediciones: `book_editions` (repeatable group)
+  - `edition_label`
+  - `edition_year`
+  - `edition_publisher`
+  - `edition_isbn`
+  - `edition_cover`
+  - `edition_format`
+  - `edition_buy_links` (repeatable)
+    - `link_label`
+    - `link_url`
+    - `link_source`
+  - `edition_pdf`
+  - `edition_epub`
+  - `edition_rights_note`
+- Campo opcional: `book_featured_edition` → referencia interna a una edición del grupo para destacarla en listados o en Home
 - Los contenidos del libro se ordenan manualmente.
+
+Regla: un `book` representa la obra. Sus ediciones viven dentro del mismo registro y no tienen CPT, taxonomía ni URL propia. Si una edición cambia solo la cubierta, el sello, el ISBN o los puntos de venta, sigue siendo la misma obra con otra edición.
 
 ### essay
 
@@ -103,7 +120,7 @@ No existen taxonomías de idioma, formato, editorial ni estado. Esos datos viven
 
 ### page
 
-- Uso: Inicio, Sobre el autor, Archivo, Correspondencia, Contacto, Prensa, Derechos
+- Uso: Inicio, Sobre el autor, Archivo, Correspondencia, Contacto, Servicios editoriales, Prensa, Derechos
 - Soporta: title, editor, excerpt, thumbnail
 - Sin taxonomías
 
@@ -119,6 +136,8 @@ Relaciones mínimas que crean lectura en profundidad. Las relaciones con book so
 - workshop → book
 
 Implementadas como campos de relación (post ID) hacia book. No existen ciclos, series ni capas adicionales.
+
+Las ediciones no participan en las relaciones del sistema: el vínculo siempre es hacia la obra (`book`), no hacia una edición concreta.
 
 ---
 
@@ -147,6 +166,8 @@ Solo lo necesario para mostrar la obra:
 - front-page.php
 - page.php
 - taxonomy-topic.php, taxonomy-period.php (fallback: archive.php)
+
+`single-book` debe poder imprimir varias ediciones dentro de la misma página: cubierta, ficha editorial, enlaces externos y descargas por edición cuando existan.
 
 No hay plantillas especiales para taxonomías; las de topic y period usan archive.php como base.
 

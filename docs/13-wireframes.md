@@ -1,6 +1,6 @@
 # Daniel Arella — Wireframes. Estructura de pantallas
 
-**Versión 1.3**
+**Versión 1.6**
 
 Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
@@ -72,12 +72,25 @@ Bloques:
 - Breadcrumb
 - Título
 - Descripción editorial
-- Metadatos: Año, Editorial, ISBN
+- Resumen de la obra
 - Cita o fragmento breve
+- Sección de ediciones
+  - Edición destacada (si existe)
+  - Lista o tarjetas de ediciones
+  - Por edición: cubierta, sello, año, ISBN, formato
+  - Enlaces externos: editorial, Amazon, librería, marketplace (solo si aplican)
+  - Descargas: PDF, EPUB (solo si aplican y siempre asociadas a la edición correcta)
+- Dónde encontrar el libro
+  - Goodreads
+  - Editorial
+  - Librería o marketplace
 - Índice de textos: Poemas, Ensayos, Relatos
-- Referencia editorial o prensa
-- Descargas: PDF, EPUB. Enlace a editorial (solo si aplica)
+- Prensa y referencias
+  - Enlaces a medios, revistas o blogs externos
+  - Nunca materiales propios del sitio
 - Pie
+
+Regla: una obra puede tener varias ediciones dentro de la misma ficha. Las ediciones no crean una nueva pantalla ni una nueva URL.
 
 ---
 
@@ -206,10 +219,13 @@ Estructura común: **Cabecera → Contenido editorial → Pie**
 | Página | Contenido |
 |--------|-----------|
 | **Sobre el autor** | Cabecera, Breadcrumb, Contenido editorial (Foto, Bio corta, Bio larga, Enlaces a libros), Pie |
+| **Servicios editoriales** | Cabecera, Breadcrumb, Introducción breve, Lista de servicios, Para quién está dirigido, Trayectoria, Llamada a Contacto, Pie |
 | **Correspondencia** | Texto editorial, Campo de correo, Botón “Recibir nuevos textos” |
 | **Contacto** | Texto breve, Formulario |
-| **Prensa** | Lista de piezas: Medio, Año, Enlace |
+| **Prensa** | Lista de piezas: Medio, Año, Enlace externo o estado archivado |
 | **Derechos** | Texto legal y permisos |
+
+Regla para `Servicios editoriales`: no mostrar tarifas ni paquetes. La única salida comercial es “Solicitar información” o “Contactar”.
 
 ---
 

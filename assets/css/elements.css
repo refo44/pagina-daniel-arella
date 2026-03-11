@@ -116,19 +116,20 @@ hr {
 
 /* Lucide Icons — 19-assets-strategy */
 .icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.2rem;
+  height: 1.2rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
+  flex-shrink: 0;
 }
 
 /* Iconos decorativos — acentos visuales, uso moderado */
 .icon-large {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
@@ -138,8 +139,8 @@ hr {
 }
 
 .icon-decorative {
-  width: 3rem;
-  height: 3rem;
+  width: 5rem;
+  height: 5rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
@@ -149,8 +150,8 @@ hr {
 }
 
 .icon-bg {
-  width: 10rem;
-  height: 10rem;
+  width: 20rem;
+  height: 20rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
@@ -162,8 +163,8 @@ hr {
 }
 
 .icon-quote {
-  width: 2rem;
-  height: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
   stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;

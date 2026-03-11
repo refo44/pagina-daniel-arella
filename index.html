@@ -12,39 +12,70 @@
 </head>
 <body data-nav="home" data-site-prefix="pagina-daniel-arella">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="parts/header.html"></div>
+  <header class="site-header">
+  <div class="o-container site-header__inner">
+    <a class="site-header__brand" data-route="" href="">Daniel Arella</a>
+    <button
+      class="site-header__toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-navigation"
+      aria-label="Abrir menú de navegación"
+      data-menu-toggle
+    >
+      Menú
+    </button>
+    <nav class="site-header__nav" id="site-navigation" aria-label="Principal" data-menu-panel >
+      <ul class="site-header__list">
+        <li><a class="site-header__link" data-nav-item="home" data-route="" href="">Inicio</a></li>
+        <li><a class="site-header__link" data-nav-item="archivo" data-route="archivo/" href="archivo/">Archivo</a></li>
+        <li><a class="site-header__link" data-nav-item="autor" data-route="sobre-el-autor/" href="sobre-el-autor/">Sobre el autor</a></li>
+        <li><a class="site-header__link" data-nav-item="talleres" data-route="talleres/" href="talleres/">Talleres</a></li>
+        <li><a class="site-header__link" data-nav-item="contacto" data-route="contacto/" href="contacto/">Contacto</a></li>
+      </ul>
+      <ul class="site-header__list site-header__list--sub">
+        <li><a class="site-header__link" data-nav-item="blog" data-route="blog/" href="blog/">Blog</a></li>
+        <li><a class="site-header__link" data-nav-item="eventos" data-route="eventos/" href="eventos/">Eventos</a></li>
+        <li><a class="site-header__link" data-nav-item="galeria" data-route="galeria/" href="galeria/">Galería</a></li>
+        <li><a class="site-header__link" data-nav-item="multimedia" data-route="multimedia/" href="multimedia/">Videos y audios</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <main id="main">
-    <section class="hero-home">
+    <section class="hero-home section-decoration">
+      <svg class="icon-bg" aria-hidden="true">
+        <use href="assets/icons/feather.svg#icon"></use>
+      </svg>
       <div class="o-container hero-home__inner">
-        <div class="hero-home__main o-stack">
-          <figure class="hero-home__portrait">
-            <img src="assets/images/daniel-arella-12.jpg" alt="Retrato de Daniel Arella, poeta, ensayista y narrador." width="540" height="675" fetchpriority="high">
-          </figure>
-          <div class="o-stack">
-            <p class="hero-home__eyebrow">Obra</p>
-            <h1>Daniel Arella: poesía, ensayo, narrativa y edición.</h1>
-            <p class="hero-home__lede">Poeta, ensayista, narrador y editor. Licenciado en Letras, magíster en Filosofía y autor de libros de poesía, antologías y trabajo crítico en torno a la literatura latinoamericana.</p>
-            <div class="button-row">
-              <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
-              <a class="button-link" data-route="archivo/" href="archivo/">Explorar archivo</a>
-            </div>
+        <div class="hero-home__main">
+          <p class="hero-home__eyebrow">Biblioteca de autor</p>
+          <h1>Daniel Arella</h1>
+          <p class="hero-home__lede">Poesía, ensayo, narrativa y edición crítica en torno a la literatura latinoamericana.</p>
+          <div class="button-row">
+            <a class="button" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons/book-open.svg#icon"></use>
+              </svg>
+              Abrir el libro
+            </a>
+            <a class="button-link" href="archivo/">
+              <svg class="icon" aria-hidden="true">
+                <use href="assets/icons/archive.svg#icon"></use>
+              </svg>
+              Explorar archivo
+            </a>
           </div>
         </div>
 
-        <aside class="hero-home__aside o-stack">
-          <figure class="hero-home__book-cover">
-            <a href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" aria-hidden="true">
-              <img src="assets/images/relatos-pioneros-ciencia-ficcion-latinoamericana-cover.jpg" alt="Portada del libro Relatos pioneros de la ciencia ficción latinoamericana." width="399" height="622" loading="lazy">
-            </a>
-          </figure>
-          <div>
-            <p class="content-kicker">Libro destacado</p>
-            <h2>Relatos pioneros de la ciencia ficción latinoamericana</h2>
-          </div>
-          <p class="u-max-readable">Antología seleccionada y prologada por Daniel Arella, con edición impresa, portada, materiales de presentación y PDF real ya integrados en el sitio.</p>
-          <p class="status-note">La plataforma reúne una selección pública mínima y verificada de libros, poemas, prensa y referencias visuales.</p>
-        </aside>
+        <figure class="hero-home__portrait">
+          <img src="assets/images/daniel-arella-12.jpg" alt="Retrato de Daniel Arella, poeta, ensayista y narrador." width="540" height="675" fetchpriority="high">
+        </figure>
+
+        <figure class="hero-home__illustration">
+          <img src="assets/illustrations/reading.svg" alt="" loading="lazy">
+        </figure>
       </div>
     </section>
 
@@ -58,7 +89,12 @@
       <div class="o-container">
         <div class="section-heading">
           <p class="section-heading__eyebrow">Selección editorial</p>
-          <h2>Lecturas abiertas</h2>
+          <h2 class="section-heading__title">
+            <svg class="icon-large" aria-hidden="true">
+              <use href="assets/icons/book.svg#icon"></use>
+            </svg>
+            Lecturas abiertas
+          </h2>
         </div>
 
         <div class="card-grid card-grid--compact">
@@ -112,7 +148,12 @@
         <div class="o-stack">
           <div class="section-heading">
             <p class="section-heading__eyebrow">Archivo</p>
-            <h2>La obra como biblioteca</h2>
+            <h2 class="section-heading__title">
+              <svg class="icon-large" aria-hidden="true">
+                <use href="assets/icons/archive.svg#icon"></use>
+              </svg>
+              La obra como biblioteca
+            </h2>
           </div>
           <p class="u-max-readable">El archivo reúne libros de poesía, antologías, poemas, páginas de prensa y recorridos temáticos construidos a partir de la biografía, CV, portadas, fotografías y PDFs reales del autor.</p>
           <div class="button-row">
@@ -144,19 +185,24 @@
     <section class="section-panel section-panel--surface">
       <div class="o-container">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Correspondencia</p>
-          <h2>Recibir nuevos textos</h2>
+          <p class="section-heading__eyebrow">Lista de correos</p>
+          <h2 class="section-heading__title">
+            <svg class="icon-large" aria-hidden="true">
+              <use href="assets/icons/mail.svg#icon"></use>
+            </svg>
+            Suscríbete
+          </h2>
         </div>
         <div class="form-panel">
-          <p class="form-note">Una carta breve cada vez que una nueva pieza entre en circulación o cuando un libro abra una nueva etapa.</p>
-          <form class="form-grid" data-static-form data-success-message="Listo. A partir de ahora recibirás nuevos textos.">
+          <p class="form-note">Recibe novedades y nuevos textos por correo.</p>
+          <form class="form-grid" data-static-form data-success-message="Listo. Ya estás en la lista.">
             <div class="form-field">
               <label for="home-email">Tu correo</label>
               <input id="home-email" name="email" type="email" autocomplete="email" required placeholder="Tu correo">
             </div>
             <div class="button-row">
-              <button class="button" type="submit">Recibir nuevos textos</button>
-              <a class="button-link" data-route="correspondencia/" href="correspondencia/">Abrir correspondencia</a>
+              <button class="button" type="submit">Suscribirme</button>
+              <a class="button-link" data-route="correspondencia/" href="correspondencia/">Abrir suscripción</a>
             </div>
           </form>
           <p class="form-status" data-form-status aria-live="polite"></p>
@@ -165,6 +211,20 @@
     </section>
   </main>
 
-  <div data-include="parts/footer.html"></div>
+  <footer class="site-footer">
+  <div class="o-container site-footer__inner">
+    <ul class="site-footer__nav">
+      <li><a href="prensa/">Prensa</a></li>
+      <li><a href="blog/">Blog</a></li>
+      <li><a href="eventos/">Eventos</a></li>
+      <li><a href="galeria/">Galería</a></li>
+      <li><a href="multimedia/">Videos y audios</a></li>
+      <li><a href="derechos/">Derechos y permisos</a></li>
+      <li><a href="contacto/">Contacto</a></li>
+      <li><a href="correspondencia/">Correspondencia</a></li>
+    </ul>
+    <p class="site-footer__credit">Sitio estático editorial preparado para migración directa a WordPress.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -4,20 +4,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prensa | Daniel Arella</title>
-  <meta name="description" content="Referencias de prensa y dossier editorial de Daniel Arella.">
+  <meta name="description" content="Noticias, artículos y referencias editoriales publicadas en sitios externos sobre Daniel Arella y su obra.">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../assets/favicon/site.webmanifest">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/main.js" defer></script>
 </head>
-<body>
+<body data-nav="prensa" data-site-prefix="pagina-daniel-arella">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="../parts/header.html"></div>
+  <header class="site-header">
+  <div class="o-container site-header__inner">
+    <a class="site-header__brand" href="../">Daniel Arella</a>
+    <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Abrir menú de navegación" data-menu-toggle>Menú</button>
+    <nav class="site-header__nav" id="site-navigation" aria-label="Principal" data-menu-panel>
+      <ul class="site-header__list">
+        <li><a class="site-header__link" data-nav-item="home" href="../">Inicio</a></li>
+        <li><a class="site-header__link" data-nav-item="archivo" href="../archivo/">Archivo</a></li>
+        <li><a class="site-header__link" data-nav-item="autor" href="../sobre-el-autor/">Sobre el autor</a></li>
+        <li><a class="site-header__link" data-nav-item="talleres" href="../talleres/">Talleres</a></li>
+        <li><a class="site-header__link" data-nav-item="contacto" href="../contacto/">Contacto</a></li>
+      </ul>
+      <ul class="site-header__list site-header__list--sub">
+        <li><a class="site-header__link" data-nav-item="blog" href="../blog/">Blog</a></li>
+        <li><a class="site-header__link" data-nav-item="eventos" href="../eventos/">Eventos</a></li>
+        <li><a class="site-header__link" data-nav-item="galeria" href="../galeria/">Galería</a></li>
+        <li><a class="site-header__link" data-nav-item="multimedia" href="../multimedia/">Videos y audios</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
+        <li class="breadcrumbs__item"><a data-route="" href="../">Inicio</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">Prensa</span></li>
       </ol>
     </div>
@@ -27,87 +47,54 @@
     <div class="o-container o-stack">
       <div class="section-heading">
         <p class="section-heading__eyebrow">Prensa</p>
-        <h1>Prensa y referencias</h1>
+        <h1>Prensa</h1>
       </div>
 
       <div class="card-grid card-grid--archive">
         <article class="card">
-          <img class="card__cover" src="../assets/images/press-02.jpeg" alt="Cartel del Festival Internacional de Poesía de Quito con Daniel Arella como invitado internacional." width="1823" height="1823" loading="lazy">
-          <p class="card__meta">Kaníbal · 2018</p>
-          <h2 class="card__title">Kaníbal · Festival Internacional de Poesía de Quito</h2>
-          <p class="card__excerpt">Cartel de invitado internacional con retrato, nota biográfica y fragmento poético.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/press-23.jpeg" alt="Cartel de presentación de Relatos pioneros de la ciencia ficción latinoamericana en la FILBo." width="1081" height="1351" loading="lazy">
-          <p class="card__meta">FILBo · 2020</p>
-          <h2 class="card__title">FILBo · Relatos pioneros</h2>
-          <p class="card__excerpt">Presentación del libro en la Feria del Libro de Bogotá.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/press-33.jpeg" alt="Cartel del evento Poesía Sci-Fi con Daniel Arella." width="1280" height="720" loading="lazy">
-          <p class="card__meta">Evento · 2024</p>
-          <h2 class="card__title">Poesía Sci-Fi</h2>
-          <p class="card__excerpt">Cartel de lectura y conversación literaria con Daniel Arella.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/press-39.jpeg" alt="Diploma de mención honrosa para Daniel Arella por el Premio de Ensayo sobre la obra de Ida Gramcko." width="2048" height="1448" loading="lazy">
-          <p class="card__meta">LP5 Editora · 2024</p>
-          <h2 class="card__title">Mención honrosa · Premio Ida Gramcko</h2>
-          <p class="card__excerpt">Diploma por el ensayo “Desde el inframundo del lenguaje”.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/daniel-arella-02.jpg" alt="Primer plano de Daniel Arella con gafas negras y bufanda oscura." width="1536" height="2048" loading="lazy">
-          <p class="card__meta">Retrato de prensa</p>
-          <h2 class="card__title">Foto de autor</h2>
-          <p class="card__excerpt">Retrato cercano de Daniel Arella con gafas y bufanda.</p>
+          <p class="card__meta">Bordes</p>
+          <h2 class="card__title">Bordes: Revista de Estudios Culturales</h2>
+          <p class="card__excerpt">Referencia editorial externa sobre <em>Relatos pioneros de la ciencia ficción latinoamericana</em>.</p>
           <div class="card__actions">
-            <a class="button-link" href="../assets/images/daniel-arella-02.jpg" download>Descargar imagen</a>
-            <a class="button-link" data-route="contacto/" href="contacto/">Solicitar información</a>
+            <a class="button-link" href="http://erevistas.saber.ula.ve/index.php/bordes/article/view/8026/7976" target="_blank" rel="noopener noreferrer">Abrir sitio</a>
           </div>
         </article>
-      </div>
 
-      <div class="section-heading">
-        <p class="section-heading__eyebrow">Referencias</p>
-        <h2>Referencias visuales</h2>
-      </div>
-
-      <div class="card-grid card-grid--archive">
         <article class="card">
-          <img class="card__cover" src="../assets/images/arthur-rimbaud.jpg" alt="Dibujo o ilustración de Arthur Rimbaud. Reproducción fotográfica sobre papel." width="640" height="865" loading="lazy">
-          <p class="card__meta">Arthur Rimbaud</p>
-          <h3 class="card__title">Dibujo de Arthur Rimbaud</h3>
-          <p class="card__excerpt">Referencia visual procedente del archivo `illustrations/`.</p>
+          <p class="card__meta">Revista Cosmocápsula</p>
+          <h2 class="card__title">Nota sobre Relatos pioneros</h2>
+          <p class="card__excerpt">Referencia externa verificada en revista y blog literario.</p>
+          <div class="card__actions">
+            <a class="button-link" href="https://cosmocapsula.wordpress.com/2015/11/10/relatos-pioneros-de-la-ciencia-ficcion-latinoamericana/" target="_blank" rel="noopener noreferrer">Abrir sitio</a>
+          </div>
         </article>
 
         <article class="card">
-          <img class="card__cover" src="../assets/images/franz-kafka-1.jpg" alt="Dibujo o ilustración de Franz Kafka. Reproducción fotográfica sobre papel." width="640" height="865" loading="lazy">
-          <p class="card__meta">Franz Kafka</p>
-          <h3 class="card__title">Dibujo de Franz Kafka</h3>
-          <p class="card__excerpt">Referencia visual procedente del archivo `illustrations/`.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/lewis-carroll-1.jpg" alt="Dibujo o ilustración de Lewis Carroll. Reproducción fotográfica sobre papel." width="640" height="865" loading="lazy">
-          <p class="card__meta">Lewis Carroll</p>
-          <h3 class="card__title">Dibujo de Lewis Carroll</h3>
-          <p class="card__excerpt">Referencia visual procedente del archivo `illustrations/`.</p>
-        </article>
-
-        <article class="card">
-          <img class="card__cover" src="../assets/images/man-ray.jpg" alt="Dibujo o ilustración de Man Ray. Reproducción fotográfica sobre papel." width="640" height="865" loading="lazy">
-          <p class="card__meta">Man Ray</p>
-          <h3 class="card__title">Dibujo de Man Ray</h3>
-          <p class="card__excerpt">Referencia visual procedente del archivo `illustrations/`.</p>
+          <p class="card__meta">Alba Ciudad 96.3 FM · 2016</p>
+          <h2 class="card__title">Filven Mérida 2016 proyecta obras literarias de escritores nacionales e internacionales</h2>
+          <p class="card__excerpt">Noticia real de archivo que menciona a Daniel Arella dentro del recital poético de cierre de la Filven Mérida 2016.</p>
+          <div class="card__actions">
+            <a class="button-link" href="https://albaciudad.org/2016/05/filven-merida-2016-proyecta-obras-literarias-de-escritores-nacionales-e-internacionales/" target="_blank" rel="noopener noreferrer">Abrir sitio</a>
+          </div>
         </article>
       </div>
     </div>
   </main>
 
-  <div data-include="../parts/footer.html"></div>
+  <footer class="site-footer">
+  <div class="o-container site-footer__inner">
+    <ul class="site-footer__nav">
+      <li><a href="../prensa/">Prensa</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../eventos/">Eventos</a></li>
+      <li><a href="../galeria/">Galería</a></li>
+      <li><a href="../multimedia/">Videos y audios</a></li>
+      <li><a href="../derechos/">Derechos y permisos</a></li>
+      <li><a href="../contacto/">Contacto</a></li>
+      <li><a href="../correspondencia/">Correspondencia</a></li>
+    </ul>
+    <p class="site-footer__credit">Sitio estático editorial preparado para migración directa a WordPress.</p>
+  </div>
+</footer>
 </body>
 </html>

@@ -17,6 +17,7 @@ Es el índice de lo que se wireframea y se implementa.
 - Sobre el autor  
 - Correspondencia  
 - Contacto  
+- Servicios editoriales  
 - Prensa  
 - Derechos y uso de la obra  
 
@@ -71,4 +72,4 @@ Definidas en `01-plataforma-autor-plan`. Estructura de listado y ficha se detall
 
 ---
 
-**Versión:** 1.3
+**Versión:** 1.4

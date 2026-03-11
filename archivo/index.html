@@ -12,12 +12,32 @@
 </head>
 <body data-site-prefix="pagina-daniel-arella" data-nav="archivo">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
-  <div data-include="../parts/header.html"></div>
+  <header class="site-header">
+  <div class="o-container site-header__inner">
+    <a class="site-header__brand" href="../">Daniel Arella</a>
+    <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Abrir menú de navegación" data-menu-toggle>Menú</button>
+    <nav class="site-header__nav" id="site-navigation" aria-label="Principal" data-menu-panel>
+      <ul class="site-header__list">
+        <li><a class="site-header__link" data-nav-item="home" href="../">Inicio</a></li>
+        <li><a class="site-header__link" data-nav-item="archivo" href="../archivo/">Archivo</a></li>
+        <li><a class="site-header__link" data-nav-item="autor" href="../sobre-el-autor/">Sobre el autor</a></li>
+        <li><a class="site-header__link" data-nav-item="talleres" href="../talleres/">Talleres</a></li>
+        <li><a class="site-header__link" data-nav-item="contacto" href="../contacto/">Contacto</a></li>
+      </ul>
+      <ul class="site-header__list site-header__list--sub">
+        <li><a class="site-header__link" data-nav-item="blog" href="../blog/">Blog</a></li>
+        <li><a class="site-header__link" data-nav-item="eventos" href="../eventos/">Eventos</a></li>
+        <li><a class="site-header__link" data-nav-item="galeria" href="../galeria/">Galería</a></li>
+        <li><a class="site-header__link" data-nav-item="multimedia" href="../multimedia/">Videos y audios</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
+        <li class="breadcrumbs__item"><a data-route="" href="../">Inicio</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">Archivo</span></li>
       </ol>
     </div>
@@ -45,11 +65,11 @@
           <div>
             <p class="archive-filter__label">Filtros</p>
             <div class="archive-filter">
-              <a class="archive-filter__chip" data-route="poem/" href="poem/">Poemas</a>
-              <a class="archive-filter__chip" data-route="book/" href="book/">Libros</a>
-              <a class="archive-filter__chip" data-route="prensa/" href="prensa/">Prensa</a>
-              <a class="archive-filter__chip" data-route="tema/memoria/" href="tema/memoria/">Tema</a>
-              <a class="archive-filter__chip" data-route="periodo/2019-2024/" href="periodo/2019-2024/">Periodo</a>
+              <a class="archive-filter__chip" data-route="poem/" href="../poem/">Poemas</a>
+              <a class="archive-filter__chip" data-route="book/" href="../book/">Libros</a>
+              <a class="archive-filter__chip" data-route="prensa/" href="../prensa/">Prensa</a>
+              <a class="archive-filter__chip" data-route="tema/memoria/" href="../tema/memoria/">Tema</a>
+              <a class="archive-filter__chip" data-route="periodo/2019-2024/" href="../periodo/2019-2024/">Periodo</a>
             </div>
           </div>
           <p class="status-note">Puedes buscar por título, tema o periodo.</p>
@@ -64,7 +84,7 @@
           <h2 class="archive-row__title">Relatos pioneros de la ciencia ficción latinoamericana</h2>
           <p>Selección y prólogo de Daniel Arella, con materiales de presentación y referencia editorial.</p>
           <div class="card__actions">
-            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
+            <a class="button" data-route="book/relatos-pioneros-ciencia-ficcion-latinoamericana.html" href="../book/relatos-pioneros-ciencia-ficcion-latinoamericana.html">Abrir el libro</a>
           </div>
         </article>
 
@@ -73,7 +93,7 @@
           <h2 class="archive-row__title">Rostro de nadie</h2>
           <p>Poema disponible en la selección de Archivo Venezuela 2024, integrado al sitio desde la fuente documental real.</p>
           <div class="card__actions">
-            <a class="button-link" data-route="poem/rostro-de-nadie.html" href="poem/rostro-de-nadie.html">Leer el poema</a>
+            <a class="button-link" data-route="poem/rostro-de-nadie.html" href="../poem/rostro-de-nadie.html">Leer el poema</a>
           </div>
         </article>
 
@@ -82,7 +102,7 @@
           <h2 class="archive-row__title">Biografía larga y CV</h2>
           <p>Información real de trayectoria, formación, premios, publicaciones y talleres del autor.</p>
           <div class="card__actions">
-            <a class="button-link" data-route="sobre-el-autor/" href="sobre-el-autor/">Leer perfil</a>
+            <a class="button-link" data-route="sobre-el-autor/" href="../sobre-el-autor/">Leer perfil</a>
           </div>
         </article>
 
@@ -91,13 +111,27 @@
           <h2 class="archive-row__title">Carteles, premios, retratos y referencias visuales</h2>
           <p>Selección pública mínima de materiales gráficos y referencias visuales ya curadas desde `press-events/` e `illustrations/`.</p>
           <div class="card__actions">
-            <a class="button-link" data-route="prensa/" href="prensa/">Abrir prensa</a>
+            <a class="button-link" data-route="prensa/" href="../prensa/">Abrir prensa</a>
           </div>
         </article>
       </div>
     </section>
   </main>
 
-  <div data-include="../parts/footer.html"></div>
+  <footer class="site-footer">
+  <div class="o-container site-footer__inner">
+    <ul class="site-footer__nav">
+      <li><a href="../prensa/">Prensa</a></li>
+      <li><a href="../blog/">Blog</a></li>
+      <li><a href="../eventos/">Eventos</a></li>
+      <li><a href="../galeria/">Galería</a></li>
+      <li><a href="../multimedia/">Videos y audios</a></li>
+      <li><a href="../derechos/">Derechos y permisos</a></li>
+      <li><a href="../contacto/">Contacto</a></li>
+      <li><a href="../correspondencia/">Correspondencia</a></li>
+    </ul>
+    <p class="site-footer__credit">Sitio estático editorial preparado para migración directa a WordPress.</p>
+  </div>
+</footer>
 </body>
 </html>

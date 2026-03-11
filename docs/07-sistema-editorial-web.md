@@ -135,7 +135,7 @@ La biografía es una entrada editorial a la obra, no un currículum.
 
 ## 6. Prensa y referencias
 
-La sección Prensa muestra dónde aparece la obra.
+La sección Prensa muestra solo dónde aparece la obra en fuentes externas.
 
 **Formato:**
 
@@ -144,9 +144,31 @@ La sección Prensa muestra dónde aparece la obra.
 - Año
 - Enlace
 
+Solo entran aquí:
+
+- noticias
+- artículos
+- reseñas
+- menciones
+- referencias editoriales publicadas fuera del sitio
+
+No entran aquí:
+
+- posts del blog propio
+- páginas del sitio
+- retratos, carteles, diplomas o archivos internos
+- fichas de circulación del libro dentro del propio ecosistema del sitio
+
 No se reproducen artículos completos salvo permiso explícito.
 
 No añadir comentarios editoriales a las referencias.
+
+Si un enlace externo ya no existe:
+
+- mantener la referencia solo si puede verificarse
+- marcarla como referencia archivada o como enlace original no disponible
+- no inventar extractos ni reconstruir el contenido
+- no dejar enlaces rotos visibles como si siguieran activos
 
 ---
 

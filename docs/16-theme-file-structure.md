@@ -1,7 +1,7 @@
 # Daniel Arella — Theme File Structure
 
 **Estructura de archivos del theme WordPress**  
-**Versión 1.3**
+**Versión 1.5**
 
 Este documento define la arquitectura definitiva de archivos del theme: qué plantillas existen, qué URLs sirven y qué bloques se reutilizan. Es el punto donde la arquitectura editorial se vuelve código sin que WordPress imponga un modelo de blog.
 
@@ -62,6 +62,7 @@ Pantallas que existen por función, no por tipo de contenido.
 | Sobre el autor | `page-sobre-el-autor.php` |
 | Correspondencia | `page-correspondencia.php` |
 | Contacto | `page-contacto.php` |
+| Servicios editoriales | `page-servicios-editoriales.php` |
 | Prensa | `page-prensa.php` |
 | Derechos | `page-derechos.php` |
 | Biblioteca de audio | `page-biblioteca-audio.php` |
@@ -111,10 +112,13 @@ Componentes estructurales que se comparten entre plantillas.
 | `parts/breadcrumb.php` | Migas de navegación |
 | `parts/poem-card.php` | Tarjeta poema |
 | `parts/book-card.php` | Tarjeta libro |
+| `parts/book-edition-card.php` | Tarjeta de edición dentro de single-book |
 | `parts/essay-card.php` | Tarjeta ensayo |
 | `parts/story-card.php` | Tarjeta relato |
 | `parts/workshop-card.php` | Tarjeta taller |
 | `parts/article-card.php` | Tarjeta artículo |
+| `parts/quote-block.php` | Cita o fragmento editorial reutilizable |
+| `parts/goodreads-link.php` | Enlace editorial externo opcional |
 
 Todo listado y todo home se arma con estas piezas.
 
@@ -148,6 +152,7 @@ theme-daniel-arella/
 ├── page-sobre-el-autor.php
 ├── page-correspondencia.php
 ├── page-contacto.php
+├── page-servicios-editoriales.php
 ├── page-prensa.php
 ├── page-derechos.php
 ├── page-biblioteca-audio.php
@@ -163,13 +168,16 @@ theme-daniel-arella/
     ├── breadcrumb.php
     ├── poem-card.php
     ├── book-card.php
+    ├── book-edition-card.php
     ├── essay-card.php
     ├── story-card.php
     ├── workshop-card.php
-    └── article-card.php
+    ├── article-card.php
+    ├── quote-block.php
+    └── goodreads-link.php
 ```
 
-`taxonomy-form.php` solo se incluye si se activa la taxonomía form. `parts/article-card.php` también es opcional (se usa solo para el CPT post). Nada más. Nada menos.
+`taxonomy-form.php` solo se incluye si se activa la taxonomía form. `parts/article-card.php` también es opcional (se usa solo para el CPT post). `parts/book-edition-card.php` existe para imprimir varias ediciones dentro de `single-book.php` sin duplicar markup.
 
 `index.php` actúa como fallback de WordPress y no se usa para rutas editoriales. `page.php` funciona como fallback para páginas que no tengan plantilla editorial específica. `search.php` existe como plantilla de respaldo para búsquedas del sistema, aunque la búsqueda editorial se integra dentro del Archivo.
 
@@ -188,6 +196,7 @@ Todas las URLs usan trailing slash final.
 | `/es/sobre-el-autor/` | `page-sobre-el-autor.php` |
 | `/es/correspondencia/` | `page-correspondencia.php` |
 | `/es/contacto/` | `page-contacto.php` |
+| `/es/servicios-editoriales/` | `page-servicios-editoriales.php` |
 | `/es/poem/` | `archive-poem.php` |
 | `/es/poem/{slug}/` | `single-poem.php` |
 | `/es/book/` | `archive-book.php` |
@@ -210,6 +219,8 @@ Todas las URLs usan trailing slash final.
 | Cualquier otra | `404.php` |
 
 Las rutas `/en/` usan exactamente las mismas plantillas. Los slugs públicos cambian cuando corresponde: `/en/about/`, `/en/contact/`, `/en/archive/`, `/en/workshops/`, `/en/audio-library/`, `/en/video-library/`, etc. Las páginas fijas traducidas conservan la misma relación plantilla → ruta con sus slugs equivalentes.
+
+Las ediciones de un libro no tienen plantilla ni URL propias. Se resuelven dentro de `single-book.php` mediante campos repetibles y `parts/book-edition-card.php`.
 
 ---
 

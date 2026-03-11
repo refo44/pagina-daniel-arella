@@ -1,6 +1,6 @@
 # Daniel Arella — Plan Maestro de la Plataforma de Autor
 
-**Versión 1.7**
+**Versión 1.8**
 
 La identidad corporativa definida en `02-identidad-corporativa` es una capa visual y editorial ya cerrada.
 
@@ -72,12 +72,13 @@ Un sitio de autor serio necesita:
 | Ensayo | Pensamiento y crítica |
 | Narrativa | Relatos y cuentos |
 | Talleres | Actividad pedagógica |
+| Servicios editoriales | Presentación profesional de edición, corrección y lectura crítica |
 | Archivo | Biblioteca completa |
 | Biblioteca de audio | Poemas, temas musicales, audiolibros, podcast |
 | Videoteca | Música, poemas leídos, videopoemas, rap, conferencias, clases |
 | Sobre el autor | Biografía intelectual |
 | Publicaciones | Libros y, si aplica, PDFs |
-| Contacto | Prensa, editores, lectores |
+| Contacto | Prensa, editores, lectores, servicios |
 
 **Audio y vídeo:** El contenido de Biblioteca de audio y Videoteca no se sube al servidor del sitio. Se aloja en la nube o en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo enlaza o inserta reproductores (embed); no almacena archivos de audio ni vídeo.
 
@@ -177,6 +178,7 @@ Sin tocar código, Daniel puede:
 - Traducir textos
 - Cambiar de etapa
 - Activar talleres
+- Ofrecer servicios editoriales mediante contacto
 - Reordenar su archivo
 - Cambiar el foco del home
 
@@ -190,12 +192,14 @@ Este sistema sí permite:
 
 - Vender libros
 - Vender talleres
+- Ofrecer servicios editoriales
 - Recibir suscriptores
 
 Pero nunca como marketing. Se expresa como:
 
 - “Adquirir el libro”
 - “Inscribirse al taller”
+- “Solicitar información”
 - “Recibir textos”
 
 La obra es el centro. La transacción es un gesto editorial.

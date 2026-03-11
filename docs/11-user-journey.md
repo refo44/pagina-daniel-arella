@@ -1,6 +1,6 @@
 # Daniel Arella — User Journey
 
-**Versión 1.4**
+**Versión 1.5**
 
 Este documento describe cómo se mueve un lector real dentro del territorio editorial. No es un diagrama técnico ni un flujo de conversión. Es una serie de recorridos de lectura y encuentro.
 
@@ -123,7 +123,24 @@ Los talleres se leen como una extensión de la obra, no como un producto.
 
 ---
 
-## 6.1 Lector explora audio y video (cuando exista)
+## 6.1 Lector busca servicios editoriales
+
+**Objetivo:** entender qué tipo de acompañamiento editorial ofrece el autor y abrir un canal de contacto directo.
+
+**Recorrido:**
+
+- Sobre el autor, Home o Footer
+- → Servicios editoriales
+- → Lee introducción, alcance y tipos de servicio
+- → “Solicitar información” o “Contactar”
+- → Contacto
+- → Envía la consulta
+
+La salida nunca es una tabla de precios ni un checkout. El recorrido conserva tono editorial y deriva a una conversación.
+
+---
+
+## 6.2 Lector explora audio y video (cuando exista)
 
 **Objetivo:** escuchar o ver la obra cuando estén disponibles Biblioteca de audio y Videoteca.
 

@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura de información y flujo de navegación
 
 **Mapa de navegación y enlaces vivos**  
-**Versión 2.2**
+**Versión 2.3**
 
 Este documento define qué enlaces salen de cada pantalla, a dónde van, en qué orden y cuáles no deben existir. No describe diseño ni layout. Es la capa que conecta el sistema editorial con el código y con la experiencia real del lector.
 
@@ -42,13 +42,13 @@ Estructura consolidada (5 ítems máximo):
 | Archivo | Archivo general (poemas, ensayos, relatos, libros, artículos) |
 | Sobre el autor | Sobre el autor |
 | Talleres | Listado Talleres |
-| Correspondencia | Correspondencia |
+| Contacto | Contacto |
 
 **Opcional (plan maestro):** Biblioteca de audio, Videoteca — accesibles desde Archivo o como ítem de cabecera según decisión de menú (máx. 5 ítems en cabecera). Ver `01-plataforma-autor-plan`.
 
 **Opcional:** Selector de idioma como control auxiliar (icono), no como ítem principal.
 
-**En pie, no en cabecera:** Contacto, Prensa, Derechos. La cabecera prioriza orientación hacia la obra y el autor.
+**En pie, no en cabecera:** Servicios editoriales, Prensa, Derechos, Correspondencia. La cabecera prioriza orientación hacia la obra y el autor.
 
 No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros concretos.
 
@@ -56,12 +56,13 @@ No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros conc
 
 | Enlace | Destino |
 |--------|---------|
+| Servicios editoriales | Servicios editoriales |
 | Prensa | Prensa |
 | Derechos | Derechos |
 | Contacto | Contacto |
 | Correspondencia | Correspondencia |
 
-Orden fijo: Prensa → Derechos → Contacto → Correspondencia.  
+Orden fijo: Servicios editoriales → Prensa → Derechos → Contacto → Correspondencia.  
 No redes sociales ni enlaces externos salvo prensa.
 
 ---
@@ -76,6 +77,7 @@ No redes sociales ni enlaces externos salvo prensa.
 | Taller próximo | Single Taller | Primario |
 | “Explorar archivo” | Archivo | Secundario |
 | “Recibir nuevos textos” | Correspondencia | Secundario |
+| “Servicios editoriales” (si aparece) | Servicios editoriales | Secundario |
 
 **Nunca:** feeds cronológicos, carruseles, bloques de “lo más visto”, “más contenido”.
 
@@ -104,6 +106,8 @@ Breadcrumb no aplica.
 |--------|---------|------|
 | Cada texto del índice | Poema, Ensayo o Relato | Primario |
 | “Descargar PDF / EPUB” (si existe) | Descarga | Secundario |
+| Goodreads / editorial / librería / marketplace (si existe) | Sitio externo | Secundario |
+| “Presentación en prensa” o referencias externas | Medio externo o página Prensa | Secundario |
 | “Explorar archivo” | Archivo | Secundario |
 | Breadcrumb | Inicio → Archivo → Libros → Libro | Secundario |
 
@@ -209,12 +213,25 @@ Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El
 |--------|---------|------|
 | “Recibir nuevos textos” | Correspondencia | Primario |
 | “Contactar” | Contacto | Secundario |
+| “Servicios editoriales” | Servicios editoriales | Secundario |
 
 **Nunca:** listas de obras dentro del texto salvo mención editorial explícita.
 
 ---
 
-## 13. Correspondencia
+## 13. Servicios editoriales
+
+| Enlace | Destino | Tipo |
+|--------|---------|------|
+| “Solicitar información” | Contacto | Primario |
+| “Contactar” | Contacto | Primario |
+| “Sobre el autor” | Sobre el autor | Secundario |
+
+La página presenta servicios de edición, corrección y lectura crítica sin precios públicos. Nunca funciona como tienda, checkout ni tabla tarifaria.
+
+---
+
+## 14. Correspondencia
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -225,24 +242,37 @@ Una sola acción.
 
 ---
 
-## 14. Contacto
+## 15. Contacto
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | “Enviar” | Confirmación | Primario |
 | “Volver” | Home o Sobre el autor | Secundario |
 
+Contacto también recibe solicitudes de talleres, prensa y servicios editoriales. No requiere página intermedia adicional.
+
 ---
 
-## 15. Prensa
+## 16. Prensa
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | Cada referencia | Medio externo (nueva pestaña) | Secundario |
 
+Prensa reúne solo publicaciones externas: artículos, noticias, menciones o referencias editoriales en sitios de terceros.
+
+Nunca incluir en Prensa:
+
+- posts del blog propio
+- páginas del sitio
+- retratos o carteles propios
+- fichas de circulación del libro (editorial, librería, marketplace)
+
+Si un enlace original ya no existe, la referencia puede mantenerse solo como archivada o como referencia sin enlace activo, siempre que sea verificable.
+
 ---
 
-## 16. Derechos
+## 17. Derechos
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
@@ -250,7 +280,7 @@ Una sola acción.
 
 ---
 
-## 17. Estados
+## 18. Estados
 
 ### Sin resultados
 

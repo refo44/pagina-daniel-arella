@@ -1,7 +1,7 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
 **Estructura de archivos del sitio previo a WordPress**  
-**Versión 1.3**
+**Versión 1.4**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
@@ -59,6 +59,8 @@ daniel-arella-static/
 ├── correspondencia/
 │   └── index.html
 ├── contacto/
+│   └── index.html
+├── servicios-editoriales/
 │   └── index.html
 ├── prensa/
 │   └── index.html
@@ -145,6 +147,7 @@ La carpeta `forma/` solo existe si se implementa la taxonomía form. No se permi
 | Sobre el autor | `/sobre-el-autor/index.html` | `page-sobre-el-autor.php` |
 | Correspondencia | `/correspondencia/index.html` | `page-correspondencia.php` |
 | Contacto | `/contacto/index.html` | `page-contacto.php` |
+| Servicios editoriales | `/servicios-editoriales/index.html` | `page-servicios-editoriales.php` |
 | Prensa | `/prensa/index.html` | `page-prensa.php` |
 | Derechos | `/derechos/index.html` | `page-derechos.php` |
 | Biblioteca de audio | `/biblioteca-audio/index.html` | `page-biblioteca-audio.php` |
@@ -251,6 +254,7 @@ La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, v
 | talleres/slug.html | single-workshop.php |
 | blog/index.html | home.php |
 | blog/slug.html | single.php |
+| servicios-editoriales/index.html | page-servicios-editoriales.php |
 | tema/{slug}/index.html | taxonomy-topic.php |
 | periodo/{slug}/index.html | taxonomy-period.php |
 | forma/{slug}/index.html | taxonomy-form.php |

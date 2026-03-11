@@ -103,26 +103,26 @@ Nunca se usan más de dos acciones principales en una misma pantalla.
 | 3 | Adquirir |
 | 4 | Contactar |
 
-**Ejemplos correctos:** “Leer el poema”, “Leer el ciclo completo”, “Recibir nuevos textos”, “Adquirir el libro”, “Contactar”
+**Ejemplos correctos:** “Leer el poema”, “Leer el ciclo completo”, “Suscribirme”, “Adquirir el libro”, “Contactar”
 
 **Incorrectos:** “Compra ya”, “Suscríbete ahora”, “Obtén acceso exclusivo”
 
 ---
 
-Los botones usan verbos en infinitivo. Ejemplo: Leer el poema, Recibir nuevos textos, Adquirir el libro.
+Los botones usan verbos claros y naturales. Ejemplo: Leer el poema, Suscribirme, Adquirir el libro.
 
 ---
 
 ## 6. El correo
 
-El email no es un newsletter. Es una correspondencia del autor.
+El email puede presentarse como lista de correos si eso evita solemnidad innecesaria y mejora la claridad.
 
-**Nombres preferidos:** Correspondencia, Carta  
-**Nombres posibles:** Cuaderno, Textos nuevos
+**Nombres preferidos:** Lista de correos, Correspondencia  
+**Nombres posibles:** Carta, Textos nuevos
 
-**Ejemplo de botón:** “Recibir nuevos textos”
+**Ejemplo de botón:** “Suscribirme”
 
-**Nunca:** “Suscribirse”, “Newsletter”
+**Evitar:** fórmulas grandilocuentes o promocionales como “Suscríbete ahora” o “Acceso exclusivo”.
 
 ---
 

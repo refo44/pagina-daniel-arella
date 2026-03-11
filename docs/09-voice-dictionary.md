@@ -138,7 +138,7 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | Leer poema | Leer el poema |
 | Leer libro | Abrir el libro |
 | Ver taller | Abrir taller |
-| Email | Recibir nuevos textos |
+| Email | Suscribirme |
 | Compra | Adquirir el libro |
 | Descarga | Descargar PDF o EPUB |
 | Archivo | Explorar archivo |
@@ -147,7 +147,7 @@ El sistema no tiene newsletters. Tiene correspondencia.
 | Envío | Enviar |
 | Cierre | Cerrar |
 
-**Nunca:** Ver más, Comprar ahora, Empieza aquí, Suscríbete, Descubre, Únete.
+**Nunca:** Ver más, Comprar ahora, Empieza aquí, Descubre, Únete.
 
 ---
 
