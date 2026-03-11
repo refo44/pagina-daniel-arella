@@ -1,11 +1,11 @@
 html {
-  background: var(--bg);
+  background: var(--page-bg);
   color: var(--text);
 }
 
 body {
   min-height: 100vh;
-  background: var(--bg);
+  background: var(--page-bg);
   color: var(--text);
   font-family: var(--font-body);
   font-size: 1.125rem;
@@ -96,7 +96,7 @@ select {
   padding: 0.85rem 1rem;
   border: 1px solid var(--border);
   border-radius: var(--radius-1);
-  background: var(--bg);
+  background: var(--content-bg);
   color: var(--text);
 }
 
