@@ -252,12 +252,45 @@ const bindMediaPagination = () => {
   });
 };
 
+const bindBackToTop = () => {
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const SCROLL_THRESHOLD = 400;
+
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "back-to-top";
+  button.setAttribute("aria-label", "Volver arriba");
+  button.innerHTML =
+    '<svg class="back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 15 6-6 6 6"/><path d="M12 21V9"/></svg>';
+
+  const updateVisibility = () => {
+    const show = window.scrollY > SCROLL_THRESHOLD;
+    button.classList.toggle("is-visible", show);
+  };
+
+  button.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: reducedMotion.matches ? "auto" : "smooth",
+    });
+    button.blur();
+  });
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateVisibility);
+  }, { passive: true });
+
+  document.body.appendChild(button);
+  updateVisibility();
+};
+
 const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
   bindCarousel();
   bindMediaPagination();
+  bindBackToTop();
 };
 
 window.addEventListener("DOMContentLoaded", () => {
