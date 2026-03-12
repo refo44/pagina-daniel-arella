@@ -51,8 +51,12 @@
     <section class="archive-intro">
       <div class="o-container">
         <p class="content-kicker">Archivo audiovisual</p>
-        <h1>Videos, audios y reels</h1>
-        <p class="u-max-readable">Poemas leídos, conferencias, piezas sonoras y piezas breves de video.</p>
+        <h1 class="archive-intro__title">
+          <svg class="archive-intro__icon icon-large" aria-hidden="true">
+            <use href="../assets/icons/video.svg#icon"></use>
+          </svg>
+          Videos, audios y reels
+        </h1>
         <nav class="media-nav" aria-label="Secciones de multimedia">
           <ul class="media-nav__list">
             <li><a class="media-nav__link" href="#videos">Videos</a></li>
@@ -60,186 +64,299 @@
             <li><a class="media-nav__link" href="#reels">Reels</a></li>
           </ul>
         </nav>
+        <p class="archive-intro__desc u-max-readable">Poemas leídos, conferencias, piezas sonoras y piezas breves de video.</p>
       </div>
     </section>
 
-    <section id="videos" class="section-panel">
-      <div class="o-container">
-        <div class="section-heading">
-          <p class="section-heading__eyebrow">Videoteca</p>
-          <h2>Videos</h2>
-        </div>
-        <div class="media-grid media-grid--video">
-          <article class="media-card media-card--video">
-            <div class="media-card__embed">
-              <iframe
-                src="https://www.youtube.com/embed/SS0S-qBW4tY"
-                title="Presentación de Relatos pioneros de la ciencia ficción latinoamericana — FILBo 2023"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                width="560"
-                height="315"
-              ></iframe>
-            </div>
-            <div class="media-card__body">
-              <p class="media-card__meta">FILBo 2023</p>
-              <h3 class="media-card__title">Presentación de «Relatos pioneros de la ciencia ficción latinoamericana»</h3>
-              <p class="media-card__excerpt">Presentación del libro en la Feria Internacional del Libro de Bogotá.</p>
-            </div>
-          </article>
-          <article class="media-card media-card--video">
-            <div class="media-card__embed">
-              <iframe
-                src="https://www.youtube.com/embed/xt0sSEPsGmc"
-                title="Encuentro con Daniel Arella"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                width="560"
-                height="315"
-              ></iframe>
-            </div>
-            <div class="media-card__body">
-              <p class="media-card__meta">Encuentro</p>
-              <h3 class="media-card__title">Encuentro con Daniel Arella</h3>
-              <p class="media-card__excerpt">Conversación y lectura con el autor.</p>
-            </div>
-          </article>
-          <article class="media-card media-card--video">
-            <div class="media-card__embed">
-              <iframe
-                src="https://www.youtube.com/embed/35KW3RwO_ac"
-                title="Ciencia Ficción y Fantasía en América Latina con el Lic Daniel Arella"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-                width="560"
-                height="315"
-              ></iframe>
-            </div>
-            <div class="media-card__body">
-              <p class="media-card__meta">Conferencia</p>
-              <h3 class="media-card__title">Ciencia Ficción y Fantasía en América Latina</h3>
-              <p class="media-card__excerpt">Conferencia con el Lic. Daniel Arella sobre ciencia ficción y fantasía en América Latina.</p>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+    <div class="multimedia-layout o-container">
+      <div class="multimedia-layout__main">
+        <section id="videos" class="section-panel">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Videoteca</p>
+            <h2>Videos</h2>
+          </div>
+          <div class="media-grid media-grid--video media-grid--paged" data-media-grid>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/SS0S-qBW4tY"
+                  title="Presentación de Relatos pioneros de la ciencia ficción latinoamericana — FILBo 2023"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">FILBo 2023</p>
+                <h3 class="media-card__title">Presentación de «Relatos pioneros de la ciencia ficción latinoamericana»</h3>
+                <p class="media-card__excerpt">Presentación del libro en la Feria Internacional del Libro de Bogotá.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/xt0sSEPsGmc"
+                  title="Encuentro con Daniel Arella"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Encuentro</p>
+                <h3 class="media-card__title">Encuentro con Daniel Arella</h3>
+                <p class="media-card__excerpt">Conversación y lectura con el autor.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/35KW3RwO_ac"
+                  title="Ciencia Ficción y Fantasía en América Latina con el Lic Daniel Arella"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Conferencia</p>
+                <h3 class="media-card__title">Ciencia Ficción y Fantasía en América Latina</h3>
+                <p class="media-card__excerpt">Conferencia con el Lic. Daniel Arella sobre ciencia ficción y fantasía en América Latina.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/SS0S-qBW4tY"
+                  title="Presentación FILBo 2023 (réplica)"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Videoteca</p>
+                <h3 class="media-card__title">Video ejemplo página 2</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/xt0sSEPsGmc"
+                  title="Encuentro (réplica)"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Videoteca</p>
+                <h3 class="media-card__title">Otro video ejemplo</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--video">
+              <div class="media-card__embed">
+                <iframe
+                  src="https://www.youtube.com/embed/35KW3RwO_ac"
+                  title="Conferencia (réplica)"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                  width="560"
+                  height="315"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Videoteca</p>
+                <h3 class="media-card__title">Tercer video página 2</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+          </div>
+          <nav class="media-pagination" aria-label="Paginación de videos" data-media-pagination data-per-page="4"></nav>
+        </section>
 
-    <section id="audios" class="section-panel section-panel--surface">
-      <div class="o-container">
-        <div class="section-heading">
-          <p class="section-heading__eyebrow">Biblioteca de audio</p>
-          <h2>Audios</h2>
-        </div>
-        <div class="media-grid media-grid--audio">
-          <article class="media-card media-card--audio">
-            <div class="media-card__embed">
-              <iframe
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="0"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
-                title="Poema leído — Daniel Arella"
-              ></iframe>
-            </div>
-            <div class="media-card__body">
-              <p class="media-card__meta">Poema leído</p>
-              <h3 class="media-card__title">Obra sonora en preparación</h3>
-              <p class="media-card__excerpt">La biblioteca de audio reunirá poemas leídos, audiolibros y piezas sonoras alojadas en plataformas externas.</p>
-            </div>
-          </article>
-          <article class="media-card media-card--audio">
-            <div class="media-card__embed">
-              <iframe
-                width="100%"
-                height="166"
-                scrolling="no"
-                frameborder="0"
-                allow="autoplay"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
-                title="Audiolibro — Daniel Arella"
-              ></iframe>
-            </div>
-            <div class="media-card__body">
-              <p class="media-card__meta">Audiolibro</p>
-              <h3 class="media-card__title">Lectura de relatos — Próximamente</h3>
-              <p class="media-card__excerpt">Fragmentos de audiolibros y lecturas de relatos se incorporarán cuando estén disponibles.</p>
-            </div>
-          </article>
-        </div>
+        <section id="audios" class="section-panel">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Biblioteca de audio</p>
+            <svg class="section-heading__icon section-heading__icon--above" aria-hidden="true">
+              <use href="../assets/icons/headphones.svg#icon"></use>
+            </svg>
+            <h2>Audios</h2>
+          </div>
+          <div class="media-grid media-grid--audio media-grid--paged" data-media-grid>
+            <article class="media-card media-card--audio">
+              <div class="media-card__embed">
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
+                  title="Poema leído — Daniel Arella"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Poema leído</p>
+                <h3 class="media-card__title">Obra sonora en preparación</h3>
+                <p class="media-card__excerpt">La biblioteca de audio reunirá poemas leídos, audiolibros y piezas sonoras alojadas en plataformas externas.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--audio">
+              <div class="media-card__embed">
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
+                  title="Audiolibro — Daniel Arella"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Audiolibro</p>
+                <h3 class="media-card__title">Lectura de relatos — Próximamente</h3>
+                <p class="media-card__excerpt">Fragmentos de audiolibros y lecturas de relatos se incorporarán cuando estén disponibles.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--audio">
+              <div class="media-card__embed">
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
+                  title="Audio ejemplo"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Biblioteca de audio</p>
+                <h3 class="media-card__title">Audio ejemplo página 2</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--audio">
+              <div class="media-card__embed">
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
+                  title="Audio ejemplo 2"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Biblioteca de audio</p>
+                <h3 class="media-card__title">Otro audio ejemplo</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--audio">
+              <div class="media-card__embed">
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameborder="0"
+                  allow="autoplay"
+                  src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/293&color=%234a6fa5&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false"
+                  title="Audio ejemplo 3"
+                ></iframe>
+              </div>
+              <div class="media-card__body">
+                <p class="media-card__meta">Biblioteca de audio</p>
+                <h3 class="media-card__title">Tercer audio página 2</h3>
+                <p class="media-card__excerpt">Para probar paginación.</p>
+              </div>
+            </article>
+          </div>
+          <nav class="media-pagination" aria-label="Paginación de audios" data-media-pagination data-per-page="4"></nav>
+        </section>
       </div>
-    </section>
 
-    <section id="reels" class="section-panel">
-      <div class="o-container">
-        <div class="section-heading">
-          <p class="section-heading__eyebrow">Piezas breves</p>
-          <h2>Reels</h2>
+      <aside id="reels" class="reels-rail section-panel" aria-label="Reels">
+        <div class="reels-rail__heading">
+          <svg class="reels-rail__icon icon-large" aria-hidden="true">
+            <use href="../assets/icons/video.svg#icon"></use>
+          </svg>
+          <h2 class="reels-rail__title">Reels</h2>
           <p class="section-heading__desc">Reels de <a href="https://www.instagram.com/dadaniarella/" target="_blank" rel="noopener noreferrer">@dadaniarella</a> en Instagram.</p>
         </div>
-        <div class="media-grid media-grid--reel">
-          <article class="media-card media-card--reel">
-            <a class="media-card__cover-link" href="https://www.instagram.com/reel/DN-ceJaDnHxhdZFVl5QPEl0cM4jdSYLGEklXrw0/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="media-card__cover"
-                src="../assets/images/daniel-arella-12.jpg"
-                alt="Reel de Daniel Arella en Instagram"
-                width="540"
-                height="540"
-                loading="lazy"
-              >
-              <span class="media-card__play-icon" aria-hidden="true"></span>
-            </a>
-            <div class="media-card__body">
-              <p class="media-card__meta">Reel</p>
-              <h3 class="media-card__title">Ver en Instagram</h3>
-              <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
-            </div>
-          </article>
-          <article class="media-card media-card--reel">
-            <a class="media-card__cover-link" href="https://www.instagram.com/reel/CwppDkpuxUVbfy8QtPvC5L-9hoxLbLRvcq1BxE0/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="media-card__cover"
-                src="../assets/images/press-33.jpeg"
-                alt="Reel de Daniel Arella en Instagram"
-                width="640"
-                height="360"
-                loading="lazy"
-              >
-              <span class="media-card__play-icon" aria-hidden="true"></span>
-            </a>
-            <div class="media-card__body">
-              <p class="media-card__meta">Reel</p>
-              <h3 class="media-card__title">Ver en Instagram</h3>
-              <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
-            </div>
-          </article>
-          <article class="media-card media-card--reel">
-            <a class="media-card__cover-link" href="https://www.instagram.com/reel/DCWbWKXN58zaZa_LzXUyM5oeou4dUHvhCYCIv00/" target="_blank" rel="noopener noreferrer">
-              <img
-                class="media-card__cover"
-                src="../assets/images/press-23.jpeg"
-                alt="Reel de Daniel Arella en Instagram"
-                width="540"
-                height="675"
-                loading="lazy"
-              >
-              <span class="media-card__play-icon" aria-hidden="true"></span>
-            </a>
-            <div class="media-card__body">
-              <p class="media-card__meta">Reel</p>
-              <h3 class="media-card__title">Ver en Instagram</h3>
-              <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
-            </div>
-          </article>
+        <div class="reels-rail__scroll" tabindex="0">
+          <div class="media-grid media-grid--reel media-grid--reel-vertical">
+            <article class="media-card media-card--reel">
+              <a class="media-card__cover-link" href="https://www.instagram.com/p/DOgWRhCiSyrStFr3EycEacUU-3fGsvQjrUZvlg0/" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="media-card__cover"
+                  src="../assets/images/daniel-arella-12.jpg"
+                  alt="Reel de Daniel Arella en Instagram"
+                  width="540"
+                  height="960"
+                  loading="lazy"
+                >
+                <span class="media-card__play-icon" aria-hidden="true"></span>
+              </a>
+              <div class="media-card__body">
+                <p class="media-card__meta">Reel</p>
+                <h3 class="media-card__title">Ver en Instagram</h3>
+                <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--reel">
+              <a class="media-card__cover-link" href="https://www.instagram.com/reel/CwppDkpuxUVbfy8QtPvC5L-9hoxLbLRvcq1BxE0/" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="media-card__cover"
+                  src="../assets/images/press-33.jpeg"
+                  alt="Reel de Daniel Arella en Instagram"
+                  width="640"
+                  height="360"
+                  loading="lazy"
+                >
+                <span class="media-card__play-icon" aria-hidden="true"></span>
+              </a>
+              <div class="media-card__body">
+                <p class="media-card__meta">Reel</p>
+                <h3 class="media-card__title">Ver en Instagram</h3>
+                <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
+              </div>
+            </article>
+            <article class="media-card media-card--reel">
+              <a class="media-card__cover-link" href="https://www.instagram.com/reel/DCWbWKXN58zaZa_LzXUyM5oeou4dUHvhCYCIv00/" target="_blank" rel="noopener noreferrer">
+                <img
+                  class="media-card__cover"
+                  src="../assets/images/press-23.jpeg"
+                  alt="Reel de Daniel Arella en Instagram"
+                  width="540"
+                  height="675"
+                  loading="lazy"
+                >
+                <span class="media-card__play-icon" aria-hidden="true"></span>
+              </a>
+              <div class="media-card__body">
+                <p class="media-card__meta">Reel</p>
+                <h3 class="media-card__title">Ver en Instagram</h3>
+                <p class="media-card__excerpt">Abre el reel en Instagram para ver el video.</p>
+              </div>
+            </article>
+          </div>
         </div>
-        <div class="reels-profile-link">
+        <div class="reels-rail__footer">
           <a class="button-link" href="https://www.instagram.com/dadaniarella/" target="_blank" rel="noopener noreferrer">Ver perfil @dadaniarella</a>
         </div>
-      </div>
-    </section>
+      </aside>
+    </div>
 
     <section class="section-panel">
       <div class="o-container">

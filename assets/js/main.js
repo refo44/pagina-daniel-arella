@@ -140,11 +140,124 @@ const bindCarousel = () => {
   startAutoplay();
 };
 
+const bindMediaPagination = () => {
+  const PER_PAGE = 4;
+
+  document.querySelectorAll("[data-media-pagination]").forEach((nav) => {
+    const section = nav.closest("section");
+    const grid = section?.querySelector("[data-media-grid]");
+
+    if (!grid) {
+      return;
+    }
+
+    const cards = Array.from(grid.querySelectorAll(".media-card"));
+    const perPage = parseInt(nav.getAttribute("data-per-page"), 10) || PER_PAGE;
+    const totalPages = Math.ceil(cards.length / perPage);
+
+    if (totalPages <= 1) {
+      nav.hidden = true;
+      return;
+    }
+
+    let currentPage = 0;
+
+    const setPage = (pageIndex) => {
+      currentPage = Math.max(0, Math.min(pageIndex, totalPages - 1));
+
+      cards.forEach((card, index) => {
+        const pageForIndex = Math.floor(index / perPage);
+        const isVisible = pageForIndex === currentPage;
+        card.hidden = !isVisible;
+      });
+
+      const prevBtn = nav.querySelector("[data-media-pagination-prev]");
+      const nextBtn = nav.querySelector("[data-media-pagination-next]");
+
+      if (prevBtn) {
+        const disabled = currentPage === 0;
+        prevBtn.setAttribute("aria-disabled", disabled ? "true" : "false");
+        prevBtn.setAttribute("tabindex", disabled ? "-1" : "0");
+      }
+      if (nextBtn) {
+        const disabled = currentPage === totalPages - 1;
+        nextBtn.setAttribute("aria-disabled", disabled ? "true" : "false");
+        nextBtn.setAttribute("tabindex", disabled ? "-1" : "0");
+      }
+
+      nav.querySelectorAll("[data-media-pagination-page]").forEach((el, i) => {
+        el.setAttribute("aria-current", i === currentPage ? "page" : null);
+        el.classList.toggle("media-pagination__current", i === currentPage);
+      });
+    };
+
+    const list = document.createElement("ul");
+    list.className = "media-pagination__list";
+
+    const prevItem = document.createElement("li");
+    prevItem.className = "media-pagination__item";
+    const prevLink = document.createElement("a");
+    prevLink.className = "media-pagination__link";
+    prevLink.setAttribute("data-media-pagination-prev", "");
+    prevLink.setAttribute("aria-label", "Página anterior");
+    prevLink.setAttribute("aria-disabled", "false");
+    prevLink.href = "#";
+    prevLink.textContent = "Anterior";
+    prevLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (currentPage > 0) {
+        setPage(currentPage - 1);
+      }
+    });
+    prevItem.appendChild(prevLink);
+    list.appendChild(prevItem);
+
+    for (let i = 0; i < totalPages; i++) {
+      const li = document.createElement("li");
+      li.className = "media-pagination__item";
+      const a = document.createElement("a");
+      a.className = i === 0 ? "media-pagination__link media-pagination__current" : "media-pagination__link";
+      a.setAttribute("data-media-pagination-page", "");
+      a.setAttribute("aria-current", i === 0 ? "page" : null);
+      a.href = "#";
+      a.textContent = String(i + 1);
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        setPage(i);
+      });
+      li.appendChild(a);
+      list.appendChild(li);
+    }
+
+    const nextItem = document.createElement("li");
+    nextItem.className = "media-pagination__item";
+    const nextLink = document.createElement("a");
+    nextLink.className = "media-pagination__link";
+    nextLink.setAttribute("data-media-pagination-next", "");
+    nextLink.setAttribute("aria-label", "Página siguiente");
+    nextLink.setAttribute("aria-disabled", totalPages === 1 ? "true" : "false");
+    nextLink.href = "#";
+    nextLink.textContent = "Siguiente";
+    nextLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      if (currentPage < totalPages - 1) {
+        setPage(currentPage + 1);
+      }
+    });
+    nextItem.appendChild(nextLink);
+    list.appendChild(nextItem);
+
+    nav.appendChild(list);
+    setPage(0);
+  });
+};
+
 const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
   bindCarousel();
+  bindMediaPagination();
 };
 
 window.addEventListener("DOMContentLoaded", () => {
