@@ -32,3 +32,13 @@ npm run serve    # Sirve en http://localhost:5550
 ```bash
 npm run lint:css
 ```
+
+## Licencia
+
+El **código fuente** de este proyecto está disponible bajo [MIT License](https://opensource.org/licenses/MIT).
+
+El **contenido** del sitio (textos e imágenes) es propiedad de Daniel Arella. Se permite citar fragmentos con atribución al autor.
+
+## Créditos
+
+Sitio creado por [Rafael Figueredo Oropeza](https://www.linkedin.com/in/rafaelfigueredo/) · refo44@gmail.com · [@ref8chan](https://www.instagram.com/ref8chan/).

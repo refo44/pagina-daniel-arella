@@ -1,4 +1,7 @@
 {
+  "name": "pagina-daniel-arella",
+  "description": "Sitio editorial estático de Daniel Arella — poemas, ensayos, libros, relatos y talleres.",
+  "license": "MIT",
   "scripts": {
     "lint:css": "stylelint \"assets/css/**/*.css\"",
     "serve": "npx --yes serve -l 5550"
