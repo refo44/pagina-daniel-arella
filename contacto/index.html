@@ -87,6 +87,17 @@
 
   <footer class="site-footer">
   <div class="o-container site-footer__inner">
+    <div class="site-footer__newsletter">
+      <p class="site-footer__newsletter-title">Lista de correos</p>
+      <p class="site-footer__newsletter-desc">Recibe novedades y nuevos textos por correo.</p>
+      <form class="site-footer__form" data-static-form data-success-message="Listo. Ya estás en la lista.">
+        <label for="footer-email" class="u-visually-hidden">Tu correo</label>
+        <input id="footer-email" class="site-footer__input" name="email" type="email" autocomplete="email" required placeholder="Tu correo">
+        <button class="site-footer__submit" type="submit">Suscribirme</button>
+        <a class="site-footer__link" href="../correspondencia/">Abrir suscripción</a>
+      </form>
+      <p class="form-status site-footer__status" data-form-status aria-live="polite"></p>
+    </div>
     <ul class="site-footer__nav">
       <li><a href="../prensa/">Prensa</a></li>
       <li><a href="../blog/">Blog</a></li>
