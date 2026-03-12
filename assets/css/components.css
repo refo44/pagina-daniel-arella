@@ -882,6 +882,40 @@ body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
   gap: var(--space-4);
 }
 
+/* Optional SoundCloud audio on poem single */
+.poem-audio {
+  margin-top: var(--space-4);
+}
+
+.poem-audio__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 var(--space-2);
+}
+
+.poem-audio__caption {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin: 0 0 var(--space-3);
+}
+
+.poem-audio__embed {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-1);
+  border: 1px solid var(--border);
+  background: var(--content-bg);
+}
+
+.poem-audio__embed iframe {
+  display: block;
+  width: 100%;
+  height: 166px;
+  border: none;
+}
+
 .book-index {
   display: grid;
   gap: var(--space-4);

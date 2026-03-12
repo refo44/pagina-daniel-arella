@@ -42,8 +42,8 @@
   <nav class="breadcrumbs" aria-label="Migas de pan">
     <div class="o-container">
       <ol class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a data-route="" href="">Inicio</a></li>
-        <li class="breadcrumbs__item"><a data-route="archivo/" href="archivo/">Archivo</a></li>
+        <li class="breadcrumbs__item"><a href="../">Inicio</a></li>
+        <li class="breadcrumbs__item"><a href="../archivo/">Archivo</a></li>
         <li class="breadcrumbs__item"><span aria-current="page">Ensayos</span></li>
       </ol>
     </div>
@@ -58,14 +58,23 @@
     </section>
 
     <section class="section-panel">
-      <div class="o-container">
-        <section class="state-panel o-flow">
-          <p>Aún no hay ensayos publicados en esta sección.</p>
-          <p>Cuando se incorporen ensayos con fuente documental verificable, aparecerán aquí con su contexto editorial correspondiente.</p>
-          <div class="button-row">
-            <a class="button-link" data-route="archivo/" href="../archivo/">Explorar archivo</a>
+      <div class="o-container card-grid card-grid--archive">
+        <article class="card">
+          <p class="card__meta">Ensayo</p>
+          <h2 class="card__title">Lorem ipsum primum</h2>
+          <p class="card__excerpt">Texto de prueba con contenido extenso para comprobar el scroll. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <div class="card__actions">
+            <a class="button" href="lorem-primum.html">Leer el ensayo</a>
           </div>
-        </section>
+        </article>
+        <article class="card">
+          <p class="card__meta">Ensayo</p>
+          <h2 class="card__title">Lorem ipsum secundum</h2>
+          <p class="card__excerpt">Segundo texto de prueba con contenido extenso para comprobar el scroll. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          <div class="card__actions">
+            <a class="button" href="lorem-secundum.html">Leer el ensayo</a>
+          </div>
+        </article>
       </div>
     </section>
   </main>
@@ -97,7 +106,6 @@
         <li><a href="../sobre-el-autor/">Sobre el autor</a></li>
         <li><a href="../servicios-editoriales/">Servicios editoriales</a></li>
         <li><a href="../galeria/">Galería</a></li>
-        <li><a href="../multimedia/">Videos y audios</a></li>
         <li><a href="../multimedia/">Videos y audios</a></li>
         <li><a href="../prensa/">Prensa</a></li>
         <li><a href="../derechos/">Derechos y permisos</a></li>
