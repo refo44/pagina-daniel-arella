@@ -130,6 +130,12 @@
   }
 }
 
+@media (min-width: 60rem) {
+  .site-footer__nav {
+    grid-template-columns: repeat(5, auto);
+  }
+}
+
 .site-footer__nav a {
   text-decoration: underline;
   text-underline-offset: 0.2em;
