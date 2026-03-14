@@ -4,15 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Derechos y permisos | Daniel Arella</title>
-  <meta name="description" content="Condiciones de uso, lectura y solicitud de permisos sobre la obra de Daniel Arella.">
+  <title>Configuración | Daniel Arella</title>
+  <meta name="description" content="Opciones de configuración del sitio.">
   <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
   <link rel="manifest" href="../assets/favicon/site.webmanifest">
   <link rel="stylesheet" href="../assets/css/main.css">
   <script src="../assets/js/theme.js"></script>
+  <script src="../assets/js/color-names.js"></script>
   <script src="../assets/js/main.js" defer></script>
 </head>
-<body>
+<body data-nav="settings" data-site-prefix="pagina-daniel-arella">
   <a class="u-visually-hidden" href="#main">Saltar al contenido</a>
   <header class="site-header">
   <div class="o-container site-header__inner">
@@ -29,6 +30,7 @@
         <li><a class="site-header__link" data-nav-item="servicios" href="../servicios-editoriales/">Servicios editoriales</a></li>
         <li><a class="site-header__link" data-nav-item="talleres" href="../talleres/">Talleres</a></li>
         <li><a class="site-header__link" data-nav-item="contacto" href="../contacto/">Contacto</a></li>
+        <li><a class="site-header__link" data-nav-item="settings" href="../settings/">Configuración</a></li>
       </ul>
       <ul class="site-header__list site-header__list--sub">
         <li><a class="site-header__link" data-nav-item="blog" href="../blog/">Blog</a></li>
@@ -45,54 +47,73 @@
     <div class="o-container">
       <ol class="breadcrumbs__list">
         <li class="breadcrumbs__item"><a href="../">Inicio</a></li>
-        <li class="breadcrumbs__item"><span aria-current="page">Derechos y permisos</span></li>
+        <li class="breadcrumbs__item"><span aria-current="page">Configuración</span></li>
       </ol>
     </div>
   </nav>
 
   <main id="main" class="content-shell">
-    <article class="o-container o-flow">
-      <p class="content-kicker">Derechos</p>
-      <h1>Uso de la obra y permisos</h1>
+    <div class="o-container form-panel">
+      <div class="o-flow">
+        <p class="content-kicker">Configuración</p>
+        <h1>Opciones del sitio</h1>
+        <p class="u-max-readable">Elige los colores de la paleta. Al guardar, se aplican en todo el sitio y se mantienen al navegar.</p>
+      </div>
 
-      <section class="o-flow">
-        <h2>Propiedad del contenido</h2>
-        <p>Los textos, imágenes y materiales editoriales de este sitio son propiedad de Daniel Arella. Forman parte de una obra viva. La reproducción, traducción, adaptación o circulación parcial o total requiere autorización previa del autor.</p>
-      </section>
-
-      <section class="o-flow">
-        <h2>Cómo citar</h2>
-        <p>Se permite citar fragmentos con fines críticos, académicos o divulgativos, siempre con atribución clara al autor y a la fuente. Los ejemplos siguientes siguen la <strong>norma APA 7.ª edición</strong> (American Psychological Association), habitual en humanidades y ciencias sociales; puedes adaptarlos a MLA, Chicago o ISO 690 según exija tu publicación.</p>
-
-        <h3>Obra en libro (poema, ensayo, relato)</h3>
-        <p>Arella, D. (Año). Título del poema/ensayo/relato. En <em>Título del libro</em> (pp. X–Y). Editorial.</p>
-        <p><strong>Ejemplo:</strong> Arella, D. (2020). [Título del relato]. En <em>Relatos pioneros de la ciencia ficción latinoamericana</em> (pp. 12–15). [Editorial].</p>
-
-        <h3>Texto solo en web (poema, ensayo, relato)</h3>
-        <p>Arella, D. (Año). Título del texto. <em>Daniel Arella — Sitio editorial</em>. URL</p>
-        <p><strong>Ejemplo:</strong> Arella, D. (2026). Rostro de nadie. <em>Daniel Arella — Sitio editorial</em>. https://ejemplo.com/poem/rostro-de-nadie</p>
-
-        <h3>Artículo o entrada de blog</h3>
-        <p>Arella, D. (Año, día mes). Título del artículo. <em>Daniel Arella — Sitio editorial</em>. URL</p>
-        <p><strong>Ejemplo:</strong> Arella, D. (2026, 11 marzo). Desde el inframundo del lenguaje. <em>Daniel Arella — Sitio editorial</em>. https://ejemplo.com/blog/desde-el-inframundo-del-lenguaje</p>
-
-        <p>En notas al pie o bibliografía se puede abreviar tras la primera mención (p. ej. Arella, 2020, p. 12).</p>
-
-        <h3>Descargar BibTeX</h3>
-        <p>Puedes descargar un archivo BibTeX con la referencia del sitio para usar en LaTeX, Zotero o Mendeley. Incluye la entrada del sitio en conjunto; para obras concretas (libros, poemas, artículos) adapta los campos a partir del archivo o genera la entrada con los datos de la ficha.</p>
-        <p>
-          <a class="button-link" href="../assets/bib/daniel-arella-sitio.bib" download>Descargar BibTeX (.bib)</a>
-        </p>
-      </section>
-
-      <section class="o-flow">
-        <h2>Permisos</h2>
-        <p>Para solicitudes de edición, permisos de lectura pública, reproducción en medios, antologías, traducción o prensa, es necesario contactar al autor. Indica en tu mensaje el texto o material que deseas usar, el medio o publicación y el alcance previsto.</p>
-        <div class="button-row">
-          <a class="button" data-route="contacto/" href="../contacto/">Solicitar permisos o información</a>
+      <form class="form-grid theme-form" data-theme-form action="#" method="get" novalidate>
+        <div class="theme-form__section">
+          <h2 class="theme-form__title">Paleta de colores</h2>
+          <p class="theme-form__desc">Los cinco colores de marca sobrescriben los valores por defecto (Silencio frío).</p>
         </div>
-      </section>
-    </article>
+        <div class="form-field theme-form__field">
+          <label for="theme-brand1">Texto principal (brand-1)</label>
+          <div class="theme-form__color-row">
+            <input id="theme-brand1" name="brand1" type="color" value="#2c2c2c" aria-label="Selector de color brand-1">
+            <input id="theme-brand1-hex" type="text" class="theme-form__hex" inputmode="text" pattern="#[0-9A-Fa-f]{6}" placeholder="#000000" maxlength="7" aria-label="Hexadecimal brand-1">
+          </div>
+          <p class="theme-form__name" data-theme-name-for="theme-brand1" aria-live="polite"></p>
+        </div>
+        <div class="form-field theme-form__field">
+          <label for="theme-brand2">Fondo claro (brand-2)</label>
+          <div class="theme-form__color-row">
+            <input id="theme-brand2" name="brand2" type="color" value="#f8f9fa" aria-label="Selector de color brand-2">
+            <input id="theme-brand2-hex" type="text" class="theme-form__hex" inputmode="text" pattern="#[0-9A-Fa-f]{6}" placeholder="#000000" maxlength="7" aria-label="Hexadecimal brand-2">
+          </div>
+          <p class="theme-form__name" data-theme-name-for="theme-brand2" aria-live="polite"></p>
+        </div>
+        <div class="form-field theme-form__field">
+          <label for="theme-brand3">Gris / acento (brand-3)</label>
+          <div class="theme-form__color-row">
+            <input id="theme-brand3" name="brand3" type="color" value="#9ca3af" aria-label="Selector de color brand-3">
+            <input id="theme-brand3-hex" type="text" class="theme-form__hex" inputmode="text" pattern="#[0-9A-Fa-f]{6}" placeholder="#000000" maxlength="7" aria-label="Hexadecimal brand-3">
+          </div>
+          <p class="theme-form__name" data-theme-name-for="theme-brand3" aria-live="polite"></p>
+        </div>
+        <div class="form-field theme-form__field">
+          <label for="theme-brand4">Enlace / primario (brand-4)</label>
+          <div class="theme-form__color-row">
+            <input id="theme-brand4" name="brand4" type="color" value="#4a6fa5" aria-label="Selector de color brand-4">
+            <input id="theme-brand4-hex" type="text" class="theme-form__hex" inputmode="text" pattern="#[0-9A-Fa-f]{6}" placeholder="#000000" maxlength="7" aria-label="Hexadecimal brand-4">
+          </div>
+          <p class="theme-form__name" data-theme-name-for="theme-brand4" aria-live="polite"></p>
+        </div>
+        <div class="form-field theme-form__field">
+          <label for="theme-brand5">Enlace hover (brand-5)</label>
+          <div class="theme-form__color-row">
+            <input id="theme-brand5" name="brand5" type="color" value="#2c3e50" aria-label="Selector de color brand-5">
+            <input id="theme-brand5-hex" type="text" class="theme-form__hex" inputmode="text" pattern="#[0-9A-Fa-f]{6}" placeholder="#000000" maxlength="7" aria-label="Hexadecimal brand-5">
+          </div>
+          <p class="theme-form__name" data-theme-name-for="theme-brand5" aria-live="polite"></p>
+        </div>
+        <div class="theme-form__actions button-row">
+          <button class="button" type="submit">Guardar</button>
+          <button class="button" type="button" data-theme-random title="Generar una paleta aleatoria de 5 colores (estilo Coolors) y aplicarla">Generar paleta aleatoria</button>
+          <button class="button" type="button" data-theme-reset title="Borrar la paleta guardada y usar los colores por defecto del sitio">Reset</button>
+          <a class="button-link" href="../">Volver al inicio</a>
+        </div>
+        <p class="form-status theme-form__status" data-theme-status aria-live="polite"></p>
+      </form>
+    </div>
   </main>
 
   <footer class="site-footer">
@@ -123,10 +144,10 @@
         <li><a href="../servicios-editoriales/">Servicios editoriales</a></li>
         <li><a href="../galeria/">Galería</a></li>
         <li><a href="../multimedia/">Videos y audios</a></li>
-        <li><a href="../multimedia/">Videos y audios</a></li>
         <li><a href="../prensa/">Prensa</a></li>
         <li><a href="../derechos/">Derechos y permisos</a></li>
         <li><a href="../contacto/">Contacto</a></li>
+        <li><a href="../settings/">Configuración</a></li>
       </ul>
     </div>
     <div class="site-footer__legal">

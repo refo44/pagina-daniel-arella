@@ -252,6 +252,155 @@ const bindMediaPagination = () => {
   });
 };
 
+const BRAND_KEYS = ["brand1", "brand2", "brand3", "brand4", "brand5"];
+const BRAND_IDS = ["theme-brand1", "theme-brand2", "theme-brand3", "theme-brand4", "theme-brand5"];
+
+const bindThemeForm = () => {
+  const form = document.querySelector("[data-theme-form]");
+  if (!form) return;
+
+  const status = form.querySelector("[data-theme-status]");
+  const inputs = BRAND_IDS.map((id) => form.querySelector(`#${id}`)).filter(Boolean);
+
+  function setInputsFromTheme(theme) {
+    inputs.forEach((input, i) => {
+      if (input && theme[BRAND_KEYS[i]]) {
+        const hex = normalizeHex(theme[BRAND_KEYS[i]]);
+        input.value = hex;
+        const hexInput = form.querySelector("#" + input.id + "-hex");
+        if (hexInput && hexInput instanceof HTMLInputElement) hexInput.value = hex;
+      }
+    });
+    updateColorNames();
+  }
+
+  function updateColorNames() {
+    BRAND_IDS.forEach((id) => {
+      const colorInput = form.querySelector("#" + id);
+      const nameEl = form.querySelector("[data-theme-name-for=\"" + id + "\"]");
+      if (!colorInput || !nameEl) return;
+      const hex = colorInput.value;
+      const name = typeof window.getNameForHex === "function" ? window.getNameForHex(hex) : null;
+      nameEl.textContent = name ? name.charAt(0).toUpperCase() + name.slice(1) : "";
+    });
+  }
+
+  function normalizeHex(value) {
+    const v = String(value).trim();
+    if (/^#[0-9A-Fa-f]{6}$/.test(v)) return v.toLowerCase();
+    if (/^[0-9A-Fa-f]{6}$/.test(v)) return "#" + v.toLowerCase();
+    return v;
+  }
+
+  function isValidHex(value) {
+    return /^#[0-9A-Fa-f]{6}$/.test(String(value).trim()) || /^[0-9A-Fa-f]{6}$/.test(String(value).trim());
+  }
+
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      const hexInput = form.querySelector("#" + input.id + "-hex");
+      if (hexInput && hexInput instanceof HTMLInputElement) hexInput.value = input.value.toLowerCase();
+      updateColorNames();
+    });
+  });
+
+  BRAND_IDS.forEach((id) => {
+    const hexInput = form.querySelector("#" + id + "-hex");
+    if (!hexInput || !(hexInput instanceof HTMLInputElement)) return;
+    const colorInput = form.querySelector("#" + id);
+    if (!colorInput) return;
+    hexInput.addEventListener("input", () => {
+      const hex = normalizeHex(hexInput.value);
+      if (isValidHex(hexInput.value)) colorInput.value = hex;
+      updateColorNames();
+    });
+    hexInput.addEventListener("blur", () => {
+      const hex = normalizeHex(hexInput.value);
+      if (isValidHex(hexInput.value)) {
+        colorInput.value = hex;
+        hexInput.value = hex;
+      } else if (colorInput.value) {
+        hexInput.value = colorInput.value.toLowerCase();
+      }
+      updateColorNames();
+    });
+  });
+
+  const stored = typeof window.getStoredTheme === "function" ? window.getStoredTheme() : null;
+  const defaultTheme = typeof window.getDefaultTheme === "function" ? window.getDefaultTheme() : null;
+  setInputsFromTheme(stored || defaultTheme);
+
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const theme = {};
+    BRAND_IDS.forEach((id, i) => {
+      const colorInput = form.querySelector(`#${id}`);
+      const hexInput = form.querySelector(`#${id}-hex`);
+      const value = (hexInput && hexInput instanceof HTMLInputElement && isValidHex(hexInput.value))
+        ? normalizeHex(hexInput.value)
+        : colorInput?.value?.trim();
+      if (value) theme[BRAND_KEYS[i]] = value;
+    });
+    if (typeof window.saveTheme === "function") {
+      window.saveTheme(theme);
+    }
+    if (status) {
+      status.textContent = "Guardado. Los colores se aplican en todo el sitio.";
+      status.classList.add("is-visible");
+    }
+  });
+
+  const resetBtn = form.querySelector("[data-theme-reset]");
+  if (resetBtn) {
+    resetBtn.addEventListener("click", () => {
+      if (typeof window.clearTheme === "function") {
+        window.clearTheme();
+      }
+      window.location.reload();
+    });
+  }
+
+  const randomBtn = form.querySelector("[data-theme-random]");
+  if (randomBtn) {
+    randomBtn.addEventListener("click", () => {
+      const theme = generateRandomPalette();
+      setInputsFromTheme(theme);
+      if (typeof window.saveTheme === "function") {
+        window.saveTheme(theme);
+      }
+      if (status) {
+        status.textContent = "Paleta aleatoria aplicada y guardada. Navega por el sitio para verla.";
+        status.classList.add("is-visible");
+      }
+    });
+  }
+};
+
+function generateRandomPalette() {
+  function randomHex() {
+    return "#" + Math.floor(Math.random() * 0x1000000).toString(16).padStart(6, "0").toLowerCase();
+  }
+  function randomDarkHex() {
+    const r = Math.floor(Math.random() * 90);
+    const g = Math.floor(Math.random() * 90);
+    const b = Math.floor(Math.random() * 90);
+    return "#" + [r, g, b].map((n) => n.toString(16).padStart(2, "0")).join("").toLowerCase();
+  }
+  function randomLightHex() {
+    const r = 200 + Math.floor(Math.random() * 56);
+    const g = 200 + Math.floor(Math.random() * 56);
+    const b = 200 + Math.floor(Math.random() * 56);
+    return "#" + [r, g, b].map((n) => n.toString(16).padStart(2, "0")).join("").toLowerCase();
+  }
+  return {
+    brand1: randomDarkHex(),
+    brand2: randomLightHex(),
+    brand3: randomHex(),
+    brand4: randomHex(),
+    brand5: randomHex(),
+  };
+}
+
 const bindBackToTop = () => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const SCROLL_THRESHOLD = 400;
@@ -288,6 +437,7 @@ const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
+  bindThemeForm();
   bindCarousel();
   bindMediaPagination();
   bindBackToTop();
