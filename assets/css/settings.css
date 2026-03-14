@@ -21,7 +21,7 @@
   --primary-hover: var(--brand-5);
   --text-on-primary: var(--brand-2);
   --shadow-soft: rgb(44 44 44 / 8%);
-  --font-body: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
+  --font-body: "Book Antiqua", Palatino, "Palatino Linotype", Georgia, serif;
   --font-heading: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
   --font-ui: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
   --font-meta: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
