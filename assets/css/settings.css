@@ -21,6 +21,10 @@
   --primary-hover: var(--brand-5);
   --text-on-primary: var(--brand-2);
   --shadow-soft: rgb(13 19 3 / 8%);
+  --header-padding-expanded: var(--space-7);
+  --header-padding-compact: var(--space-4);
+  --header-brand-expanded: 2rem;
+  --header-brand-compact: 1.35rem;
   --font-body: "Book Antiqua", Palatino, "Palatino Linotype", Georgia, serif;
   --font-heading: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
   --font-ui: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
@@ -71,5 +75,10 @@
 @media (prefers-reduced-motion: reduce) {
   :root {
     scroll-behavior: auto;
+  }
+
+  .site-header__inner,
+  .site-header__brand {
+    transition: none;
   }
 }

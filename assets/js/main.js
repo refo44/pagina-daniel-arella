@@ -252,6 +252,35 @@ const bindMediaPagination = () => {
   });
 };
 
+const bindHeaderShrink = () => {
+  const header = document.querySelector(".site-header");
+
+  if (!header) {
+    return;
+  }
+
+  const nav = header.querySelector("[data-menu-panel]");
+  const toggle = header.querySelector("[data-menu-toggle]");
+  const SCROLL_THRESHOLD = 64;
+
+  const updateHeader = () => {
+    const isCompact = window.scrollY > SCROLL_THRESHOLD;
+    header.classList.toggle("is-compact", isCompact);
+
+    if (isCompact && nav && toggle) {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menú de navegación");
+    }
+  };
+
+  window.addEventListener("scroll", () => {
+    requestAnimationFrame(updateHeader);
+  }, { passive: true });
+
+  updateHeader();
+};
+
 const bindBackToTop = () => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const SCROLL_THRESHOLD = 400;
@@ -288,6 +317,7 @@ const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
+  bindHeaderShrink();
   bindCarousel();
   bindMediaPagination();
   bindBackToTop();
