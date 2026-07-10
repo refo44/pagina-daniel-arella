@@ -275,7 +275,7 @@ Nunca usan hex ni brand tokens.
 
 **Regla editorial de superficies:** Las superficies editoriales son contenedores ocasionales para destacados o contexto. La obra principal se presenta directamente sobre el fondo de lectura. Se usan para: destacados, navegación contextual, módulos secundarios. No para envolver sistemáticamente todos los textos.
 
-Esto permite: Dark mode, Rebranding, Tema alterno — sin tocar componentes.
+Esto permite: Rebranding y tema alterno — sin tocar componentes. **No incluye dark mode:** el sitio usa solo tema claro en todos los dispositivos.
 
 ---
 
@@ -318,37 +318,17 @@ No hay estilos arbitrarios. Todo fluye desde los tokens.
 
 ---
 
-## 8. Dark mode
+## 8. Tema claro único (sin dark mode)
 
-No se añaden colores. Solo se reasignan roles (`prefers-color-scheme: dark`). Opcional según `22-tendencias-ux-ui-sistema-editorial`.
+El sitio **no incluye dark mode**. Nunca usar `@media (prefers-color-scheme: dark)` ni variantes oscuras de roles.
 
-**Regla de focus:** En modo claro, focus = brand-4 (más sereno) o brand-5 (más intenso) según accesibilidad y fatiga visual. En modo oscuro, focus = brand-4 por legibilidad y menor agresividad sobre fondo oscuro.
+**Reglas:**
+- Un solo tema: paleta Tierra viva en modo claro.
+- Declarar `color-scheme: light` en `:root` para que móvil y desktop respeten el mismo tema.
+- Ignorar la preferencia de modo oscuro del sistema operativo o del navegador.
+- Cabecera y pie (Tinta + Pergamino) forman parte del tema claro; no son un “modo oscuro” alternativo.
 
-**Surface en dark mode:** Terracota sobre Tinta crea contraste fuerte; usar solo en superficies puntuales. Decisión estética clara, no error.
-
-```css
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: var(--brand-1);       /* Tinta */
-    --text: var(--brand-2);     /* Pergamino */
-    --text-muted: var(--brand-3);
-    --surface: var(--brand-3);  /* Terracota - protagonista sobre oscuro */
-    --border: var(--brand-2);   /* Pergamino — usar con moderación; preferir separación por espacio antes que por contorno */
-
-    --link: var(--brand-4);     /* Siena - contrasta bien en oscuro */
-    --link-hover: var(--brand-5);
-    --focus: var(--brand-4);    /* menor agresividad en lectura oscura */
-
-    --header-bg: var(--brand-1);
-    --footer-bg: var(--brand-1);
-
-    --primary: var(--brand-4);
-    --primary-hover: var(--brand-5);
-  }
-}
-```
-
-La identidad sigue intacta. Mantener contraste AA en todos los estados.
+**Focus:** `--focus: var(--brand-4)` en todo el sitio. Mantener contraste AA en todos los estados.
 
 ---
 
@@ -382,7 +362,7 @@ El editor no puede romper la identidad.
 | Ritmo editorial | Cerrado |
 | Layout | Cerrado |
 | Tokens | Cerrados |
-| Dark mode | Opcional |
+| Dark mode | Excluido |
 | Logo | Pendiente |
 | theme.json | Pendiente |
 
@@ -400,7 +380,8 @@ Ahí se encuentra:
 - **Filosofía de diseño editorial:** minimalismo como estructura, no como estética; principios, riesgos reales, decisiones permitidas y anti-patrones; equivalencia HTML/WordPress — sección 1 de ese documento.
 - **Tabla de adopción y minimalismo:** qué adoptar, qué evitar; implementación — sección 2 de ese documento.
 - **Design tokens** (alineados con esta identidad), **performance-first**, **accesibilidad por defecto**, **micro-interacciones funcionales**, **storytelling editorial** (ritmo y jerarquía).
-- **Opcional:** dark mode, formas orgánicas en dosis mínimas.
+- **Opcional:** formas orgánicas en dosis mínimas.
+- **Excluido:** dark mode.
 - **Evitar como base:** experiencias agentic, popups/smart triggers, motion “de show”.
 - **Bloque listo para implementación:** checklist de maqueta estática y equivalencia en WordPress — sección 4 de ese documento.
 

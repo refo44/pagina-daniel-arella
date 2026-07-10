@@ -72,7 +72,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 | Performance | Adoptar | 1 CSS, JS mínimo con defer, imágenes con dimensiones |
 | Accesibilidad-first | Adoptar | Contraste AA, focus visible, headings correctos, teclado, reduced motion |
 | Micro-interacciones | Adoptar con cuidado | Hover, focus, botones, menú móvil; nada en cuerpo de texto |
-| Dark mode | Adoptar | `prefers-color-scheme` reasigna roles; sin nueva paleta, solo reasignación de roles |
+| Dark mode | Evitar | Sin dark mode; `color-scheme: light` en `:root`; nunca `prefers-color-scheme: dark` |
 | Storytelling | Adoptar con cuidado | Ritmo vertical y jerarquía; parallax solo en home y portadas |
 | IA, personalización de contenido o comportamiento | No aplica | No aplica al proyecto |
 | AR/VR, 3D | Evitar | No aplica |
@@ -112,7 +112,7 @@ Solo donde confirman una acción: hover de links, focus de inputs, estados de bo
 ## 3. Decisiones adoptadas y qué evitar
 
 **Adoptado para este proyecto:**
-- **Dark mode:** sí; reasignar roles con `prefers-color-scheme`.
+- **Tema claro único:** sin dark mode; `color-scheme: light` en `:root`.
 - **Popups:** suscripción (newsletter) y avisos puntuales; reglas estrictas de frecuencia.
 - **Home y portadas de sección:** hero, parallax y recursos visuales; tipografía animada y carouseles solo aquí; nunca en artículos o páginas de lectura.
 - **Video e imágenes:** video embebido, imagen con pie editorial, portada especial permitidos.

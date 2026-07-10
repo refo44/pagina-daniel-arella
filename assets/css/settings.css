@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light;
   --brand-1: #0d1303;
   --brand-2: #f3e0cc;
   --brand-3: #b02e17;
@@ -48,28 +49,6 @@
   --line-ui: 1.4;
   --bp-medium: 40rem;
   --bp-wide: 64rem;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: var(--brand-1);
-    --page-bg: var(--brand-1);
-    --content-bg: var(--brand-5);
-    --text: var(--brand-2);
-    --text-muted: var(--brand-3);
-    --surface: var(--brand-5);
-    --surface-strong: var(--brand-3);
-    --border: var(--brand-3);
-    --link: var(--brand-4);
-    --link-hover: var(--brand-2);
-    --focus: var(--brand-4);
-    --header-bg: var(--brand-1);
-    --footer-bg: var(--brand-1);
-    --primary: var(--brand-4);
-    --primary-hover: var(--brand-2);
-    --text-on-primary: var(--brand-1);
-    --shadow-soft: rgb(13 19 3 / 32%);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
