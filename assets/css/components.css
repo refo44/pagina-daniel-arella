@@ -1762,10 +1762,13 @@ body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+    gap: var(--space-4);
+    padding-block: var(--header-padding-compact);
   }
 
   .site-header:not(.is-compact) .site-header__brand {
     width: auto;
+    font-size: var(--header-brand-compact);
     text-align: left;
   }
 
