@@ -3,92 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Paleta Silencio frío — Daniel Arella</title>
+  <title>Paleta Tierra viva — Daniel Arella</title>
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
     /* Garantizar paleta en este documento (por si main.css no carga o se pierde al imprimir) */
     :root {
-      --brand-1: #2c2c2c;
-      --brand-2: #f8f9fa;
-      --brand-3: #9ca3af;
-      --brand-4: #4a6fa5;
-      --brand-5: #2c3e50;
-      --bg: #f8f9fa;
-      --text: #2c2c2c;
-      --text-muted: #9ca3af;
-      --content-bg: #fff;
-      --border: #9ca3af;
-      --header-bg: #2c2c2c;
-      --footer-bg: #2c2c2c;
-      --text-on-primary: #f8f9fa;
-      --primary: #4a6fa5;
-      --primary-hover: #2c3e50;
-      --link: #4a6fa5;
-      --link-hover: #2c3e50;
-      --surface: #9ca3af;
+      --brand-1: #0d1303;
+      --brand-2: #f3e0cc;
+      --brand-3: #b02e17;
+      --brand-4: #7e390c;
+      --brand-5: #174f18;
+      --bg: #f3e0cc;
+      --text: #0d1303;
+      --text-muted: #b02e17;
+      --content-bg: #f3e0cc;
+      --border: #b02e17;
+      --header-bg: #0d1303;
+      --footer-bg: #0d1303;
+      --text-on-primary: #f3e0cc;
+      --primary: #7e390c;
+      --primary-hover: #174f18;
+      --link: #7e390c;
+      --link-hover: #174f18;
+      --surface: #b02e17;
     }
 
     /* Overrides and layout for this palette document */
     body.palette-doc {
       padding: 0;
       max-width: none;
-      background: #f8f9fa !important;
-      color: #2c2c2c !important;
+      background: #f3e0cc !important;
+      color: #0d1303 !important;
       font-family: var(--font-body);
     }
     .palette-doc .doc-page {
       min-height: 100vh;
       padding: 2rem;
-      background: #f8f9fa;
+      background: #f3e0cc;
     }
     .palette-doc .doc-page--cover { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; min-height: auto; padding: 2rem 1.5rem; }
-    .palette-doc .doc-page--cover h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #2c2c2c; }
-    .palette-doc .doc-page--cover p { font-size: 1.1rem; color: #9ca3af; }
+    .palette-doc .doc-page--cover h1 { font-size: 2rem; margin-bottom: 0.5rem; color: #0d1303; }
+    .palette-doc .doc-page--cover p { font-size: 1.1rem; color: #b02e17; }
     .palette-doc .doc-section { margin-bottom: 2.5rem; }
-    .palette-doc .doc-section h2 { font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid #9ca3af; padding-bottom: 0.5rem; color: #2c2c2c; }
-    .palette-doc .doc-section h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: #2c2c2c; }
-    .palette-doc .doc-section p { color: #2c2c2c; }
-    .palette-doc .doc-section a { color: #4a6fa5; }
-    .palette-doc .doc-section a:hover { color: #2c3e50; }
+    .palette-doc .doc-section h2 { font-size: 1.5rem; margin-bottom: 1rem; border-bottom: 1px solid #b02e17; padding-bottom: 0.5rem; color: #0d1303; }
+    .palette-doc .doc-section h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: #0d1303; }
+    .palette-doc .doc-section p { color: #0d1303; }
+    .palette-doc .doc-section a { color: #7e390c; }
+    .palette-doc .doc-section a:hover { color: #174f18; }
     .palette-swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1rem 0; }
     .palette-swatch { border-radius: var(--radius-2); overflow: hidden; border: 1px solid var(--border); }
     .palette-swatch__block { height: 80px; }
-    .palette-swatch__block--1 { background: #2c2c2c; }
-    .palette-swatch__block--2 { background: #f8f9fa; border-bottom: 1px solid var(--border); }
-    .palette-swatch__block--3 { background: #9ca3af; }
-    .palette-swatch__block--4 { background: #4a6fa5; }
-    .palette-swatch__block--5 { background: #2c3e50; }
-    .palette-swatch__info { padding: 0.5rem 0.75rem; font-family: var(--font-ui); font-size: 0.85rem; background: #fff; color: #2c2c2c; }
-    .palette-swatch__info .name { font-weight: 600; color: #2c2c2c; }
-    .palette-swatch__info .hex { font-family: monospace; color: #9ca3af; }
+    .palette-swatch__block--1 { background: #0d1303; }
+    .palette-swatch__block--2 { background: #f3e0cc; border-bottom: 1px solid var(--border); }
+    .palette-swatch__block--3 { background: #b02e17; }
+    .palette-swatch__block--4 { background: #7e390c; }
+    .palette-swatch__block--5 { background: #174f18; }
+    .palette-swatch__info { padding: 0.5rem 0.75rem; font-family: var(--font-ui); font-size: 0.85rem; background: #f3e0cc; color: #0d1303; }
+    .palette-swatch__info .name { font-weight: 600; color: #0d1303; }
+    .palette-swatch__info .hex { font-family: monospace; color: #b02e17; }
     .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
-    .combo-box { padding: 1rem; border-radius: var(--radius-2); border: 1px solid #9ca3af; }
-    .combo-box--page { background: #f8f9fa; color: #2c2c2c; }
-    .combo-box--header { background: #2c2c2c; color: #f8f9fa; }
-    .combo-box--surface { background: #9ca3af; color: #2c2c2c; }
-    .combo-box--button { background: #4a6fa5; color: #f8f9fa; }
-    .combo-box--hover { background: #2c3e50; color: #f8f9fa; }
+    .combo-box { padding: 1rem; border-radius: var(--radius-2); border: 1px solid #b02e17; }
+    .combo-box--page { background: #f3e0cc; color: #0d1303; }
+    .combo-box--header { background: #0d1303; color: #f3e0cc; }
+    .combo-box--surface { background: #b02e17; color: #0d1303; }
+    .combo-box--button { background: #7e390c; color: #f3e0cc; }
+    .combo-box--hover { background: #174f18; color: #f3e0cc; }
     .examples-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1rem 0; }
-    .screenshot-placeholder { min-height: 200px; border: 2px dashed #9ca3af; border-radius: var(--radius-2); display: flex; align-items: center; justify-content: center; background: #f8f9fa; color: #9ca3af; font-family: var(--font-ui); font-size: 0.9rem; text-align: center; padding: 1rem; }
+    .screenshot-placeholder { min-height: 200px; border: 2px dashed #b02e17; border-radius: var(--radius-2); display: flex; align-items: center; justify-content: center; background: #f3e0cc; color: #b02e17; font-family: var(--font-ui); font-size: 0.9rem; text-align: center; padding: 1rem; }
     .screenshot-placeholder img { max-width: 100%; width: auto; height: auto; border-radius: var(--radius-2); display: block; }
     @media print {
-      body.palette-doc { background: #f8f9fa !important; color: #2c2c2c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .palette-doc .doc-page { min-height: auto; padding: 1.5rem; page-break-after: always; background: #f8f9fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      body.palette-doc { background: #f3e0cc !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc .doc-page { min-height: auto; padding: 1.5rem; page-break-after: always; background: #f3e0cc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .doc-page:last-child { page-break-after: auto; }
       .palette-doc .doc-page--cover { min-height: auto; padding: 1.5rem 1.5rem 0.5rem; page-break-after: auto; }
-      .palette-doc .section-panel--surface { background: #9ca3af !important; color: #2c2c2c !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc .section-panel--surface { background: #b02e17 !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .combo-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .palette-swatch__block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc [style*="background: var(--header-bg)"],
-      .palette-doc [style*="background: var(--footer-bg)"] { background: #2c2c2c !important; color: #f8f9fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .palette-doc .palette-footer-demo { background: #2c2c2c !important; color: #f8f9fa !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc [style*="background: var(--footer-bg)"] { background: #0d1303 !important; color: #f3e0cc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc .palette-footer-demo { background: #0d1303 !important; color: #f3e0cc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .no-print { display: none !important; }
     }
   </style>
 </head>
 <body class="palette-doc">
   <div class="doc-page doc-page--cover">
-    <h1>Paleta Silencio frío</h1>
+    <h1>Paleta Tierra viva</h1>
     <p>Guía de color y elementos — Sitio Daniel Arella</p>
     <p style="margin-top: 1rem; font-size: 0.95rem;">Documento generado a partir de <code>02-identidad-corporativa</code> y <code>assets/css/settings.css</code></p>
   </div>
@@ -100,23 +100,23 @@
       <div class="palette-swatches">
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--1"></div>
-          <div class="palette-swatch__info"><span class="name">Charcoal</span><br><span class="hex">#2c2c2c</span><br><small>--brand-1 · Cabecera, pie, texto</small></div>
+          <div class="palette-swatch__info"><span class="name">Tinta</span><br><span class="hex">#0d1303</span><br><small>--brand-1 · Cabecera, pie, texto</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--2"></div>
-          <div class="palette-swatch__info"><span class="name">Off-white</span><br><span class="hex">#f8f9fa</span><br><small>--brand-2 · Fondos, superficies</small></div>
+          <div class="palette-swatch__info"><span class="name">Pergamino</span><br><span class="hex">#f3e0cc</span><br><small>--brand-2 · Fondos, superficies</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--3"></div>
-          <div class="palette-swatch__info"><span class="name">Slate Gray</span><br><span class="hex">#9ca3af</span><br><small>--brand-3 · Bordes, texto secundario</small></div>
+          <div class="palette-swatch__info"><span class="name">Terracota</span><br><span class="hex">#b02e17</span><br><small>--brand-3 · Bordes, texto secundario</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--4"></div>
-          <div class="palette-swatch__info"><span class="name">Steel Blue</span><br><span class="hex">#4a6fa5</span><br><small>--brand-4 · Enlaces, botones, foco</small></div>
+          <div class="palette-swatch__info"><span class="name">Siena</span><br><span class="hex">#7e390c</span><br><small>--brand-4 · Enlaces, botones, foco</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--5"></div>
-          <div class="palette-swatch__info"><span class="name">Deep Slate</span><br><span class="hex">#2c3e50</span><br><small>--brand-5 · Hover, énfasis</small></div>
+          <div class="palette-swatch__info"><span class="name">Musgo</span><br><span class="hex">#174f18</span><br><small>--brand-5 · Hover, énfasis</small></div>
         </div>
       </div>
     </div>
@@ -124,11 +124,11 @@
     <div class="doc-section">
       <h2>2. Combinaciones de fondo y texto</h2>
       <div class="combo-grid">
-        <div class="combo-box combo-box--page"><strong>Página general</strong><br>Fondo Off-white, texto Charcoal</div>
-        <div class="combo-box combo-box--header"><strong>Cabecera / pie</strong><br>Fondo Charcoal, texto Off-white</div>
-        <div class="combo-box combo-box--surface"><strong>Superficie editorial</strong><br>Fondo Slate Gray, texto Charcoal</div>
-        <div class="combo-box combo-box--button"><strong>Botones / CTAs</strong><br>Fondo Steel Blue, texto Off-white</div>
-        <div class="combo-box combo-box--hover"><strong>Hover botones</strong><br>Fondo Deep Slate, texto Off-white</div>
+        <div class="combo-box combo-box--page"><strong>Página general</strong><br>Fondo Pergamino, texto Tinta</div>
+        <div class="combo-box combo-box--header"><strong>Cabecera / pie</strong><br>Fondo Tinta, texto Pergamino</div>
+        <div class="combo-box combo-box--surface"><strong>Superficie editorial</strong><br>Fondo Terracota, texto Tinta</div>
+        <div class="combo-box combo-box--button"><strong>Botones / CTAs</strong><br>Fondo Siena, texto Pergamino</div>
+        <div class="combo-box combo-box--hover"><strong>Hover botones</strong><br>Fondo Musgo, texto Pergamino</div>
       </div>
     </div>
   </div>
@@ -145,18 +145,18 @@
       </div>
 
       <h3>Enlaces</h3>
-      <p>Texto con <a href="#">enlace en Steel Blue</a> y hover en Deep Slate.</p>
+      <p>Texto con <a href="#">enlace en Siena</a> y hover en Musgo.</p>
 
       <h3>Cabecera (estilo)</h3>
-      <div style="background: #2c2c2c; color: #f8f9fa; padding: 1rem 1.5rem; border-radius: var(--radius-2); font-family: var(--font-ui);">
+      <div style="background: #0d1303; color: #f3e0cc; padding: 1rem 1.5rem; border-radius: var(--radius-2); font-family: var(--font-ui);">
         <strong>Daniel Arella</strong> · Inicio · Archivo · Libros · Blog · Prensa
       </div>
 
       <h3>Panel de superficie (sección)</h3>
-      <div class="section-panel section-panel--surface" style="padding: 1.5rem; background: #9ca3af; color: #2c2c2c;">
-        <p class="section-heading__eyebrow" style="margin: 0 0 0.25rem; color: #2c2c2c;">Selección editorial</p>
-        <h2 class="section-heading__title" style="margin: 0 0 0.5rem; color: #2c2c2c;">Recomendaciones</h2>
-        <p style="margin: 0; color: #2c2c2c;">Texto sobre superficie Slate Gray. Las tarjetas y secciones alternan con fondo Off-white.</p>
+      <div class="section-panel section-panel--surface" style="padding: 1.5rem; background: #b02e17; color: #0d1303;">
+        <p class="section-heading__eyebrow" style="margin: 0 0 0.25rem; color: #0d1303;">Selección editorial</p>
+        <h2 class="section-heading__title" style="margin: 0 0 0.5rem; color: #0d1303;">Recomendaciones</h2>
+        <p style="margin: 0; color: #0d1303;">Texto sobre superficie Terracota. Las tarjetas y secciones alternan con fondo Pergamino.</p>
       </div>
 
       <h3>Tarjeta (card)</h3>
@@ -243,7 +243,7 @@
       </div>
 
       <h3>Bloque de pie (newsletter)</h3>
-      <div class="palette-footer-demo" style="background: #2c2c2c; color: #f8f9fa; padding: 1.5rem; border-radius: var(--radius-2);">
+      <div class="palette-footer-demo" style="background: #0d1303; color: #f3e0cc; padding: 1.5rem; border-radius: var(--radius-2);">
         <div class="site-footer__newsletter">
           <p class="site-footer__newsletter-title">Lista de correos</p>
           <p class="site-footer__newsletter-desc">Recibe novedades y nuevos textos por correo.</p>
@@ -276,20 +276,20 @@
 
       <h3>Encabezado de sección con icono</h3>
       <div class="section-heading">
-        <p class="section-heading__eyebrow" style="color: #2c2c2c;">Archivo</p>
-        <h2 class="section-heading__title" style="color: #2c2c2c;">
+        <p class="section-heading__eyebrow" style="color: #0d1303;">Archivo</p>
+        <h2 class="section-heading__title" style="color: #0d1303;">
           <svg class="icon-large" aria-hidden="true">
             <use href="assets/icons/archive.svg#icon"></use>
           </svg>
           La obra como biblioteca
         </h2>
       </div>
-      <p class="u-max-readable" style="color: #2c2c2c;">El sitio reúne libros, poemas, artículos, eventos y prensa externa.</p>
+      <p class="u-max-readable" style="color: #0d1303;">El sitio reúne libros, poemas, artículos, eventos y prensa externa.</p>
 
       <h3>Contenido de página (content-kicker + o-flow)</h3>
-      <article class="o-flow" style="max-width: 50ch; color: #2c2c2c;">
-        <p class="content-kicker" style="color: #9ca3af;">Derechos</p>
-        <h1 style="color: #2c2c2c;">Uso de la obra y permisos</h1>
+      <article class="o-flow" style="max-width: 50ch; color: #0d1303;">
+        <p class="content-kicker" style="color: #b02e17;">Derechos</p>
+        <h1 style="color: #0d1303;">Uso de la obra y permisos</h1>
         <p>Los textos, imágenes y materiales editoriales de este sitio son propiedad de Daniel Arella. La reproducción o circulación requiere autorización previa.</p>
         <p><span class="button-link" style="cursor: default;">Contactar</span></p>
       </article>
@@ -303,17 +303,17 @@
 
       <h3>Inicio — Hero y libro activo</h3>
       <div class="screenshot-placeholder" id="screenshot-home">
-        <img src="assets/Screenshot_2026-03-12_at_8.28.49_AM-71b2a809-191d-47b4-b800-917eb4bc26a8.png" alt="Cabecera Charcoal, área principal en off-white, tarjeta del libro activo con botón Steel Blue y enlace secundario." width="800" height="auto" loading="lazy">
+        <img src="assets/Screenshot_2026-03-12_at_8.28.49_AM-71b2a809-191d-47b4-b800-917eb4bc26a8.png" alt="Cabecera Tinta, área principal en off-white, tarjeta del libro activo con botón Siena y enlace secundario." width="800" height="auto" loading="lazy">
       </div>
 
       <h3>Inicio — Sección Prensa</h3>
       <div class="screenshot-placeholder" id="screenshot-prensa">
-        <img src="assets/Screenshot_2026-03-12_at_8.28.37_AM-8e10fb3a-dd70-46f3-81d5-62b1d1f55ff0.png" alt="Página Prensa: cabecera oscura, breadcrumb azul, tres tarjetas sobre superficie Slate Gray, botones Abrir sitio." width="800" height="auto" loading="lazy">
+        <img src="assets/Screenshot_2026-03-12_at_8.28.37_AM-8e10fb3a-dd70-46f3-81d5-62b1d1f55ff0.png" alt="Página Prensa: cabecera oscura, breadcrumb azul, tres tarjetas sobre superficie Terracota, botones Abrir sitio." width="800" height="auto" loading="lazy">
       </div>
 
       <h3>Inicio — La obra como biblioteca y pie</h3>
       <div class="screenshot-placeholder" id="screenshot-archivo-footer">
-        <img src="assets/Screenshot_2026-03-12_at_8.29.15_AM-44f58b4d-747c-43c7-b976-41674b38b88c.png" alt="Bloque La obra como biblioteca sobre Slate Gray, panel de cita Kafka, pie Charcoal con newsletter y botón Suscribirme en Steel Blue, botón volver arriba." width="800" height="auto" loading="lazy">
+        <img src="assets/Screenshot_2026-03-12_at_8.29.15_AM-44f58b4d-747c-43c7-b976-41674b38b88c.png" alt="Bloque La obra como biblioteca sobre Terracota, panel de cita Kafka, pie Tinta con newsletter y botón Suscribirme en Siena, botón volver arriba." width="800" height="auto" loading="lazy">
       </div>
     </div>
   </div>

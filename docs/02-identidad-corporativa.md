@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 1.9**
+**Versión 2.0**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -28,41 +28,41 @@ Solo existen cinco colores reales. No hay grises, no hay degradados, no hay exte
 
 **Regla absoluta:** No puede existir ningún otro color que no esté en la paleta. Fondos, texto, bordes, sombras (con alpha de un color de la paleta), iconos, estados hover/focus — todo proviene exclusivamente de estos cinco hex.
 
-**Paleta: Silencio frío**
+**Paleta: Tierra viva**
 
 | Nombre | Hex | Uso principal |
 |--------|-----|----------------|
-| Charcoal | #2c2c2c | Cabecera, pie, texto |
-| Off-white | #f8f9fa | Fondos, superficies |
-| Slate Gray | #9ca3af | Superficies editoriales, texto secundario, bordes |
-| Steel Blue | #4a6fa5 | Acento base: enlaces, botones, foco |
-| Deep Slate | #2c3e50 | Acento intenso: hover, énfasis |
+| Tinta | #0d1303 | Cabecera, pie, texto |
+| Pergamino | #f3e0cc | Fondos, superficies |
+| Terracota | #b02e17 | Superficies editoriales, texto secundario, bordes |
+| Siena | #7e390c | Acento base: enlaces, botones, foco |
+| Musgo | #174f18 | Acento intenso: hover, énfasis |
 
 ### Guía visual
 
 Imagina el sitio así:
 
 ```
-[ Header: Charcoal ]
+[ Header: Tinta ]
     Daniel Arella
 --------------------------
-[ Superficie editorial: Slate Gray ]
+[ Superficie editorial: Terracota ]
     Destacado
 --------------------------
-Text: Charcoal
-Links: Steel Blue → Deep Slate en hover
-Buttons: Steel Blue con texto Off-white → Deep Slate en hover
+Text: Tinta
+Links: Siena → Musgo en hover
+Buttons: Siena con texto Pergamino → Musgo en hover
 ```
 
 Todo se construye con estas cinco tintas. Fondos y texto siempre provienen de la paleta.
 
 | Combinación | Fondo | Texto |
 |-------------|-------|-------|
-| Página general | Off-white | Charcoal |
-| Cabecera / pie | Charcoal | Off-white |
-| Superficies editoriales | Slate Gray | Charcoal |
-| Botones / CTAs | Steel Blue | Off-white |
-| Hover botones | Deep Slate | Off-white |
+| Página general | Pergamino | Tinta |
+| Cabecera / pie | Tinta | Pergamino |
+| Superficies editoriales | Terracota | Tinta |
+| Botones / CTAs | Siena | Pergamino |
+| Hover botones | Musgo | Pergamino |
 
 ---
 
@@ -179,14 +179,14 @@ Esto es una de las decisiones más importantes.
 
 ### Capa 1: Tokens de marca
 
-Los únicos colores reales. El orden es semántico: 1–3 neutros, 4–5 acentos (4 = base, 5 = más intenso).
+Los únicos colores reales. El orden es semántico: 1–2 neutros, 3–5 acentos (3 = terracota, 4 = base de interacción, 5 = hover).
 
 ```css
---brand-1: #2c2c2c;  /* Charcoal - neutro oscuro principal */
---brand-2: #f8f9fa;  /* Off-white - neutro claro base */
---brand-3: #9ca3af;  /* Slate Gray - neutro medio: superficies editoriales, bordes, texto secundario */
---brand-4: #4a6fa5;  /* Steel Blue - acento base de interacción */
---brand-5: #2c3e50;  /* Deep Slate - acento intenso (hover, énfasis) */
+--brand-1: #0d1303;  /* Tinta - neutro oscuro principal */
+--brand-2: #f3e0cc;  /* Pergamino - neutro claro base */
+--brand-3: #b02e17;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
+--brand-4: #7e390c;  /* Siena - acento base de interacción */
+--brand-5: #174f18;  /* Musgo - acento intenso (hover, énfasis) */
 ```
 
 ### Capa 2: Roles semánticos
@@ -195,38 +195,38 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 ```css
 /* Semantic roles */
---bg: var(--brand-2);           /* Off-white */
---text: var(--brand-1);         /* Charcoal */
---text-muted: var(--brand-3);  /* Slate Gray - metadatos, UI secundaria (evita opacity) */
---surface: var(--brand-3);      /* Slate Gray - superficies editoriales */
---border: var(--brand-3);       /* Slate Gray - bordes suaves, no Charcoal (evita dureza) */
+--bg: var(--brand-2);           /* Pergamino */
+--text: var(--brand-1);         /* Tinta */
+--text-muted: var(--brand-3);  /* Terracota - metadatos, UI secundaria (evita opacity) */
+--surface: var(--brand-3);      /* Terracota - superficies editoriales */
+--border: var(--brand-3);       /* Terracota - bordes; usar con moderación */
 
---link: var(--brand-4);         /* Steel Blue - acento base */
---link-hover: var(--brand-5);   /* Deep Slate - acento intenso */
---focus: var(--brand-4);        /* Steel Blue - más sereno para lectura larga */
+--link: var(--brand-4);         /* Siena - acento base */
+--link-hover: var(--brand-5);   /* Musgo - acento intenso */
+--focus: var(--brand-4);        /* Siena - acento de foco */
 
---header-bg: var(--brand-1);    /* Charcoal */
---footer-bg: var(--brand-1);    /* Charcoal */
+--header-bg: var(--brand-1);    /* Tinta */
+--footer-bg: var(--brand-1);    /* Tinta */
 
---primary: var(--brand-4);      /* Steel Blue - acento base */
---primary-hover: var(--brand-5); /* Deep Slate - acento intenso */
---text-on-primary: var(--brand-2); /* Off-white - texto sobre botones/CTAs */
+--primary: var(--brand-4);      /* Siena - acento base */
+--primary-hover: var(--brand-5); /* Musgo - acento intenso */
+--text-on-primary: var(--brand-2); /* Pergamino - texto sobre botones/CTAs */
 ```
 
 Los componentes solo consumen roles, nunca hex directo.
 
-**Regla de superficie:** Off-white es el fondo dominante del sitio. Slate Gray se usa solo para superficies editoriales puntuales (destacados, bloques contextuales, navegación secundaria). No debe convertirse en fondo extensivo de lectura.
+**Regla de superficie:** Pergamino es el fondo dominante del sitio. Terracota se usa solo para superficies editoriales puntuales (destacados, bloques contextuales, navegación secundaria). No debe convertirse en fondo extensivo de lectura.
 
-**Surface y separación:** Off-white y Slate Gray contrastan bien. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
+**Surface y separación:** Pergamino y Terracota contrastan bien. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
 
 **Separación visual:** (1) Primero: whitespace. (2) Segundo: ritmo vertical. (3) Tercero: borde suave (brand-3). Evitar contornos fuertes o marcos pesados.
 
 ### Accesibilidad de contraste
 
-- **Texto sobre fondo claro:** Charcoal sobre Off-white cumple AA sobrado.
-- **Steel Blue** como texto sobre Off-white: verificar contraste AA.
-- **Deep Slate** como texto sobre Off-white: verificar contraste AA.
-- **Solución:** Enlaces con color azul. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
+- **Texto sobre fondo claro:** Tinta sobre Pergamino cumple AA sobrado.
+- **Siena** como texto sobre Pergamino: verificar contraste AA.
+- **Musgo** como texto sobre Pergamino: verificar contraste AA.
+- **Solución:** Enlaces con color Siena. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 **Enlaces de navegación o interfaz:** sin subrayado.
 
@@ -246,7 +246,7 @@ a:hover { color: var(--link-hover); }
 
 **Focus:** En modo claro y oscuro, `--focus: var(--brand-4)` mantiene calma editorial. Si se prefiere focus más intenso (brand-5), usar `box-shadow` con alpha en lugar de outline sólido.
 
-**Botones y CTAs:** Contraste seguro = texto Off-white sobre fondos azules (Steel Blue / Deep Slate).
+**Botones y CTAs:** Contraste seguro = texto Pergamino sobre fondos Siena / Musgo.
 
 ```css
 .button {
@@ -324,18 +324,18 @@ No se añaden colores. Solo se reasignan roles (`prefers-color-scheme: dark`). O
 
 **Regla de focus:** En modo claro, focus = brand-4 (más sereno) o brand-5 (más intenso) según accesibilidad y fatiga visual. En modo oscuro, focus = brand-4 por legibilidad y menor agresividad sobre fondo oscuro.
 
-**Surface en dark mode:** Slate Gray sobre Charcoal crea contraste moderado; tarjetas como papel sobre fondo oscuro. Decisión estética clara, no error.
+**Surface en dark mode:** Terracota sobre Tinta crea contraste fuerte; usar solo en superficies puntuales. Decisión estética clara, no error.
 
 ```css
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: var(--brand-1);       /* Charcoal */
-    --text: var(--brand-2);     /* Off-white */
+    --bg: var(--brand-1);       /* Tinta */
+    --text: var(--brand-2);     /* Pergamino */
     --text-muted: var(--brand-3);
-    --surface: var(--brand-3);  /* Slate Gray - protagonista sobre oscuro */
-    --border: var(--brand-2);   /* Off-white — usar con moderación; preferir separación por espacio antes que por contorno */
+    --surface: var(--brand-3);  /* Terracota - protagonista sobre oscuro */
+    --border: var(--brand-2);   /* Pergamino — usar con moderación; preferir separación por espacio antes que por contorno */
 
-    --link: var(--brand-4);     /* Steel Blue - contrasta bien en oscuro */
+    --link: var(--brand-4);     /* Siena - contrasta bien en oscuro */
     --link-hover: var(--brand-5);
     --focus: var(--brand-4);    /* menor agresividad en lectura oscura */
 
@@ -416,5 +416,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 1.9  
-**Identidad:** Silencio frío — Charcoal, Off-white, Slate Gray, Steel Blue, Deep Slate.
+**Versión del documento:** 2.0  
+**Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Musgo.

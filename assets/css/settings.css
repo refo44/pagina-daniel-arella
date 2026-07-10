@@ -1,12 +1,12 @@
 :root {
-  --brand-1: #2c2c2c;
-  --brand-2: #f8f9fa;
-  --brand-3: #9ca3af;
-  --brand-4: #4a6fa5;
-  --brand-5: #2c3e50;
+  --brand-1: #0d1303;
+  --brand-2: #f3e0cc;
+  --brand-3: #b02e17;
+  --brand-4: #7e390c;
+  --brand-5: #174f18;
   --bg: var(--brand-2);
   --page-bg: var(--brand-2);
-  --content-bg: #fff;
+  --content-bg: var(--brand-2);
   --text: var(--brand-1);
   --text-muted: var(--brand-3);
   --surface: var(--brand-3);
@@ -20,7 +20,7 @@
   --primary: var(--brand-4);
   --primary-hover: var(--brand-5);
   --text-on-primary: var(--brand-2);
-  --shadow-soft: rgb(44 44 44 / 8%);
+  --shadow-soft: rgb(13 19 3 / 8%);
   --font-body: "Book Antiqua", Palatino, "Palatino Linotype", Georgia, serif;
   --font-heading: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
   --font-ui: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
@@ -64,7 +64,7 @@
     --primary: var(--brand-4);
     --primary-hover: var(--brand-2);
     --text-on-primary: var(--brand-1);
-    --shadow-soft: rgb(44 44 44 / 32%);
+    --shadow-soft: rgb(13 19 3 / 32%);
   }
 }
 
