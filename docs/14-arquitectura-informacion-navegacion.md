@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura de información y flujo de navegación
 
 **Mapa de navegación y enlaces vivos**  
-**Versión 2.6**
+**Versión 2.7**
 
 Este documento define qué enlaces salen de cada pantalla, a dónde van, en qué orden y cuáles no deben existir. No describe diseño ni layout. Es la capa que conecta el sistema editorial con el código y con la experiencia real del lector.
 
@@ -34,7 +34,9 @@ Sirve para que:
 
 ### Cabecera
 
-Estructura consolidada:
+Dos niveles. El primero es la navegación estructural fija; el segundo agrupa las secciones de circulación externa y multimedia que crecieron después de la v2.6 de este documento.
+
+**Nivel 1 — estructural:**
 
 | Enlace | Destino |
 |--------|---------|
@@ -48,15 +50,26 @@ Estructura consolidada:
 
 `Libros` no cuelga de `Archivo`: es una sección editorial con acceso directo desde cabecera.
 
-**Opcional (plan maestro):** Biblioteca de audio, Videoteca — accesibles desde Archivo o como ítem de cabecera según decisión de menú. Ver `01-plataforma-autor-plan`.
+**Nivel 2 — circulación y multimedia:**
+
+| Enlace | Destino |
+|--------|---------|
+| Blog | Listado Blog |
+| Eventos | Listado Eventos |
+| Galería | Galería |
+| Videos y audios | Multimedia (videos, audios, reels) |
+
+Eventos y Galería se adoptaron formalmente a la arquitectura en la v2.7 de este documento (antes existían en el sitio sin mapa). Multimedia reemplaza los conceptos separados "Biblioteca de audio" / "Videoteca" del plan maestro: en la implementación real ambos se unificaron en una sola sección con pestañas internas (Videos, Audios, Reels) en vez de dos páginas distintas.
 
 **Opcional:** Selector de idioma como control auxiliar (icono), no como ítem principal.
 
-**En pie, no en cabecera:** Prensa, Derechos, Correspondencia. La cabecera prioriza orientación hacia la obra y el autor.
+**Regla de Prensa:** Prensa nunca aparece en cabecera, en ningún nivel. Es una sección de referencia externa (evidencia, no obra) y vive únicamente en el pie. Esta regla se mantiene sin cambios respecto a versiones anteriores.
 
 No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros concretos.
 
 ### Pie
+
+El pie ya no replica el sitemap completo (16 enlaces). Muestra solo los destinos de referencia/administrativos que no viven en la cabecera, más una salida explícita al mapa completo:
 
 | Enlace | Destino |
 |--------|---------|
@@ -65,9 +78,12 @@ No incluir nunca en cabecera: Prensa, Derechos, piezas individuales, libros conc
 | Derechos | Derechos |
 | Contacto | Contacto |
 | Correspondencia | Correspondencia |
+| Ver todo el sitio | `/sitemap.html` — índice completo de todas las secciones, agrupado por función editorial |
 
-Orden fijo: Servicios editoriales → Prensa → Derechos → Contacto → Correspondencia.  
+Orden fijo: Servicios editoriales → Prensa → Derechos → Contacto → Correspondencia → Ver todo el sitio.
 No redes sociales ni enlaces externos salvo prensa.
+
+`sitemap.html` existe como página real (no solo archivo opcional de referencia, como sugería `17-static-file-structure` v1.3) precisamente para sostener este pie reducido sin perder wayfinding hacia Poemas, Ensayos, Relatos, Tema, Periodo, Forma, etc.
 
 ---
 
@@ -184,6 +200,21 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 
 ---
 
+## 9.1 Single Evento
+
+Sección adoptada formalmente en la v2.7 (antes existía en el sitio sin spec). Un evento es memoria editorial de una actividad pública (lectura, presentación, festival), no una entrada de blog ni una pieza de prensa.
+
+| Enlace | Destino | Tipo |
+|--------|---------|------|
+| “Volver a eventos” | Listado Eventos | Secundario |
+| Libro presentado (si aplica) | Single Libro | Primario |
+| “Sobre el autor” o “Contacto” (según el evento) | Sobre el autor / Contacto | Secundario |
+| Breadcrumb | Inicio → Eventos → [Título del evento] | Secundario |
+
+**Nunca:** listado de "otros eventos" ni cronología tipo feed.
+
+---
+
 ## 10. Archivo y listados
 
 Archivo general y por tipo (Poemas, Ensayos, Relatos, Talleres, Artículos). Libros se accede desde su propio listado principal.
@@ -198,15 +229,25 @@ Archivo general y por tipo (Poemas, Ensayos, Relatos, Talleres, Artículos). Lib
 
 ---
 
-## 10.1 Biblioteca de audio y videoteca (plan maestro)
+## 10.1 Multimedia (implementada — reemplaza Biblioteca de audio / Videoteca)
 
-Cuando estén implementadas (`01-plataforma-autor-plan`):
+El plan maestro original (`01-plataforma-autor-plan`) proponía dos secciones separadas: Biblioteca de audio y Videoteca. La implementación real las unificó en una sola página `/multimedia/` con tres bloques internos (Videos, Audios, Reels) en vez de dos rutas distintas. No hay fichas individuales (single) por pieza: cada elemento enlaza o embebe directamente el servicio externo (YouTube, SoundCloud, Instagram).
 
 | Enlace | Destino | Tipo |
 |--------|---------|------|
-| Cada pieza de audio y video | Single correspondiente (si existe) o reproductor externo (embed) | Primario |
-| Filtros por tipo | Mismo listado refinado | Secundario |
-| “Explorar archivo” / Inicio | Archivo o Home | Secundario |
+| Cada pieza de audio o video | Reproductor externo embebido (YouTube, SoundCloud, Instagram) | Primario |
+| Paginación por bloque (Videos/Audios/Reels) | Mismo bloque, página siguiente | Secundario |
+| “Explorar archivo” | Archivo | Secundario |
+
+## 10.2 Galería (adoptada en v2.7)
+
+Selección visual de fotografías, portadas y contexto del autor. Sin fichas individuales por imagen; es una página única de tipo listado.
+
+| Enlace | Destino | Tipo |
+|--------|---------|------|
+| “Explorar archivo” | Archivo | Secundario |
+
+**Nunca:** convertir la galería en un feed de redes sociales embebido.
 
 Misma regla que el resto del archivo: sin bloques de recomendación ni ruido. El audio y el video se alojan en servicios externos (YouTube, Vimeo, Instagram Reels, Spotify, etc.); el sitio solo enlaza o embebe.
 
@@ -257,6 +298,8 @@ La página presenta servicios de edición, corrección y lectura crítica sin pr
 | “Volver” | Home o Sobre el autor | Secundario |
 
 Una sola acción.
+
+**Dos puntos de entrada al mismo objetivo, no dos features distintas:** el campo “Lista de correos” en el pie (presente en todas las páginas) es la captura oportunista y liviana; `/correspondencia/` es el destino editorial dedicado, con texto de contexto, enlazado desde Inicio y Sobre el autor (“Recibir nuevos textos”). Ambos envían al mismo mecanismo de suscripción.
 
 ---
 
@@ -325,7 +368,7 @@ Si un enlace original ya no existe, la referencia puede mantenerse solo como arc
 
 ---
 
-## 18. Regla final
+## 19. Regla final
 
 Si un enlace no empuja la lectura hacia:
 

@@ -60,12 +60,15 @@ Una página por función editorial. Un slug por idioma.
 | Servicios editoriales | `/es/servicios-editoriales/` | `/en/editorial-services/` |
 | Prensa | `/es/prensa/` | `/en/press/` |
 | Derechos | `/es/derechos/` | `/en/rights/` |
-| Biblioteca de audio | `/es/biblioteca-audio/` | `/en/audio-library/` |
-| videoteca | `/es/videoteca/` | `/en/video-library/` |
+| Multimedia | `/es/multimedia/` | `/en/media/` |
+| Galería | `/es/galeria/` | `/en/gallery/` |
+| Mapa del sitio | `/es/sitemap/` | `/en/sitemap/` |
 
 `/es/archivo/` es el punto de entrada editorial al corpus completo.
 
-No existen variantes ni duplicados. Biblioteca de audio y videoteca según `01-plataforma-autor-plan`; las rutas de fichas (single) se añadirán cuando se defina el modelo de contenido.
+No existen variantes ni duplicados. Las rutas de fichas (single) se añadirán cuando se defina el modelo de contenido.
+
+**Nota v2.4:** `Biblioteca de audio` (`/es/biblioteca-audio/`) y `Videoteca` (`/es/videoteca/`) del plan maestro original se retiraron de este árbol. La implementación real las unificó en una sola sección `Multimedia` con bloques internos (Videos, Audios, Reels) — ver `14-arquitectura-informacion-navegacion` §10.1. `Galería` y `Eventos` se incorporan como secciones reales, adoptadas después del plan original (ver `05-mapa-pantallas`).
 
 ---
 
@@ -83,8 +86,9 @@ Cada tipo tiene un eje propio.
 | Relato | `/es/story/{slug}` | `/en/story/{slug}` |
 | Taller | `/es/talleres/{slug}` | `/en/workshops/{slug}` |
 | Artículo | `/es/blog/{slug}` | `/en/blog/{slug}` |
+| Evento | `/es/eventos/{slug}` | `/en/events/{slug}` |
 
-Los slugs de tipo permanecen en inglés para consistencia técnica.
+Los slugs de tipo permanecen en inglés para consistencia técnica, salvo `eventos`/`talleres` que ya circulan públicamente en español y se mantienen así en ES.
 
 ### Listados por tipo
 
@@ -96,6 +100,9 @@ Los slugs de tipo permanecen en inglés para consistencia técnica.
 | Listado de relatos | `/es/story/` | `/en/story/` |
 | Listado de talleres | `/es/talleres/` | `/en/workshops/` |
 | Listado de artículos | `/es/blog/` | `/en/blog/` |
+| Listado de eventos | `/es/eventos/` | `/en/events/` |
+
+Galería y Multimedia no tienen eje de tipo propio: son páginas fijas de listado único (sección 3), sin fichas individuales.
 
 ---
 
@@ -141,8 +148,9 @@ Si se implementa la taxonomía `form` (`03-arquitectura-editorial`):
 /es/servicios-editoriales/
 /es/prensa/
 /es/derechos/
-/es/biblioteca-audio/
-/es/videoteca/
+/es/multimedia/
+/es/galeria/
+/es/sitemap/
 
 /es/poem/
 /es/poem/{slug}
@@ -156,9 +164,12 @@ Si se implementa la taxonomía `form` (`03-arquitectura-editorial`):
 /es/talleres/{slug}
 /es/blog/
 /es/blog/{slug}
+/es/eventos/
+/es/eventos/{slug}
 
 /es/tema/{slug}
 /es/periodo/{slug}
+/es/forma/{slug}
 
 /en/… (espejo exacto)
 /en/topic/{slug}
@@ -166,7 +177,7 @@ Si se implementa la taxonomía `form` (`03-arquitectura-editorial`):
 /en/form/{slug}
 ```
 
-Nada más existe. Las rutas `/es/biblioteca-audio/` y `/es/videoteca/` (y sus singles, si se implementan singles) se detallan al desarrollar según `01-plataforma-autor-plan`.
+Nada más existe.
 
 ---
 
