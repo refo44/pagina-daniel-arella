@@ -183,7 +183,7 @@ Más reciente, Más antiguo, Por título, Por libro
 - Ver la lectura, cuando exista audio o video asociado
 - **Contexto:** “Este poema pertenece al libro: [Libro]”, “Abrir el libro”
 
-Las tarjetas del listado siempre usan “Leer el poema”. No anuncian si la ficha incluye audio o video, porque estos medios son complementos opcionales de cualquier poema.
+Las tarjetas del listado usan siempre la etiqueta “Poema” y la acción “Leer el poema”. La fecha, publicación de origen y medios asociados pertenecen a la ficha individual; el listado no anuncia si incluye audio o video, porque estos medios son complementos opcionales de cualquier poema.
 
 ### 6.2 Libro
 
