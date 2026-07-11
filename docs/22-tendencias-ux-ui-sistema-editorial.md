@@ -51,6 +51,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 ### 1.3 Iconografía
 
 - **Iconos funcionales:** Lucide Icons. Navegación, acciones, enlaces interactivos. Estilo outline minimalista. Tamaño estándar: 16–24px.
+- **Marcas externas:** símbolo oficial en SVG local junto al nombre del servicio; nunca como icon font ni como sustituto del texto.
 - **Iconos decorativos:** Uso moderado como acentos visuales. Separadores, encabezados de sección, fondos sutiles (opacidad baja), citas. Tamaño: 48–96px decorativos, 120–220px fondo. Regla: pocos, discretos, relacionados con el contenido.
 - **Ilustraciones:** Open Doodles. Hero, cabeceras de sección, estados vacíos. Máximo 3–5 ilustraciones en todo el sitio.
 

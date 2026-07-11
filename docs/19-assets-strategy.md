@@ -14,7 +14,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 
 | Área | Decisión |
 |------|----------|
-| **Iconos** | Lucide Icons. SVG inline o archivos locales. Sin icon fonts, sin Font Awesome por CDN. |
+| **Iconos** | Lucide Icons para la interfaz y SVG oficiales para marcas externas. Siempre locales; sin icon fonts ni CDN. |
 | **Ilustraciones** | Open Doodles. SVG para hero, cabeceras de sección y estados vacíos. |
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
@@ -31,7 +31,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 
 ```
 assets/
-├── icons/          Lucide Icons (SVG)
+├── icons/          Iconos de interfaz y marcas externas (SVG)
 ├── illustrations/  Open Doodles (SVG) para hero, secciones y estados vacíos
 ├── images/         Fotos, portadas de libros (optimizar: WebP o AVIF cuando sea posible)
 ├── fonts/          Tipografías autohospedadas (woff2)
@@ -61,6 +61,10 @@ Los documentos descargables no son obligatorios en la maqueta ni en el theme. Si
 
 Lucide ofrece más de mil iconos vectoriales consistentes: grid 24×24, stroke 2px, sin relleno por defecto, color heredado del texto (`currentColor`).
 
+### Marcas externas
+
+Las marcas externas, como Goodreads, usan su símbolo reconocible en un SVG local obtenido de Simple Icons. Estos símbolos acompañan texto explícito, son decorativos para tecnologías de asistencia y nunca sustituyen el nombre del servicio.
+
 ### Estructura de archivos (iconos)
 
 ```
@@ -76,6 +80,7 @@ assets/icons/
   arrow-right.svg
   arrow-left.svg
   external-link.svg
+  goodreads.svg
   quote.svg
   pen-tool.svg
   bookmark.svg
