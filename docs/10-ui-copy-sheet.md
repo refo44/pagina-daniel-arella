@@ -191,11 +191,11 @@ Las tarjetas del listado usan siempre la etiqueta “Poema” y la acción “Le
 
 **Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
 
-**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Reseñas de lectores, Prensa y referencias, Derechos
+**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Prensa y referencias, Derechos
 
 **Breadcrumb:** Inicio → Libros → [Libro]
 
-**Regla editorial:** “Dónde encontrar el libro” contiene solo editorial, librerías y marketplaces con una ficha verificable del título. Goodreads pertenece a “Reseñas de lectores”; no se trata como punto de venta. Un CTA de compra mostrado por Goodreads solo se replica si su destino abre una ficha válida del mismo libro.
+**Regla editorial:** “Dónde encontrar el libro” contiene solo editoriales, librerías y marketplaces con una ficha verificable del título. Goodreads se presenta como un elemento externo independiente, sin crear una sección propia, porque funciona como red social, catálogo comunitario y espacio de reseñas y recomendaciones; no se trata como punto de venta. Un CTA de compra mostrado por Goodreads solo se replica si su destino abre una ficha válida del mismo libro.
 
 ### 6.3 Ensayo
 

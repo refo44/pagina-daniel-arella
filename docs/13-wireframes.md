@@ -84,8 +84,7 @@ Bloques:
 - Dónde encontrar el libro
   - Editorial
   - Librería o marketplace
-- Reseñas de lectores
-  - Goodreads
+- Enlace externo independiente a Goodreads, si existe
 - Índice de textos: Poemas, Ensayos, Relatos
 - Prensa y referencias
   - Enlaces a medios, revistas o blogs externos

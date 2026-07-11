@@ -139,7 +139,7 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 | Cada texto del índice | Poema, Ensayo o Relato | Primario |
 | “Descargar PDF / EPUB” (si existe) | Descarga | Secundario |
 | Editorial / librería / marketplace (si existe y la ficha es válida) | Punto de consulta o compra externo | Secundario |
-| Goodreads (si existe) | Reseñas de lectores y ficha comunitaria | Secundario |
+| Goodreads (si existe) | Red social de lectores, catálogo, reseñas y recomendaciones | Secundario |
 | “Presentación en prensa” o referencias externas | Medio externo o página Prensa | Secundario |
 | “Explorar libros” | Listado Libros | Secundario |
 | Breadcrumb | Inicio → Libros → [Libro] | Secundario |
