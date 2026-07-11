@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.6**
+**Versión 2.7**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -393,7 +393,7 @@ Cada variante SVG tiene una versión PNG de 1024 px en la misma carpeta. Los arc
 
 - Usar siempre una variante de color de la paleta Tierra viva; no recolorear con tonos externos.
 - Mantener la proporción original y dejar aire alrededor del cabello; no recortar, deformar, rotar ni añadir sombras.
-- En la cabecera, usar el isotipo Pergamino transparente junto al nombre y el lema editorial visibles. La imagen lleva `alt=""` porque el texto contiguo ya identifica el enlace.
+- En la cabecera, usar el isotipo como máscara decorativa junto al nombre y el lema editorial visibles. Hereda el color del enlace de marca: Pergamino en reposo y Castaño en hover/active, igual que **Daniel Arella**. Se oculta a tecnologías de asistencia porque el texto contiguo ya identifica el enlace.
 - Tamaño mínimo recomendado del isotipo: 32 px en interfaz y 16 px únicamente como favicon.
 - Sobre fondos claros se usa Tinta; sobre Tinta se usa Pergamino. La versión con fondo propio se reserva para contextos donde no se controla la superficie.
 
@@ -468,5 +468,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.6
+**Versión del documento:** 2.7
 **Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.

@@ -31,9 +31,14 @@
 }
 
 .site-header__logo {
+  display: block;
   flex: 0 0 auto;
   width: auto;
   height: 3rem;
+  aspect-ratio: 666 / 600;
+  background-color: currentcolor;
+  mask: url("../logo/logo-mark-tinta.svg") center / contain no-repeat;
+  transition: background-color 0.2s ease;
 }
 
 .site-header__identity {
