@@ -18,7 +18,6 @@
       --text: #0d1303;
       --text-muted: #b02e17;
       --content-bg: #f3e0cc;
-      --section-focus-bg: #ffffff;
       --reading-bg: #ffffff;
       --border: #b02e17;
       --header-bg: #0d1303;
@@ -81,7 +80,7 @@
       .palette-doc .doc-page { min-height: auto; padding: 1.5rem; page-break-after: always; background: #f3e0cc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .doc-page:last-child { page-break-after: auto; }
       .palette-doc .doc-page--cover { min-height: auto; padding: 1.5rem 1.5rem 0.5rem; page-break-after: auto; }
-      .palette-doc .section-panel--focus { background: #ffffff !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc .content-body--reading { background: #ffffff !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .combo-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .palette-swatch__block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc [style*="background: var(--header-bg)"],
@@ -125,7 +124,7 @@
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--6"></div>
-          <div class="palette-swatch__info"><span class="name">Blanco</span><br><span class="hex">#ffffff</span><br><small>--brand-6 · Fondo claro alterno</small></div>
+          <div class="palette-swatch__info"><span class="name">Blanco</span><br><span class="hex">#ffffff</span><br><small>--brand-6 · Fondo de lectura sostenida</small></div>
         </div>
       </div>
     </div>
@@ -134,7 +133,7 @@
       <h2>2. Combinaciones de fondo y texto</h2>
       <div class="combo-grid">
         <div class="combo-box combo-box--page"><strong>Página general</strong><br>Fondo Pergamino, texto Tinta</div>
-        <div class="combo-box combo-box--alternate"><strong>Banda alterna</strong><br>Fondo Blanco, texto Tinta</div>
+        <div class="combo-box combo-box--alternate"><strong>Lectura sostenida</strong><br>Fondo Blanco, texto Tinta</div>
         <div class="combo-box combo-box--header"><strong>Cabecera / pie</strong><br>Fondo Tinta, texto Pergamino</div>
         <div class="combo-box combo-box--surface"><strong>Superficie editorial</strong><br>Fondo Terracota, texto Tinta</div>
         <div class="combo-box combo-box--button"><strong>Botones / CTAs</strong><br>Fondo Siena, texto Pergamino</div>
@@ -162,11 +161,10 @@
         <strong>Daniel Arella</strong> · Inicio · Archivo · Libros · Blog · Prensa
       </div>
 
-      <h3>Panel de superficie (sección)</h3>
-      <div class="section-panel section-panel--focus" style="padding: 1.5rem; background: #ffffff; color: #0d1303;">
-        <p class="section-heading__eyebrow" style="margin: 0 0 0.25rem; color: #0d1303;">Selección editorial</p>
-        <h2 class="section-heading__title" style="margin: 0 0 0.5rem; color: #0d1303;">Recomendaciones</h2>
-        <p style="margin: 0; color: #0d1303;">Texto Tinta sobre fondo Blanco. Las bandas alternan con el fondo Pergamino.</p>
+      <h3>Bloque de lectura sostenida</h3>
+      <div class="content-body content-body--reading o-flow" style="background: #ffffff; color: #0d1303;">
+        <p>El Blanco envuelve únicamente versos o prosa continua que requieren atención sostenida.</p>
+        <p>Títulos, imágenes, tarjetas, acciones y navegación permanecen sobre Pergamino.</p>
       </div>
 
       <h3>Tarjeta (card)</h3>

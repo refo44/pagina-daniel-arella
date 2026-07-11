@@ -37,7 +37,7 @@ Solo existen seis colores reales. No hay grises, no hay degradados, no hay exten
 | Terracota | #b02e17 | Superficies editoriales, texto secundario, bordes |
 | Siena | #7e390c | Acento base: enlaces, botones, foco |
 | Musgo | #174f18 | Acento intenso: hover, énfasis |
-| Blanco | #ffffff | Fondo claro alterno para bandas de contenido |
+| Blanco | #ffffff | Fondo exclusivo para bloques de lectura sostenida |
 
 ### Guía visual
 
@@ -47,7 +47,7 @@ Imagina el sitio así:
 [ Header: Tinta ]
     Daniel Arella
 --------------------------
-[ Bandas alternas: Pergamino / Blanco ]
+[ Superficie de lectura: Blanco ]
     Destacado
 --------------------------
 Text: Tinta
@@ -55,12 +55,12 @@ Links: Siena → Musgo en hover
 Buttons: Siena con texto Pergamino → Musgo en hover
 ```
 
-Todo se construye con estas seis tintas. Los fondos claros alternan entre Pergamino y Blanco; ambos usan Tinta como texto principal.
+Todo se construye con estas seis tintas. Pergamino sostiene la interfaz y Blanco aparece únicamente detrás de prosa o versos de lectura sostenida; ambos usan Tinta como texto principal.
 
 | Combinación | Fondo | Texto |
 |-------------|-------|-------|
 | Página general | Pergamino | Tinta |
-| Banda alterna | Blanco | Tinta |
+| Bloque de lectura sostenida | Blanco | Tinta |
 | Cabecera / pie | Tinta | Pergamino |
 | Superficies editoriales | Terracota | Tinta |
 | Botones / CTAs | Siena | Pergamino |
@@ -181,7 +181,7 @@ Esto es una de las decisiones más importantes.
 
 ### Capa 1: Tokens de marca
 
-Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 3–5 son acentos y 6 es el fondo claro alterno.
+Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 3–5 son acentos y 6 es el fondo exclusivo de lectura sostenida.
 
 ```css
 --brand-1: #0d1303;  /* Tinta - neutro oscuro principal */
@@ -189,7 +189,7 @@ Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 
 --brand-3: #b02e17;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
 --brand-4: #7e390c;  /* Siena - acento base de interacción */
 --brand-5: #174f18;  /* Musgo - acento intenso (hover, énfasis) */
---brand-6: #ffffff;  /* Blanco - fondo claro alterno */
+--brand-6: #ffffff;  /* Blanco - fondo de lectura sostenida */
 ```
 
 ### Capa 2: Roles semánticos
@@ -201,7 +201,6 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 --bg: var(--brand-2);           /* Pergamino */
 --page-bg: var(--brand-2);      /* Pergamino - lienzo principal */
 --content-bg: var(--brand-2);   /* Pergamino - tarjetas y controles */
---section-focus-bg: var(--brand-6); /* Blanco - bandas de foco */
 --reading-bg: var(--brand-6);   /* Blanco - lectura concentrada */
 --text: var(--brand-1);         /* Tinta */
 --text-muted: var(--brand-3);  /* Terracota - metadatos, UI secundaria (evita opacity) */
@@ -222,17 +221,15 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 Los componentes solo consumen roles, nunca hex directo.
 
-**Regla de fondos claros:** Pergamino es el lienzo dominante y Blanco se usa en bandas alternas. Las tarjetas y formularios conservan Pergamino para distinguirse dentro de las bandas blancas. Ambos fondos usan Tinta como texto principal.
+**Regla de fondos claros:** Pergamino es el lienzo de toda la interfaz: orientación, secciones, tarjetas, formularios, imágenes, multimedia, acciones y navegación. Blanco no es un recurso de alternancia visual.
 
-**Regla de lectura concentrada:** Todo texto completo que requiera atención sostenida —poemas, ensayos, relatos y artículos— se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`). “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`. Pergamino queda para el contexto de navegación, introducciones, tarjetas y contenido secundario.
+**Regla de lectura concentrada:** Solo el bloque tipográfico de un texto que requiera atención sostenida —versos, prosa continua o documentación extensa— se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`). El título, los metadatos, las imágenes, los paneles, la multimedia, las acciones y la navegación permanecen en Pergamino. “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`.
 
 **Dos objetivos UX:** En lectura continua domina la legibilidad, aunque el resultado sea visualmente más sobrio. En portadas, navegación, destacados y llamadas a la acción puede dominar el atractivo visual, siempre sin trasladar ese impacto al cuerpo de lectura.
 
 **Regla de superficie:** Terracota se reserva para acentos editoriales puntuales, texto secundario, bordes y navegación contextual. No debe convertirse en fondo extensivo de lectura.
 
-**Alternancia con propósito:** Pergamino y Blanco no alternan por posición, paridad ni decoración. Blanco identifica lectura concentrada o una banda con función de foco informativo; Pergamino identifica orientación, exploración, transición y contexto secundario. La decisión se toma por función dentro de la arquitectura de información.
-
-**Aplicación en el home:** Recomendaciones usa Blanco porque concentra la prioridad editorial; Prensa usa Blanco porque aporta evidencia y credibilidad. Blog y Archivo usan Pergamino porque su función es explorar y navegar el corpus.
+**Sin alternancia de secciones:** Blanco identifica únicamente una superficie tipográfica de lectura concentrada. No se aplica a bandas, grids, tarjetas, portadas ni bloques de evidencia. Todas las secciones del home usan Pergamino.
 
 **Separación visual:** (1) Primero: whitespace. (2) Segundo: ritmo vertical. (3) Tercero: borde suave (brand-3). Evitar contornos fuertes o marcos pesados.
 

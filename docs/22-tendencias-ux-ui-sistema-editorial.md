@@ -42,10 +42,10 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 ### 1.2 Legibilidad e impacto visual
 
-- **Lectura concentrada:** poemas, ensayos, relatos y artículos completos priorizan legibilidad y foco. Usan fondo Blanco (`--reading-bg`) y texto Tinta (`--text`), no negro puro.
+- **Lectura concentrada:** el bloque tipográfico de poemas, ensayos, relatos y documentación extensa prioriza legibilidad y foco. Usa fondo Blanco (`--reading-bg`) y texto Tinta (`--text`), no negro puro.
 - **Exploración e impacto:** portadas, navegación, destacados y CTAs pueden usar más contraste, color y composición para orientar y atraer.
 - **Límite:** los recursos de impacto visual no invaden el cuerpo de lectura ni compiten con la obra.
-- **Alternancia semántica:** Blanco y Pergamino se asignan según la función informativa del bloque, nunca por posición, paridad o variedad decorativa.
+- **Límite del Blanco:** títulos, metadatos, imágenes, multimedia, paneles, CTAs, navegación, grids y tarjetas permanecen sobre Pergamino. Blanco no alterna secciones ni funciona como decoración.
 
 ### 1.3 Iconografía
 

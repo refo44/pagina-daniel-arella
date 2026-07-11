@@ -92,12 +92,12 @@ Breadcrumb no aplica.
 | Bloque | Fondo | Propósito |
 |--------|-------|-----------|
 | Hero | Pergamino | Orientar y presentar la propuesta del sitio |
-| Recomendaciones | Blanco | Concentrar la prioridad editorial y facilitar la decisión de lectura |
+| Recomendaciones | Pergamino | Concentrar la prioridad editorial mediante jerarquía y contenido, no mediante un cambio decorativo de fondo |
 | Blog | Pergamino | Explorar novedades y recorridos posibles |
-| Prensa | Blanco | Presentar evidencia, referencias y credibilidad |
+| Prensa | Pergamino | Presentar evidencia, referencias y credibilidad |
 | Archivo | Pergamino | Navegar el corpus y sus taxonomías |
 
-Los fondos no alternan por orden visual. Blanco señala foco, lectura o evidencia; Pergamino señala orientación, exploración o contexto.
+Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una página. No se utiliza en secciones de tarjetas, navegación, evidencia o acciones.
 
 ---
 

@@ -310,14 +310,14 @@ body[data-nav="home"] .hero-home {
   isolation: isolate;
 }
 
-body[data-nav="home"] .section-panel:not(.section-panel--focus) {
+body[data-nav="home"] .section-panel {
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
 body[data-nav="home"] .hero-home > *,
-body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
+body[data-nav="home"] .section-panel > * {
   position: relative;
   z-index: 1;
 }
@@ -526,11 +526,6 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
 
 .section-panel {
   padding-block: var(--space-8);
-}
-
-.section-panel--focus {
-  background: var(--section-focus-bg);
-  color: var(--text);
 }
 
 .section-heading {
@@ -905,9 +900,11 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
   padding-block: var(--space-7);
 }
 
-.content-shell--reading {
+.content-body--reading {
   background: var(--reading-bg);
   color: var(--text);
+  padding: var(--space-6) var(--space-5);
+  border-radius: var(--radius-2);
 }
 
 .content-shell__header {

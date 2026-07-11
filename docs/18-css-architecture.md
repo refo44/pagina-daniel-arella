@@ -177,7 +177,7 @@ Las utilities no sustituyen componentes ni objetos. Se usan solo como apoyo punt
 
 ## 8. Variables CSS (Settings)
 
-En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. Los colores vienen de `02-identidad-corporativa`: 6 colores de marca (`--brand-*`) y roles semánticos (`--bg`, `--section-focus-bg`, `--reading-bg`, `--text`, `--link`, etc.). **Ningún componente usa hex directo; solo roles.**
+En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. Los colores vienen de `02-identidad-corporativa`: 6 colores de marca (`--brand-*`) y roles semánticos (`--bg`, `--reading-bg`, `--text`, `--link`, etc.). **Ningún componente usa hex directo; solo roles.**
 
 ```css
 :root {
@@ -208,9 +208,9 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
 
 Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
 
-Las páginas de lectura concentrada usan el modificador `.content-shell--reading`, que asigna `--reading-bg` (Blanco) como fondo y `--text` (Tinta) como color. Se aplica a poemas, ensayos, relatos y artículos completos; no a índices ni tarjetas.
+Los textos de lectura concentrada usan `.content-body--reading`, que asigna `--reading-bg` (Blanco) y `--text` (Tinta) únicamente al bloque de versos o prosa continua. El título, los metadatos, las imágenes, la multimedia, los paneles, las acciones y la navegación permanecen fuera sobre Pergamino.
 
-Las bandas de foco usan `.section-panel--focus` y `--section-focus-bg` (Blanco). No se aplican con `:nth-child` ni por alternancia automática: el HTML las declara únicamente cuando la sección representa prioridad editorial, evidencia o una decisión principal dentro de la arquitectura de información.
+Blanco no se usa en bandas, secciones, grids ni tarjetas. La jerarquía de portadas y páginas de exploración se resuelve con composición, espaciado y tipografía sobre Pergamino.
 
 Las listas editoriales dentro de textos conservan viñetas o numeración. Las listas usadas como estructura de interfaz —navegación, grids de tarjetas, filtros, metadatos, acciones y paginación— eliminan `list-style` y `padding-left` en su clase de componente.
 
