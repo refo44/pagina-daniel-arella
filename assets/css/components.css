@@ -58,6 +58,13 @@
   font-style: italic;
   font-weight: 400;
   line-height: var(--line-body);
+  transition: color 0.2s ease;
+}
+
+.site-header__brand:hover .site-header__tagline,
+.site-header__brand:active .site-header__tagline,
+.site-header__brand:focus-visible .site-header__tagline {
+  color: inherit;
 }
 
 .site-header.is-compact .site-header__inner {
