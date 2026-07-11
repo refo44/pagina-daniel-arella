@@ -22,7 +22,7 @@
   clip-path: none;
   overflow: visible;
   background: var(--header-bg);
-  color: var(--brand-2);
+  color: var(--text-on-dark);
   white-space: normal;
 }
 

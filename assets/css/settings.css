@@ -22,6 +22,11 @@
   --focus: var(--brand-4);
   --header-bg: var(--brand-1);
   --footer-bg: var(--brand-1);
+  --text-on-dark: var(--brand-2);
+  --text-on-dark-accent: var(--brand-3);
+  --border-on-dark: var(--brand-2);
+  --focus-on-dark: var(--brand-2);
+  --scrim: rgb(13 19 3 / 30%);
   --hero-bg: var(--brand-3);
   --hero-text: var(--brand-2);
   --hero-action: var(--brand-5);
@@ -34,7 +39,7 @@
   --header-padding-compact: var(--space-4);
   --header-brand-expanded: 2rem;
   --header-brand-compact: 1.35rem;
-  --font-body: "Book Antiqua", palatino, "Palatino Linotype", georgia, serif;
+  --font-body: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
   --font-heading: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
   --font-ui: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
   --font-meta: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;
@@ -57,7 +62,7 @@
   --card-gap: var(--space-7);
   --radius-1: 0.25rem;
   --radius-2: 0.5rem;
-  --line-body: 1.7;
+  --line-body: 1.6;
   --line-heading: 1.2;
   --line-ui: 1.4;
   --bp-medium: 40rem;

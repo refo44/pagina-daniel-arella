@@ -3,7 +3,7 @@
   top: 0;
   z-index: 10;
   background: var(--header-bg);
-  color: var(--brand-2);
+  color: var(--text-on-dark);
   box-shadow: none;
 }
 
@@ -50,7 +50,7 @@
   align-items: center;
   gap: var(--space-2);
   padding: 0.7rem 1rem;
-  border: 1px solid var(--brand-3);
+  border: 1px solid var(--border);
   border-radius: var(--radius-1);
   background: transparent;
   color: inherit;
@@ -84,14 +84,14 @@
 }
 
 .site-header__link[aria-current="page"] {
-  color: var(--brand-3);
+  color: var(--text-on-dark-accent);
   text-decoration: underline;
 }
 
 .site-header__list--sub {
   margin-top: var(--space-2);
   padding-top: var(--space-2);
-  border-top: 1px solid var(--brand-2);
+  border-top: 1px solid var(--border-on-dark);
 }
 
 .site-header__list--sub .site-header__link {
@@ -103,7 +103,7 @@
   margin-top: var(--space-9);
   padding-block: var(--space-8);
   background: var(--footer-bg);
-  color: var(--brand-2);
+  color: var(--text-on-dark);
 }
 
 .site-footer__inner {
@@ -245,7 +245,7 @@
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-ui);
   font-size: 1rem;
-  color: var(--brand-1);
+  color: var(--text);
   background: var(--content-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-1);
@@ -256,7 +256,7 @@
 }
 
 .site-footer__input:focus {
-  outline: 2px solid var(--brand-2);
+  outline: 2px solid var(--focus-on-dark);
   outline-offset: 2px;
 }
 
@@ -277,7 +277,7 @@
 }
 
 .site-footer__submit:focus-visible {
-  outline: 2px solid var(--brand-2);
+  outline: 2px solid var(--focus-on-dark);
   outline-offset: 2px;
 }
 
@@ -943,6 +943,16 @@ body[data-nav="home"] .section-panel > * {
   max-width: var(--measure-readable);
 }
 
+.content-body--poem {
+  max-width: 55ch;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+.content-body--poem p {
+  margin-bottom: 2em;
+}
+
 .content-body p + p,
 .content-body p + figure,
 .content-body figure + p,
@@ -1411,7 +1421,7 @@ body[data-nav="home"] .section-panel > * {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(0 0 0 / 30%);
+  background: var(--scrim);
   opacity: 0;
   transition: opacity 0.2s ease;
   pointer-events: none;
@@ -1742,7 +1752,7 @@ body[data-nav="home"] .section-panel > * {
   .site-header:not(.is-compact) .site-header__list--sub {
     margin-top: var(--space-2);
     padding-top: var(--space-2);
-    border-top: 1px solid var(--brand-2);
+    border-top: 1px solid var(--border-on-dark);
     margin-left: 0;
   }
 
