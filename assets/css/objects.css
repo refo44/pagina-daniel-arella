@@ -32,6 +32,24 @@
   gap: var(--space-8);
 }
 
+/*
+ * Por debajo de 64rem, .o-sidebar apila su contenido en una sola columna y el
+ * DOM ya no se ve completo de un vistazo: el aside (datos prácticos, contacto,
+ * CTA) pasa a verse primero para que la acción principal no quede enterrada
+ * al final de un artículo largo. Solo se toca el orden visual en este rango;
+ * a partir de 64rem ambos bloques son visibles a la vez y se deja el orden
+ * natural del DOM (artículo primero) sin modificar.
+ */
+@media (width < 64rem) {
+  .o-sidebar > article.o-flow {
+    order: 2;
+  }
+
+  .o-sidebar > aside.content-panel {
+    order: 1;
+  }
+}
+
 @media (width >= 64rem) {
   .o-sidebar {
     grid-template-columns: minmax(0, 1.65fr) minmax(18rem, 0.85fr);
