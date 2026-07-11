@@ -198,7 +198,7 @@ Estas piezas no forman parte del corpus textual (poem, essay, story). Funcionan 
 
 ## 8. Descargas y derechos
 
-Las descargas, si existen, viven solo dentro de Book. Un Book también puede funcionar solo como ficha editorial y bibliográfica, sin archivos públicos.
+Las descargas de obras, si existen, viven dentro de Book. Un Book también puede funcionar solo como ficha editorial y bibliográfica, sin archivos públicos.
 
 Ahí pueden vivir, a nivel de obra o de edición:
 
@@ -216,6 +216,8 @@ No hay tienda ni sistema de licencias dentro del sitio. El libro se presenta com
 Si una obra tiene varias ediciones, la página del Book las presenta como variantes editoriales de la misma obra, no como libros distintos ni como duplicados del archivo.
 
 El orden interno de un Book se define manualmente para respetar la secuencia editorial del libro.
+
+Un Workshop puede incluir de forma opcional un único PDF de programa curricular. Este archivo es material de apoyo de la ficha, no una obra, edición, entidad ni URL independiente. Si no existe un programa autorizado, el bloque de descarga no se muestra.
 
 ---
 

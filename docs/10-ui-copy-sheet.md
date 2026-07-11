@@ -212,6 +212,7 @@ Más reciente, Más antiguo, Por título, Por libro
 - Abrir el taller
 - Enviar solicitud (formulario de inscripción)
 - Contactar
+- Descargar programa (PDF), solo cuando exista un programa curricular público
 - **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
 - **Estados:** “No hay talleres programados por ahora.”, “Este taller ya finalizó.”
 

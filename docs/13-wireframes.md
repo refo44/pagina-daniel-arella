@@ -138,6 +138,7 @@ Bloques:
 - Título
 - Descripción
 - Datos: Fecha, Lugar, Modalidad
+- Programa curricular y descarga en PDF (opcional)
 - Relación con libro
 - Llamada a acción: Enviar solicitud, Contactar
 - Pie

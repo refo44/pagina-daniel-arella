@@ -181,6 +181,7 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 |--------|---------|------|
 | Libro relacionado | Single Libro | Primario |
 | “Enviar solicitud de inscripción” o “Contactar” | Contacto | Primario |
+| “Descargar programa (PDF)” (si existe) | PDF del programa curricular | Secundario |
 | “Volver a talleres” | Listado Talleres | Secundario |
 
 **Nunca:** otros talleres sueltos dentro del single.

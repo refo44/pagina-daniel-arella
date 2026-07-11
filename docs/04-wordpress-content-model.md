@@ -107,7 +107,7 @@ Regla: un `book` representa la obra. Sus ediciones viven dentro del mismo regist
 - Tiene archive
 - Soporta: title, editor, excerpt, thumbnail, revisions, custom-fields
 - Taxonomías: topic, period
-- Campos: workshop_start_date, workshop_end_date, workshop_place, workshop_status, workshop_signup_url
+- Campos: workshop_start_date, workshop_end_date, workshop_place, workshop_status, workshop_signup_url, workshop_program_pdf (opcional)
 - Relación: workshop_book → book (0 o 1)
 
 ### post

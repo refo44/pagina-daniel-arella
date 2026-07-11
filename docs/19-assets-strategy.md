@@ -19,7 +19,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
 | **Imágenes** | Optimizar antes de subir (WebP o AVIF cuando sea posible). |
-| **Documentos (PDF/EPUB)** | No forman parte del árbol base. Solo crear una carpeta pública para documentos si un título debe ofrecer descarga de forma explícita. |
+| **Documentos (PDF/EPUB)** | Viven en `assets/pdf/` solo cuando una obra o un taller debe ofrecer una descarga pública de forma explícita. |
 | **JS** | Solo navegación, formularios, accesibilidad. Sin frameworks ni lógica de app. Todo con `defer`. Sin animaciones costosas ni librerías de motion. |
 | **Audio y video (Biblioteca de audio, Videoteca)** | No se alojan en el servidor ni en `assets/`. Viven en servicios de terceros (YouTube, Vimeo, Instagram Reels, Spotify, SoundCloud, etc.). El sitio solo almacena URL o código de embed y muestra reproductor embebido o enlace. Ver `01-plataforma-autor-plan`, `03-arquitectura-editorial`. |
 
@@ -35,6 +35,7 @@ assets/
 ├── illustrations/  Open Doodles (SVG) para hero, secciones y estados vacíos
 ├── images/         Fotos, portadas de libros (optimizar: WebP o AVIF cuando sea posible)
 ├── fonts/          Tipografías autohospedadas (woff2)
+├── pdf/            Libros y programas curriculares con descarga pública
 └── favicon/        ico, svg, png, webmanifest (agrupa todos los archivos de icono del sitio: favicon, apple-touch-icon, manifest)
 
 js/                 Scripts mínimos (navegación, formularios, accesibilidad)
@@ -43,7 +44,7 @@ js/                 Scripts mínimos (navegación, formularios, accesibilidad)
 
 La misma estructura se replica en la maqueta estática y dentro del theme. En `02-identidad-corporativa` se definen las familias tipográficas (Fraunces, Source Sans 3) y su uso.
 
-Los documentos descargables no son obligatorios en la maqueta ni en el theme. Si un libro no ofrece descarga pública, el PDF o EPUB permanece fuera del árbol público y el sitio muestra solo la ficha editorial.
+Los documentos descargables no son obligatorios en la maqueta ni en el theme. Si un libro no ofrece descarga pública, el PDF o EPUB permanece fuera del árbol público y el sitio muestra solo la ficha editorial. En Workshop, el programa curricular en PDF también es opcional y solo aparece cuando existe un archivo público autorizado.
 
 ---
 

@@ -120,6 +120,7 @@ daniel-arella-static/
 │   ├── illustrations/      (Open Doodles)
 │   ├── svg/
 │   ├── fonts/
+│   ├── pdf/                (libros y programas curriculares con descarga pública)
 │   └── favicon/
 │
 └── parts/

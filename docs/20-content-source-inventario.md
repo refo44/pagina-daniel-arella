@@ -151,6 +151,8 @@ El resto (press-03 a press-13, 15 a 22, 24 a 31, 34 a 38, 40 a 42, 46 a 48) revi
 
 **Documentos (texto):** `content-source/documents/` — CV, biografía larga, archivo Venezuela (.md, .doc, .docx); contenido fuente para páginas Sobre el autor, etc.
 
+**Programa curricular de referencia:** `assets/pdf/programa-ciencia-ficcion-venezolana-2024.pdf` — ejemplo descargable asociado a `/talleres/ciencia-ficcion-venezolana-2024.html`; sustituir por el programa oficial cuando esté disponible.
+
 ---
 
 ## 4. Tamaños recomendados para el sitio
