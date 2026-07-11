@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.1**
+**Versión 2.2**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -218,6 +218,11 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 --header-bg: var(--brand-1);    /* Tinta */
 --footer-bg: var(--brand-1);    /* Tinta */
+--text-on-dark: var(--brand-2);        /* Pergamino - texto sobre header/footer/skip-link */
+--text-on-dark-accent: var(--brand-3); /* Terracota - estado "página actual" sobre header */
+--border-on-dark: var(--brand-2);      /* Pergamino - divisores sobre header/footer */
+--focus-on-dark: var(--brand-2);       /* Pergamino - anillo de foco sobre superficies Tinta */
+--scrim: rgb(13 19 3 / 30%);           /* Tinta con alpha - overlays sobre imagen */
 --hero-bg: var(--brand-3);      /* Terracota - impacto visual */
 --hero-text: var(--brand-2);    /* Pergamino - texto sobre hero */
 --hero-action: var(--brand-5);  /* Castaño - acción principal del hero */
@@ -226,6 +231,8 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 --primary-hover: var(--brand-5); /* Castaño - acento intenso */
 --text-on-primary: var(--brand-2); /* Pergamino - texto sobre botones/CTAs */
 ```
+
+**Regla de superficies oscuras:** Header, footer y el skip-link usan Tinta de fondo; su texto e iconos nunca son un brand token crudo (`--brand-2`) sino el rol `--text-on-dark`. Lo mismo aplica a bordes y foco sobre esas superficies (`--border-on-dark`, `--focus-on-dark`). Esto es lo que separa Capa 2 de Capa 1: un componente nunca decide "quiero Pergamino", decide "quiero texto legible sobre esta superficie oscura", y el rol resuelve el hex.
 
 Los componentes solo consumen roles, nunca hex directo.
 
@@ -245,9 +252,11 @@ Los componentes solo consumen roles, nunca hex directo.
 
 ### Accesibilidad de contraste
 
-- **Texto sobre fondos claros:** Tinta sobre Pergamino y Blanco cumple AA sobrado.
-- **Siena** como texto sobre Pergamino o Blanco: verificar contraste AA.
-- **Castaño** como texto sobre Pergamino o Blanco: contraste AAA (10.45:1 sobre Pergamino).
+- **Texto sobre fondos claros:** Tinta sobre Pergamino y Blanco cumple AA sobrado (14.70:1 / 18.89:1).
+- **Terracota** como texto sobre Pergamino: 5.22:1 (AA). Sobre Blanco: 6.70:1 (AA).
+- **Siena** como texto sobre Pergamino: 7.06:1. Sobre Blanco: 9.07:1 (AA).
+- **Castaño** como texto sobre Pergamino: 11.00:1. Sobre Blanco: 14.14:1 (AAA en ambos).
+- **Terracota como fondo:** solo sostiene texto Pergamino (5.22:1). Tinta sobre Terracota cae a 2.82:1 — no usar para texto corrido, solo para iconografía o acentos grandes.
 - **Solución:** Enlaces con color Siena. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 **Enlaces de navegación o interfaz:** sin subrayado.
@@ -292,6 +301,7 @@ Nunca usan hex ni brand tokens.
 
 .surface-editorial {
   background: var(--surface);
+  color: var(--text-on-dark);
 }
 ```
 
@@ -320,7 +330,7 @@ Esto permite: Rebranding y tema alterno — sin tocar componentes. **No incluye 
 ```css
 .poem-card {
   background: var(--surface);
-  color: var(--text);
+  color: var(--text-on-dark);
 }
 
 .poem-card__title {
@@ -419,5 +429,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.1
+**Versión del documento:** 2.2
 **Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.

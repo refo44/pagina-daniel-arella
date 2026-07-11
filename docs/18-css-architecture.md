@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura CSS
 
 **Decisión técnica: CSS nativo con ITCSS + BEM + variables CSS**  
-**Versión 1.2**
+**Versión 1.3**
 
 Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta estática primero, theme WordPress después. No hay Sass, no hay preprocesador, no hay framework. La misma estructura sirve para ambos.
 
@@ -182,20 +182,42 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
 ```css
 :root {
   /* Tipografía (02-identidad-corporativa) */
-  --font-body: 'Fraunces', serif;
-  --font-heading: 'Fraunces', serif;
-  --font-meta: 'Source Sans 3', sans-serif;   /* Metadatos, fechas, etiquetas */
-  --font-ui: 'Source Sans 3', sans-serif;     /* Controles, navegación */
+  --font-body: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
+  --font-heading: "Fraunces", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", georgia, serif;
+  --font-meta: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;   /* Metadatos, fechas, etiquetas */
+  --font-ui: "Source Sans 3", "Segoe UI", helvetica, arial, sans-serif;    /* Controles, navegación */
+
+  /* Cargados vía @font-face en generic.css desde assets/fonts/*.woff2 (400/600, con itálica 400 en Fraunces) */
+
+  /* Escala tipográfica: un solo lugar donde vive cada tamaño, nunca rem sueltos en components.css */
+  --text-2xs: 0.8125rem;  /* etiquetas mínimas */
+  --text-xs: 0.875rem;    /* texto legal, fine print */
+  --text-sm: 0.9375rem;   /* metadatos, nav secundaria, breadcrumbs */
+  --text-base: 1rem;      /* UI por defecto: botones, nav, excerpts */
+  --text-lg: 1.22rem;     /* lede del hero, títulos de media-card */
+  --text-xl: 1.3rem;      /* títulos de fila de archivo */
+  --text-2xl: clamp(1.2rem, 2vw, 1.35rem); /* card__title, fluido */
+  --text-poem: 1.1rem;    /* cuerpo de poema (02-identidad-corporativa) */
+  --text-body: 1.125rem;  /* cuerpo de prosa, 18px (02-identidad-corporativa) */
+  --text-h3: clamp(1.3rem, 2vw, 1.6rem);
+  --text-h2: clamp(1.75rem, 2.6vw, 2.35rem);
+  --text-h1: clamp(2.25rem, 3vw, 3.5rem);
 
   /* Medida de lectura */
   --measure-readable: 65ch;
+  --measure-heading: 42ch;
 
-  /* Espaciado */
-  --flow-space: 1.2rem;   /* o-flow: espaciado entre elementos en contenido editorial */
+  /* Espaciado: escala completa 1–9, sin valores arbitrarios en components.css */
+  --space-1: 0.25rem;
   --space-2: 0.5rem;
+  --space-3: 0.75rem;
   --space-4: 1rem;
+  --space-5: 1.25rem;
   --space-6: 1.5rem;
-  --space-8: 2rem;
+  --space-7: 2rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --flow-space: 1.25em;   /* o-flow: espaciado entre elementos en contenido editorial */
 
   /* Colores: roles semánticos se definen en 02-identidad-corporativa y deben copiarse aquí sin modificación */
 
@@ -206,7 +228,9 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
 }
 ```
 
-Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
+Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex, y tamaños de la escala tipográfica (`var(--text-sm)`), nunca `rem` sueltos. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
+
+Cuando un tamaño no calza exacto en la escala (ej. algo pensado como "casi 1rem"), se redondea al escalón más cercano en vez de crear un valor nuevo — la escala completa vale más que la precisión de un solo componente. Excepción: ajustes ópticos de un glifo o ícono decorativo (ej. centrar visualmente un ícono dentro de su caja) no son parte del ritmo de espaciado y pueden usar un valor puntual, documentado con un comentario breve.
 
 Los poemas, ensayos, relatos, artículos, notas del autor y documentación usan `.content-body--reading`, que asigna `--reading-bg` (Blanco) y `--text` (Tinta) únicamente al bloque de versos o prosa continua, independientemente de su extensión. El título, los metadatos, las imágenes, la multimedia, las acciones y la navegación permanecen fuera sobre el lienzo Pergamino.
 
@@ -325,7 +349,7 @@ Al implementar, verificar:
 - Tipografía: máximo 2 familias; jerarquías H1–H3 fijas.
 - Color: solo roles semánticos; nunca hex en componentes.
 - Lectura: ancho de columna 60–70ch; ritmo vertical consistente.
-- Motion: en páginas de texto, cero animaciones decorativas; solo focus y hover. Las transiciones deben limitarse a `color`, `background-color`, `border-color`, `opacity` y `outline`.
+- Motion: en páginas de texto, cero animaciones decorativas; solo focus y hover. Las transiciones deben limitarse a `color`, `background-color`, `border-color`, `opacity`, `outline` y `box-shadow` (solo con `--shadow-soft`, y solo en hover/focus de tarjetas — nunca como sombra permanente en reposo).
 - Respetar `prefers-reduced-motion` para usuarios que lo prefieran.
 - `:focus-visible` visible (p. ej. outline con `--focus`).
 
