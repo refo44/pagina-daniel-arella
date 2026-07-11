@@ -228,9 +228,9 @@ WordPress conserva cada comentario como parte de su sistema nativo. La publicaci
 
 ### 8.2 Compartir
 
-Todos los libros y artículos incluyen la acción “Compartir”. Los talleres y eventos la incluyen únicamente mientras su fecha los mantenga en los grupos de próximos. En teléfonos y tabletas la acción usa el selector nativo cuando está disponible; en computadoras con macOS, Windows o Linux siempre abre el panel propio con Facebook, X, WhatsApp, Threads y copia del enlace.
+Todos los libros y artículos incluyen la acción “Compartir”. Los talleres y eventos la incluyen únicamente mientras su fecha los mantenga en los grupos de próximos. La acción abre el panel propio con Facebook, X, WhatsApp, Threads, copia del enlace e imágenes preparadas para publicaciones e historias de Instagram. En teléfonos y tabletas, estas imágenes se envían al selector nativo; en computadoras se descargan para subirlas manualmente.
 
-Cada página compartible define título, descripción, URL canónica e imagen mediante Open Graph y Twitter Cards. Las imágenes deben ser archivos raster públicos para que las plataformas puedan generar una vista previa consistente. Compartir no crea contadores públicos ni integraciones de seguimiento con redes sociales.
+Cada página compartible define título, descripción, URL canónica e imagen mediante Open Graph y Twitter Cards. Las imágenes deben ser archivos raster públicos para que WhatsApp y las plataformas compatibles generen una vista previa consistente. Instagram no crea previews de enlaces en publicaciones o historias: el sitio genera una composición 1:1 o 9:16 a partir de la imagen editorial. Compartir no crea contadores públicos ni integraciones de seguimiento con redes sociales.
 
 ---
 

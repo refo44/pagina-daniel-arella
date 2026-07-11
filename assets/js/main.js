@@ -334,6 +334,8 @@ const createShareDialog = () => {
         <li><a class="button-link share-dialog__option" data-share-x target="_blank" rel="noopener noreferrer">X</a></li>
         <li><a class="button-link share-dialog__option" data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
         <li><a class="button-link share-dialog__option" data-share-threads target="_blank" rel="noopener noreferrer">Threads</a></li>
+        <li><button class="button-link share-dialog__option" type="button" data-share-instagram-post>Instagram · publicación</button></li>
+        <li><button class="button-link share-dialog__option" type="button" data-share-instagram-story>Instagram · historia</button></li>
         <li class="share-dialog__item--wide"><button class="button-link share-dialog__option" type="button" data-share-copy>Copiar enlace</button></li>
       </ul>
       <p class="share-dialog__status" data-share-status aria-live="polite"></p>
@@ -377,6 +379,160 @@ const copyText = async (text) => {
   }
 };
 
+const SOCIAL_IMAGE_FORMATS = {
+  post: { width: 1080, height: 1080, label: "publicación" },
+  story: { width: 1080, height: 1920, label: "historia" },
+};
+
+const getShareImageUrl = () => {
+  const configuredUrl = document.querySelector('meta[property="og:image"]')?.getAttribute("content");
+
+  if (!configuredUrl) {
+    return null;
+  }
+
+  const publicImageUrl = new URL(configuredUrl, window.location.href);
+  const assetsPathStart = publicImageUrl.pathname.indexOf("/assets/");
+
+  if (assetsPathStart === -1) {
+    return publicImageUrl.href;
+  }
+
+  const sitePrefix = document.body.dataset.sitePrefix;
+  const hasSitePrefix = sitePrefix && window.location.pathname.startsWith(`/${sitePrefix}/`);
+  const localPrefix = hasSitePrefix ? `/${sitePrefix}` : "";
+
+  return `${window.location.origin}${localPrefix}${publicImageUrl.pathname.slice(assetsPathStart)}`;
+};
+
+const loadShareImage = (url) =>
+  new Promise((resolve, reject) => {
+    const image = new Image();
+    image.onload = () => resolve(image);
+    image.onerror = () => reject(new Error("Share image could not be loaded"));
+    image.src = url;
+  });
+
+const drawContainedImage = ({ context, image, x, y, width, height }) => {
+  const scale = Math.min(width / image.naturalWidth, height / image.naturalHeight);
+  const renderedWidth = image.naturalWidth * scale;
+  const renderedHeight = image.naturalHeight * scale;
+
+  context.drawImage(
+    image,
+    x + ((width - renderedWidth) / 2),
+    y + ((height - renderedHeight) / 2),
+    renderedWidth,
+    renderedHeight,
+  );
+};
+
+const drawWrappedTitle = ({ context, title, x, y, maxWidth, lineHeight, maxLines }) => {
+  const words = title.split(/\s+/);
+  const lines = [];
+  let currentLine = "";
+
+  words.forEach((word) => {
+    const candidate = currentLine ? `${currentLine} ${word}` : word;
+
+    if (context.measureText(candidate).width <= maxWidth || !currentLine) {
+      currentLine = candidate;
+      return;
+    }
+
+    lines.push(currentLine);
+    currentLine = word;
+  });
+
+  if (currentLine) {
+    lines.push(currentLine);
+  }
+
+  const visibleLines = lines.slice(0, maxLines);
+
+  if (lines.length > maxLines) {
+    const lastIndex = visibleLines.length - 1;
+    visibleLines[lastIndex] = `${visibleLines[lastIndex].replace(/[.,;:]?$/, "")}…`;
+  }
+
+  visibleLines.forEach((line, index) => {
+    context.fillText(line, x, y + (index * lineHeight));
+  });
+};
+
+const createSocialImageFile = async ({ formatName, title }) => {
+  const format = SOCIAL_IMAGE_FORMATS[formatName];
+  const imageUrl = getShareImageUrl();
+
+  if (!format || !imageUrl) {
+    throw new Error("Share image is unavailable");
+  }
+
+  const image = await loadShareImage(imageUrl);
+  const canvas = document.createElement("canvas");
+  const context = canvas.getContext("2d");
+
+  if (!context) {
+    throw new Error("Canvas is unavailable");
+  }
+
+  canvas.width = format.width;
+  canvas.height = format.height;
+  context.fillStyle = "#f3e0cc";
+  context.fillRect(0, 0, format.width, format.height);
+
+  const horizontalPadding = formatName === "story" ? 90 : 64;
+  const imageTop = formatName === "story" ? 210 : 130;
+  const imageHeight = formatName === "story" ? 1120 : 650;
+  const titleTop = formatName === "story" ? 1490 : 850;
+  const titleFontSize = formatName === "story" ? 64 : 48;
+  const titleLineHeight = formatName === "story" ? 78 : 58;
+
+  context.fillStyle = "#7e390c";
+  context.font = `600 ${formatName === "story" ? 34 : 28}px system-ui, sans-serif`;
+  context.fillText("DANIEL ARELLA", horizontalPadding, formatName === "story" ? 115 : 70);
+
+  drawContainedImage({
+    context,
+    image,
+    x: horizontalPadding,
+    y: imageTop,
+    width: format.width - (horizontalPadding * 2),
+    height: imageHeight,
+  });
+
+  context.fillStyle = "#0d1303";
+  context.font = `700 ${titleFontSize}px Georgia, serif`;
+  drawWrappedTitle({
+    context,
+    title,
+    x: horizontalPadding,
+    y: titleTop,
+    maxWidth: format.width - (horizontalPadding * 2),
+    lineHeight: titleLineHeight,
+    maxLines: formatName === "story" ? 4 : 3,
+  });
+
+  const blob = await new Promise((resolve) => canvas.toBlob(resolve, "image/jpeg", 0.9));
+
+  if (!blob) {
+    throw new Error("Share image could not be generated");
+  }
+
+  const pageSlug = window.location.pathname.split("/").filter(Boolean).pop()?.replace(/\.html$/, "") || "daniel-arella";
+  const filename = `${pageSlug}-${formatName}.jpg`;
+  return new File([blob], filename, { type: "image/jpeg" });
+};
+
+const downloadFile = (file) => {
+  const objectUrl = URL.createObjectURL(file);
+  const link = document.createElement("a");
+  link.href = objectUrl;
+  link.download = file.name;
+  link.click();
+  window.setTimeout(() => URL.revokeObjectURL(objectUrl), 1000);
+};
+
 const bindShareActions = () => {
   const triggers = document.querySelectorAll("[data-share]");
 
@@ -391,9 +547,12 @@ const bindShareActions = () => {
   const xLink = dialog.querySelector("[data-share-x]");
   const whatsappLink = dialog.querySelector("[data-share-whatsapp]");
   const threadsLink = dialog.querySelector("[data-share-threads]");
+  const instagramPostButton = dialog.querySelector("[data-share-instagram-post]");
+  const instagramStoryButton = dialog.querySelector("[data-share-instagram-story]");
   const copyButton = dialog.querySelector("[data-share-copy]");
   const status = dialog.querySelector("[data-share-status]");
   let currentShareUrl = "";
+  let currentShareTitle = "";
 
   const openFallback = ({ title, url }) => {
     const encodedUrl = encodeURIComponent(url);
@@ -404,6 +563,7 @@ const bindShareActions = () => {
     whatsappLink?.setAttribute("href", `https://api.whatsapp.com/send?text=${encodedText}`);
     threadsLink?.setAttribute("href", `https://www.threads.com/intent/post?text=${encodeURIComponent(title)}&url=${encodedUrl}`);
     currentShareUrl = url;
+    currentShareTitle = title;
 
     if (status instanceof HTMLElement) {
       status.textContent = "";
@@ -412,6 +572,48 @@ const bindShareActions = () => {
     dialog.removeAttribute("aria-hidden");
     dialog.showModal();
   };
+
+  const shareInstagramImage = async (formatName) => {
+    const format = SOCIAL_IMAGE_FORMATS[formatName];
+
+    if (!format || !(status instanceof HTMLElement)) {
+      return;
+    }
+
+    status.textContent = `Preparando imagen para ${format.label}…`;
+
+    try {
+      const file = await createSocialImageFile({ formatName, title: currentShareTitle });
+      const shareData = {
+        files: [file],
+        title: currentShareTitle,
+        text: `${currentShareTitle}\n${currentShareUrl}`,
+      };
+
+      if (isMobileDevice && typeof navigator.canShare === "function" && navigator.canShare(shareData)) {
+        await navigator.share(shareData);
+        status.textContent = "";
+        return;
+      }
+
+      downloadFile(file);
+      status.textContent = `Imagen para ${format.label} descargada. Ya puedes subirla a Instagram.`;
+    } catch (error) {
+      if (error instanceof DOMException && error.name === "AbortError") {
+        status.textContent = "";
+        return;
+      }
+
+      status.textContent = "No fue posible preparar la imagen. Inténtalo de nuevo.";
+    }
+  };
+
+  instagramPostButton?.addEventListener("click", () => {
+    void shareInstagramImage("post");
+  });
+  instagramStoryButton?.addEventListener("click", () => {
+    void shareInstagramImage("story");
+  });
 
   copyButton?.addEventListener("click", async () => {
     try {
@@ -427,7 +629,7 @@ const bindShareActions = () => {
   });
 
   triggers.forEach((trigger) => {
-    trigger.addEventListener("click", async () => {
+    trigger.addEventListener("click", () => {
       const heading = document.querySelector("main h1");
       const title = trigger.getAttribute("data-share-title") ??
         heading?.textContent?.trim() ??
@@ -436,17 +638,6 @@ const bindShareActions = () => {
       const url = new URL(configuredUrl || window.location.href, window.location.href);
       url.hash = "";
       const shareData = { title, url: url.href };
-
-      if (isMobileDevice && typeof navigator.share === "function") {
-        try {
-          await navigator.share(shareData);
-          return;
-        } catch (error) {
-          if (error instanceof DOMException && error.name === "AbortError") {
-            return;
-          }
-        }
-      }
 
       openFallback(shareData);
     });

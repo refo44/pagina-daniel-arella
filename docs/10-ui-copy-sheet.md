@@ -248,12 +248,12 @@ Los comentarios aparecen únicamente en las páginas individuales de libros y ar
 ### 6.8 Compartir
 
 - **Acción:** “Compartir”
-- **Opciones en pantallas grandes:** Facebook, X, WhatsApp, Threads, Copiar enlace
+- **Opciones:** Facebook, X, WhatsApp, Threads, Instagram · publicación, Instagram · historia, Copiar enlace
 - **Confirmación:** “Enlace copiado.”
 
-En teléfonos y tabletas se usa el selector nativo cuando está disponible. En computadoras con macOS, Windows o Linux siempre se abre el panel propio para evitar menús o comportamientos diferentes entre sistemas. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
+El panel propio se abre en todos los sistemas para mantener opciones consistentes. En teléfonos y tabletas, las imágenes para Instagram se envían al selector nativo cuando admite archivos; en computadoras se descargan con una indicación para subirlas manualmente. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
 
-Cada página compartible debe ofrecer una vista previa con título, descripción e imagen propios. La imagen se publica en un formato raster compatible con los rastreadores sociales; los diagramas SVG requieren una versión PNG destinada a la vista previa.
+Cada página compartible debe ofrecer una vista previa con título, descripción e imagen propios. La imagen se publica en un formato raster compatible con los rastreadores sociales; los diagramas SVG requieren una versión PNG destinada a la vista previa. WhatsApp usa esta información al compartir el enlace. Para Instagram, el sitio genera una composición 1:1 para publicaciones o 9:16 para historias porque esa plataforma no renderiza tarjetas Open Graph dentro de esos formatos.
 
 ---
 
