@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.3**
+**Versión 2.4**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -48,6 +48,7 @@ Imagina el sitio así:
 ```
 [ Header: Tinta ]
     [ Isotipo ] Daniel Arella
+                 Cuaderno de las fulminaciones
 --------------------------
 [ Superficie de lectura: Blanco ]
     Destacado
@@ -366,7 +367,17 @@ El sitio **no incluye dark mode**. Nunca usar `@media (prefers-color-scheme: dar
 
 ## 9. Isotipo y firma de marca
 
-El símbolo del rostro con cabello rizado y anteojos es el **isotipo oficial**. La firma principal combina el isotipo con el nombre **Daniel Arella** compuesto en Fraunces; el símbolo no sustituye el nombre en la cabecera ni crea una tercera tipografía.
+El símbolo del rostro con cabello rizado y anteojos es el **isotipo oficial**. La firma principal combina el isotipo con el nombre **Daniel Arella** y el lema editorial **Cuaderno de las fulminaciones**, ambos compuestos en Fraunces; el símbolo no sustituye el nombre en la cabecera ni crea una tercera tipografía.
+
+### Lema editorial
+
+**Cuaderno de las fulminaciones** es el subtítulo oficial de la plataforma y forma parte permanente de la firma de marca.
+
+- Se escribe siempre con mayúscula inicial, sin comillas y sin punto final.
+- Aparece debajo de **Daniel Arella** en la cabecera de todas las páginas.
+- Aparece inmediatamente después del H1 **Daniel Arella** en la portada.
+- Se presenta en cursiva y con menor jerarquía que el nombre; nunca compite con títulos de obras o páginas.
+- No sustituye descripciones SEO, entradillas editoriales ni títulos de contenido.
 
 ### Variantes oficiales
 
@@ -382,7 +393,7 @@ Cada variante SVG tiene una versión PNG de 1024 px en la misma carpeta. Los arc
 
 - Usar siempre una variante de color de la paleta Tierra viva; no recolorear con tonos externos.
 - Mantener la proporción original y dejar aire alrededor del cabello; no recortar, deformar, rotar ni añadir sombras.
-- En la cabecera, usar el isotipo Pergamino transparente junto al nombre visible. La imagen lleva `alt=""` porque el texto contiguo ya identifica el enlace.
+- En la cabecera, usar el isotipo Pergamino transparente junto al nombre y el lema editorial visibles. La imagen lleva `alt=""` porque el texto contiguo ya identifica el enlace.
 - Tamaño mínimo recomendado del isotipo: 32 px en interfaz y 16 px únicamente como favicon.
 - Sobre fondos claros se usa Tinta; sobre Tinta se usa Pergamino. La versión con fondo propio se reserva para contextos donde no se controla la superficie.
 
@@ -457,5 +468,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.3
+**Versión del documento:** 2.4
 **Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.
