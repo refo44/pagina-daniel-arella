@@ -50,10 +50,16 @@
   align-items: center;
   gap: var(--space-2);
   padding: var(--space-3) var(--space-4);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-on-dark);
   border-radius: var(--radius-1);
   background: transparent;
   color: inherit;
+  transition: background 0.2s ease;
+}
+
+.site-header__toggle:hover,
+.site-header__toggle:active {
+  background: var(--surface-subtle-on-dark);
 }
 
 .site-header__nav {
@@ -216,7 +222,7 @@
   display: grid;
   gap: var(--space-3);
   padding-bottom: var(--space-6);
-  border-bottom: 1px solid rgb(255 255 255 / 15%);
+  border-bottom: 1px solid var(--border-subtle-on-dark);
 }
 
 .site-footer__newsletter-title {
@@ -294,8 +300,8 @@
 .site-footer__status {
   margin: 0;
   color: inherit;
-  background: rgb(255 255 255 / 10%);
-  border-color: rgb(255 255 255 / 20%);
+  background: var(--surface-subtle-on-dark);
+  border-color: var(--border-subtle-on-dark);
 }
 
 .hero-home {
@@ -414,18 +420,20 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .hero-slide .button:hover,
-.hero-slide .button:focus-visible {
+.hero-slide .button:focus-visible,
+.hero-slide .button:active {
   background: var(--hero-action-hover);
   color: var(--hero-text);
 }
 
 .hero-slide .button-link {
-  border-color: rgb(243 224 204 / 55%);
+  border-color: var(--border-on-hero);
   color: var(--hero-text);
 }
 
 .hero-slide .button-link:hover,
-.hero-slide .button-link:focus-visible {
+.hero-slide .button-link:focus-visible,
+.hero-slide .button-link:active {
   border-color: var(--hero-text);
   color: var(--hero-text);
 }
@@ -457,7 +465,7 @@ body[data-nav="home"] .section-panel > * {
   height: 3rem;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--content-bg);
   color: var(--text);
   font-family: var(--font-ui);
@@ -782,7 +790,8 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .button:hover,
-.button:focus-visible {
+.button:focus-visible,
+.button:active {
   background: var(--primary-hover);
   color: var(--text-on-primary);
 }
@@ -795,7 +804,8 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .button-link:hover,
-.button-link:focus-visible {
+.button-link:focus-visible,
+.button-link:active {
   color: var(--link-hover);
   border-color: var(--link);
 }
@@ -860,6 +870,48 @@ body[data-nav="home"] .section-panel > * {
   margin-bottom: 0;
 }
 
+.archive-intro--illustrated .o-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-8);
+}
+
+.archive-intro__illustration {
+  flex-shrink: 0;
+  width: 11rem;
+  height: auto;
+  opacity: 0.9;
+}
+
+@media (width < 40rem) {
+  .archive-intro__illustration {
+    display: none;
+  }
+}
+
+.archive-intro--watermark {
+  position: relative;
+  overflow: clip;
+}
+
+.archive-intro__watermark {
+  position: absolute;
+  top: 50%;
+  right: -2rem;
+  transform: translateY(-50%);
+  width: 20rem;
+  height: auto;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+@media (width < 64rem) {
+  .archive-intro__watermark {
+    display: none;
+  }
+}
+
 .archive-intro__layout {
   display: grid;
   gap: var(--space-6);
@@ -872,12 +924,20 @@ body[data-nav="home"] .section-panel > * {
 .archive-filter__chip {
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--border-subtle);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: transparent;
   color: var(--text);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.archive-filter__chip:hover,
+.archive-filter__chip:focus-visible,
+.archive-filter__chip:active {
+  border-color: var(--link);
+  color: var(--link);
 }
 
 .archive-filter__chip[aria-current="page"] {
@@ -1178,7 +1238,7 @@ body[data-nav="home"] .section-panel > * {
 
 .reels-rail__scroll::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-1);
 }
 
 .reels-rail__scroll::-webkit-scrollbar-thumb:hover {
@@ -1572,6 +1632,13 @@ body[data-nav="home"] .section-panel > * {
 
 .state-panel {
   max-width: 38rem;
+}
+
+.state-panel__illustration {
+  width: 9rem;
+  height: auto;
+  margin-bottom: var(--space-2);
+  opacity: 0.9;
 }
 
 .entry-nav {

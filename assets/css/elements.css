@@ -23,7 +23,8 @@ a {
   text-underline-offset: 0.16em;
 }
 
-a:hover {
+a:hover,
+a:active {
   color: var(--link-hover);
 }
 

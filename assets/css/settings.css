@@ -26,11 +26,14 @@
   --text-on-dark-accent: var(--brand-3);
   --border-on-dark: var(--brand-2);
   --focus-on-dark: var(--brand-2);
+  --border-subtle-on-dark: rgb(243 224 204 / 15%);
+  --surface-subtle-on-dark: rgb(243 224 204 / 10%);
   --scrim: rgb(13 19 3 / 30%);
   --hero-bg: var(--brand-3);
   --hero-text: var(--brand-2);
   --hero-action: var(--brand-5);
   --hero-action-hover: var(--brand-1);
+  --border-on-hero: rgb(243 224 204 / 55%);
   --primary: var(--brand-4);
   --primary-hover: var(--brand-5);
   --text-on-primary: var(--brand-2);
@@ -62,6 +65,7 @@
   --card-gap: var(--space-7);
   --radius-1: 0.25rem;
   --radius-2: 0.5rem;
+  --radius-pill: 999px;
   --line-body: 1.6;
   --line-heading: 1.2;
   --line-ui: 1.4;
