@@ -139,19 +139,19 @@
   list-style: none;
 }
 
-@media (min-width: 30rem) {
+@media (width >= 30rem) {
   .site-footer__nav {
     grid-template-columns: repeat(3, auto);
   }
 }
 
-@media (min-width: 45rem) {
+@media (width >= 45rem) {
   .site-footer__nav {
     grid-template-columns: repeat(4, auto);
   }
 }
 
-@media (min-width: 60rem) {
+@media (width >= 60rem) {
   .site-footer__nav {
     grid-template-columns: repeat(5, auto);
   }
@@ -216,7 +216,7 @@
   display: grid;
   gap: var(--space-3);
   padding-bottom: var(--space-5);
-  border-bottom: 1px solid rgb(255 255 255 / 0.15);
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
 }
 
 .site-footer__newsletter-title {
@@ -294,8 +294,8 @@
 .site-footer__status {
   margin: 0;
   color: inherit;
-  background: rgb(255 255 255 / 0.1);
-  border-color: rgb(255 255 255 / 0.2);
+  background: rgb(255 255 255 / 10%);
+  border-color: rgb(255 255 255 / 20%);
 }
 
 .hero-home {
@@ -550,7 +550,7 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
 }
 
 .section-heading__icon {
-  stroke: currentColor;
+  stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -794,7 +794,7 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
   border-radius: 50%;
   background: var(--content-bg);
   color: var(--text);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.2s ease, visibility 0.2s ease, background 0.2s ease, color 0.2s ease, transform 0.2s ease;
@@ -1109,7 +1109,7 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
 .reels-rail__icon {
   width: 2.5rem;
   height: 2.5rem;
-  stroke: currentColor;
+  stroke: currentcolor;
   stroke-width: 2;
   stroke-linecap: round;
   stroke-linejoin: round;
@@ -1261,7 +1261,7 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
   grid-template-columns: 1fr;
 }
 
-@media (min-width: 48rem) {
+@media (width >= 48rem) {
   .media-grid--video {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1765,7 +1765,7 @@ body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
   }
 }
 
-@media (max-width: 47.999rem) {
+@media (width <= 47.999rem) {
   .site-header:not(.is-compact) .site-header__inner {
     flex-direction: row;
     align-items: center;
