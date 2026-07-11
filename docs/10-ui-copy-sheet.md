@@ -253,6 +253,8 @@ Los comentarios aparecen únicamente en las páginas individuales de libros y ar
 
 En teléfonos y tabletas se usa el selector nativo cuando está disponible. En computadoras con macOS, Windows o Linux siempre se abre el panel propio para evitar menús o comportamientos diferentes entre sistemas. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
 
+Cada página compartible debe ofrecer una vista previa con título, descripción e imagen propios. La imagen se publica en un formato raster compatible con los rastreadores sociales; los diagramas SVG requieren una versión PNG destinada a la vista previa.
+
 ---
 
 ## 7. Servicios editoriales
