@@ -56,6 +56,7 @@ Bloques:
 - Breadcrumb
 - Título
 - Texto del poema
+- Lectura en audio o video asociado (opcional, después del texto)
 - Este texto pertenece al libro → Enlace al libro
 - Navegación: Anterior, Siguiente, Volver al archivo
 - Pie

@@ -55,6 +55,7 @@ No existen taxonomías de idioma, formato, editorial, edición ni estado. Esos d
 - Taxonomías: topic, period
 - Relación: poem_book → book (0 o 1)
 - Orden dentro del libro (opcional): book_order → integer
+- Video asociado (opcional): poem_video_url → URL externa de YouTube o Vimeo; se inserta en la ficha y también puede aparecer en Multimedia
 
 ### book
 

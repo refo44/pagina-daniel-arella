@@ -180,6 +180,7 @@ Más reciente, Más antiguo, Por título, Por libro
 - Siguiente poema
 - Poema anterior
 - Explorar archivo
+- Ver la lectura, cuando exista audio o video asociado
 - **Contexto:** “Este poema pertenece al libro: [Libro]”, “Abrir el libro”
 
 ### 6.2 Libro

@@ -302,6 +302,7 @@ Para el resto de archivos de la carpeta (~250 en total), usar **Caption** = “D
 | Eventos / prensa   | `press-events/` (premio-rey-david-2021, press-01…50) | Ver §3.2 y RENAME-MAP; usar las ≥ 800 px. |
 | Ilustración editorial | `illustrations/` (250 imgs, 95 autores) | Selección; servir a 800–1200 px; créditos y derechos; ver §2.2 listado autores. |
 | Descargas libro   | `books/pdf/`                              | Vincular PDF a fichas Book solo si habrá descarga pública; si no, usarlo como fuente editorial privada. |
+| Video asociado | YouTube `sv6NjG2DJJY` | Lectura de «La Puerta Oculta del Sol» en el XVI Festival Internacional de Poesía de Cali; usado en la ficha del poema y en Multimedia. |
 | Textos (CV, bio)   | `documents/`                              | Contenido para Sobre el autor, etc. |
 
 ---
