@@ -89,6 +89,9 @@ Bloques:
 - Prensa y referencias
   - Enlaces a medios, revistas o blogs externos
   - Nunca materiales propios del sitio
+- Comentarios
+  - Lista moderada
+  - Formulario para publicar un comentario
 - Pie
 
 Regla: una obra puede tener varias ediciones dentro de la misma ficha. Las ediciones no crean una nueva pantalla ni una nueva URL.
@@ -164,6 +167,9 @@ Bloques:
 - Título
 - Texto del artículo
 - Navegación: Explorar artículos o Volver al archivo
+- Comentarios
+  - Lista moderada
+  - Formulario para publicar un comentario
 - Pie
 
 Ver `07-sistema-editorial-web` (4.3), `10-ui-copy-sheet` (6.6).

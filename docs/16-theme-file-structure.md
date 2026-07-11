@@ -1,7 +1,7 @@
 # Daniel Arella — Theme File Structure
 
 **Estructura de archivos del theme WordPress**  
-**Versión 1.5**
+**Versión 1.6**
 
 Este documento define la arquitectura definitiva de archivos del theme: qué plantillas existen, qué URLs sirven y qué bloques se reutilizan. Es el punto donde la arquitectura editorial se vuelve código sin que WordPress imponga un modelo de blog.
 
@@ -48,6 +48,8 @@ Cada tipo de obra tiene su propia plantilla de lectura y su propio archivo. Nunc
 | post (blog) | `single.php` | `home.php` |
 
 El listado de Artículos usa `home.php` en lugar de `archive-post.php`, porque WordPress resuelve las entradas nativas mediante la plantilla del blog. Esto garantiza que cada género conserve su forma y jerarquía.
+
+`single-book.php` y `single.php` cargan `comments.php` después del contenido editorial. Ninguna otra plantilla individual muestra comentarios.
 
 ---
 
@@ -106,6 +108,7 @@ Componentes estructurales que se comparten entre plantillas.
 
 | Archivo | Función |
 |---------|---------|
+| `comments.php` | Lista, paginación y formulario de comentarios para libros y artículos |
 | `header.php` | Cabecera y navegación global |
 | `footer.php` | Pie editorial |
 | `parts/navigation.php` | Menú |
@@ -135,6 +138,7 @@ theme-daniel-arella/
 ├── index.php
 ├── header.php
 ├── footer.php
+├── comments.php
 ├── front-page.php
 ├── single-poem.php
 ├── single-book.php

@@ -1,6 +1,6 @@
 # Daniel Arella — WordPress Content Model
 
-**Versión 2.7**
+**Versión 2.8**
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés, etiquetas visibles traducidas vía i18n. Suficiente para desarrollo, legible para el autor.
 
@@ -61,7 +61,7 @@ No existen taxonomías de idioma, formato, editorial, edición ni estado. Esos d
 
 - Slug: /book/
 - Tiene archive
-- Soporta: title, editor, thumbnail, revisions, custom-fields
+- Soporta: title, editor, thumbnail, revisions, custom-fields, comments
 - Taxonomías: topic, period
 - Campos base: book_subtitle, book_abstract, book_rights_note
 - Ediciones: `book_editions` (repeatable group)
@@ -115,7 +115,7 @@ Regla: un `book` representa la obra. Sus ediciones viven dentro del mismo regist
 
 - Slug: /blog/
 - Tiene archive
-- Soporta: title, editor, excerpt, thumbnail, revisions
+- Soporta: title, editor, excerpt, thumbnail, revisions, comments
 - Uso: artículos, notas, textos circunstanciales
 - Taxonomías: topic, period
 
@@ -212,9 +212,20 @@ Si aparece otro tema con necesidades estructurales similares (partituras, fórmu
 
 ---
 
-## 8. Principio rector
+## 8. Comentarios y moderación
+
+- Los comentarios están habilitados por defecto únicamente en `book` y `post`.
+- El CPT `book` registra soporte para `comments`; `post` utiliza el soporte nativo de WordPress.
+- `single-book.php` y `single.php` cargan `comments_template()` después del contenido editorial y antes del pie.
+- `comments.php` muestra la lista mediante `wp_list_comments()`, su paginación y el formulario nativo mediante `comment_form()`.
+- Todos los comentarios pasan por moderación. Akismet se configura en WordPress para detectar spam antes de que llegue a la conversación pública.
+- El correo solicitado por el formulario nunca se publica.
+- La maqueta HTML no muestra un formulario sin persistencia; el bloque se activa al migrar a WordPress.
+
+---
+
+## 9. Principio rector
 
 Todo en este modelo existe para una sola cosa: que la obra pueda leerse, encontrarse y recorrerse sin ruido.
 
 No hay capas para marketing, funnels ni growth. Solo obra, libros, pensamiento y lectores.
-

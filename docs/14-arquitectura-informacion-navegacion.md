@@ -146,6 +146,8 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 
 **Nunca:** “otros libros”, “libros relacionados”.
 
+Los comentarios pertenecen al final de la página individual y no generan una ruta independiente ni enlaces desde el listado de libros.
+
 ---
 
 ## 6. Single Ensayo
@@ -199,6 +201,8 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 | Breadcrumb | Inicio → Archivo → Artículos → [Título del artículo] | Secundario |
 
 **Nunca:** listas genéricas de artículos sin relación.
+
+Los comentarios pertenecen al final de la página individual y no generan una ruta independiente ni enlaces desde el listado de artículos.
 
 ---
 

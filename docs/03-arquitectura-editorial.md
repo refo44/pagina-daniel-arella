@@ -220,6 +220,12 @@ El orden interno de un Book se define manualmente para respetar la secuencia edi
 
 Un Workshop puede incluir de forma opcional un programa curricular. Cuando existe, la ficha muestra el contenido completo en HTML y ofrece el mismo programa en un único PDF descargable. Este archivo es material de apoyo de la ficha, no una obra, edición, entidad ni URL independiente. Si no existe un programa autorizado, no se muestran el bloque curricular ni la descarga.
 
+### 8.1 Comentarios
+
+Todos los libros (`book`) y artículos (`post`) permiten comentarios en su página individual. Los comentarios no aparecen en tarjetas, listados ni otros tipos de contenido.
+
+WordPress conserva cada comentario como parte de su sistema nativo. La publicación está sujeta a moderación y Akismet filtra el spam. Los comentarios no crean una entidad editorial, taxonomía ni ruta independiente.
+
 ---
 
 ## 9. Multilenguaje

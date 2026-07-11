@@ -191,7 +191,7 @@ Las tarjetas del listado usan siempre la etiqueta “Poema” y la acción “Le
 
 **Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
 
-**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Prensa y referencias, Derechos
+**Secciones:** Descripción, Cita o fragmento, Índice, Ficha bibliográfica, Edición, Dónde encontrar el libro, Prensa y referencias, Derechos, Comentarios
 
 **Breadcrumb:** Inicio → Libros → [Libro]
 
@@ -226,6 +226,20 @@ Cuando exista un programa, sus objetivos, sesiones, metodología y materiales se
 - Leer el artículo
 - Siguiente artículo, Artículo anterior
 - Explorar artículos
+- Comentarios
+
+### 6.7 Comentarios en libros y artículos
+
+- **Título:** “Comentarios”
+- **Estado vacío:** “Todavía no hay comentarios.”
+- **Invitación:** “Deja un comentario”
+- **Campos:** Nombre, Correo, Comentario
+- **Ayuda del correo:** “Tu correo no se publicará.”
+- **Acción:** “Publicar comentario”
+- **Moderación:** “Tu comentario está pendiente de moderación.”
+- **Error:** “No fue posible publicar el comentario. Inténtalo de nuevo.”
+
+Los comentarios aparecen únicamente en las páginas individuales de libros y artículos. No se muestran contadores ni extractos de comentarios en tarjetas o listados.
 
 ---
 

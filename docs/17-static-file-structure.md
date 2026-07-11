@@ -1,7 +1,7 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
 **Estructura de archivos del sitio previo a WordPress**  
-**Versión 1.6**
+**Versión 1.7**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
@@ -224,6 +224,8 @@ Durante la maqueta estos archivos se insertan manualmente o mediante un preproce
 | chess-exercise.html | Ejercicio de ajedrez: nivel + planteamiento + solución en `&lt;details&gt;`. |
 
 `article-card.html` se usa solo para el CPT post (Artículos). `quote-block`, `goodreads-link` y los tres bloques de ajedrez se incluyen dentro del cuerpo de `essay`/`post` según corresponda. En WordPress `quote-block` y `goodreads-link` se convierten en `get_template_part()`; los bloques de ajedrez se convierten en bloques Gutenberg (`04-wordpress-content-model` §7).
+
+Los comentarios no se simulan en la maqueta estática: un formulario sin persistencia ni moderación sería engañoso. Las páginas HTML de libros y artículos permanecen sin ese bloque; `comments.php` se incorpora únicamente en el theme WordPress, donde Akismet y la moderación son operativos.
 
 ---
 
