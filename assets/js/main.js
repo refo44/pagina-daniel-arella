@@ -333,7 +333,8 @@ const createShareDialog = () => {
         <li><a class="button-link share-dialog__option" data-share-facebook target="_blank" rel="noopener noreferrer">Facebook</a></li>
         <li><a class="button-link share-dialog__option" data-share-x target="_blank" rel="noopener noreferrer">X</a></li>
         <li><a class="button-link share-dialog__option" data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-        <li><button class="button-link share-dialog__option" type="button" data-share-copy>Copiar enlace</button></li>
+        <li><a class="button-link share-dialog__option" data-share-threads target="_blank" rel="noopener noreferrer">Threads</a></li>
+        <li class="share-dialog__item--wide"><button class="button-link share-dialog__option" type="button" data-share-copy>Copiar enlace</button></li>
       </ul>
       <p class="share-dialog__status" data-share-status aria-live="polite"></p>
     </div>
@@ -389,6 +390,7 @@ const bindShareActions = () => {
   const facebookLink = dialog.querySelector("[data-share-facebook]");
   const xLink = dialog.querySelector("[data-share-x]");
   const whatsappLink = dialog.querySelector("[data-share-whatsapp]");
+  const threadsLink = dialog.querySelector("[data-share-threads]");
   const copyButton = dialog.querySelector("[data-share-copy]");
   const status = dialog.querySelector("[data-share-status]");
   let currentShareUrl = "";
@@ -400,6 +402,7 @@ const bindShareActions = () => {
     facebookLink?.setAttribute("href", `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`);
     xLink?.setAttribute("href", `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${encodedUrl}`);
     whatsappLink?.setAttribute("href", `https://api.whatsapp.com/send?text=${encodedText}`);
+    threadsLink?.setAttribute("href", `https://www.threads.com/intent/post?text=${encodeURIComponent(title)}&url=${encodedUrl}`);
     currentShareUrl = url;
 
     if (status instanceof HTMLElement) {

@@ -896,6 +896,10 @@ body[data-nav="home"] .section-panel > * {
   width: 100%;
 }
 
+.share-dialog__item--wide {
+  grid-column: 1 / -1;
+}
+
 .share-dialog__status {
   min-height: 1.5em;
   margin: var(--space-4) 0 0;
@@ -906,6 +910,10 @@ body[data-nav="home"] .section-panel > * {
 @media (width <= 36rem) {
   .share-dialog__options {
     grid-template-columns: 1fr;
+  }
+
+  .share-dialog__item--wide {
+    grid-column: auto;
   }
 }
 
