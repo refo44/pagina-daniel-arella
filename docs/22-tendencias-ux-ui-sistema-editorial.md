@@ -40,7 +40,14 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 | Página de sección | Organizar contenido |
 | Página de autor | Contextualizar la voz |
 
-### 1.2 Iconografía
+### 1.2 Legibilidad e impacto visual
+
+- **Lectura concentrada:** poemas, ensayos, relatos y artículos completos priorizan legibilidad y foco. Usan fondo Blanco (`--reading-bg`) y texto Tinta (`--text`), no negro puro.
+- **Exploración e impacto:** portadas, navegación, destacados y CTAs pueden usar más contraste, color y composición para orientar y atraer.
+- **Límite:** los recursos de impacto visual no invaden el cuerpo de lectura ni compiten con la obra.
+- **Alternancia semántica:** Blanco y Pergamino se asignan según la función informativa del bloque, nunca por posición, paridad o variedad decorativa.
+
+### 1.3 Iconografía
 
 - **Iconos funcionales:** Lucide Icons. Navegación, acciones, enlaces interactivos. Estilo outline minimalista. Tamaño estándar: 16–24px.
 - **Iconos decorativos:** Uso moderado como acentos visuales. Separadores, encabezados de sección, fondos sutiles (opacidad baja), citas. Tamaño: 48–96px decorativos, 120–220px fondo. Regla: pocos, discretos, relacionados con el contenido.
@@ -48,13 +55,13 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 **Jerarquía visual:** Ilustraciones → iconos decorativos → iconos funcionales → tipografía.
 
-### 1.3 Sistema: tipografía, blanco, jerarquía
+### 1.4 Sistema: tipografía, blanco, jerarquía
 
 - Tipografía = voz; espacio en blanco = ritmo.
 - Jerarquía con tamaño, interlineado, espaciado vertical, peso. **No** con colores, cajas, fondos ni módulos.
 - La cabecera debe ser corta y clara, pero puede superar 5 ítems si eso evita esconder una sección estructural. En este proyecto, `Libros` tiene acceso directo en el menú principal.
 
-### 1.4 Anti-patrones y reglas operativas
+### 1.5 Anti-patrones y reglas operativas
 
 **Riesgos:** Minimalismo sin personalidad (identidad en tipografía, no en efectos); simplificar y perder acceso al contenido; “minimalismo caliente” en artículos (distrae). Para leads, conversiones, CTAs: ver Regla práctica.
 

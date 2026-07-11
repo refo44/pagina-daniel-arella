@@ -310,14 +310,14 @@ body[data-nav="home"] .hero-home {
   isolation: isolate;
 }
 
-body[data-nav="home"] .section-panel:not(.section-panel--surface) {
+body[data-nav="home"] .section-panel:not(.section-panel--focus) {
   position: relative;
   overflow: hidden;
   isolation: isolate;
 }
 
 body[data-nav="home"] .hero-home > *,
-body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
+body[data-nav="home"] .section-panel:not(.section-panel--focus) > * {
   position: relative;
   z-index: 1;
 }
@@ -528,8 +528,9 @@ body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
   padding-block: var(--space-8);
 }
 
-.section-panel--surface {
-  background: var(--content-bg);
+.section-panel--focus {
+  background: var(--section-focus-bg);
+  color: var(--text);
 }
 
 .section-heading {
@@ -577,6 +578,8 @@ body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
 .card-grid {
   display: grid;
   gap: var(--space-5);
+  padding-left: 0;
+  list-style: none;
 }
 
 .card-grid--compact {
@@ -900,6 +903,11 @@ body[data-nav="home"] .section-panel:not(.section-panel--surface) > * {
 
 .content-shell {
   padding-block: var(--space-7);
+}
+
+.content-shell--reading {
+  background: var(--reading-bg);
+  color: var(--text);
 }
 
 .content-shell__header {

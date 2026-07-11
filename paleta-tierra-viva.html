@@ -13,10 +13,13 @@
       --brand-3: #b02e17;
       --brand-4: #7e390c;
       --brand-5: #174f18;
+      --brand-6: #ffffff;
       --bg: #f3e0cc;
       --text: #0d1303;
       --text-muted: #b02e17;
       --content-bg: #f3e0cc;
+      --section-focus-bg: #ffffff;
+      --reading-bg: #ffffff;
       --border: #b02e17;
       --header-bg: #0d1303;
       --footer-bg: #0d1303;
@@ -58,12 +61,14 @@
     .palette-swatch__block--3 { background: #b02e17; }
     .palette-swatch__block--4 { background: #7e390c; }
     .palette-swatch__block--5 { background: #174f18; }
+    .palette-swatch__block--6 { background: #ffffff; border-bottom: 1px solid var(--border); }
     .palette-swatch__info { padding: 0.5rem 0.75rem; font-family: var(--font-ui); font-size: 0.85rem; background: #f3e0cc; color: #0d1303; }
     .palette-swatch__info .name { font-weight: 600; color: #0d1303; }
     .palette-swatch__info .hex { font-family: monospace; color: #b02e17; }
     .combo-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
     .combo-box { padding: 1rem; border-radius: var(--radius-2); border: 1px solid #b02e17; }
     .combo-box--page { background: #f3e0cc; color: #0d1303; }
+    .combo-box--alternate { background: #ffffff; color: #0d1303; }
     .combo-box--header { background: #0d1303; color: #f3e0cc; }
     .combo-box--surface { background: #b02e17; color: #0d1303; }
     .combo-box--button { background: #7e390c; color: #f3e0cc; }
@@ -76,7 +81,7 @@
       .palette-doc .doc-page { min-height: auto; padding: 1.5rem; page-break-after: always; background: #f3e0cc !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .doc-page:last-child { page-break-after: auto; }
       .palette-doc .doc-page--cover { min-height: auto; padding: 1.5rem 1.5rem 0.5rem; page-break-after: auto; }
-      .palette-doc .section-panel--surface { background: #b02e17 !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .palette-doc .section-panel--focus { background: #ffffff !important; color: #0d1303 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .combo-box { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc .palette-swatch__block { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       .palette-doc [style*="background: var(--header-bg)"],
@@ -95,8 +100,8 @@
 
   <div class="doc-page">
     <div class="doc-section">
-      <h2>1. Los cinco colores</h2>
-      <p>Solo existen cinco colores reales. Todo el sitio (fondos, texto, bordes, sombras, hover) proviene de esta paleta.</p>
+      <h2>1. Los seis colores</h2>
+      <p>Solo existen seis colores reales. Todo el sitio (fondos, texto, bordes, sombras, hover) proviene de esta paleta.</p>
       <div class="palette-swatches">
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--1"></div>
@@ -104,7 +109,7 @@
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--2"></div>
-          <div class="palette-swatch__info"><span class="name">Pergamino</span><br><span class="hex">#f3e0cc</span><br><small>--brand-2 · Fondos, superficies</small></div>
+          <div class="palette-swatch__info"><span class="name">Pergamino</span><br><span class="hex">#f3e0cc</span><br><small>--brand-2 · Fondo principal, tarjetas</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--3"></div>
@@ -118,6 +123,10 @@
           <div class="palette-swatch__block palette-swatch__block--5"></div>
           <div class="palette-swatch__info"><span class="name">Musgo</span><br><span class="hex">#174f18</span><br><small>--brand-5 · Hover, énfasis</small></div>
         </div>
+        <div class="palette-swatch">
+          <div class="palette-swatch__block palette-swatch__block--6"></div>
+          <div class="palette-swatch__info"><span class="name">Blanco</span><br><span class="hex">#ffffff</span><br><small>--brand-6 · Fondo claro alterno</small></div>
+        </div>
       </div>
     </div>
 
@@ -125,6 +134,7 @@
       <h2>2. Combinaciones de fondo y texto</h2>
       <div class="combo-grid">
         <div class="combo-box combo-box--page"><strong>Página general</strong><br>Fondo Pergamino, texto Tinta</div>
+        <div class="combo-box combo-box--alternate"><strong>Banda alterna</strong><br>Fondo Blanco, texto Tinta</div>
         <div class="combo-box combo-box--header"><strong>Cabecera / pie</strong><br>Fondo Tinta, texto Pergamino</div>
         <div class="combo-box combo-box--surface"><strong>Superficie editorial</strong><br>Fondo Terracota, texto Tinta</div>
         <div class="combo-box combo-box--button"><strong>Botones / CTAs</strong><br>Fondo Siena, texto Pergamino</div>
@@ -153,10 +163,10 @@
       </div>
 
       <h3>Panel de superficie (sección)</h3>
-      <div class="section-panel section-panel--surface" style="padding: 1.5rem; background: #b02e17; color: #0d1303;">
+      <div class="section-panel section-panel--focus" style="padding: 1.5rem; background: #ffffff; color: #0d1303;">
         <p class="section-heading__eyebrow" style="margin: 0 0 0.25rem; color: #0d1303;">Selección editorial</p>
         <h2 class="section-heading__title" style="margin: 0 0 0.5rem; color: #0d1303;">Recomendaciones</h2>
-        <p style="margin: 0; color: #0d1303;">Texto sobre superficie Terracota. Las tarjetas y secciones alternan con fondo Pergamino.</p>
+        <p style="margin: 0; color: #0d1303;">Texto Tinta sobre fondo Blanco. Las bandas alternan con el fondo Pergamino.</p>
       </div>
 
       <h3>Tarjeta (card)</h3>

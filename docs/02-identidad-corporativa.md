@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.0**
+**Versión 2.1**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -24,19 +24,20 @@ El sitio debe sentirse como una biblioteca íntima, no como una revista ni como 
 
 ## 2. Paleta cromática
 
-Solo existen cinco colores reales. No hay grises, no hay degradados, no hay extensiones.
+Solo existen seis colores reales. No hay grises, no hay degradados, no hay extensiones.
 
-**Regla absoluta:** No puede existir ningún otro color que no esté en la paleta. Fondos, texto, bordes, sombras (con alpha de un color de la paleta), iconos, estados hover/focus — todo proviene exclusivamente de estos cinco hex.
+**Regla absoluta:** No puede existir ningún otro color que no esté en la paleta. Fondos, texto, bordes, sombras (con alpha de un color de la paleta), iconos, estados hover/focus — todo proviene exclusivamente de estos seis hex.
 
 **Paleta: Tierra viva**
 
 | Nombre | Hex | Uso principal |
 |--------|-----|----------------|
 | Tinta | #0d1303 | Cabecera, pie, texto |
-| Pergamino | #f3e0cc | Fondos, superficies |
+| Pergamino | #f3e0cc | Fondo claro principal, tarjetas y formularios |
 | Terracota | #b02e17 | Superficies editoriales, texto secundario, bordes |
 | Siena | #7e390c | Acento base: enlaces, botones, foco |
 | Musgo | #174f18 | Acento intenso: hover, énfasis |
+| Blanco | #ffffff | Fondo claro alterno para bandas de contenido |
 
 ### Guía visual
 
@@ -46,7 +47,7 @@ Imagina el sitio así:
 [ Header: Tinta ]
     Daniel Arella
 --------------------------
-[ Superficie editorial: Terracota ]
+[ Bandas alternas: Pergamino / Blanco ]
     Destacado
 --------------------------
 Text: Tinta
@@ -54,11 +55,12 @@ Links: Siena → Musgo en hover
 Buttons: Siena con texto Pergamino → Musgo en hover
 ```
 
-Todo se construye con estas cinco tintas. Fondos y texto siempre provienen de la paleta.
+Todo se construye con estas seis tintas. Los fondos claros alternan entre Pergamino y Blanco; ambos usan Tinta como texto principal.
 
 | Combinación | Fondo | Texto |
 |-------------|-------|-------|
 | Página general | Pergamino | Tinta |
+| Banda alterna | Blanco | Tinta |
 | Cabecera / pie | Tinta | Pergamino |
 | Superficies editoriales | Terracota | Tinta |
 | Botones / CTAs | Siena | Pergamino |
@@ -179,7 +181,7 @@ Esto es una de las decisiones más importantes.
 
 ### Capa 1: Tokens de marca
 
-Los únicos colores reales. El orden es semántico: 1–2 neutros, 3–5 acentos (3 = terracota, 4 = base de interacción, 5 = hover).
+Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 3–5 son acentos y 6 es el fondo claro alterno.
 
 ```css
 --brand-1: #0d1303;  /* Tinta - neutro oscuro principal */
@@ -187,6 +189,7 @@ Los únicos colores reales. El orden es semántico: 1–2 neutros, 3–5 acentos
 --brand-3: #b02e17;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
 --brand-4: #7e390c;  /* Siena - acento base de interacción */
 --brand-5: #174f18;  /* Musgo - acento intenso (hover, énfasis) */
+--brand-6: #ffffff;  /* Blanco - fondo claro alterno */
 ```
 
 ### Capa 2: Roles semánticos
@@ -196,6 +199,10 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 ```css
 /* Semantic roles */
 --bg: var(--brand-2);           /* Pergamino */
+--page-bg: var(--brand-2);      /* Pergamino - lienzo principal */
+--content-bg: var(--brand-2);   /* Pergamino - tarjetas y controles */
+--section-focus-bg: var(--brand-6); /* Blanco - bandas de foco */
+--reading-bg: var(--brand-6);   /* Blanco - lectura concentrada */
 --text: var(--brand-1);         /* Tinta */
 --text-muted: var(--brand-3);  /* Terracota - metadatos, UI secundaria (evita opacity) */
 --surface: var(--brand-3);      /* Terracota - superficies editoriales */
@@ -215,17 +222,25 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 
 Los componentes solo consumen roles, nunca hex directo.
 
-**Regla de superficie:** Pergamino es el fondo dominante del sitio. Terracota se usa solo para superficies editoriales puntuales (destacados, bloques contextuales, navegación secundaria). No debe convertirse en fondo extensivo de lectura.
+**Regla de fondos claros:** Pergamino es el lienzo dominante y Blanco se usa en bandas alternas. Las tarjetas y formularios conservan Pergamino para distinguirse dentro de las bandas blancas. Ambos fondos usan Tinta como texto principal.
 
-**Surface y separación:** Pergamino y Terracota contrastan bien. Usar separación por ritmo (padding, whitespace) y borde suave (brand-3). Evitar sombras; mantener aire editorial.
+**Regla de lectura concentrada:** Todo texto completo que requiera atención sostenida —poemas, ensayos, relatos y artículos— se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`). “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`. Pergamino queda para el contexto de navegación, introducciones, tarjetas y contenido secundario.
+
+**Dos objetivos UX:** En lectura continua domina la legibilidad, aunque el resultado sea visualmente más sobrio. En portadas, navegación, destacados y llamadas a la acción puede dominar el atractivo visual, siempre sin trasladar ese impacto al cuerpo de lectura.
+
+**Regla de superficie:** Terracota se reserva para acentos editoriales puntuales, texto secundario, bordes y navegación contextual. No debe convertirse en fondo extensivo de lectura.
+
+**Alternancia con propósito:** Pergamino y Blanco no alternan por posición, paridad ni decoración. Blanco identifica lectura concentrada o una banda con función de foco informativo; Pergamino identifica orientación, exploración, transición y contexto secundario. La decisión se toma por función dentro de la arquitectura de información.
+
+**Aplicación en el home:** Recomendaciones usa Blanco porque concentra la prioridad editorial; Prensa usa Blanco porque aporta evidencia y credibilidad. Blog y Archivo usan Pergamino porque su función es explorar y navegar el corpus.
 
 **Separación visual:** (1) Primero: whitespace. (2) Segundo: ritmo vertical. (3) Tercero: borde suave (brand-3). Evitar contornos fuertes o marcos pesados.
 
 ### Accesibilidad de contraste
 
-- **Texto sobre fondo claro:** Tinta sobre Pergamino cumple AA sobrado.
-- **Siena** como texto sobre Pergamino: verificar contraste AA.
-- **Musgo** como texto sobre Pergamino: verificar contraste AA.
+- **Texto sobre fondos claros:** Tinta sobre Pergamino y Blanco cumple AA sobrado.
+- **Siena** como texto sobre Pergamino o Blanco: verificar contraste AA.
+- **Musgo** como texto sobre Pergamino o Blanco: verificar contraste AA.
 - **Solución:** Enlaces con color Siena. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 **Enlaces de navegación o interfaz:** sin subrayado.
@@ -244,7 +259,7 @@ a:hover { color: var(--link-hover); }
 }
 ```
 
-**Focus:** En modo claro y oscuro, `--focus: var(--brand-4)` mantiene calma editorial. Si se prefiere focus más intenso (brand-5), usar `box-shadow` con alpha en lugar de outline sólido.
+**Focus:** `--focus: var(--brand-4)` mantiene calma editorial en el tema claro único. Si se prefiere focus más intenso (brand-5), usar `box-shadow` con alpha en lugar de outline sólido.
 
 **Botones y CTAs:** Contraste seguro = texto Pergamino sobre fondos Siena / Musgo.
 
@@ -397,5 +412,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.0  
-**Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Musgo.
+**Versión del documento:** 2.1
+**Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Musgo y Blanco.

@@ -228,7 +228,7 @@ Las ediciones de un libro no tienen plantilla ni URL propias. Se resuelven dentr
 
 **Según 22-tendencias-ux-ui-sistema-editorial:** `theme.json` debe bloquear paleta y tipografías; el editor no habilita estilos libres ni bloques con animación en contenido.
 
-- Paleta: solo los 5 colores de marca y roles semánticos de `02-identidad-corporativa`.
+- Paleta: solo los 6 colores de marca y roles semánticos de `02-identidad-corporativa`.
 - Tipografías: Fraunces, Source Sans 3. Sin familias adicionales.
 - Sin bloques de animación en área de lectura.
 

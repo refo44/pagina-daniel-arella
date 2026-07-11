@@ -5,9 +5,12 @@
   --brand-3: #b02e17;
   --brand-4: #7e390c;
   --brand-5: #174f18;
+  --brand-6: #ffffff;
   --bg: var(--brand-2);
   --page-bg: var(--brand-2);
   --content-bg: var(--brand-2);
+  --section-focus-bg: var(--brand-6);
+  --reading-bg: var(--brand-6);
   --text: var(--brand-1);
   --text-muted: var(--brand-3);
   --surface: var(--brand-3);

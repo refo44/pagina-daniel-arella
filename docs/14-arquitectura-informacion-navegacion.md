@@ -87,6 +87,18 @@ No redes sociales ni enlaces externos salvo prensa.
 
 Breadcrumb no aplica.
 
+### Fondos según función informativa
+
+| Bloque | Fondo | Propósito |
+|--------|-------|-----------|
+| Hero | Pergamino | Orientar y presentar la propuesta del sitio |
+| Recomendaciones | Blanco | Concentrar la prioridad editorial y facilitar la decisión de lectura |
+| Blog | Pergamino | Explorar novedades y recorridos posibles |
+| Prensa | Blanco | Presentar evidencia, referencias y credibilidad |
+| Archivo | Pergamino | Navegar el corpus y sus taxonomías |
+
+Los fondos no alternan por orden visual. Blanco señala foco, lectura o evidencia; Pergamino señala orientación, exploración o contexto.
+
 ---
 
 ## 4. Single Poema
