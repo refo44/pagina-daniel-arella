@@ -217,7 +217,7 @@ Si una obra tiene varias ediciones, la página del Book las presenta como varian
 
 El orden interno de un Book se define manualmente para respetar la secuencia editorial del libro.
 
-Un Workshop puede incluir de forma opcional un único PDF de programa curricular. Este archivo es material de apoyo de la ficha, no una obra, edición, entidad ni URL independiente. Si no existe un programa autorizado, el bloque de descarga no se muestra.
+Un Workshop puede incluir de forma opcional un programa curricular. Cuando existe, la ficha muestra el contenido completo en HTML y ofrece el mismo programa en un único PDF descargable. Este archivo es material de apoyo de la ficha, no una obra, edición, entidad ni URL independiente. Si no existe un programa autorizado, no se muestran el bloque curricular ni la descarga.
 
 ---
 

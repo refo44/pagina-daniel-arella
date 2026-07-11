@@ -216,6 +216,8 @@ Más reciente, Más antiguo, Por título, Por libro
 - **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
 - **Estados:** “No hay talleres programados por ahora.”, “Este taller ya finalizó.”
 
+Cuando exista un programa, sus objetivos, sesiones, metodología y materiales se leen completos en la ficha; el PDF es una descarga complementaria, no el único acceso al contenido.
+
 ### 6.6 Artículo
 
 - Leer el artículo
