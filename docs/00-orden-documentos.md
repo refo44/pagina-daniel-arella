@@ -19,6 +19,7 @@ Los documentos en `docs/` llevan prefijo de dos dígitos (`01-`, `02-`, …) par
 | **22** | Criterios contemporáneos | Lectura de tendencias UX/UI 2026 aplicada al sistema editorial. Filtro estratégico para decisiones futuras. Criterio de validación para la revisión de documentos (identidad, CSS, navegación, assets, implementación). |
 | **23** | Accesibilidad | Estándares de accesibilidad: estrategia, principios WCAG, reglas de diseño, HTML semántico, ARIA, checklist y pruebas. WCAG 2.1/2.2 AA. |
 | **24** | Layout | Principios de layout: ancho de lectura, ritmo vertical, uso del blanco, relación tipografía/imagen, grid y responsive. Cierra el sistema visual antes de escribir HTML. |
+| **25** | Compartir | Guía técnica reutilizable para previews, intents, Web Share API, WhatsApp e imágenes para publicaciones e historias de Instagram. |
 
 ---
 
@@ -54,3 +55,4 @@ Ningún documento debe depender de uno con número mayor. El documento `00-orden
 22. `22-tendencias-ux-ui-sistema-editorial`
 23. `23-estandares-accesibilidad`
 24. `24-principios-layout`
+25. `25-guia-compartir-redes-sociales`
