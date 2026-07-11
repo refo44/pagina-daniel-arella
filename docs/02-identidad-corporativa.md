@@ -229,7 +229,7 @@ Los componentes solo consumen roles, nunca hex directo.
 
 **Regla del hero:** El hero no es una superficie de lectura. Su función es resaltar, atraer y conducir hacia una acción; usa Terracota (`--hero-bg`) con texto Pergamino (`--hero-text`) y una acción Castaño accesible.
 
-**Regla de lectura concentrada:** Solo el bloque tipográfico de un texto que requiera atención sostenida —versos, prosa continua o documentación extensa— se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`). El título, los metadatos, las imágenes, los paneles, la multimedia, las acciones y la navegación permanecen en Pergamino. “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`.
+**Regla de lectura concentrada:** El bloque tipográfico de poemas, ensayos, relatos, artículos, notas del autor y documentación se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`), sin depender de su extensión. El título, los metadatos, las imágenes, los paneles, la multimedia, las acciones y la navegación permanecen fuera. “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`.
 
 **Dos objetivos UX:** En lectura continua domina la legibilidad, aunque el resultado sea visualmente más sobrio. En portadas, navegación, destacados y llamadas a la acción puede dominar el atractivo visual, siempre sin trasladar ese impacto al cuerpo de lectura.
 

@@ -117,7 +117,7 @@ Cada relato es una unidad:
 
 ### 4.3 Artículos y notas (blog)
 
-Los artículos y notas del autor (definidos como Article en `03-arquitectura-editorial`) siguen las reglas de voz y legibilidad. En WordPress se implementan como post. Estructura más flexible que los ensayos; pueden ser breves o extensos según el propósito. Nunca lenguaje promocional.
+Los artículos y notas del autor (definidos como Article en `03-arquitectura-editorial`) siguen las reglas de voz y legibilidad. En WordPress se implementan como post. Estructura más flexible que los ensayos; pueden ser breves o extensos según el propósito, pero su cuerpo siempre usa la superficie de lectura. Nunca lenguaje promocional.
 
 ---
 
