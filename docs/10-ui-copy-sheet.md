@@ -145,6 +145,10 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Vid
 
 **Talleres:** Próximo, En curso, Finalizado
 
+**Grupos cronológicos:** Próximos talleres, Talleres realizados, Próximos eventos, Eventos realizados
+
+En listados, las actividades próximas se ordenan por fecha de inicio ascendente y las realizadas por fecha de inicio descendente. En actividades de varios días siempre se toma la fecha del primer día.
+
 ---
 
 ## 5. Búsqueda y filtros

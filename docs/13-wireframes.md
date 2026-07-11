@@ -142,6 +142,13 @@ Bloques:
 - Llamada a acción: Enviar solicitud, Contactar
 - Pie
 
+**Listado de talleres:**
+
+- Próximos talleres, ordenados por fecha de inicio ascendente
+- Talleres realizados, ordenados por fecha de inicio descendente
+- Estado vacío independiente para cada grupo
+- En talleres de varios días, la clasificación y el orden usan el primer día
+
 ---
 
 ## 7. Single artículo
@@ -219,7 +226,11 @@ Bloques implementados — listado:
 
 - Cabecera, Breadcrumb
 - Título ("Eventos")
-- Listado de eventos (título, fecha/lugar, extracto, enlace)
+- Próximos eventos, ordenados por fecha de inicio ascendente
+- Eventos realizados, ordenados por fecha de inicio descendente
+- Estado vacío independiente para cada grupo
+- En eventos de varios días, la clasificación y el orden usan el primer día
+- Cada evento muestra título, fecha/lugar, extracto y enlace
 - Pie
 
 Bloques implementados — single:
