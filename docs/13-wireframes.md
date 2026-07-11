@@ -152,6 +152,7 @@ Bloques:
 **Listado de talleres:**
 
 - Próximos talleres, ordenados por fecha de inicio ascendente
+- Cada taller próximo: “Solicitar inscripción” como acción principal y “Ver el taller” como acción secundaria
 - Talleres realizados, ordenados por fecha de inicio descendente
 - Estado vacío independiente para cada grupo
 - En talleres de varios días, la clasificación y el orden usan el primer día

@@ -231,6 +231,8 @@ Archivo general y por tipo (Poemas, Ensayos, Relatos, Talleres, Artículos). Lib
 
 Los listados de Talleres y Eventos separan agenda y archivo. Las actividades próximas aparecen primero, ordenadas desde la fecha de inicio más cercana; las realizadas se ordenan de la más reciente a la más antigua. Si una actividad dura varios días, se usa el día de inicio para clasificarla y ordenarla.
 
+Cada taller próximo enlaza directamente a Contacto mediante “Solicitar inscripción”, con el asunto del taller completado, y conserva “Ver el taller” como acceso secundario a su ficha.
+
 | Enlace | Destino | Tipo |
 |--------|---------|------|
 | Cada ítem | Single correspondiente | Primario |

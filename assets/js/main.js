@@ -74,6 +74,20 @@ const bindArchiveSearch = () => {
   });
 };
 
+const prefillContactSubject = () => {
+  const subjectInput = document.querySelector("#contact-subject");
+
+  if (!(subjectInput instanceof HTMLInputElement) || subjectInput.value) {
+    return;
+  }
+
+  const subject = new URLSearchParams(window.location.search).get("subject");
+
+  if (subject) {
+    subjectInput.value = subject;
+  }
+};
+
 const bindCarousel = () => {
   const carousel = document.querySelector("[data-carousel]");
 
@@ -472,6 +486,7 @@ const init = () => {
   bindMenuToggle();
   bindStaticForms();
   bindArchiveSearch();
+  prefillContactSubject();
   bindHeaderShrink();
   bindCarousel();
   bindMediaPagination();

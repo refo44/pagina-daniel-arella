@@ -149,6 +149,8 @@ Poemas, Ensayos, Relatos, Libros, Talleres, Artículos, Biblioteca de audio, Vid
 
 En listados, las actividades próximas se ordenan por fecha de inicio ascendente y las realizadas por fecha de inicio descendente. En actividades de varios días siempre se toma la fecha del primer día.
 
+Cada tarjeta de “Próximos talleres” muestra “Solicitar inscripción” como acción principal y “Ver el taller” como acción secundaria. La solicitud abre Contacto con el asunto del taller completado; no es necesario entrar antes en la ficha.
+
 ---
 
 ## 5. Búsqueda y filtros
