@@ -141,7 +141,7 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 | Editorial / librería / marketplace (si existe y la ficha es válida) | Punto de consulta o compra externo | Secundario |
 | Goodreads (si existe) | Red social de lectores, catálogo, reseñas y recomendaciones | Secundario |
 | “Presentación en prensa” o referencias externas | Medio externo o página Prensa | Secundario |
-| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp y copia del enlace | Secundario |
+| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp, Threads y copia del enlace | Secundario |
 | “Explorar libros” | Listado Libros | Secundario |
 | Breadcrumb | Inicio → Libros → [Libro] | Secundario |
 
@@ -200,7 +200,7 @@ Los comentarios pertenecen al final de la página individual y no generan una ru
 | “Artículo anterior” | Artículo anterior | Secundario |
 | “Siguiente artículo” | Artículo siguiente | Primario |
 | “Explorar archivo” o “Artículos” | Archivo Blog | Secundario |
-| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp y copia del enlace | Secundario |
+| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp, Threads y copia del enlace | Secundario |
 | Breadcrumb | Inicio → Archivo → Artículos → [Título del artículo] | Secundario |
 
 **Nunca:** listas genéricas de artículos sin relación.

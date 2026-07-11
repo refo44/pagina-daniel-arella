@@ -248,7 +248,7 @@ Los comentarios aparecen únicamente en las páginas individuales de libros y ar
 ### 6.8 Compartir
 
 - **Acción:** “Compartir”
-- **Opciones en pantallas grandes:** Facebook, X, WhatsApp, Copiar enlace
+- **Opciones en pantallas grandes:** Facebook, X, WhatsApp, Threads, Copiar enlace
 - **Confirmación:** “Enlace copiado.”
 
 En teléfonos y tabletas se usa el selector nativo cuando está disponible. En computadoras con macOS, Windows o Linux siempre se abre el panel propio para evitar menús o comportamientos diferentes entre sistemas. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.

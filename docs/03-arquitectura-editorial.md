@@ -228,7 +228,7 @@ WordPress conserva cada comentario como parte de su sistema nativo. La publicaci
 
 ### 8.2 Compartir
 
-Todos los libros y artículos incluyen la acción “Compartir”. Los talleres y eventos la incluyen únicamente mientras su fecha los mantenga en los grupos de próximos. En teléfonos y tabletas la acción usa el selector nativo cuando está disponible; en computadoras con macOS, Windows o Linux siempre abre el panel propio con Facebook, X, WhatsApp y copia del enlace.
+Todos los libros y artículos incluyen la acción “Compartir”. Los talleres y eventos la incluyen únicamente mientras su fecha los mantenga en los grupos de próximos. En teléfonos y tabletas la acción usa el selector nativo cuando está disponible; en computadoras con macOS, Windows o Linux siempre abre el panel propio con Facebook, X, WhatsApp, Threads y copia del enlace.
 
 Compartir no crea metadatos editoriales, contadores públicos ni integraciones de seguimiento con redes sociales.
 
