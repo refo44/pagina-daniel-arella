@@ -369,6 +369,7 @@ const bindShareActions = () => {
     return;
   }
 
+  const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
   const dialog = createShareDialog();
   const facebookLink = dialog.querySelector("[data-share-facebook]");
   const xLink = dialog.querySelector("[data-share-x]");
@@ -418,7 +419,7 @@ const bindShareActions = () => {
       url.hash = "";
       const shareData = { title, url: url.href };
 
-      if (typeof navigator.share === "function") {
+      if (hasCoarsePointer && typeof navigator.share === "function") {
         try {
           await navigator.share(shareData);
           return;
