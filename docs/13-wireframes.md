@@ -82,9 +82,10 @@ Bloques:
   - Enlaces externos: editorial, Amazon, librería, marketplace (solo si aplican)
   - Descargas: PDF, EPUB (solo si aplican y siempre asociadas a la edición correcta)
 - Dónde encontrar el libro
-  - Goodreads
   - Editorial
   - Librería o marketplace
+- Reseñas de lectores
+  - Goodreads
 - Índice de textos: Poemas, Ensayos, Relatos
 - Prensa y referencias
   - Enlaces a medios, revistas o blogs externos

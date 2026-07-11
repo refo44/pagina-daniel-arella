@@ -208,7 +208,8 @@ Ahí pueden vivir, a nivel de obra o de edición:
 - Año
 - ISBN
 - Cubierta
-- Enlaces externos de compra o consulta (Amazon, editorial, librería o marketplace)
+- Enlaces externos de compra o consulta (Amazon, editorial, librería o marketplace), verificados para esa edición
+- Goodreads como ficha comunitaria y fuente de reseñas, separado de los puntos de venta
 - Aviso breve de derechos
 
 No hay tienda ni sistema de licencias dentro del sitio. El libro se presenta como obra, no como producto, pero puede enlazar a puntos externos de compra o consulta cuando eso ayuda a localizar una edición real.
