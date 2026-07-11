@@ -79,6 +79,7 @@ assets/icons/
   menu.svg
   arrow-right.svg
   arrow-left.svg
+  share-2.svg
   external-link.svg
   goodreads.svg
   quote.svg

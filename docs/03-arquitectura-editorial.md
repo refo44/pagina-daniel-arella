@@ -226,6 +226,12 @@ Todos los libros (`book`) y artículos (`post`) permiten comentarios en su pági
 
 WordPress conserva cada comentario como parte de su sistema nativo. La publicación está sujeta a moderación y Akismet filtra el spam. Los comentarios no crean una entidad editorial, taxonomía ni ruta independiente.
 
+### 8.2 Compartir
+
+Todos los libros y artículos incluyen la acción “Compartir”. Los talleres y eventos la incluyen únicamente mientras su fecha los mantenga en los grupos de próximos. La acción usa el selector nativo del dispositivo cuando está disponible y ofrece como alternativa Facebook, X, WhatsApp y copia del enlace.
+
+Compartir no crea metadatos editoriales, contadores públicos ni integraciones de seguimiento con redes sociales.
+
 ---
 
 ## 9. Multilenguaje

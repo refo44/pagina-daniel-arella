@@ -89,6 +89,7 @@ Bloques:
 - Prensa y referencias
   - Enlaces a medios, revistas o blogs externos
   - Nunca materiales propios del sitio
+- Acción “Compartir”
 - Comentarios
   - Lista moderada
   - Formulario para publicar un comentario
@@ -145,6 +146,7 @@ Bloques:
 - Programa curricular completo en la ficha y descarga del mismo contenido en PDF (bloque opcional)
 - Relación con libro
 - Llamada a acción: Enviar solicitud, Contactar
+- Acción “Compartir” cuando el taller sea próximo
 - Pie
 
 **Listado de talleres:**
@@ -167,6 +169,7 @@ Bloques:
 - Título
 - Texto del artículo
 - Navegación: Explorar artículos o Volver al archivo
+- Acción “Compartir”
 - Comentarios
   - Lista moderada
   - Formulario para publicar un comentario
@@ -248,6 +251,7 @@ Bloques implementados — single:
 - Cuerpo editorial (contexto del evento)
 - Enlace al libro presentado si aplica
 - "Volver a eventos"
+- Acción “Compartir” cuando el evento sea próximo
 - Pie
 
 ---

@@ -187,7 +187,7 @@ Las tarjetas del listado usan siempre la etiqueta “Poema” y la acción “Le
 
 ### 6.2 Libro
 
-**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro, Dónde encontrar el libro
+**Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro, Dónde encontrar el libro, Compartir
 
 **Regla:** Descargar PDF, Descargar EPUB y Adquirir el libro solo aparecen si aplican a ese título.
 
@@ -215,6 +215,7 @@ Las tarjetas del listado usan siempre la etiqueta “Poema” y la acción “Le
 - Abrir el taller
 - Enviar solicitud (formulario de inscripción)
 - Contactar
+- Compartir, solo mientras el taller pertenezca a “Próximos talleres”
 - Descargar programa (PDF), solo cuando exista un programa curricular público
 - **Datos:** Modalidad, Fecha, Lugar, Cupo, Valor
 - **Estados:** “No hay talleres programados por ahora.”, “Este taller ya finalizó.”
@@ -226,6 +227,7 @@ Cuando exista un programa, sus objetivos, sesiones, metodología y materiales se
 - Leer el artículo
 - Siguiente artículo, Artículo anterior
 - Explorar artículos
+- Compartir
 - Comentarios
 
 ### 6.7 Comentarios en libros y artículos
@@ -240,6 +242,14 @@ Cuando exista un programa, sus objetivos, sesiones, metodología y materiales se
 - **Error:** “No fue posible publicar el comentario. Inténtalo de nuevo.”
 
 Los comentarios aparecen únicamente en las páginas individuales de libros y artículos. No se muestran contadores ni extractos de comentarios en tarjetas o listados.
+
+### 6.8 Compartir
+
+- **Acción:** “Compartir”
+- **Opciones en pantallas grandes:** Facebook, X, WhatsApp, Copiar enlace
+- **Confirmación:** “Enlace copiado.”
+
+En dispositivos compatibles se usa primero el selector nativo para compartir. Si no está disponible, se abre el panel propio con las opciones anteriores. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
 
 ---
 

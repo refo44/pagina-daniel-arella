@@ -141,6 +141,7 @@ Blanco se reserva para el bloque tipográfico de lectura sostenida dentro de una
 | Editorial / librería / marketplace (si existe y la ficha es válida) | Punto de consulta o compra externo | Secundario |
 | Goodreads (si existe) | Red social de lectores, catálogo, reseñas y recomendaciones | Secundario |
 | “Presentación en prensa” o referencias externas | Medio externo o página Prensa | Secundario |
+| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp y copia del enlace | Secundario |
 | “Explorar libros” | Listado Libros | Secundario |
 | Breadcrumb | Inicio → Libros → [Libro] | Secundario |
 
@@ -185,6 +186,7 @@ Los comentarios pertenecen al final de la página individual y no generan una ru
 | Libro relacionado | Single Libro | Primario |
 | “Enviar solicitud de inscripción” o “Contactar” | Contacto | Primario |
 | “Descargar programa (PDF)” (si existe) | PDF del programa curricular | Secundario |
+| “Compartir” (solo taller próximo) | Selector nativo o panel de redes | Secundario |
 | “Volver a talleres” | Listado Talleres | Secundario |
 
 **Nunca:** otros talleres sueltos dentro del single.
@@ -198,6 +200,7 @@ Los comentarios pertenecen al final de la página individual y no generan una ru
 | “Artículo anterior” | Artículo anterior | Secundario |
 | “Siguiente artículo” | Artículo siguiente | Primario |
 | “Explorar archivo” o “Artículos” | Archivo Blog | Secundario |
+| “Compartir” | Selector nativo o panel con Facebook, X, WhatsApp y copia del enlace | Secundario |
 | Breadcrumb | Inicio → Archivo → Artículos → [Título del artículo] | Secundario |
 
 **Nunca:** listas genéricas de artículos sin relación.
@@ -215,6 +218,7 @@ Sección adoptada formalmente en la v2.7 (antes existía en el sitio sin spec). 
 | “Volver a eventos” | Listado Eventos | Secundario |
 | Libro presentado (si aplica) | Single Libro | Primario |
 | “Sobre el autor” o “Contacto” (según el evento) | Sobre el autor / Contacto | Secundario |
+| “Compartir” (solo evento próximo) | Selector nativo o panel de redes | Secundario |
 | Breadcrumb | Inicio → Eventos → [Título del evento] | Secundario |
 
 **Nunca:** listado de "otros eventos" ni cronología tipo feed.

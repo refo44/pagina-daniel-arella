@@ -122,6 +122,7 @@ Componentes estructurales que se comparten entre plantillas.
 | `parts/article-card.php` | Tarjeta artículo |
 | `parts/quote-block.php` | Cita o fragmento editorial reutilizable |
 | `parts/goodreads-link.php` | Enlace editorial externo opcional |
+| `parts/share-actions.php` | Acción de compartir para singles autorizados |
 
 Todo listado y todo home se arma con estas piezas.
 
@@ -178,10 +179,11 @@ theme-daniel-arella/
     ├── workshop-card.php
     ├── article-card.php
     ├── quote-block.php
-    └── goodreads-link.php
+    ├── goodreads-link.php
+    └── share-actions.php
 ```
 
-`taxonomy-form.php` solo se incluye si se activa la taxonomía form. `parts/article-card.php` también es opcional (se usa solo para el CPT post). `parts/book-edition-card.php` existe para imprimir varias ediciones dentro de `single-book.php` sin duplicar markup.
+`taxonomy-form.php` solo se incluye si se activa la taxonomía form. `parts/article-card.php` también es opcional (se usa solo para el CPT post). `parts/book-edition-card.php` existe para imprimir varias ediciones dentro de `single-book.php` sin duplicar markup. `parts/share-actions.php` se incluye siempre en libros y artículos; en talleres y eventos solo cuando su fecha los mantiene en el grupo de próximos.
 
 `index.php` actúa como fallback de WordPress y no se usa para rutas editoriales. `page.php` funciona como fallback para páginas que no tengan plantilla editorial específica. `search.php` existe como plantilla de respaldo para búsquedas del sistema, aunque la búsqueda editorial se integra dentro del Archivo.
 

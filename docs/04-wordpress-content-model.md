@@ -170,6 +170,8 @@ Solo lo necesario para mostrar la obra:
 
 `single-book` debe poder imprimir varias ediciones dentro de la misma página: cubierta, ficha editorial, enlaces externos y descargas por edición cuando existan.
 
+`single-book.php` y `single.php` incluyen siempre la acción de compartir. `single-workshop.php` y `single-evento.php` la incluyen solo cuando la fecha de inicio mantiene la actividad en el grupo de próximas.
+
 No hay plantillas especiales para taxonomías; las de topic y period usan archive.php como base.
 
 ---

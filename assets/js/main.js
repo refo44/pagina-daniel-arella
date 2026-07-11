@@ -302,6 +302,138 @@ const bindHeaderShrink = () => {
   updateHeader();
 };
 
+const createShareDialog = () => {
+  const dialog = document.createElement("dialog");
+  dialog.className = "share-dialog";
+  dialog.setAttribute("aria-labelledby", "share-dialog-title");
+  dialog.setAttribute("aria-hidden", "true");
+  dialog.innerHTML = `
+    <div class="share-dialog__panel">
+      <div class="share-dialog__header">
+        <h2 class="share-dialog__title" id="share-dialog-title">Compartir</h2>
+        <button class="share-dialog__close" type="button" data-share-close aria-label="Cerrar">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
+      <ul class="share-dialog__options" role="list">
+        <li><a class="button-link share-dialog__option" data-share-facebook target="_blank" rel="noopener noreferrer">Facebook</a></li>
+        <li><a class="button-link share-dialog__option" data-share-x target="_blank" rel="noopener noreferrer">X</a></li>
+        <li><a class="button-link share-dialog__option" data-share-whatsapp target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+        <li><button class="button-link share-dialog__option" type="button" data-share-copy>Copiar enlace</button></li>
+      </ul>
+      <p class="share-dialog__status" data-share-status aria-live="polite"></p>
+    </div>
+  `;
+
+  const closeButton = dialog.querySelector("[data-share-close]");
+  closeButton?.addEventListener("click", () => dialog.close());
+  dialog.addEventListener("close", () => dialog.setAttribute("aria-hidden", "true"));
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      dialog.close();
+    }
+  });
+
+  document.body.appendChild(dialog);
+  return dialog;
+};
+
+const copyText = async (text) => {
+  if (navigator.clipboard && window.isSecureContext) {
+    try {
+      await navigator.clipboard.writeText(text);
+      return;
+    } catch {
+      // Continue with the selection fallback when clipboard permission is unavailable.
+    }
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  const isCopied = document.execCommand("copy");
+  textarea.remove();
+
+  if (!isCopied) {
+    throw new Error("Copy command failed");
+  }
+};
+
+const bindShareActions = () => {
+  const triggers = document.querySelectorAll("[data-share]");
+
+  if (triggers.length === 0) {
+    return;
+  }
+
+  const dialog = createShareDialog();
+  const facebookLink = dialog.querySelector("[data-share-facebook]");
+  const xLink = dialog.querySelector("[data-share-x]");
+  const whatsappLink = dialog.querySelector("[data-share-whatsapp]");
+  const copyButton = dialog.querySelector("[data-share-copy]");
+  const status = dialog.querySelector("[data-share-status]");
+  let currentShareUrl = "";
+
+  const openFallback = ({ title, url }) => {
+    const encodedUrl = encodeURIComponent(url);
+    const encodedText = encodeURIComponent(`${title} ${url}`);
+
+    facebookLink?.setAttribute("href", `https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`);
+    xLink?.setAttribute("href", `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${encodedUrl}`);
+    whatsappLink?.setAttribute("href", `https://api.whatsapp.com/send?text=${encodedText}`);
+    currentShareUrl = url;
+
+    if (status instanceof HTMLElement) {
+      status.textContent = "";
+    }
+
+    dialog.removeAttribute("aria-hidden");
+    dialog.showModal();
+  };
+
+  copyButton?.addEventListener("click", async () => {
+    try {
+      await copyText(currentShareUrl);
+      if (status instanceof HTMLElement) {
+        status.textContent = "Enlace copiado.";
+      }
+    } catch {
+      if (status instanceof HTMLElement) {
+        status.textContent = `Copia este enlace: ${currentShareUrl}`;
+      }
+    }
+  });
+
+  triggers.forEach((trigger) => {
+    trigger.addEventListener("click", async () => {
+      const heading = document.querySelector("main h1");
+      const title = trigger.getAttribute("data-share-title") ??
+        heading?.textContent?.trim() ??
+        document.title;
+      const configuredUrl = trigger.getAttribute("data-share-url");
+      const url = new URL(configuredUrl || window.location.href, window.location.href);
+      url.hash = "";
+      const shareData = { title, url: url.href };
+
+      if (typeof navigator.share === "function") {
+        try {
+          await navigator.share(shareData);
+          return;
+        } catch (error) {
+          if (error instanceof DOMException && error.name === "AbortError") {
+            return;
+          }
+        }
+      }
+
+      openFallback(shareData);
+    });
+  });
+};
+
 const bindBackToTop = () => {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const SCROLL_THRESHOLD = 400;
@@ -342,6 +474,7 @@ const init = () => {
   bindHeaderShrink();
   bindCarousel();
   bindMediaPagination();
+  bindShareActions();
   bindBackToTop();
 };
 

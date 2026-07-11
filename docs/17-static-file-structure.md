@@ -136,6 +136,7 @@ daniel-arella-static/
     ├── article-card.html
     ├── quote-block.html
     ├── goodreads-link.html
+    ├── share-actions.html
     ├── chess-notation.html
     ├── chess-diagram.html
     └── chess-exercise.html
@@ -219,11 +220,12 @@ Durante la maqueta estos archivos se insertan manualmente o mediante un preproce
 | article-card.html | Tarjeta artículo |
 | quote-block.html | Bloque de cita (texto + atribución). Reutilizable para citas de libros del autor o de otros. |
 | goodreads-link.html | Enlace a Goodreads para fichas de libro. |
+| share-actions.html | Acción de compartir para libros, artículos y actividades próximas. |
 | chess-notation.html | Notación algebraica de ajedrez (texto). Ver `03-arquitectura-editorial` §3.1. |
 | chess-diagram.html | Diagrama de tablero: imagen + alt descriptivo obligatorio + leyenda. |
 | chess-exercise.html | Ejercicio de ajedrez: nivel + planteamiento + solución en `&lt;details&gt;`. |
 
-`article-card.html` se usa solo para el CPT post (Artículos). `quote-block`, `goodreads-link` y los tres bloques de ajedrez se incluyen dentro del cuerpo de `essay`/`post` según corresponda. En WordPress `quote-block` y `goodreads-link` se convierten en `get_template_part()`; los bloques de ajedrez se convierten en bloques Gutenberg (`04-wordpress-content-model` §7).
+`article-card.html` se usa solo para el CPT post (Artículos). `quote-block`, `goodreads-link` y los tres bloques de ajedrez se incluyen dentro del cuerpo de `essay`/`post` según corresponda. `share-actions.html` se inserta en todos los libros y artículos, y solo en talleres o eventos próximos. En WordPress `quote-block`, `goodreads-link` y `share-actions` se convierten en `get_template_part()`; los bloques de ajedrez se convierten en bloques Gutenberg (`04-wordpress-content-model` §7).
 
 Los comentarios no se simulan en la maqueta estática: un formulario sin persistencia ni moderación sería engañoso. Las páginas HTML de libros y artículos permanecen sin ese bloque; `comments.php` se incorpora únicamente en el theme WordPress, donde Akismet y la moderación son operativos.
 
