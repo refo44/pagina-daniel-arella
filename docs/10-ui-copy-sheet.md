@@ -183,6 +183,8 @@ Más reciente, Más antiguo, Por título, Por libro
 - Ver la lectura, cuando exista audio o video asociado
 - **Contexto:** “Este poema pertenece al libro: [Libro]”, “Abrir el libro”
 
+Las tarjetas del listado siempre usan “Leer el poema”. No anuncian si la ficha incluye audio o video, porque estos medios son complementos opcionales de cualquier poema.
+
 ### 6.2 Libro
 
 **Acciones:** Abrir el libro, Leer fragmentos, Ver índice, Ver presentación en prensa, Descargar PDF, Descargar EPUB, Adquirir el libro, Dónde encontrar el libro
