@@ -383,7 +383,8 @@ const bindShareActions = () => {
     return;
   }
 
-  const hasCoarsePointer = window.matchMedia("(pointer: coarse)").matches;
+  const isIPad = navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1;
+  const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || isIPad;
   const dialog = createShareDialog();
   const facebookLink = dialog.querySelector("[data-share-facebook]");
   const xLink = dialog.querySelector("[data-share-x]");
@@ -433,7 +434,7 @@ const bindShareActions = () => {
       url.hash = "";
       const shareData = { title, url: url.href };
 
-      if (hasCoarsePointer && typeof navigator.share === "function") {
+      if (isMobileDevice && typeof navigator.share === "function") {
         try {
           await navigator.share(shareData);
           return;

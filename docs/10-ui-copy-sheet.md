@@ -251,7 +251,7 @@ Los comentarios aparecen únicamente en las páginas individuales de libros y ar
 - **Opciones en pantallas grandes:** Facebook, X, WhatsApp, Copiar enlace
 - **Confirmación:** “Enlace copiado.”
 
-En móviles y dispositivos de puntero táctil se usa el selector nativo cuando está disponible. En computadoras, incluido macOS, siempre se abre el panel propio para evitar el menú de compartir del sistema. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
+En teléfonos y tabletas se usa el selector nativo cuando está disponible. En computadoras con macOS, Windows o Linux siempre se abre el panel propio para evitar menús o comportamientos diferentes entre sistemas. La acción aparece en todos los libros y artículos, y únicamente en talleres y eventos próximos. No se añade a tarjetas ni a actividades realizadas.
 
 ---
 
