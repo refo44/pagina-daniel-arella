@@ -1,7 +1,7 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
 **Estructura de archivos del sitio previo a WordPress**  
-**Versión 1.7**
+**Versión 1.8**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
@@ -118,7 +118,7 @@ daniel-arella-static/
 │   ├── images/
 │   ├── icons/              (Lucide Icons y símbolos locales de marcas externas)
 │   ├── illustrations/      (Open Doodles)
-│   ├── svg/
+│   ├── logo/               (isotipo oficial en SVG y PNG)
 │   ├── fonts/
 │   ├── pdf/                (libros y programas curriculares con descarga pública)
 │   └── favicon/
@@ -301,4 +301,4 @@ La maqueta ya es la obra.
 
 ---
 
-**Versión:** 1.6
+**Versión:** 1.8

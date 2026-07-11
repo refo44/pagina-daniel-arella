@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.2**
+**Versión 2.3**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -47,7 +47,7 @@ Imagina el sitio así:
 
 ```
 [ Header: Tinta ]
-    Daniel Arella
+    [ Isotipo ] Daniel Arella
 --------------------------
 [ Superficie de lectura: Blanco ]
     Destacado
@@ -364,7 +364,35 @@ El sitio **no incluye dark mode**. Nunca usar `@media (prefers-color-scheme: dar
 
 ---
 
-## 9. WordPress
+## 9. Isotipo y firma de marca
+
+El símbolo del rostro con cabello rizado y anteojos es el **isotipo oficial**. La firma principal combina el isotipo con el nombre **Daniel Arella** compuesto en Fraunces; el símbolo no sustituye el nombre en la cabecera ni crea una tercera tipografía.
+
+### Variantes oficiales
+
+| Variante | Archivo | Fondo | Uso |
+|----------|---------|-------|-----|
+| Tinta transparente | `assets/logo/logo-mark-tinta.svg` | Transparente | Fondos Pergamino o Blanco |
+| Pergamino transparente | `assets/logo/logo-mark-pergamino.svg` | Transparente | Cabecera y pie Tinta |
+| Tinta sobre Pergamino | `assets/logo/logo-mark-tinta-on-pergamino.svg` | Pergamino | Piezas que requieren una superficie cerrada |
+
+Cada variante SVG tiene una versión PNG de 1024 px en la misma carpeta. Los archivos terminados en `-transparent.png` conservan canal alfa.
+
+### Reglas de uso
+
+- Usar siempre una variante de color de la paleta Tierra viva; no recolorear con tonos externos.
+- Mantener la proporción original y dejar aire alrededor del cabello; no recortar, deformar, rotar ni añadir sombras.
+- En la cabecera, usar el isotipo Pergamino transparente junto al nombre visible. La imagen lleva `alt=""` porque el texto contiguo ya identifica el enlace.
+- Tamaño mínimo recomendado del isotipo: 32 px en interfaz y 16 px únicamente como favicon.
+- Sobre fondos claros se usa Tinta; sobre Tinta se usa Pergamino. La versión con fondo propio se reserva para contextos donde no se controla la superficie.
+
+### Favicon
+
+El favicon deriva del mismo isotipo en Tinta sobre Pergamino. El set oficial vive en `assets/favicon/` e incluye SVG, ICO, Apple Touch Icon y PNG de 192 y 512 px para el manifest.
+
+---
+
+## 10. WordPress
 
 Este sistema se traduce directamente a:
 
@@ -385,7 +413,7 @@ El editor no puede romper la identidad.
 
 ---
 
-## 10. Estado del sistema
+## 11. Estado del sistema
 
 | Capa | Estado |
 |------|--------|
@@ -395,12 +423,12 @@ El editor no puede romper la identidad.
 | Layout | Cerrado |
 | Tokens | Cerrados |
 | Dark mode | Excluido |
-| Logo | Pendiente |
+| Logo | Cerrado |
 | theme.json | Pendiente |
 
 ---
 
-## 11. Tendencias aplicadas al sistema editorial
+## 12. Tendencias aplicadas al sistema editorial
 
 Qué se adopta y qué se evita (lectura, claridad, accesibilidad, performance vs. personalización, ruido, invasión) está definido en:
 
@@ -429,5 +457,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.2
+**Versión del documento:** 2.3
 **Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.

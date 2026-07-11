@@ -1,7 +1,7 @@
 # Daniel Arella — Estrategia de assets
 
 **Iconos, fuentes, favicon y scripts: reglas y estructura**  
-**Versión 1.1**
+**Versión 1.2**
 
 Este documento define qué assets existen, dónde viven y cómo se usan en la maqueta estática y en el theme WordPress. Las decisiones se toman en la maqueta y se migran tal cual; no se rediseña después. **JS vive en la raíz del proyecto** (`js/`), no dentro de `assets/`: código (CSS, JS) separado de media (imágenes, iconos, fuentes, favicon).
 
@@ -17,6 +17,7 @@ Este documento define qué assets existen, dónde viven y cómo se usan en la ma
 | **Iconos** | Lucide Icons para la interfaz y SVG oficiales para marcas externas. Siempre locales; sin icon fonts ni CDN. |
 | **Ilustraciones** | Open Doodles. SVG para hero, cabeceras de sección y estados vacíos. |
 | **Fuentes** | Autohospedadas en `assets/fonts/`, formato woff2, declaradas con `@font-face`. Sin CDN externo (doc 22: priorizar auto-hospedado). |
+| **Logo** | Isotipo vectorial en Tinta y Pergamino, con variantes transparentes y PNG de respaldo. |
 | **Favicon** | Set completo moderno: favicon.ico, favicon.svg, apple-touch-icon.png, site.webmanifest. |
 | **Imágenes** | Optimizar antes de subir (WebP o AVIF cuando sea posible). |
 | **Documentos (PDF/EPUB)** | Viven en `assets/pdf/` solo cuando una obra o un taller debe ofrecer una descarga pública de forma explícita. |
@@ -34,6 +35,7 @@ assets/
 ├── icons/          Iconos de interfaz y marcas externas (SVG)
 ├── illustrations/  Open Doodles (SVG) para hero, secciones y estados vacíos
 ├── images/         Fotos, portadas de libros (optimizar: WebP o AVIF cuando sea posible)
+├── logo/           Isotipo oficial en SVG y PNG
 ├── fonts/          Tipografías autohospedadas (woff2)
 ├── pdf/            Libros y programas curriculares con descarga pública
 └── favicon/        ico, svg, png, webmanifest (agrupa todos los archivos de icono del sitio: favicon, apple-touch-icon, manifest)
@@ -332,7 +334,29 @@ Formato: **woff2**. Los nombres de archivo deben estar en kebab-case. Declaraci�
 
 ---
 
-## 5. Favicon
+## 5. Logo
+
+El isotipo oficial y sus reglas visuales se definen en `02-identidad-corporativa`. Los SVG son los archivos maestros; los PNG existen para exportación y contextos sin soporte vectorial.
+
+```
+assets/logo/
+  logo-mark-tinta.svg
+  logo-mark-pergamino.svg
+  logo-mark-tinta-on-pergamino.svg
+  logo-mark-tinta-transparent.png
+  logo-mark-pergamino-transparent.png
+  logo-mark-tinta-on-pergamino.png
+```
+
+- `logo-mark-tinta.svg` y `logo-mark-pergamino.svg` tienen fondo transparente.
+- Los PNG transparentes se exportan a 1024 px y conservan canal alfa.
+- La variante Pergamino se usa en la cabecera Tinta; la variante Tinta se usa sobre Pergamino o Blanco.
+- La versión sobre Pergamino se reserva para piezas que necesitan fondo propio y es la fuente del favicon.
+- El isotipo que acompaña texto visible usa `alt=""`; si aparece solo con función identificativa, usa `alt="Daniel Arella"`.
+
+---
+
+## 6. Favicon
 
 Hacerlo bien una vez y no tocarlo.
 
@@ -346,6 +370,8 @@ assets/favicon/
   favicon.ico
   favicon.svg
   apple-touch-icon.png
+  icon-192.png
+  icon-512.png
   site.webmanifest
 ```
 
@@ -353,16 +379,17 @@ assets/favicon/
 
 ### Checklist
 
-- [ ] favicon.ico (múltiples tamaños o 32×32 como mínimo)
-- [ ] favicon.svg (escalable)
-- [ ] apple-touch-icon.png (180×180 recomendado)
-- [ ] site.webmanifest con name, short_name, icons, theme_color si aplica
+- [x] favicon.ico (16×16, 32×32 y 48×48)
+- [x] favicon.svg (escalable)
+- [x] apple-touch-icon.png (180×180)
+- [x] icon-192.png e icon-512.png
+- [x] site.webmanifest con name, short_name, icons y colores de marca
 
 En HTML: `<link rel="icon">`, `<link rel="apple-touch-icon">` y referencia al manifest según estándar. En WordPress se encolan o se referencian desde el theme con las mismas rutas relativas a la raíz del sitio.
 
 ---
 
-## 6. JavaScript (js/)
+## 7. JavaScript (js/)
 
 Los scripts viven en **js/** en la raíz del proyecto y del theme, no dentro de `assets/`.
 
@@ -418,7 +445,7 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 ---
 
-## 7. Migración a WordPress
+## 8. Migración a WordPress
 
 - **assets/** se replica dentro del theme (p. ej. `theme-daniel-arella/assets/`).
 - **js/** se replica en la raíz del theme (p. ej. `theme-daniel-arella/js/`).
@@ -427,7 +454,7 @@ Así el sitio se mantiene silencioso, estable y portable entre HTML estático y 
 
 ---
 
-## 8. Relación con otros documentos
+## 9. Relación con otros documentos
 
 - **Estructura de archivos:** `17-static-file-structure` incluye `assets/` (images, icons, fonts, favicon) y `js/` en la raíz; este documento detalla iconos, fuentes, favicon y reglas para JS.
 - **Identidad:** `02-identidad-corporativa` define tipografías y paleta; las fuentes listadas aquí son las que se autohospedan para esa identidad.
