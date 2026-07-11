@@ -1,7 +1,7 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
 **Estructura de archivos del sitio previo a WordPress**  
-**Versión 1.4**
+**Versión 1.5**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
@@ -50,7 +50,7 @@ Todas las rutas usan trailing slash cuando corresponden a carpetas.
 daniel-arella-static/
 ├── index.html
 ├── 404.html
-├── sitemap.html          (opcional; útil para revisar estructura)
+├── sitemap.html          (real, enlazada desde el pie — no opcional)
 │
 ├── archivo/
 │   └── index.html
@@ -67,12 +67,13 @@ daniel-arella-static/
 ├── derechos/
 │   └── index.html
 │
-├── biblioteca-audio/
-│   └── index.html
-├── videoteca/
-│   └── index.html
 ├── multimedia/
-│   └── index.html          (Videos, Audios, Reels)
+│   └── index.html          (Videos, Audios, Reels — reemplaza biblioteca-audio/ y videoteca/ del plan original)
+├── galeria/
+│   └── index.html
+├── eventos/
+│   ├── index.html
+│   └── {slug}.html
 │
 ├── poem/
 │   ├── index.html
@@ -91,7 +92,7 @@ daniel-arella-static/
 │   └── {slug}.html
 ├── blog/
 │   ├── index.html
-│   └── {slug}.html
+│   └── {slug}/index.html   (nota: blog usa carpeta+index en vez de {slug}.html — ver §5)
 │
 ├── tema/
 │   └── {slug}/
@@ -150,9 +151,11 @@ La carpeta `forma/` solo existe si se implementa la taxonomía form. No se permi
 | Servicios editoriales | `/servicios-editoriales/index.html` | `page-servicios-editoriales.php` |
 | Prensa | `/prensa/index.html` | `page-prensa.php` |
 | Derechos | `/derechos/index.html` | `page-derechos.php` |
-| Biblioteca de audio | `/biblioteca-audio/index.html` | `page-biblioteca-audio.php` |
-| Videoteca | `/videoteca/index.html` | `page-videoteca.php` |
 | Multimedia (Videos, Audios, Reels) | `/multimedia/index.html` | `page-multimedia.php` |
+| Galería | `/galeria/index.html` | `page-galeria.php` |
+| Mapa del sitio | `/sitemap.html` | `page-sitemap.php` |
+
+`Biblioteca de audio` y `Videoteca` del plan original no se implementaron como páginas separadas; `Multimedia` cumple ambas funciones en una sola página con bloques internos. `Galería` se adoptó como página fija después del plan original (ver `05-mapa-pantallas`).
 
 ---
 
@@ -167,9 +170,12 @@ Cada tipo es una carpeta con su archivo y sus piezas.
 | essay | `/essay/index.html` | `/essay/{slug}.html` |
 | story | `/story/index.html` | `/story/{slug}.html` |
 | workshop | `/talleres/index.html` | `/talleres/{slug}.html` |
-| blog (artículos) | `/blog/index.html` | `/blog/{slug}.html` |
+| blog (artículos) | `/blog/index.html` | `/blog/{slug}/index.html` |
+| evento | `/eventos/index.html` | `/eventos/{slug}.html` |
 
 El CPT interno es workshop pero el slug público es `/talleres/`. No existen URLs fuera de esto.
+
+**Excepción documentada — blog:** a diferencia de los demás tipos, las fichas de blog usan `/blog/{slug}/index.html` (carpeta) en vez de `/blog/{slug}.html` (archivo plano). Se adoptó así porque anticipa exactamente la URL final de WordPress (`/blog/{slug}/`) sin reescritura de rutas al migrar. El resto de los tipos usa el patrón `{slug}.html` de esta sección; no se homologa hacia atrás porque cambiaría URLs de fichas de blog ya publicadas.
 
 ---
 
@@ -253,8 +259,14 @@ La maqueta ya debe hablar en el idioma del theme. Detalle de capas ITCSS, BEM, v
 | talleres/index.html | archive-workshop.php |
 | talleres/slug.html | single-workshop.php |
 | blog/index.html | home.php |
-| blog/slug.html | single.php |
+| blog/slug/index.html | single.php |
+| eventos/index.html | archive-evento.php |
+| eventos/slug.html | single-evento.php |
 | servicios-editoriales/index.html | page-servicios-editoriales.php |
+| multimedia/index.html | page-multimedia.php |
+| galeria/index.html | page-galeria.php |
+| correspondencia/index.html | page-correspondencia.php |
+| sitemap.html | page-sitemap.php |
 | tema/{slug}/index.html | taxonomy-topic.php |
 | periodo/{slug}/index.html | taxonomy-period.php |
 | forma/{slug}/index.html | taxonomy-form.php |
@@ -276,4 +288,4 @@ La maqueta ya es la obra.
 
 ---
 
-**Versión:** 1.3
+**Versión:** 1.5

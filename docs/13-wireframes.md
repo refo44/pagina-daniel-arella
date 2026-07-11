@@ -1,6 +1,6 @@
 # Daniel Arella — Wireframes. Estructura de pantallas
 
-**Versión 1.8**
+**Versión 1.9**
 
 Este documento define la arquitectura visible de cada pantalla. No dibuja interfaces. Define jerarquías, bloques y flujo de lectura.
 
@@ -178,39 +178,58 @@ Regla: `Archivo` no absorbe `Libros`. Los libros tienen su propio listado princi
 
 ---
 
-## 8.1 Biblioteca de audio (plan maestro)
+## 8.1 Multimedia (implementada)
 
-**Función:** ofrecer la obra en formato sonoro (poemas, audiolibros, podcast, temas musicales).
+**Función:** ofrecer la obra en formato audio y video en una sola página, en vez de las dos secciones separadas ("Biblioteca de audio", "Videoteca") previstas en el plan original.
 
-**Alojamiento:** El audio no se sube al servidor; vive en servicios de terceros (Spotify, SoundCloud, etc.). El sitio muestra enlaces o reproductores embebidos.
+**Alojamiento:** Nada se sube al servidor; vive en servicios de terceros (YouTube, SoundCloud, Instagram Reels). El sitio muestra enlaces o reproductores embebidos.
 
-Bloques previstos:
+Bloques implementados:
 
 - Cabecera
-- Título (“Biblioteca de audio”)
-- Listado de piezas (título, tipo, enlace o embed)
-- Filtros opcionales (tipo: poema, audiolibro, podcast)
+- Título ("Videos, audios y reels")
+- Navegación interna a tres bloques en la misma página: Videos, Audios, Reels
+- Cada bloque: listado de piezas (título, tipo, embed), paginación propia
 - Pie
 
-La ficha de cada pieza (single) se definirá al implementar el modelo de contenido. Ver `01-plataforma-autor-plan`, `05-mapa-pantallas`.
+Sin ficha individual (single) por pieza: cada elemento enlaza o embebe directamente el servicio externo.
 
 ---
 
-## 8.2 Videoteca (plan maestro)
+## 8.2 Galería (implementada, adoptada tras el plan original)
 
-**Función:** ofrecer la obra en formato video (poemas leídos, videopoemas, conferencias, clases, música).
+**Función:** selección visual de fotografías, retratos y contexto del autor.
 
-**Alojamiento:** El video no se sube al servidor; vive en servicios de terceros (YouTube, Vimeo, Instagram Reels, etc.). El sitio muestra enlaces o reproductores embebidos (embed).
-
-Bloques previstos:
+Bloques implementados:
 
 - Cabecera
-- Título: Videoteca
-- Listado de piezas (título, tipo, enlace o embed)
-- Filtros opcionales (tipo: poema leído, conferencia, etc.)
+- Título ("Galería")
+- Cuadrícula de imágenes con pie de foto/crédito cuando aplica
 - Pie
 
-La ficha de cada pieza (single) se definirá al implementar el modelo de contenido. Ver `01-plataforma-autor-plan`, `05-mapa-pantallas`.
+Sin ficha individual por imagen. Ver `05-mapa-pantallas`.
+
+---
+
+## 8.3 Eventos (implementada, adoptada tras el plan original)
+
+**Función:** memoria editorial de lecturas, presentaciones y festivales — actividad pública del autor, distinta de Prensa (que reúne solo referencias externas) y de Blog (que reúne artículos propios).
+
+Bloques implementados — listado:
+
+- Cabecera, Breadcrumb
+- Título ("Eventos")
+- Listado de eventos (título, fecha/lugar, extracto, enlace)
+- Pie
+
+Bloques implementados — single:
+
+- Cabecera, Breadcrumb (Inicio → Eventos → Título)
+- Título del evento, fecha, lugar, cartel/imagen si existe
+- Cuerpo editorial (contexto del evento)
+- Enlace al libro presentado si aplica
+- "Volver a eventos"
+- Pie
 
 ---
 

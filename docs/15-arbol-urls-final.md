@@ -1,7 +1,7 @@
 # Daniel Arella — Árbol de URLs final
 
 **Geografía oficial de la obra**  
-**Versión 2.3**
+**Versión 2.4**
 
 Este documento define todas las rutas reales del sitio por idioma, tipo de obra y archivo. No es un menú ni un sitemap técnico. Es el mapa del territorio que WordPress y el theme deben respetar.
 
@@ -230,6 +230,12 @@ Ejemplo:
 | `/es/prensa/` | page-prensa.php |
 | `/es/derechos/` | page-derechos.php |
 | `/es/correspondencia/` | page-correspondencia.php |
+| `/es/multimedia/` | page-multimedia.php |
+| `/es/galeria/` | page-galeria.php |
+| `/es/eventos/slug` | single-evento.php |
+| `/es/eventos/` | archive-evento.php |
+| `/es/forma/poema-en-prosa` | taxonomy-form.php |
+| `/es/sitemap/` | page-sitemap.php |
 
 ---
 
