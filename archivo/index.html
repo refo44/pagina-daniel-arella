@@ -56,7 +56,7 @@
           <p class="content-kicker">Archivo</p>
           <h1>Explorar la obra como biblioteca.</h1>
           <p class="u-max-readable">Cada pieza conserva su relación con temas y periodos. Esta versión pública organiza el archivo textual por recorridos editoriales, mientras Libros, Eventos y Prensa mantienen su propia entrada.</p>
-          <form class="form-grid u-max-readable">
+          <form class="form-grid u-max-readable" data-archive-search data-search-target="archive-filters">
             <div class="form-field">
               <label for="search-archive">Buscar en el archivo</label>
               <input id="search-archive" name="q" type="search" placeholder="Buscar en el archivo">
@@ -64,7 +64,7 @@
           </form>
         </div>
 
-        <aside class="content-panel o-stack">
+        <aside class="content-panel o-stack" id="archive-filters">
           <div>
             <p class="archive-filter__label">Filtros</p>
             <div class="archive-filter">

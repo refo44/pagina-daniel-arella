@@ -53,6 +53,27 @@ const bindStaticForms = () => {
   });
 };
 
+const bindArchiveSearch = () => {
+  document.querySelectorAll("[data-archive-search]").forEach((form) => {
+    const targetId = form.getAttribute("data-search-target");
+    const target = targetId ? document.getElementById(targetId) : null;
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!(target instanceof HTMLElement)) {
+        return;
+      }
+
+      target.scrollIntoView({ behavior: "smooth", block: "center" });
+      target.classList.add("is-highlighted");
+      window.setTimeout(() => {
+        target.classList.remove("is-highlighted");
+      }, 2000);
+    });
+  });
+};
+
 const bindCarousel = () => {
   const carousel = document.querySelector("[data-carousel]");
 
@@ -317,6 +338,7 @@ const init = () => {
   highlightNavigation();
   bindMenuToggle();
   bindStaticForms();
+  bindArchiveSearch();
   bindHeaderShrink();
   bindCarousel();
   bindMediaPagination();
