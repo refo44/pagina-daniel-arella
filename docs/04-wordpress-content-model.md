@@ -1,6 +1,6 @@
 # Daniel Arella — WordPress Content Model
 
-**Versión 2.6**
+**Versión 2.7**
 
 Modelo mínimo de contenido para la plataforma de autor. Claves técnicas en inglés, etiquetas visibles traducidas vía i18n. Suficiente para desarrollo, legible para el autor.
 
@@ -173,7 +173,45 @@ No hay plantillas especiales para taxonomías; las de topic y period usan archiv
 
 ---
 
-## 7. Principio rector
+## 7. Contenido enriquecido dentro del editor
+
+Ver `03-arquitectura-editorial` §3.1. Algunos temas (ajedrez es el primer caso real) necesitan estructura dentro del cuerpo de un `essay` o `post`, más allá de lo que resuelve el editor de texto enriquecido estándar. Esto se implementa como **bloques Gutenberg personalizados**, no como CPT ni taxonomía nueva — el contenido sigue viviendo dentro de `essay`/`post`, clasificado por `topic=ajedrez` como cualquier otra pieza.
+
+### 7.1 Bloque: Notación de ajedrez
+
+- Nombre: `danielarella/chess-notation`
+- Categoría de bloque: Texto
+- Atributos: `notation` (RichText, notación algebraica en texto plano)
+- Render: `<p class="chess-notation">{notation}</p>`
+- Sin JavaScript en el frontend; el bloque solo estructura texto.
+
+### 7.2 Bloque: Diagrama de tablero
+
+- Nombre: `danielarella/chess-diagram`
+- Categoría de bloque: Medios
+- Atributos: `image` (media, obligatorio), `alt` (string, **obligatorio, sin valor por defecto**), `caption` (string)
+- Render: `<figure class="chess-diagram"><img src="{image}" alt="{alt}">{caption && <figcaption>{caption}</figcaption>}</figure>`
+- Validación editorial: el bloque no debe poder publicarse con `alt` vacío — quien no puede ver el diagrama depende enteramente de ese texto para entender la posición.
+
+### 7.3 Bloque: Ejercicio de ajedrez
+
+- Nombre: `danielarella/chess-exercise`
+- Categoría de bloque: Texto
+- Atributos:
+  - `level` (select: `Principiante` | `Intermedio` | `Avanzado`) — vive en el bloque, no en el post; una pieza puede tener varios ejercicios de dificultad distinta
+  - `prompt` (RichText, planteamiento del reto)
+  - `diagram` (InnerBlocks, opcional — permite anidar el bloque Diagrama de tablero)
+  - `solutionNotation` (RichText, notación de la solución)
+  - `solutionText` (RichText, explicación breve)
+- Render: `<details class="chess-exercise__solution"><summary>Ver solución</summary>…</details>` — disclosure nativo, sin JavaScript, operable por teclado.
+
+### 7.4 Regla general para bloques personalizados futuros
+
+Si aparece otro tema con necesidades estructurales similares (partituras, fórmulas, diagramas técnicos), se resuelve con el mismo patrón: bloque Gutenberg nuevo dentro de `essay`/`post` existentes, nunca un CPT o taxonomía nueva. Un bloque no debe depender de JavaScript en el frontend salvo que la interacción sea imprescindible (no es el caso de ninguno de los tres bloques de ajedrez).
+
+---
+
+## 8. Principio rector
 
 Todo en este modelo existe para una sola cosa: que la obra pueda leerse, encontrarse y recorrerse sin ruido.
 

@@ -1,7 +1,7 @@
 # Daniel Arella — Arquitectura CSS
 
 **Decisión técnica: CSS nativo con ITCSS + BEM + variables CSS**  
-**Versión 1.3**
+**Versión 1.4**
 
 Este documento define cómo se escribe y organiza el CSS del proyecto: maqueta estática primero, theme WordPress después. No hay Sass, no hay preprocesador, no hay framework. La misma estructura sirve para ambos.
 
@@ -95,6 +95,9 @@ Ejemplos alineados con la arquitectura editorial:
 | Tarjeta artículo | `.article-card` | `__title`, `__excerpt` | — |
 | Migas | `.breadcrumbs` | `__item`, `__link` | — |
 | Ficha libro | `.book` | `__meta`, `__index` | — |
+| Notación de ajedrez | `.chess-notation` | — | — |
+| Diagrama de tablero | `.chess-diagram` | — (usa `img`/`figcaption` nativos) | — |
+| Ejercicio de ajedrez | `.chess-exercise` | `__level`, `__prompt`, `__solution` | — |
 
 Reglas:
 

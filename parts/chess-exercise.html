@@ -1,0 +1,24 @@
+<!--
+  Ejercicio o reto de ajedrez. La solución vive dentro de <details>/<summary>
+  nativo: sin JavaScript, operable por teclado, accesible por defecto.
+  El nivel de dificultad es texto (Principiante/Intermedio/Avanzado), nunca
+  solo color — un artículo puede traer varios ejercicios de dificultad distinta,
+  por eso el nivel vive en el bloque, no como taxonomía del artículo completo.
+  Para WordPress: bloque Gutenberg "Ejercicio de ajedrez" (ver 04-wordpress-content-model §8).
+  Atributos: level (select: Principiante | Intermedio | Avanzado), prompt (string),
+  diagram (opcional, reutiliza el bloque Diagrama de tablero), solution_notation (string),
+  solution_text (string, explicación breve).
+-->
+<div class="chess-exercise">
+  <p class="chess-exercise__level">Nivel: Intermedio</p>
+  <p class="chess-exercise__prompt">Las blancas juegan y dan mate en dos movimientos. ¿Cuál es la jugada inicial?</p>
+  <figure class="chess-diagram">
+    <img src="/assets/images/ajedrez/diagrama-ejercicio-01.png" alt="Posición de ajedrez: rey negro en h8 acorralado por peones propios en g7 y h7; dama blanca en d1, torre blanca en e1." width="480" height="480" loading="lazy">
+    <figcaption>Blancas juegan y ganan.</figcaption>
+  </figure>
+  <details class="chess-exercise__solution">
+    <summary>Ver solución</summary>
+    <p class="chess-notation">1. Dd8+ Txd8 2. Te8#</p>
+    <p>La torre queda protegida en la octava fila; al capturar la dama, el rey negro no tiene casillas de escape porque sus propios peones en g7 y h7 le cierran el paso.</p>
+  </details>
+</div>

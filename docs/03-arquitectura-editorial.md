@@ -1,6 +1,6 @@
 # Daniel Arella — Arquitectura editorial
 
-**Versión 2.9**
+**Versión 3.0**
 
 Esta capa se apoya en la identidad corporativa y en el plan maestro (`01-plataforma-autor-plan`). No la reemplaza. La vuelve operativa.
 
@@ -82,6 +82,26 @@ Esos datos viven como campos simples dentro de cada pieza cuando es necesario mo
 El idioma se gestiona mediante el sistema multilenguaje del sitio (no como taxonomía editorial).
 
 **Regla de clasificación:** Cada pieza debería tener como máximo 1 periodo y 1–3 temas. Evitar clasificaciones excesivas.
+
+---
+
+## 3.1 Bloques de contenido enriquecido (ej. ajedrez)
+
+Algunos temas dentro de `essay` o `article` necesitan estructura interna más allá de texto corrido: ajedrez es el primer caso real (`tema/ajedrez`), con notación de jugadas, diagramas de tablero y ejercicios con nivel de dificultad y solución.
+
+**Regla:** esto no crea un CPT ni una taxonomía nueva. `tema=ajedrez` ya identifica el corpus; lo que hacía falta era estructura *dentro* de la pieza. Se resuelve con bloques de contenido reutilizables, igual que `quote-block` ya existe para citas:
+
+| Bloque | Qué representa |
+|--------|-----------------|
+| Notación de ajedrez | Texto de jugadas en notación algebraica |
+| Diagrama de tablero | Imagen de una posición, con alt descriptivo y leyenda de la jugada |
+| Ejercicio de ajedrez | Planteamiento + nivel de dificultad + solución oculta (`<details>`) |
+
+El nivel de dificultad vive **en el bloque del ejercicio, no en la pieza completa**: un mismo ensayo puede traer ejercicios de dificultad distinta, así que no puede ser taxonomía ni campo a nivel de `essay`/`article`.
+
+Detalle de implementación: `17-static-file-structure` §7 (maqueta), `18-css-architecture` §5 (BEM), `04-wordpress-content-model` §8 (bloques Gutenberg).
+
+Este patrón — bloques reutilizables dentro de una pieza, sin CPT nuevo — es el que se repite si aparece otro tema con necesidades estructurales similares (por ejemplo, partituras musicales o fórmulas). No se crea una entidad nueva por cada tema; se crean bloques.
 
 ---
 
@@ -243,6 +263,6 @@ Si una estructura no ayuda a leer mejor o recordar mejor la obra, no existe.
 
 ---
 
-**Versión:** 2.8  
+**Versión:** 3.0  
 **Depende de:** `01-plataforma-autor-plan`, `02-identidad-corporativa`  
 **Alimenta a:** `04-wordpress-content-model`

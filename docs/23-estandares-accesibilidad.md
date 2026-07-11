@@ -1,7 +1,7 @@
 # Daniel Arella — Estándares de accesibilidad
 
 **Documento único de estándares de accesibilidad**  
-**Versión 1.0**
+**Versión 1.1**
 
 Estrategia, principios, reglas de diseño, HTML semántico, ARIA, contenido editorial, checklist de implementación y pruebas. Alineado con WCAG 2.2 Nivel AA.
 
@@ -100,7 +100,7 @@ Proporcionar nombre accesible: (1) texto visible, (2) texto `.u-visually-hidden`
 ## 6. Contenido editorial
 
 - **Headings:** H1–H3 ordenados; un H1 por página.
-- **Texto alt:** Todas las imágenes informativas; descriptivo y conciso. Decorativas: `alt=""`.
+- **Texto alt:** Todas las imágenes informativas; descriptivo y conciso. Decorativas: `alt=""`. Caso límite: diagramas de tablero de ajedrez (`03-arquitectura-editorial` §3.1) — el alt es la única vía de acceso a la posición para quien usa lector de pantalla, así que describe la posición o el punto clave de la jugada; nunca queda vacío ni genérico ("diagrama de ajedrez").
 - **Enlaces:** Texto descriptivo (evitar "aquí", "clic", "más" sin contexto).
 - **Enlaces externos:** Indicar cuando un enlace abre nueva pestaña o cambia contexto.
 - **Media:** Subtítulos o transcripción para video/audio informativo.

@@ -1,7 +1,7 @@
 # Daniel Arella — Estructura estática (HTML/CSS)
 
 **Estructura de archivos del sitio previo a WordPress**  
-**Versión 1.5**
+**Versión 1.6**
 
 Este documento define la arquitectura definitiva de la maqueta estática. Todo lo que aquí existe tiene correspondencia directa con una plantilla del theme WordPress. No se rediseña después, solo se traduce.
 
@@ -132,7 +132,12 @@ daniel-arella-static/
     ├── essay-card.html
     ├── story-card.html
     ├── workshop-card.html
-    └── article-card.html
+    ├── article-card.html
+    ├── quote-block.html
+    ├── goodreads-link.html
+    ├── chess-notation.html
+    ├── chess-diagram.html
+    └── chess-exercise.html
 ```
 
 La carpeta `forma/` solo existe si se implementa la taxonomía form. No se permite JavaScript para animaciones en contenido de lectura (doc 22). Nada más. Nada menos.
@@ -213,8 +218,11 @@ Durante la maqueta estos archivos se insertan manualmente o mediante un preproce
 | article-card.html | Tarjeta artículo |
 | quote-block.html | Bloque de cita (texto + atribución). Reutilizable para citas de libros del autor o de otros. |
 | goodreads-link.html | Enlace a Goodreads para fichas de libro. |
+| chess-notation.html | Notación algebraica de ajedrez (texto). Ver `03-arquitectura-editorial` §3.1. |
+| chess-diagram.html | Diagrama de tablero: imagen + alt descriptivo obligatorio + leyenda. |
+| chess-exercise.html | Ejercicio de ajedrez: nivel + planteamiento + solución en `&lt;details&gt;`. |
 
-`article-card.html` se usa solo para el CPT post (Artículos). `quote-block` y `goodreads-link` se incluyen en singles de libro según corresponda. En WordPress estos se convierten en `get_template_part()`.
+`article-card.html` se usa solo para el CPT post (Artículos). `quote-block`, `goodreads-link` y los tres bloques de ajedrez se incluyen dentro del cuerpo de `essay`/`post` según corresponda. En WordPress `quote-block` y `goodreads-link` se convierten en `get_template_part()`; los bloques de ajedrez se convierten en bloques Gutenberg (`04-wordpress-content-model` §7).
 
 ---
 
@@ -288,4 +296,4 @@ La maqueta ya es la obra.
 
 ---
 
-**Versión:** 1.5
+**Versión:** 1.6
