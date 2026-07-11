@@ -1,6 +1,6 @@
 # Daniel Arella — Corporate Identity and Editorial System
 
-**Versión 2.4**
+**Versión 2.6**
 
 Este documento define el sistema completo de identidad visual, tipográfica y editorial para el sitio de Daniel Arella. Gobierna tanto la maqueta estática como el theme WordPress. No es un theme. No es un blog. Es una plataforma de autor.
 
@@ -374,7 +374,7 @@ El símbolo del rostro con cabello rizado y anteojos es el **isotipo oficial**. 
 **Cuaderno de las fulminaciones** es el subtítulo oficial de la plataforma y forma parte permanente de la firma de marca.
 
 - Se escribe siempre con mayúscula inicial, sin comillas y sin punto final.
-- Aparece debajo de **Daniel Arella** en la cabecera de todas las páginas.
+- Aparece debajo de **Daniel Arella** en la cabecera de todas las páginas y usa el mismo rol Terracota (`--text-on-dark-accent`) de los enlaces activos.
 - Aparece inmediatamente después del H1 **Daniel Arella** en la portada.
 - Se presenta en cursiva y con menor jerarquía que el nombre; nunca compite con títulos de obras o páginas.
 - No sustituye descripciones SEO, entradillas editoriales ni títulos de contenido.
@@ -468,5 +468,5 @@ La obra vive dentro de esta gramática.
 
 ---
 
-**Versión del documento:** 2.4
+**Versión del documento:** 2.6
 **Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.
