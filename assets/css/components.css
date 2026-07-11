@@ -465,7 +465,7 @@ body[data-nav="home"] .section-panel > * {
   height: 3rem;
   padding: 0;
   border: 1px solid var(--border);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: var(--content-bg);
   color: var(--text);
   font-family: var(--font-ui);
@@ -942,12 +942,20 @@ body[data-nav="home"] .section-panel > * {
 .archive-filter__chip {
   padding: var(--space-2) var(--space-3);
   border: 1px solid var(--border-subtle);
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   background: transparent;
   color: var(--text);
   font-family: var(--font-ui);
   font-size: var(--text-sm);
   text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.archive-filter__chip:hover,
+.archive-filter__chip:focus-visible,
+.archive-filter__chip:active {
+  border-color: var(--link);
+  color: var(--link);
 }
 
 .archive-filter__chip[aria-current="page"] {
@@ -1248,7 +1256,7 @@ body[data-nav="home"] .section-panel > * {
 
 .reels-rail__scroll::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 0.25rem;
+  border-radius: var(--radius-1);
 }
 
 .reels-rail__scroll::-webkit-scrollbar-thumb:hover {
