@@ -208,9 +208,11 @@ En `settings.css` (o al inicio de `main.css`) se definen los tokens en `:root`. 
 
 Los componentes y objects usan roles (`var(--text)`, `var(--surface)`), nunca hex. Medida de lectura objetivo: 60–70ch (ver `22-tendencias-ux-ui-sistema-editorial`).
 
-Los textos de lectura concentrada usan `.content-body--reading`, que asigna `--reading-bg` (Blanco) y `--text` (Tinta) únicamente al bloque de versos o prosa continua. El título, los metadatos, las imágenes, la multimedia, los paneles, las acciones y la navegación permanecen fuera sobre Pergamino.
+Los textos de lectura concentrada usan `.content-body--reading`, que asigna `--reading-bg` (Blanco) y `--text` (Tinta) únicamente al bloque de versos o prosa continua. El título, los metadatos, las imágenes, la multimedia, las acciones y la navegación permanecen fuera sobre el lienzo Pergamino.
 
-Blanco no se usa en bandas, secciones, grids ni tarjetas. La jerarquía de portadas y páginas de exploración se resuelve con composición, espaciado y tipografía sobre Pergamino.
+`--content-bg` (Blanco) se usa en unidades informativas —tarjetas, listados, paneles y controles— para separarlas del lienzo Pergamino. No se aplica a bandas completas ni a contenedores vacíos; la composición y el espaciado siguen siendo la jerarquía principal.
+
+El hero usa roles propios (`--hero-bg`, `--hero-text`, `--hero-action`) porque pertenece a la capa de impacto visual. No consume `--content-bg` ni `--reading-bg`.
 
 Las listas editoriales dentro de textos conservan viñetas o numeración. Las listas usadas como estructura de interfaz —navegación, grids de tarjetas, filtros, metadatos, acciones y paginación— eliminan `list-style` y `padding-left` en su clase de componente.
 

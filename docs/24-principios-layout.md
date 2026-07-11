@@ -37,6 +37,9 @@ Cierra el sistema visual: ancho de lectura, ritmo vertical, uso del blanco, rela
 - **Agrupación:** El blanco separa grupos lógicos (header / hero / sección / footer).
 - **Contraste:** Zonas densas (texto, listas) equilibradas con zonas abiertas (hero, entre secciones).
 - **Regla:** No sacrificar el blanco para "meter más contenido".
+- **Descanso visual:** La interfaz debe sentirse ligera, serena y respirable. El vacío reduce tedio y permite reconocer la jerarquía sin esfuerzo.
+- **Límite de chrome:** Evitar acumular borde, sombra, fondo y radio sobre un mismo bloque. Primero espacio y ritmo; usar un borde sutil solo cuando la agrupación no sea evidente.
+- **Contraste de superficies:** Pergamino funciona como lienzo y Blanco como superficie informativa. El hero puede usar un color de marca porque su función es atraer, no sostener lectura. Esta diferencia debe facilitar la exploración sin convertir cada `div` en una caja.
 
 ---
 

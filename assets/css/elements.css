@@ -40,6 +40,7 @@ h1,
 h2,
 h3,
 h4 {
+  max-width: var(--measure-heading);
   font-family: var(--font-heading);
   font-weight: 600;
   line-height: var(--line-heading);
@@ -71,7 +72,7 @@ ol {
 
 blockquote {
   padding-left: var(--space-5);
-  border-left: 3px solid var(--border);
+  border-left: 2px solid var(--border-subtle);
   font-style: italic;
 }
 
@@ -94,7 +95,7 @@ textarea,
 select {
   width: 100%;
   padding: 0.85rem 1rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-subtle);
   border-radius: var(--radius-1);
   background: var(--content-bg);
   color: var(--text);
@@ -111,7 +112,7 @@ button {
 
 hr {
   border: 0;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-subtle);
 }
 
 /* Lucide Icons — 19-assets-strategy */
@@ -135,7 +136,7 @@ hr {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  opacity: 0.42;
+  opacity: 0.28;
   pointer-events: none;
 }
 
@@ -147,7 +148,7 @@ hr {
   stroke-linecap: round;
   stroke-linejoin: round;
   fill: none;
-  opacity: 0.2;
+  opacity: 0.12;
   pointer-events: none;
 }
 

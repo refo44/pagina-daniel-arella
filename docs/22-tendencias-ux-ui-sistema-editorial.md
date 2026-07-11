@@ -45,7 +45,8 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 - **Lectura concentrada:** el bloque tipográfico de poemas, ensayos, relatos y documentación extensa prioriza legibilidad y foco. Usa fondo Blanco (`--reading-bg`) y texto Tinta (`--text`), no negro puro.
 - **Exploración e impacto:** portadas, navegación, destacados y CTAs pueden usar más contraste, color y composición para orientar y atraer.
 - **Límite:** los recursos de impacto visual no invaden el cuerpo de lectura ni compiten con la obra.
-- **Límite del Blanco:** títulos, metadatos, imágenes, multimedia, paneles, CTAs, navegación, grids y tarjetas permanecen sobre Pergamino. Blanco no alterna secciones ni funciona como decoración.
+- **Uso del Blanco:** superficies informativas —tarjetas, listados, paneles, controles y lectura— usan Blanco para distinguirse del lienzo Pergamino. No se aplica a contenedores vacíos ni alterna bandas por decoración.
+- **Hero:** pertenece a exploración e impacto, no a lectura concentrada. Usa color de marca con contraste AA para atraer y conducir hacia una acción.
 
 ### 1.3 Iconografía
 
@@ -59,6 +60,7 @@ Para Daniel Arella el minimalismo no es estilo ni moda: es **disciplina de edici
 
 - Tipografía = voz; espacio en blanco = ritmo.
 - Jerarquía con tamaño, interlineado, espaciado vertical, peso. **No** con colores, cajas, fondos ni módulos.
+- La expresión visual es minimalista y serena: pocos marcos, sombras excepcionales, vacíos intencionales y pausas amplias entre grupos. Debe resultar ligera y atractiva sin añadir ruido.
 - La cabecera debe ser corta y clara, pero puede superar 5 ítems si eso evita esconder una sección estructural. En este proyecto, `Libros` tiene acceso directo en el menú principal.
 
 ### 1.5 Anti-patrones y reglas operativas

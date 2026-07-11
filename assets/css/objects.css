@@ -1,10 +1,10 @@
 .o-container {
-  width: min(100% - (2 * var(--space-6)), var(--measure-page));
+  width: min(100% - (2 * var(--gutter-inline)), var(--measure-page));
   margin-inline: auto;
 }
 
 .o-container--wide {
-  width: min(100% - (2 * var(--space-6)), var(--measure-wide));
+  width: min(100% - (2 * var(--gutter-inline)), var(--measure-wide));
 }
 
 .o-stack > * + * {
@@ -12,12 +12,12 @@
 }
 
 .o-flow > * + * {
-  margin-block-start: var(--flow-space, 1.1em);
+  margin-block-start: var(--flow-space);
 }
 
 .o-grid {
   display: grid;
-  gap: var(--grid-gap, var(--space-6));
+  gap: var(--grid-gap, var(--space-7));
 }
 
 .o-cluster {
@@ -29,7 +29,7 @@
 
 .o-sidebar {
   display: grid;
-  gap: var(--space-7);
+  gap: var(--space-8);
 }
 
 @media (width >= 64rem) {

@@ -12,21 +12,24 @@
       --brand-2: #f3e0cc;
       --brand-3: #b02e17;
       --brand-4: #7e390c;
-      --brand-5: #174f18;
+      --brand-5: #4b2418;
       --brand-6: #ffffff;
       --bg: #f3e0cc;
       --text: #0d1303;
       --text-muted: #b02e17;
-      --content-bg: #f3e0cc;
+      --content-bg: #ffffff;
       --reading-bg: #ffffff;
       --border: #b02e17;
       --header-bg: #0d1303;
       --footer-bg: #0d1303;
+      --hero-bg: #b02e17;
+      --hero-text: #f3e0cc;
+      --hero-action: #4b2418;
       --text-on-primary: #f3e0cc;
       --primary: #7e390c;
-      --primary-hover: #174f18;
+      --primary-hover: #4b2418;
       --link: #7e390c;
-      --link-hover: #174f18;
+      --link-hover: #4b2418;
       --surface: #b02e17;
     }
 
@@ -51,7 +54,7 @@
     .palette-doc .doc-section h3 { font-size: 1.15rem; margin: 1.25rem 0 0.5rem; color: #0d1303; }
     .palette-doc .doc-section p { color: #0d1303; }
     .palette-doc .doc-section a { color: #7e390c; }
-    .palette-doc .doc-section a:hover { color: #174f18; }
+    .palette-doc .doc-section a:hover { color: #4b2418; }
     .palette-swatches { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin: 1rem 0; }
     .palette-swatch { border-radius: var(--radius-2); overflow: hidden; border: 1px solid var(--border); }
     .palette-swatch__block { height: 80px; }
@@ -59,7 +62,7 @@
     .palette-swatch__block--2 { background: #f3e0cc; border-bottom: 1px solid var(--border); }
     .palette-swatch__block--3 { background: #b02e17; }
     .palette-swatch__block--4 { background: #7e390c; }
-    .palette-swatch__block--5 { background: #174f18; }
+    .palette-swatch__block--5 { background: #4b2418; }
     .palette-swatch__block--6 { background: #ffffff; border-bottom: 1px solid var(--border); }
     .palette-swatch__info { padding: 0.5rem 0.75rem; font-family: var(--font-ui); font-size: 0.85rem; background: #f3e0cc; color: #0d1303; }
     .palette-swatch__info .name { font-weight: 600; color: #0d1303; }
@@ -71,7 +74,7 @@
     .combo-box--header { background: #0d1303; color: #f3e0cc; }
     .combo-box--surface { background: #b02e17; color: #0d1303; }
     .combo-box--button { background: #7e390c; color: #f3e0cc; }
-    .combo-box--hover { background: #174f18; color: #f3e0cc; }
+    .combo-box--hover { background: #4b2418; color: #f3e0cc; }
     .examples-row { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: 1rem 0; }
     .screenshot-placeholder { min-height: 200px; border: 2px dashed #b02e17; border-radius: var(--radius-2); display: flex; align-items: center; justify-content: center; background: #f3e0cc; color: #b02e17; font-family: var(--font-ui); font-size: 0.9rem; text-align: center; padding: 1rem; }
     .screenshot-placeholder img { max-width: 100%; width: auto; height: auto; border-radius: var(--radius-2); display: block; }
@@ -108,7 +111,7 @@
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--2"></div>
-          <div class="palette-swatch__info"><span class="name">Pergamino</span><br><span class="hex">#f3e0cc</span><br><small>--brand-2 · Fondo principal, tarjetas</small></div>
+          <div class="palette-swatch__info"><span class="name">Pergamino</span><br><span class="hex">#f3e0cc</span><br><small>--brand-2 · Lienzo principal y pausas</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--3"></div>
@@ -120,7 +123,7 @@
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--5"></div>
-          <div class="palette-swatch__info"><span class="name">Musgo</span><br><span class="hex">#174f18</span><br><small>--brand-5 · Hover, énfasis</small></div>
+          <div class="palette-swatch__info"><span class="name">Castaño</span><br><span class="hex">#4b2418</span><br><small>--brand-5 · Hover, énfasis</small></div>
         </div>
         <div class="palette-swatch">
           <div class="palette-swatch__block palette-swatch__block--6"></div>
@@ -137,7 +140,7 @@
         <div class="combo-box combo-box--header"><strong>Cabecera / pie</strong><br>Fondo Tinta, texto Pergamino</div>
         <div class="combo-box combo-box--surface"><strong>Superficie editorial</strong><br>Fondo Terracota, texto Tinta</div>
         <div class="combo-box combo-box--button"><strong>Botones / CTAs</strong><br>Fondo Siena, texto Pergamino</div>
-        <div class="combo-box combo-box--hover"><strong>Hover botones</strong><br>Fondo Musgo, texto Pergamino</div>
+        <div class="combo-box combo-box--hover"><strong>Hover botones</strong><br>Fondo Castaño, texto Pergamino</div>
       </div>
     </div>
   </div>
@@ -154,7 +157,7 @@
       </div>
 
       <h3>Enlaces</h3>
-      <p>Texto con <a href="#">enlace en Siena</a> y hover en Musgo.</p>
+      <p>Texto con <a href="#">enlace en Siena</a> y hover en Castaño.</p>
 
       <h3>Cabecera (estilo)</h3>
       <div style="background: #0d1303; color: #f3e0cc; padding: 1rem 1.5rem; border-radius: var(--radius-2); font-family: var(--font-ui);">
@@ -164,7 +167,7 @@
       <h3>Bloque de lectura sostenida</h3>
       <div class="content-body content-body--reading o-flow" style="background: #ffffff; color: #0d1303;">
         <p>El Blanco envuelve únicamente versos o prosa continua que requieren atención sostenida.</p>
-        <p>Títulos, imágenes, tarjetas, acciones y navegación permanecen sobre Pergamino.</p>
+        <p>Tarjetas, listados, paneles y lectura usan Blanco; Pergamino conserva el lienzo y las pausas. El hero usa Terracota con texto Pergamino para generar impacto visual.</p>
       </div>
 
       <h3>Tarjeta (card)</h3>

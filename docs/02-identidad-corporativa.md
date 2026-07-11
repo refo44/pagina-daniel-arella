@@ -33,11 +33,11 @@ Solo existen seis colores reales. No hay grises, no hay degradados, no hay exten
 | Nombre | Hex | Uso principal |
 |--------|-----|----------------|
 | Tinta | #0d1303 | Cabecera, pie, texto |
-| Pergamino | #f3e0cc | Fondo claro principal, tarjetas y formularios |
+| Pergamino | #f3e0cc | Lienzo principal, orientación y pausas |
 | Terracota | #b02e17 | Superficies editoriales, texto secundario, bordes |
 | Siena | #7e390c | Acento base: enlaces, botones, foco |
-| Musgo | #174f18 | Acento intenso: hover, énfasis |
-| Blanco | #ffffff | Fondo exclusivo para bloques de lectura sostenida |
+| Castaño | #4b2418 | Acento intenso: hover, énfasis |
+| Blanco | #ffffff | Superficies de contenido y lectura sostenida |
 
 ### Guía visual
 
@@ -51,20 +51,21 @@ Imagina el sitio así:
     Destacado
 --------------------------
 Text: Tinta
-Links: Siena → Musgo en hover
-Buttons: Siena con texto Pergamino → Musgo en hover
+Links: Siena → Castaño en hover
+Buttons: Siena con texto Pergamino → Castaño en hover
 ```
 
-Todo se construye con estas seis tintas. Pergamino sostiene la interfaz y Blanco aparece únicamente detrás de prosa o versos de lectura sostenida; ambos usan Tinta como texto principal.
+Todo se construye con estas seis tintas. Pergamino sostiene el lienzo y las pausas; Blanco permite distinguir superficies informativas —tarjetas, listados, paneles y lectura sostenida—. El hero usa Terracota con texto Pergamino para atraer atención sin confundirse con una superficie de lectura.
 
 | Combinación | Fondo | Texto |
 |-------------|-------|-------|
 | Página general | Pergamino | Tinta |
+| Superficie de contenido | Blanco | Tinta |
 | Bloque de lectura sostenida | Blanco | Tinta |
 | Cabecera / pie | Tinta | Pergamino |
 | Superficies editoriales | Terracota | Tinta |
 | Botones / CTAs | Siena | Pergamino |
-| Hover botones | Musgo | Pergamino |
+| Hover botones | Castaño | Pergamino |
 
 ---
 
@@ -188,7 +189,7 @@ Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 
 --brand-2: #f3e0cc;  /* Pergamino - neutro claro base */
 --brand-3: #b02e17;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
 --brand-4: #7e390c;  /* Siena - acento base de interacción */
---brand-5: #174f18;  /* Musgo - acento intenso (hover, énfasis) */
+--brand-5: #4b2418;  /* Castaño - acento intenso (hover, énfasis) */
 --brand-6: #ffffff;  /* Blanco - fondo de lectura sostenida */
 ```
 
@@ -200,7 +201,7 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 /* Semantic roles */
 --bg: var(--brand-2);           /* Pergamino */
 --page-bg: var(--brand-2);      /* Pergamino - lienzo principal */
---content-bg: var(--brand-2);   /* Pergamino - tarjetas y controles */
+--content-bg: var(--brand-6);   /* Blanco - superficies con contenido */
 --reading-bg: var(--brand-6);   /* Blanco - lectura concentrada */
 --text: var(--brand-1);         /* Tinta */
 --text-muted: var(--brand-3);  /* Terracota - metadatos, UI secundaria (evita opacity) */
@@ -208,20 +209,25 @@ Cómo se usan. Alineado con `22-tendencias-ux-ui-sistema-editorial` (design toke
 --border: var(--brand-3);       /* Terracota - bordes; usar con moderación */
 
 --link: var(--brand-4);         /* Siena - acento base */
---link-hover: var(--brand-5);   /* Musgo - acento intenso */
+--link-hover: var(--brand-5);   /* Castaño - acento intenso */
 --focus: var(--brand-4);        /* Siena - acento de foco */
 
 --header-bg: var(--brand-1);    /* Tinta */
 --footer-bg: var(--brand-1);    /* Tinta */
+--hero-bg: var(--brand-3);      /* Terracota - impacto visual */
+--hero-text: var(--brand-2);    /* Pergamino - texto sobre hero */
+--hero-action: var(--brand-5);  /* Castaño - acción principal del hero */
 
 --primary: var(--brand-4);      /* Siena - acento base */
---primary-hover: var(--brand-5); /* Musgo - acento intenso */
+--primary-hover: var(--brand-5); /* Castaño - acento intenso */
 --text-on-primary: var(--brand-2); /* Pergamino - texto sobre botones/CTAs */
 ```
 
 Los componentes solo consumen roles, nunca hex directo.
 
-**Regla de fondos claros:** Pergamino es el lienzo de toda la interfaz: orientación, secciones, tarjetas, formularios, imágenes, multimedia, acciones y navegación. Blanco no es un recurso de alternancia visual.
+**Regla de fondos claros:** Pergamino es el lienzo de orientación, navegación y pausa. Blanco distingue superficies informativas: tarjetas, listados, paneles, controles y lectura sostenida. No se usa en contenedores vacíos ni como alternancia automática.
+
+**Regla del hero:** El hero no es una superficie de lectura. Su función es resaltar, atraer y conducir hacia una acción; usa Terracota (`--hero-bg`) con texto Pergamino (`--hero-text`) y una acción Castaño accesible.
 
 **Regla de lectura concentrada:** Solo el bloque tipográfico de un texto que requiera atención sostenida —versos, prosa continua o documentación extensa— se presenta sobre `--reading-bg` (Blanco) con `--text` (Tinta, `#0d1303`). El título, los metadatos, las imágenes, los paneles, la multimedia, las acciones y la navegación permanecen en Pergamino. “Oscuro” significa el color de texto definido por el tema, nunca negro puro `#000000`.
 
@@ -229,7 +235,7 @@ Los componentes solo consumen roles, nunca hex directo.
 
 **Regla de superficie:** Terracota se reserva para acentos editoriales puntuales, texto secundario, bordes y navegación contextual. No debe convertirse en fondo extensivo de lectura.
 
-**Sin alternancia de secciones:** Blanco identifica únicamente una superficie tipográfica de lectura concentrada. No se aplica a bandas, grids, tarjetas, portadas ni bloques de evidencia. Todas las secciones del home usan Pergamino.
+**Sin alternancia decorativa:** Las bandas del home conservan Pergamino; sus unidades de contenido usan Blanco para distinguirse con claridad. La decisión responde a agrupación y legibilidad, no a la posición de la sección.
 
 **Separación visual:** (1) Primero: whitespace. (2) Segundo: ritmo vertical. (3) Tercero: borde suave (brand-3). Evitar contornos fuertes o marcos pesados.
 
@@ -237,7 +243,7 @@ Los componentes solo consumen roles, nunca hex directo.
 
 - **Texto sobre fondos claros:** Tinta sobre Pergamino y Blanco cumple AA sobrado.
 - **Siena** como texto sobre Pergamino o Blanco: verificar contraste AA.
-- **Musgo** como texto sobre Pergamino o Blanco: verificar contraste AA.
+- **Castaño** como texto sobre Pergamino o Blanco: contraste AAA (10.45:1 sobre Pergamino).
 - **Solución:** Enlaces con color Siena. Se distinguen por color respecto al texto; hover refuerza con cambio de tono.
 
 **Enlaces de navegación o interfaz:** sin subrayado.
@@ -258,7 +264,7 @@ a:hover { color: var(--link-hover); }
 
 **Focus:** `--focus: var(--brand-4)` mantiene calma editorial en el tema claro único. Si se prefiere focus más intenso (brand-5), usar `box-shadow` con alpha en lugar de outline sólido.
 
-**Botones y CTAs:** Contraste seguro = texto Pergamino sobre fondos Siena / Musgo.
+**Botones y CTAs:** Contraste seguro = texto Pergamino sobre fondos Siena / Castaño.
 
 ```css
 .button {
@@ -410,4 +416,4 @@ La obra vive dentro de esta gramática.
 ---
 
 **Versión del documento:** 2.1
-**Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Musgo y Blanco.
+**Identidad:** Tierra viva — Tinta, Pergamino, Terracota, Siena, Castaño y Blanco.

@@ -199,7 +199,7 @@ Las reglas tipográficas se definen en `02-identidad-corporativa`:
 - Texto de cuerpo legible en móvil y escritorio.
 - Nunca usar títulos como decoración.
 - Tipografía: Fraunces para obra y títulos; Source Sans 3 para metadatos y UI. Ritmo y medida en 02.
-- Solo el bloque tipográfico de lectura concentrada —versos o prosa continua— usa `--reading-bg` (Blanco) y `--text` (Tinta, no negro puro). Títulos, metadatos, imágenes, multimedia, paneles, acciones, navegación e introducciones permanecen sobre Pergamino.
+- Solo el bloque tipográfico de lectura concentrada —versos o prosa continua— usa `--reading-bg` (Blanco) y `--text` (Tinta, no negro puro). Títulos, metadatos, imágenes, multimedia, acciones, navegación e introducciones permanecen fuera de esa superficie; los paneles con información pueden usar `--content-bg` (Blanco) como unidades independientes sobre el lienzo Pergamino.
 - En lectura continua se prioriza legibilidad y foco; en portadas, destacados, navegación y CTAs se permite mayor impacto visual.
 
 ---
