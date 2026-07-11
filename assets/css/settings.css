@@ -3,9 +3,9 @@
 
   --brand-1: #0d1303;
   --brand-2: #f3e0cc;
-  --brand-3: #b02e17;
-  --brand-4: #7e390c;
-  --brand-5: #4b2418;
+  --brand-3: #974319;
+  --brand-4: #802e0e;
+  --brand-5: #472015;
   --brand-6: #ffffff;
   --bg: var(--brand-2);
   --page-bg: var(--brand-2);
@@ -67,6 +67,18 @@
   --line-ui: 1.4;
   --bp-medium: 40rem;
   --bp-wide: 64rem;
+  --text-2xs: 0.8125rem;
+  --text-xs: 0.875rem;
+  --text-sm: 0.9375rem;
+  --text-base: 1rem;
+  --text-lg: 1.22rem;
+  --text-xl: 1.3rem;
+  --text-2xl: clamp(1.2rem, 2vw, 1.35rem);
+  --text-poem: 1.1rem;
+  --text-body: 1.125rem;
+  --text-h3: clamp(1.3rem, 2vw, 1.6rem);
+  --text-h2: clamp(1.75rem, 2.6vw, 2.35rem);
+  --text-h1: clamp(2.25rem, 3vw, 3.5rem);
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -79,7 +79,7 @@
   padding: 0.6rem 0;
   color: inherit;
   font-family: var(--font-ui);
-  font-size: 0.98rem;
+  font-size: var(--text-base);
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@
 }
 
 .site-header__list--sub .site-header__link {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   opacity: 0.9;
 }
 
@@ -124,7 +124,7 @@
 .site-footer__links-title {
   font-family: var(--font-meta);
   font-weight: 600;
-  font-size: 0.8125rem;
+  font-size: var(--text-2xs);
   text-transform: uppercase;
   letter-spacing: 0.04em;
   margin: 0;
@@ -160,7 +160,7 @@
 .site-footer__nav a {
   text-decoration: underline;
   text-underline-offset: 0.2em;
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
 }
 
 .site-footer__nav a:hover {
@@ -169,7 +169,7 @@
 
 .footer-credits {
   font-family: var(--font-ui);
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   margin: 0;
 }
 
@@ -188,7 +188,7 @@
 
 .site-footer__legal {
   font-family: var(--font-ui);
-  font-size: 0.875rem;
+  font-size: var(--text-xs);
   margin: 0;
   margin-top: var(--space-6);
   opacity: 0.9;
@@ -222,12 +222,12 @@
 .site-footer__newsletter-title {
   font-family: var(--font-meta);
   font-weight: 600;
-  font-size: 1rem;
+  font-size: var(--text-base);
   margin: 0;
 }
 
 .site-footer__newsletter-desc {
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   opacity: 0.9;
   margin: 0;
 }
@@ -244,7 +244,7 @@
   max-width: 16rem;
   padding: var(--space-2) var(--space-3);
   font-family: var(--font-ui);
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--text);
   background: var(--content-bg);
   border: 1px solid var(--border);
@@ -264,7 +264,7 @@
   padding: var(--space-2) var(--space-4);
   font-family: var(--font-ui);
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   color: var(--text-on-primary);
   background: var(--primary);
   border: none;
@@ -282,7 +282,7 @@
 }
 
 .site-footer__link {
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
@@ -386,7 +386,7 @@ body[data-nav="home"] .section-panel > * {
 .hero-slide__eyebrow {
   margin: 0;
   font-family: var(--font-meta);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   letter-spacing: 0.02em;
   color: inherit;
   opacity: 0.9;
@@ -461,7 +461,7 @@ body[data-nav="home"] .section-panel > * {
   background: var(--content-bg);
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   text-decoration: none;
   transform: translateY(-50%);
   transition:
@@ -522,7 +522,7 @@ body[data-nav="home"] .section-panel > * {
 .entry-nav,
 .book-index__meta {
   font-family: var(--font-meta);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   letter-spacing: 0.02em;
 }
 
@@ -535,7 +535,7 @@ body[data-nav="home"] .section-panel > * {
 
 .hero-home__lede {
   max-width: 34rem;
-  font-size: 1.22rem;
+  font-size: var(--text-lg);
 }
 
 .hero-home__aside {
@@ -676,11 +676,11 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .card__title {
-  font-size: clamp(1.2rem, 2vw, 1.35rem);
+  font-size: var(--text-2xl);
 }
 
 .card__excerpt {
-  font-size: 1rem;
+  font-size: var(--text-base);
 }
 
 .card__cover {
@@ -760,7 +760,7 @@ body[data-nav="home"] .section-panel > * {
   border: 1px solid transparent;
   border-radius: var(--radius-1);
   font-family: var(--font-ui);
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   line-height: 1;
   text-decoration: none;
@@ -866,7 +866,7 @@ body[data-nav="home"] .section-panel > * {
   background: transparent;
   color: var(--text);
   font-family: var(--font-ui);
-  font-size: 0.94rem;
+  font-size: var(--text-sm);
   text-decoration: none;
 }
 
@@ -893,7 +893,7 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .archive-row__title {
-  font-size: 1.3rem;
+  font-size: var(--text-xl);
 }
 
 .archive-row__meta {
@@ -945,7 +945,7 @@ body[data-nav="home"] .section-panel > * {
 
 .content-body--poem {
   max-width: 55ch;
-  font-size: 1.1rem;
+  font-size: var(--text-poem);
   line-height: 1.7;
 }
 
@@ -981,13 +981,13 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .poem-audio__title {
-  font-size: 1rem;
+  font-size: var(--text-base);
   font-weight: 600;
   margin: 0 0 var(--space-2);
 }
 
 .poem-audio__caption {
-  font-size: 0.9rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   margin: 0 0 var(--space-3);
 }
@@ -1209,7 +1209,7 @@ body[data-nav="home"] .section-panel > * {
   padding-inline: var(--space-2);
   font-family: var(--font-meta);
   font-weight: 600;
-  font-size: 0.9375rem;
+  font-size: var(--text-sm);
   text-decoration: none;
   color: var(--link);
   border: 1px solid var(--border);
@@ -1344,12 +1344,12 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .media-card__title {
-  font-size: 1.22rem;
+  font-size: var(--text-lg);
   margin: 0;
 }
 
 .media-card__excerpt {
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--text-muted);
   margin: var(--space-2) 0 0;
 }
@@ -1438,7 +1438,7 @@ body[data-nav="home"] .section-panel > * {
 }
 
 .section-heading__desc {
-  font-size: 1rem;
+  font-size: var(--text-base);
   color: var(--text-muted);
   margin: var(--space-2) 0 0;
 }
@@ -1516,7 +1516,7 @@ body[data-nav="home"] .section-panel > * {
 .quote-block__attribution {
   grid-column: 2;
   font-family: var(--font-meta);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
   color: var(--text-muted);
   margin: 0;
   font-style: normal;
@@ -1664,7 +1664,7 @@ body[data-nav="home"] .section-panel > * {
 .gallery-pagination-info {
   color: var(--text-muted);
   font-family: var(--font-ui);
-  font-size: 0.95rem;
+  font-size: var(--text-sm);
 }
 
 .gallery-pagination-pages {

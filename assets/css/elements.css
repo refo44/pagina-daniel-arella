@@ -8,7 +8,7 @@ body {
   background: var(--page-bg);
   color: var(--text);
   font-family: var(--font-body);
-  font-size: 1.125rem;
+  font-size: var(--text-body);
   line-height: var(--line-body);
   text-rendering: optimizelegibility;
 }
@@ -48,15 +48,15 @@ h4 {
 }
 
 h1 {
-  font-size: clamp(2.25rem, 3vw, 3.5rem);
+  font-size: var(--text-h1);
 }
 
 h2 {
-  font-size: clamp(1.75rem, 2.6vw, 2.35rem);
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: clamp(1.3rem, 2vw, 1.6rem);
+  font-size: var(--text-h3);
 }
 
 p,
