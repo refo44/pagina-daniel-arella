@@ -34,10 +34,12 @@ Solo existen seis colores reales. No hay grises, no hay degradados, no hay exten
 |--------|-----|----------------|
 | Tinta | #0d1303 | Cabecera, pie, texto |
 | Pergamino | #f3e0cc | Lienzo principal, orientación y pausas |
-| Terracota | #b02e17 | Superficies editoriales, texto secundario, bordes |
-| Siena | #7e390c | Acento base: enlaces, botones, foco |
-| Castaño | #4b2418 | Acento intenso: hover, énfasis |
+| Terracota | #974319 | Superficies editoriales, texto secundario, bordes |
+| Siena | #802e0e | Acento base: enlaces, botones, foco |
+| Castaño | #472015 | Acento intenso: hover, énfasis |
 | Blanco | #ffffff | Superficies de contenido y lectura sostenida |
+
+**Nota de versión 2.2:** Terracota, Siena y Castaño se recalibraron en una rampa tonal coherente — un solo matiz (H 20° → 17° → 13°) que se desplaza levemente hacia el rojo a medida que oscurece, como el comportamiento real de los pigmentos de tierra. Antes eran tres tonos cálidos con matiz inconsistente (H 9° / 24° / 14° — Castaño no continuaba la rampa de los otros dos) y Terracota pasaba el mínimo de contraste AA como texto sobre Pergamino por muy poco margen (5.03:1). La rampa nueva da más margen en los tres pasos (5.22 / 7.06 / 11.00 sobre Pergamino) sin cambiar Tinta, Pergamino ni Blanco, y sin alterar el territorio cálido de tierra y arcilla que define la marca.
 
 ### Guía visual
 
@@ -63,9 +65,11 @@ Todo se construye con estas seis tintas. Pergamino sostiene el lienzo y las paus
 | Superficie de contenido | Blanco | Tinta |
 | Bloque de lectura sostenida | Blanco | Tinta |
 | Cabecera / pie | Tinta | Pergamino |
-| Superficies editoriales | Terracota | Tinta |
+| Superficies editoriales | Terracota | Pergamino |
 | Botones / CTAs | Siena | Pergamino |
 | Hover botones | Castaño | Pergamino |
+
+**Nota:** Terracota como fondo de superficie editorial no sostiene texto Tinta — su contraste (2.8:1) queda por debajo de AA. Cuando Terracota es fondo, el texto va en Pergamino (5.2:1, AA). Tinta sobre Terracota solo se usa para iconografía o acentos grandes (≥3:1), nunca para texto corrido.
 
 ---
 
@@ -187,9 +191,9 @@ Los únicos colores reales. El orden es semántico: 1–2 son los neutros base, 
 ```css
 --brand-1: #0d1303;  /* Tinta - neutro oscuro principal */
 --brand-2: #f3e0cc;  /* Pergamino - neutro claro base */
---brand-3: #b02e17;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
---brand-4: #7e390c;  /* Siena - acento base de interacción */
---brand-5: #4b2418;  /* Castaño - acento intenso (hover, énfasis) */
+--brand-3: #974319;  /* Terracota - acento medio: superficies editoriales, bordes, texto secundario */
+--brand-4: #802e0e;  /* Siena - acento base de interacción */
+--brand-5: #472015;  /* Castaño - acento intenso (hover, énfasis) */
 --brand-6: #ffffff;  /* Blanco - fondo de lectura sostenida */
 ```
 

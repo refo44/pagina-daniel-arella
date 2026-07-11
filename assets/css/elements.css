@@ -67,7 +67,7 @@ dd {
 
 ul,
 ol {
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
 }
 
 blockquote {
@@ -94,7 +94,7 @@ input,
 textarea,
 select {
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: var(--space-4);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-1);
   background: var(--content-bg);
